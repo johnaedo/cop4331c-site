@@ -42,7 +42,7 @@ jobs:
 
       - name: Debug - Check revealjs plugin source
         run: |
-          cat /home/runner/work/cop4331c/cop4331c/.venv/lib/python3.13/site-packages/mkdocs_revealjs/plugin.py
+          cat /home/runner/work/cop4331c/.venv/lib/python3.13/site-packages/mkdocs_revealjs/plugin.py
 
       - name: Build and deploy
         env:
