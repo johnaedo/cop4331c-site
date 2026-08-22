@@ -70,17 +70,17 @@
   <circle cx="1320" cy="320" r="2.5" fill="rgba(255,201,4,0.15)" />
 
   <!-- Code watermark — right side -->
-  <text font-family="'Ubuntu Mono', 'Courier New', monospace" font-size="18" fill="rgba(255,201,4,0.22)" x="740" y="118">public interface Course {</text>
-  <text font-family="'Ubuntu Mono', 'Courier New', monospace" font-size="18" fill="rgba(255,201,4,0.22)" x="740" y="148">    void design(OOPrinciples p);</text>
-  <text font-family="'Ubuntu Mono', 'Courier New', monospace" font-size="18" fill="rgba(255,201,4,0.22)" x="740" y="178">    List&lt;Demo&gt; getCodeDemos();</text>
-  <text font-family="'Ubuntu Mono', 'Courier New', monospace" font-size="18" fill="rgba(255,201,4,0.22)" x="740" y="208">    Slide[] getLectureSlides();</text>
-  <text font-family="'Ubuntu Mono', 'Courier New', monospace" font-size="18" fill="rgba(255,201,4,0.22)" x="740" y="238">    boolean isDeployed();</text>
-  <text font-family="'Ubuntu Mono', 'Courier New', monospace" font-size="18" fill="rgba(255,201,4,0.22)" x="740" y="268">}</text>
-  <text font-family="'Ubuntu Mono', 'Courier New', monospace" font-size="18" fill="rgba(255,201,4,0.12)" x="740" y="310">// Spring 2025 · COP 4331C</text>
+  <text font-family="'Ubuntu Mono', 'Courier New', monospace" font-size="18" fill="rgba(255,201,4,0.22)" x="1020" y="118">public interface Course {</text>
+  <text font-family="'Ubuntu Mono', 'Courier New', monospace" font-size="18" fill="rgba(255,201,4,0.22)" x="1020" y="148">    void design(OOPrinciples p);</text>
+  <text font-family="'Ubuntu Mono', 'Courier New', monospace" font-size="18" fill="rgba(255,201,4,0.22)" x="1020" y="178">    List&lt;Demo&gt; getCodeDemos();</text>
+  <text font-family="'Ubuntu Mono', 'Courier New', monospace" font-size="18" fill="rgba(255,201,4,0.22)" x="1020" y="208">    Slide[] getLectureSlides();</text>
+  <text font-family="'Ubuntu Mono', 'Courier New', monospace" font-size="18" fill="rgba(255,201,4,0.22)" x="1020" y="238">    boolean isDeployed();</text>
+  <text font-family="'Ubuntu Mono', 'Courier New', monospace" font-size="18" fill="rgba(255,201,4,0.22)" x="1020" y="268">}</text>
+  <text font-family="'Ubuntu Mono', 'Courier New', monospace" font-size="18" fill="rgba(255,201,4,0.12)" x="1020" y="310">// Spring 2025 · COP 4331C</text>
 
   <!-- Fade masks over code -->
-  <rect x="1180" y="0"   width="180" height="400" fill="url(#codefade)" />
-  <rect x="740"  y="0"   width="120" height="400" fill="url(#leftfade)" />
+  <rect x="1260" y="0"   width="100" height="400" fill="url(#codefade)" />
+  <rect x="1020" y="0"   width="120" height="400" fill="url(#leftfade)" />
   <rect x="0"    y="0"   width="1360" height="80"  fill="url(#topfade)" />
   <rect x="0"    y="320" width="1360" height="80"  fill="url(#botfade)" />
 
@@ -94,5 +94,5 @@
   <text font-family="'Karla', sans-serif" font-size="18" font-weight="400"                          fill="#555555"         x="104" y="294">Department of Computer Science · Dr. John Aedo</text>
 
   <!-- Bottom gold rule -->
-  <rect x="100" y="308" width="480" height="2" rx="1" fill="#ffc904" opacity="0.4" />
+  <rect x="100" y="308" width="920" height="2" rx="1" fill="#ffc904" opacity="0.4" />
 </svg>
