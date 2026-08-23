@@ -4,23 +4,23 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Course notes, code demos, and tutorials" name="description"/>
 <meta content="Dr. John Aedo" name="author"/>
-<link href="https://johnaedo.github.io/cop4331c/Lecture%20Slides/" rel="canonical"/>
-<link href="../Code%20Demos%20and%20Tutorials/MERN%20Stack/Getting%20Started%20with%20MERN%20A%20%28version%202.0%29/" rel="prev"/>
-<link href="%20Authentication/" rel="next"/>
-<link href="../_assets/meta/favicons.svg" rel="icon"/>
+<link href="https://johnaedo.github.io/cop4331c/Code%20Demos%20and%20Tutorials/Setting%20Up%20MongoDB%20Auth%20and%20Security/" rel="canonical"/>
+<link href="../" rel="prev"/>
+<link href="../LAMP%20Stack/Getting%20Started%20with%20LAMP/" rel="next"/>
+<link href="../../_assets/meta/favicons.svg" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
-<title>Index - COP 4331C - Processes of Object Oriented Software Development</title>
-<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
-<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<title>Setting Up MongoDB Auth and Security - COP 4331C - Processes of Object Oriented Software Development</title>
+<link href="../../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Karla:300,300i,400,400i,700,700i%7CUbuntu+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Karla";--md-code-font:"Ubuntu Mono"}</style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
-<link href="../_static/css/admonition.css" rel="stylesheet"/>
-<link href="../_static/css/custom_attributes.css" rel="stylesheet"/>
-<link href="../_static/css/customization.css" rel="stylesheet"/>
+<link href="../../_static/css/admonition.css" rel="stylesheet"/>
+<link href="../../_static/css/custom_attributes.css" rel="stylesheet"/>
+<link href="../../_static/css/customization.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/gh/Enveloppe/_static@refs/heads/master/dist/styles.css" rel="stylesheet"/>
-<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
 <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
 <link href="https://unpkg.com/tippy.js@6/animations/scale-subtle.css" rel="stylesheet"/>
@@ -30,12 +30,12 @@
 <meta content="https://johnaedo.github.io/cop4331c/_assets/meta/logo.svg" property="og:image"/>
 <meta content="https://johnaedo.github.io/cop4331c/_assets/meta/logo.svg" name="twitter:image"/>
 <meta content="https://johnaedo.github.io/cop4331c/" name="site_url"/>
-<meta content="Lecture Slides" property="og:title"/>
-<meta content="Lecture Slides" name="twitter:title"/>
+<meta content="Setting Up MongoDB Auth and Security" property="og:title"/>
+<meta content="Setting Up MongoDB Auth and Security" name="twitter:title"/>
 <meta content="Course notes, code demos, and tutorials" name="og:description"/>
 <meta content="Course notes, code demos, and tutorials" name="twitter:description"/>
-<script> document.title = "Lecture Slides" </script>
-<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+<script> document.title = "Setting Up MongoDB Auth and Security" </script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -51,7 +51,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="..">
+<a class="md-skip" href="../..">
           Skip to content
         </a>
 </div>
@@ -59,8 +59,8 @@
 </div>
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="COP 4331C - Processes of Object Oriented Software Development" class="md-header__button md-logo" data-md-component="logo" href=".." title="COP 4331C - Processes of Object Oriented Software Development">
-<img alt="logo" src="../_assets/meta/logo.svg"/>
+<a aria-label="COP 4331C - Processes of Object Oriented Software Development" class="md-header__button md-logo" data-md-component="logo" href="../.." title="COP 4331C - Processes of Object Oriented Software Development">
+<img alt="logo" src="../../_assets/meta/logo.svg"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
@@ -75,7 +75,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Index
+              Setting Up MongoDB Auth and Security
             
           </span>
 </div>
@@ -128,7 +128,7 @@
 <div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="..">
+<a class="md-tabs__link" href="../..">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -137,7 +137,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../Helpful%20Links/">
+<a class="md-tabs__link" href="../../Helpful%20Links/">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -146,7 +146,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../tags/">
+<a class="md-tabs__link" href="../../tags/">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -155,7 +155,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../Assignments/">
+<a class="md-tabs__link" href="../../Assignments/">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -163,8 +163,8 @@
 
         </a>
 </li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../Code%20Demos%20and%20Tutorials/">
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -172,8 +172,8 @@
 
         </a>
 </li>
-<li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="./">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../Lecture%20Slides/">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -193,14 +193,14 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="COP 4331C - Processes of Object Oriented Software Development" class="md-nav__button md-logo" data-md-component="logo" href=".." title="COP 4331C - Processes of Object Oriented Software Development">
-<img alt="logo" src="../_assets/meta/logo.svg"/>
+<a aria-label="COP 4331C - Processes of Object Oriented Software Development" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="COP 4331C - Processes of Object Oriented Software Development">
+<img alt="logo" src="../../_assets/meta/logo.svg"/>
 </a>
     COP 4331C - Processes of Object Oriented Software Development
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="..">
+<a class="md-nav__link" href="../..">
 <svg height="18" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M843.5 737.4c-12.4-75.2-79.2-129.1-155.3-125.4S550.9 676 546 752c-153.5-4.8-208-40.7-199.1-113.7c3.3-27.3 19.8-41.9 50.1-49c18.4-4.3 38.8-4.9 57.3-3.2c1.7.2 3.5.3 5.2.5c11.3 2.7 22.8 5 34.3 6.8c34.1 5.6 68.8 8.4 101.8 6.6c92.8-5 156-45.9 159.2-132.7c3.1-84.1-54.7-143.7-147.9-183.6c-29.9-12.8-61.6-22.7-93.3-30.2c-14.3-3.4-26.3-5.7-35.2-7.2c-7.9-75.9-71.5-133.8-147.8-134.4S189.7 168 180.5 243.8s40 146.3 114.2 163.9s149.9-23.3 175.7-95.1c9.4 1.7 18.7 3.6 28 5.8c28.2 6.6 56.4 15.4 82.4 26.6c70.7 30.2 109.3 70.1 107.5 119.9c-1.6 44.6-33.6 65.2-96.2 68.6c-27.5 1.5-57.6-.9-87.3-5.8c-8.3-1.4-15.9-2.8-22.6-4.3c-3.9-.8-6.6-1.5-7.8-1.8l-3.1-.6c-2.2-.3-5.9-.8-10.7-1.3c-25-2.3-52.1-1.5-78.5 4.6c-55.2 12.9-93.9 47.2-101.1 105.8c-15.7 126.2 78.6 184.7 276 188.9c29.1 70.4 106.4 107.9 179.6 87c73.3-20.9 119.3-93.4 106.9-168.6M329.1 345.2c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3M695.6 845c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3" fill="currentColor"></path></svg>
 <span class="md-ellipsis">
     Home
@@ -208,7 +208,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Helpful%20Links/">
+<a class="md-nav__link" href="../../Helpful%20Links/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Helpful Links
@@ -216,7 +216,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../tags/">
+<a class="md-nav__link" href="../../tags/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Tags
@@ -226,7 +226,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../Assignments/">
+<a class="md-nav__link" href="../../Assignments/">
 <svg height="18" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M843.5 737.4c-12.4-75.2-79.2-129.1-155.3-125.4S550.9 676 546 752c-153.5-4.8-208-40.7-199.1-113.7c3.3-27.3 19.8-41.9 50.1-49c18.4-4.3 38.8-4.9 57.3-3.2c1.7.2 3.5.3 5.2.5c11.3 2.7 22.8 5 34.3 6.8c34.1 5.6 68.8 8.4 101.8 6.6c92.8-5 156-45.9 159.2-132.7c3.1-84.1-54.7-143.7-147.9-183.6c-29.9-12.8-61.6-22.7-93.3-30.2c-14.3-3.4-26.3-5.7-35.2-7.2c-7.9-75.9-71.5-133.8-147.8-134.4S189.7 168 180.5 243.8s40 146.3 114.2 163.9s149.9-23.3 175.7-95.1c9.4 1.7 18.7 3.6 28 5.8c28.2 6.6 56.4 15.4 82.4 26.6c70.7 30.2 109.3 70.1 107.5 119.9c-1.6 44.6-33.6 65.2-96.2 68.6c-27.5 1.5-57.6-.9-87.3-5.8c-8.3-1.4-15.9-2.8-22.6-4.3c-3.9-.8-6.6-1.5-7.8-1.8l-3.1-.6c-2.2-.3-5.9-.8-10.7-1.3c-25-2.3-52.1-1.5-78.5 4.6c-55.2 12.9-93.9 47.2-101.1 105.8c-15.7 126.2 78.6 184.7 276 188.9c29.1 70.4 106.4 107.9 179.6 87c73.3-20.9 119.3-93.4 106.9-168.6M329.1 345.2c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3M695.6 845c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3" fill="currentColor"></path></svg>
 <span class="md-ellipsis">
     Assignments
@@ -243,7 +243,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Assignments/Concurrent%20Hash%20Table/">
+<a class="md-nav__link" href="../../Assignments/Concurrent%20Hash%20Table/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Concurrent Hash Table
@@ -253,32 +253,155 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/">
+<a class="md-nav__link" href="../">
 <svg height="18" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M843.5 737.4c-12.4-75.2-79.2-129.1-155.3-125.4S550.9 676 546 752c-153.5-4.8-208-40.7-199.1-113.7c3.3-27.3 19.8-41.9 50.1-49c18.4-4.3 38.8-4.9 57.3-3.2c1.7.2 3.5.3 5.2.5c11.3 2.7 22.8 5 34.3 6.8c34.1 5.6 68.8 8.4 101.8 6.6c92.8-5 156-45.9 159.2-132.7c3.1-84.1-54.7-143.7-147.9-183.6c-29.9-12.8-61.6-22.7-93.3-30.2c-14.3-3.4-26.3-5.7-35.2-7.2c-7.9-75.9-71.5-133.8-147.8-134.4S189.7 168 180.5 243.8s40 146.3 114.2 163.9s149.9-23.3 175.7-95.1c9.4 1.7 18.7 3.6 28 5.8c28.2 6.6 56.4 15.4 82.4 26.6c70.7 30.2 109.3 70.1 107.5 119.9c-1.6 44.6-33.6 65.2-96.2 68.6c-27.5 1.5-57.6-.9-87.3-5.8c-8.3-1.4-15.9-2.8-22.6-4.3c-3.9-.8-6.6-1.5-7.8-1.8l-3.1-.6c-2.2-.3-5.9-.8-10.7-1.3c-25-2.3-52.1-1.5-78.5 4.6c-55.2 12.9-93.9 47.2-101.1 105.8c-15.7 126.2 78.6 184.7 276 188.9c29.1 70.4 106.4 107.9 179.6 87c73.3-20.9 119.3-93.4 106.9-168.6M329.1 345.2c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3M695.6 845c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3" fill="currentColor"></path></svg>
 <span class="md-ellipsis">
     Code Demos and Tutorials
   </span>
 </a>
-<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
             Code Demos and Tutorials
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/Setting%20Up%20MongoDB%20Auth%20and%20Security/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
+<span class="md-ellipsis">
+    Setting Up MongoDB Auth and Security
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Setting Up MongoDB Auth and Security
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#securing-mongodb-authentication-tls-setup-guide">
+<span class="md-ellipsis">
+      
+        Securing MongoDB: Authentication + TLS Setup Guide
+      
+    </span>
+</a>
+<nav aria-label="Securing MongoDB: Authentication + TLS Setup Guide" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-create-users-before-enabling-auth">
+<span class="md-ellipsis">
+      
+        1. Create Users (before enabling auth)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-an-admin-user">
+<span class="md-ellipsis">
+      
+        Create an admin user
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-an-app-specific-user-recommended">
+<span class="md-ellipsis">
+      
+        Create an app-specific user (recommended)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-obtain-a-tls-certificate-with-certbot">
+<span class="md-ellipsis">
+      
+        2. Obtain a TLS Certificate with Certbot
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-build-the-certificate-files-mongodb-needs">
+<span class="md-ellipsis">
+      
+        3. Build the Certificate Files MongoDB Needs
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-update-etcmongodconf">
+<span class="md-ellipsis">
+      
+        4. Update /etc/mongod.conf
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-restart-and-verify">
+<span class="md-ellipsis">
+      
+        5. Restart and Verify
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-automate-certificate-renewal">
+<span class="md-ellipsis">
+      
+        6. Automate Certificate Renewal
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-before-opening-the-firewall">
+<span class="md-ellipsis">
+      
+        7. Before Opening the Firewall
+      
+    </span>
+</a>
+<nav aria-label="7. Before Opening the Firewall" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-nodejs-mongoose-connection-string">
+<span class="md-ellipsis">
+      
+        Example Node.js / Mongoose connection string
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
@@ -296,7 +419,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/Getting%20Started%20with%20LAMP/">
+<a class="md-nav__link" href="../LAMP%20Stack/Getting%20Started%20with%20LAMP/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Getting Started with LAMP
@@ -322,7 +445,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/MERN%20Stack/Getting%20Started%20with%20MERN%20A%20%28version%202.0%29/">
+<a class="md-nav__link" href="../MERN%20Stack/Getting%20Started%20with%20MERN%20A%20%28version%202.0%29/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Getting Started with MERN A (version 2.0)
@@ -335,27 +458,27 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link md-nav__link--active" href="./">
+<a class="md-nav__link" href="../../Lecture%20Slides/">
 <svg height="18" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M843.5 737.4c-12.4-75.2-79.2-129.1-155.3-125.4S550.9 676 546 752c-153.5-4.8-208-40.7-199.1-113.7c3.3-27.3 19.8-41.9 50.1-49c18.4-4.3 38.8-4.9 57.3-3.2c1.7.2 3.5.3 5.2.5c11.3 2.7 22.8 5 34.3 6.8c34.1 5.6 68.8 8.4 101.8 6.6c92.8-5 156-45.9 159.2-132.7c3.1-84.1-54.7-143.7-147.9-183.6c-29.9-12.8-61.6-22.7-93.3-30.2c-14.3-3.4-26.3-5.7-35.2-7.2c-7.9-75.9-71.5-133.8-147.8-134.4S189.7 168 180.5 243.8s40 146.3 114.2 163.9s149.9-23.3 175.7-95.1c9.4 1.7 18.7 3.6 28 5.8c28.2 6.6 56.4 15.4 82.4 26.6c70.7 30.2 109.3 70.1 107.5 119.9c-1.6 44.6-33.6 65.2-96.2 68.6c-27.5 1.5-57.6-.9-87.3-5.8c-8.3-1.4-15.9-2.8-22.6-4.3c-3.9-.8-6.6-1.5-7.8-1.8l-3.1-.6c-2.2-.3-5.9-.8-10.7-1.3c-25-2.3-52.1-1.5-78.5 4.6c-55.2 12.9-93.9 47.2-101.1 105.8c-15.7 126.2 78.6 184.7 276 188.9c29.1 70.4 106.4 107.9 179.6 87c73.3-20.9 119.3-93.4 106.9-168.6M329.1 345.2c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3M695.6 845c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3" fill="currentColor"></path></svg>
 <span class="md-ellipsis">
     Lecture Slides
   </span>
 </a>
-<label class="md-nav__link md-nav__link--active" for="__nav_6" id="__nav_6_label" tabindex="">
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
             Lecture Slides
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="%20Authentication/">
+<a class="md-nav__link" href="../../Lecture%20Slides/%20Authentication/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
      Authentication
@@ -363,7 +486,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="Course%20Logistics%20%28Syllabus%2C%20class%20policies%2C%20etc%29/">
+<a class="md-nav__link" href="../../Lecture%20Slides/Course%20Logistics%20%28Syllabus%2C%20class%20policies%2C%20etc%29/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Course Logistics (Syllabus, class policies, etc)
@@ -371,7 +494,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="Course%20Logistics/">
+<a class="md-nav__link" href="../../Lecture%20Slides/Course%20Logistics/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Course Logistics
@@ -379,7 +502,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="Cypress%20Testing%20Guide/">
+<a class="md-nav__link" href="../../Lecture%20Slides/Cypress%20Testing%20Guide/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Cypress Testing Guide
@@ -387,7 +510,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="History%20of%20the%20Web%20and%20Overview%20of%20Web%20Architectures/">
+<a class="md-nav__link" href="../../Lecture%20Slides/History%20of%20the%20Web%20and%20Overview%20of%20Web%20Architectures/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     History of the Web and Overview of Web Architectures
@@ -395,7 +518,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="Node.js%20Fundamentals/">
+<a class="md-nav__link" href="../../Lecture%20Slides/Node.js%20Fundamentals/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Node.js Fundamentals
@@ -403,7 +526,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="Week%2010%20-%20Testing%20Routes%20with%20Jest/">
+<a class="md-nav__link" href="../../Lecture%20Slides/Week%2010%20-%20Testing%20Routes%20with%20Jest/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Week 10   Testing Routes with Jest
@@ -411,7 +534,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="Week%204%20Lecture%20-%20Node.js%20Fundamentals/">
+<a class="md-nav__link" href="../../Lecture%20Slides/Week%204%20Lecture%20-%20Node.js%20Fundamentals/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Week 4 Lecture   Node.js Fundamentals
@@ -436,22 +559,111 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#lecture-slides">
+<a class="md-nav__link" href="#securing-mongodb-authentication-tls-setup-guide">
 <span class="md-ellipsis">
       
-        Lecture Slides
+        Securing MongoDB: Authentication + TLS Setup Guide
+      
+    </span>
+</a>
+<nav aria-label="Securing MongoDB: Authentication + TLS Setup Guide" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-create-users-before-enabling-auth">
+<span class="md-ellipsis">
+      
+        1. Create Users (before enabling auth)
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#presentations">
+<a class="md-nav__link" href="#create-an-admin-user">
 <span class="md-ellipsis">
       
-        Presentations
+        Create an admin user
       
     </span>
 </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-an-app-specific-user-recommended">
+<span class="md-ellipsis">
+      
+        Create an app-specific user (recommended)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-obtain-a-tls-certificate-with-certbot">
+<span class="md-ellipsis">
+      
+        2. Obtain a TLS Certificate with Certbot
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-build-the-certificate-files-mongodb-needs">
+<span class="md-ellipsis">
+      
+        3. Build the Certificate Files MongoDB Needs
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-update-etcmongodconf">
+<span class="md-ellipsis">
+      
+        4. Update /etc/mongod.conf
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-restart-and-verify">
+<span class="md-ellipsis">
+      
+        5. Restart and Verify
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-automate-certificate-renewal">
+<span class="md-ellipsis">
+      
+        6. Automate Certificate Renewal
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-before-opening-the-firewall">
+<span class="md-ellipsis">
+      
+        7. Before Opening the Firewall
+      
+    </span>
+</a>
+<nav aria-label="7. Before Opening the Firewall" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-nodejs-mongoose-connection-string">
+<span class="md-ellipsis">
+      
+        Example Node.js / Mongoose connection string
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -488,25 +700,167 @@
   page title (or respectively site name) is used as the main headline.
 -->
 <!-- Page content -->
-<h2 id="lecture-slides">Lecture Slides<a class="headerlink" href="#lecture-slides" title="Permanent link">¶</a></h2>
-<p>Slide decks and reference guides published after each class session. Use these to review concepts, catch up if you missed a session, or follow along in real time.</p>
-<p>Use the sidebar to navigate to a specific deck. The search bar is useful if you remember a keyword from lecture but not which session it came from.</p>
-<p>Use the links below if you want to view the deck as a presentation in your browser.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Source:  Claude.ai, manually verified on a DigitalOcean droplet created with the MERN template.</p>
+</div>
+<h2 id="securing-mongodb-authentication-tls-setup-guide">Securing MongoDB: Authentication + TLS Setup Guide<a class="headerlink" href="#securing-mongodb-authentication-tls-setup-guide" title="Permanent link">¶</a></h2>
+<p>This document covers the full process for locking down a MongoDB instance before exposing it on the firewall:</p>
+<ol>
+<li>Creating admin and application users</li>
+<li>Enabling TLS/SSL with Let’s Encrypt certificates</li>
+<li>Handling the “chain of trust” requirement</li>
+<li>Final <code>mongod.conf</code> configuration</li>
+<li>Certificate renewal automation</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> MongoDB’s config file is normally located at <code>/etc/mongod.conf</code> (not <code>/etc/mongodb.conf</code>) on most package installs. Adjust paths below if yours differs.</p>
+</blockquote>
 <hr/>
-<h2 id="presentations">Presentations<a class="headerlink" href="#presentations" title="Permanent link">¶</a></h2>
+<h3 id="1-create-users-before-enabling-auth">1. Create Users (before enabling auth)<a class="headerlink" href="#1-create-users-before-enabling-auth" title="Permanent link">¶</a></h3>
+<p>Auth isn’t required yet at this point, so connect locally without credentials:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>mongosh
+</code></pre></div>
+<h3 id="create-an-admin-user">Create an admin user<a class="headerlink" href="#create-an-admin-user" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nx">use</span><span class="w"> </span><span class="nx">admin</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nx">db</span><span class="p">.</span><span class="nx">createUser</span><span class="p">({</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">  </span><span class="nx">user</span><span class="o">:</span><span class="w"> </span><span class="s2">"adminUser"</span><span class="p">,</span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">  </span><span class="nx">pwd</span><span class="o">:</span><span class="w"> </span><span class="nx">passwordPrompt</span><span class="p">(),</span><span class="w">  </span><span class="c1">// prompts securely, avoids leaving password in shell history</span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">  </span><span class="nx">roles</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s2">"userAdminAnyDatabase"</span><span class="p">,</span><span class="w"> </span><span class="nx">db</span><span class="o">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="s2">"readWriteAnyDatabase"</span><span class="w"> </span><span class="p">]</span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="p">})</span>
+</code></pre></div>
+<h3 id="create-an-app-specific-user-recommended">Create an app-specific user (recommended)<a class="headerlink" href="#create-an-app-specific-user-recommended" title="Permanent link">¶</a></h3>
+<p>Scope this to just your application’s database rather than granting broad access:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nx">use</span><span class="w"> </span><span class="nx">budgetplanner</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nx">db</span><span class="p">.</span><span class="nx">createUser</span><span class="p">({</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">  </span><span class="nx">user</span><span class="o">:</span><span class="w"> </span><span class="s2">"budgetApp"</span><span class="p">,</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">  </span><span class="nx">pwd</span><span class="o">:</span><span class="w"> </span><span class="nx">passwordPrompt</span><span class="p">(),</span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">  </span><span class="nx">roles</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s2">"readWrite"</span><span class="p">,</span><span class="w"> </span><span class="nx">db</span><span class="o">:</span><span class="w"> </span><span class="s2">"budgetplanner"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="p">})</span>
+</code></pre></div>
+<hr/>
+<h2 id="2-obtain-a-tls-certificate-with-certbot">2. Obtain a TLS Certificate with Certbot<a class="headerlink" href="#2-obtain-a-tls-certificate-with-certbot" title="Permanent link">¶</a></h2>
+<p>MongoDB validates TLS against a hostname, so this requires a real domain pointing at the server (not just an IP).</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>sudo<span class="w"> </span>certbot<span class="w"> </span>certonly<span class="w"> </span>--standalone<span class="w"> </span>-d<span class="w"> </span>yourdomain.example.com
+</code></pre></div>
+<p>Use <code>--webserver</code> mode instead of <code>--standalone</code> if nginx/apache is already running on port 80.</p>
+<p>This creates the following files under <code>/etc/letsencrypt/live/yourdomain.example.com/</code>:</p>
 <ul>
-<li><a href="https://teaching.johnaedo.com/lectures/cop4331c/Cypress%20Testing%20Guide%20"><strong>Cypress Testing Guide</strong></a></li>
+<li><code>fullchain.pem</code> — full certificate chain</li>
+<li><code>privkey.pem</code> — private key</li>
+<li><code>chain.pem</code> — intermediate CA certificate (needed for the chain-of-trust requirement below)</li>
 </ul>
+<hr/>
+<h2 id="3-build-the-certificate-files-mongodb-needs">3. Build the Certificate Files MongoDB Needs<a class="headerlink" href="#3-build-the-certificate-files-mongodb-needs" title="Permanent link">¶</a></h2>
+<p>MongoDB requires two separate files:</p>
+<ul>
+<li>A combined cert + key file (<code>certificateKeyFile</code>)</li>
+<li>A CA file for chain-of-trust validation (<code>CAFile</code>) — <strong>required</strong> as of MongoDB 4.4.29 / 5.0.25 / 6.0.14 / 7.0.6+ due to a security fix (CVE-2024-1351). Without this, <code>mongod</code> will refuse to start with the error <em>“The use of TLS without specifying a chain of trust is no longer supported.”</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/ssl/mongodb
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1"># Combined cert + private key</span>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>sudo<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">'cat /etc/letsencrypt/live/yourdomain.example.com/fullchain.pem \</span>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="s1">  /etc/letsencrypt/live/yourdomain.example.com/privkey.pem \</span>
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="s1">  &gt; /etc/ssl/mongodb/mongodb.pem'</span>
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a>
+<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="c1"># CA chain file, copied into a location the mongodb user can read</span>
+<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a>sudo<span class="w"> </span>cp<span class="w"> </span>/etc/letsencrypt/live/yourdomain.example.com/chain.pem<span class="w"> </span>/etc/ssl/mongodb/chain.pem
+<a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a>
+<a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="c1"># Lock down permissions</span>
+<a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a>sudo<span class="w"> </span>chown<span class="w"> </span>mongodb:mongodb<span class="w"> </span>/etc/ssl/mongodb/mongodb.pem<span class="w"> </span>/etc/ssl/mongodb/chain.pem
+<a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>/etc/ssl/mongodb/mongodb.pem<span class="w"> </span>/etc/ssl/mongodb/chain.pem
+</code></pre></div>
+<p>Certbot’s <code>/etc/letsencrypt/live/</code> directory is normally root-only, which is why the files are copied into <code>/etc/ssl/mongodb</code> where the <code>mongodb</code> user can read them.</p>
+<hr/>
+<h2 id="4-update-etcmongodconf">4. Update <code>/etc/mongod.conf</code><a class="headerlink" href="#4-update-etcmongodconf" title="Permanent link">¶</a></h2>
+<p>Combine authentication, network binding, and TLS settings into the config file:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nt">security</span><span class="p">:</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="nt">authorization</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">enabled</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="nt">net</span><span class="p">:</span>
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">27017</span>
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">  </span><span class="nt">bindIp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1,YOUR_SERVER_IP</span>
+<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">  </span><span class="nt">tls</span><span class="p">:</span>
+<a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">requireTLS</span>
+<a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">    </span><span class="nt">certificateKeyFile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/ssl/mongodb/mongodb.pem</span>
+<a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">    </span><span class="nt">CAFile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/ssl/mongodb/chain.pem</span>
+<a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">    </span><span class="nt">allowConnectionsWithoutCertificates</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p><strong>Field notes:</strong></p>
+<ul>
+<li><code>authorization: enabled</code> — requires username/password for all connections</li>
+<li><code>bindIp</code> — bind to localhost plus the server’s actual IP rather than all interfaces (<code>0.0.0.0</code>), to limit exposure</li>
+<li><code>tls.mode: requireTLS</code> — rejects any non-TLS connection</li>
+<li><code>certificateKeyFile</code> — the combined server cert + key</li>
+<li><code>CAFile</code> — required chain-of-trust file (intermediate CA)</li>
+<li><code>allowConnectionsWithoutCertificates: true</code> — this is server-side TLS only (encrypts the connection); it does <strong>not</strong> require clients to present their own certificate. Client identity is handled via username/password instead. Omit this only if you want full mutual TLS (client certs), which is a more involved, separate setup.</li>
+</ul>
+<blockquote>
+<p><strong>YAML indentation matters.</strong> <code>tls:</code> must be nested one level under <code>net:</code>, using spaces, not tabs — a common source of “unrecognized option” errors.</p>
+</blockquote>
+<hr/>
+<h2 id="5-restart-and-verify">5. Restart and Verify<a class="headerlink" href="#5-restart-and-verify" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>mongod
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>mongod<span class="w"> </span>-n<span class="w"> </span><span class="m">50</span><span class="w">   </span><span class="c1"># check for startup errors</span>
+</code></pre></div>
+<p>Test the connection with both auth and TLS:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>mongosh<span class="w"> </span>--tls<span class="w"> </span>--host<span class="w"> </span>yourdomain.example.com<span class="w"> </span>-u<span class="w"> </span>adminUser<span class="w"> </span>-p<span class="w"> </span>--authenticationDatabase<span class="w"> </span>admin
+</code></pre></div>
+<p>If it connects successfully with the password and refuses connections without one, the setup is working.</p>
+<hr/>
+<h2 id="6-automate-certificate-renewal">6. Automate Certificate Renewal<a class="headerlink" href="#6-automate-certificate-renewal" title="Permanent link">¶</a></h2>
+<p>Let’s Encrypt certificates expire every 90 days. Certbot auto-renews the underlying cert, but MongoDB needs its combined PEM and CA file rebuilt, and the service restarted, after each renewal.</p>
+<p>Create a deploy hook:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/letsencrypt/renewal-hooks/deploy/mongodb-tls.sh
+</code></pre></div>
+<p>Contents:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="ch">#!/bin/bash</span>
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="nv">DOMAIN</span><span class="o">=</span><span class="s2">"yourdomain.example.com"</span>
+<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a>
+<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a>cat<span class="w"> </span>/etc/letsencrypt/live/<span class="nv">$DOMAIN</span>/fullchain.pem<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">    </span>/etc/letsencrypt/live/<span class="nv">$DOMAIN</span>/privkey.pem<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">    </span>&gt;<span class="w"> </span>/etc/ssl/mongodb/mongodb.pem
+<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a>
+<a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a>cp<span class="w"> </span>/etc/letsencrypt/live/<span class="nv">$DOMAIN</span>/chain.pem<span class="w"> </span>/etc/ssl/mongodb/chain.pem
+<a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a>
+<a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a>chown<span class="w"> </span>mongodb:mongodb<span class="w"> </span>/etc/ssl/mongodb/mongodb.pem<span class="w"> </span>/etc/ssl/mongodb/chain.pem
+<a href="#__codelineno-9-11" id="__codelineno-9-11" name="__codelineno-9-11"></a>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>/etc/ssl/mongodb/mongodb.pem<span class="w"> </span>/etc/ssl/mongodb/chain.pem
+<a href="#__codelineno-9-12" id="__codelineno-9-12" name="__codelineno-9-12"></a>
+<a href="#__codelineno-9-13" id="__codelineno-9-13" name="__codelineno-9-13"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>mongod
+</code></pre></div>
+<p>Make it executable:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>sudo<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/etc/letsencrypt/renewal-hooks/deploy/mongodb-tls.sh
+</code></pre></div>
+<p>Certbot automatically runs every script in <code>renewal-hooks/deploy/</code> after a successful renewal, so this keeps MongoDB’s certificates current without manual intervention.</p>
+<hr/>
+<h2 id="7-before-opening-the-firewall">7. Before Opening the Firewall<a class="headerlink" href="#7-before-opening-the-firewall" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<p>Restrict the port to trusted IPs only, rather than opening it broadly:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span>from<span class="w"> </span>&lt;trusted-ip&gt;<span class="w"> </span>to<span class="w"> </span>any<span class="w"> </span>port<span class="w"> </span><span class="m">27017</span>
+</code></pre></div>
+</li>
+<li>
+<p>Use strong, unique passwords per user, stored in environment variables / connection strings rather than hardcoded.</p>
+</li>
+<li>Consider whether external exposure is even necessary — if only your app server talks to MongoDB, keeping it on a private network/VPC and never opening 27017 publicly is the safest option.</li>
+</ul>
+<h3 id="example-nodejs-mongoose-connection-string">Example Node.js / Mongoose connection string<a class="headerlink" href="#example-nodejs-mongoose-connection-string" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>mongodb://budgetApp:PASSWORD@yourdomain.example.com:27017/budgetplanner?tls=true&amp;authSource=budgetplanner
+</code></pre></div>
 <hr/>
 <div class="md-source-file">
 <small>
 <!-- mkdocs-git-revision-date-localized-plugin -->
 <u>Last update</u> :
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 22, 2026 13:29:46 UTC">April 22, 2026</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 23, 2026 20:11:33 UTC">August 23, 2026</span>
 <!-- mkdocs-git-revision-date-plugin -->
 <br/>
 <u>Created</u> :
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 16, 2026 15:49:35 UTC">April 16, 2026</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 23, 2026 20:11:33 UTC">August 23, 2026</span>
 </small>
 </div>
 <!-- Was this page helpful? -->
@@ -519,7 +873,7 @@
     try {
       const index = document.querySelector('h1').innerHTML;
       if (index === "Index") {
-        document.querySelector('h1').innerHTML = "Lecture Slides";
+        document.querySelector('h1').innerHTML = "Setting Up MongoDB Auth and Security";
       }
     } catch (error) {
       // console.log(error);
@@ -557,11 +911,11 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
-<script src="../_static/js/mathjax.js"></script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script src="../../_static/js/mathjax.js"></script>
 <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script src="../_static/js/snippets.js"></script>
+<script src="../../_static/js/snippets.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/Enveloppe/_static@refs/heads/master/dist/index.js"></script>
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });

@@ -4,9 +4,9 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Course notes, code demos, and tutorials" name="description"/>
 <meta content="Dr. John Aedo" name="author"/>
-<link href="https://johnaedo.github.io/cop4331c/Lecture%20Slides/" rel="canonical"/>
-<link href="../Code%20Demos%20and%20Tutorials/MERN%20Stack/Getting%20Started%20with%20MERN%20A%20%28version%202.0%29/" rel="prev"/>
-<link href="%20Authentication/" rel="next"/>
+<link href="https://johnaedo.github.io/cop4331c/Code%20Demos%20and%20Tutorials/" rel="canonical"/>
+<link href="../Assignments/Concurrent%20Hash%20Table/" rel="prev"/>
+<link href="Setting%20Up%20MongoDB%20Auth%20and%20Security/" rel="next"/>
 <link href="../_assets/meta/favicons.svg" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
 <title>Index - COP 4331C - Processes of Object Oriented Software Development</title>
@@ -30,11 +30,11 @@
 <meta content="https://johnaedo.github.io/cop4331c/_assets/meta/logo.svg" property="og:image"/>
 <meta content="https://johnaedo.github.io/cop4331c/_assets/meta/logo.svg" name="twitter:image"/>
 <meta content="https://johnaedo.github.io/cop4331c/" name="site_url"/>
-<meta content="Lecture Slides" property="og:title"/>
-<meta content="Lecture Slides" name="twitter:title"/>
+<meta content="Code Demos and Tutorials" property="og:title"/>
+<meta content="Code Demos and Tutorials" name="twitter:title"/>
 <meta content="Course notes, code demos, and tutorials" name="og:description"/>
 <meta content="Course notes, code demos, and tutorials" name="twitter:description"/>
-<script> document.title = "Lecture Slides" </script>
+<script> document.title = "Code Demos and Tutorials" </script>
 <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -163,8 +163,8 @@
 
         </a>
 </li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../Code%20Demos%20and%20Tutorials/">
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="./">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -172,8 +172,8 @@
 
         </a>
 </li>
-<li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="./">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Lecture%20Slides/">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -253,27 +253,27 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/">
+<a class="md-nav__link md-nav__link--active" href="./">
 <svg height="18" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M843.5 737.4c-12.4-75.2-79.2-129.1-155.3-125.4S550.9 676 546 752c-153.5-4.8-208-40.7-199.1-113.7c3.3-27.3 19.8-41.9 50.1-49c18.4-4.3 38.8-4.9 57.3-3.2c1.7.2 3.5.3 5.2.5c11.3 2.7 22.8 5 34.3 6.8c34.1 5.6 68.8 8.4 101.8 6.6c92.8-5 156-45.9 159.2-132.7c3.1-84.1-54.7-143.7-147.9-183.6c-29.9-12.8-61.6-22.7-93.3-30.2c-14.3-3.4-26.3-5.7-35.2-7.2c-7.9-75.9-71.5-133.8-147.8-134.4S189.7 168 180.5 243.8s40 146.3 114.2 163.9s149.9-23.3 175.7-95.1c9.4 1.7 18.7 3.6 28 5.8c28.2 6.6 56.4 15.4 82.4 26.6c70.7 30.2 109.3 70.1 107.5 119.9c-1.6 44.6-33.6 65.2-96.2 68.6c-27.5 1.5-57.6-.9-87.3-5.8c-8.3-1.4-15.9-2.8-22.6-4.3c-3.9-.8-6.6-1.5-7.8-1.8l-3.1-.6c-2.2-.3-5.9-.8-10.7-1.3c-25-2.3-52.1-1.5-78.5 4.6c-55.2 12.9-93.9 47.2-101.1 105.8c-15.7 126.2 78.6 184.7 276 188.9c29.1 70.4 106.4 107.9 179.6 87c73.3-20.9 119.3-93.4 106.9-168.6M329.1 345.2c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3M695.6 845c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3" fill="currentColor"></path></svg>
 <span class="md-ellipsis">
     Code Demos and Tutorials
   </span>
 </a>
-<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<label class="md-nav__link md-nav__link--active" for="__nav_5" id="__nav_5_label" tabindex="">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
             Code Demos and Tutorials
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/Setting%20Up%20MongoDB%20Auth%20and%20Security/">
+<a class="md-nav__link" href="Setting%20Up%20MongoDB%20Auth%20and%20Security/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Setting Up MongoDB Auth and Security
@@ -296,7 +296,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/Getting%20Started%20with%20LAMP/">
+<a class="md-nav__link" href="LAMP%20Stack/Getting%20Started%20with%20LAMP/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Getting Started with LAMP
@@ -322,7 +322,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/MERN%20Stack/Getting%20Started%20with%20MERN%20A%20%28version%202.0%29/">
+<a class="md-nav__link" href="MERN%20Stack/Getting%20Started%20with%20MERN%20A%20%28version%202.0%29/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Getting Started with MERN A (version 2.0)
@@ -335,27 +335,27 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link md-nav__link--active" href="./">
+<a class="md-nav__link" href="../Lecture%20Slides/">
 <svg height="18" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M843.5 737.4c-12.4-75.2-79.2-129.1-155.3-125.4S550.9 676 546 752c-153.5-4.8-208-40.7-199.1-113.7c3.3-27.3 19.8-41.9 50.1-49c18.4-4.3 38.8-4.9 57.3-3.2c1.7.2 3.5.3 5.2.5c11.3 2.7 22.8 5 34.3 6.8c34.1 5.6 68.8 8.4 101.8 6.6c92.8-5 156-45.9 159.2-132.7c3.1-84.1-54.7-143.7-147.9-183.6c-29.9-12.8-61.6-22.7-93.3-30.2c-14.3-3.4-26.3-5.7-35.2-7.2c-7.9-75.9-71.5-133.8-147.8-134.4S189.7 168 180.5 243.8s40 146.3 114.2 163.9s149.9-23.3 175.7-95.1c9.4 1.7 18.7 3.6 28 5.8c28.2 6.6 56.4 15.4 82.4 26.6c70.7 30.2 109.3 70.1 107.5 119.9c-1.6 44.6-33.6 65.2-96.2 68.6c-27.5 1.5-57.6-.9-87.3-5.8c-8.3-1.4-15.9-2.8-22.6-4.3c-3.9-.8-6.6-1.5-7.8-1.8l-3.1-.6c-2.2-.3-5.9-.8-10.7-1.3c-25-2.3-52.1-1.5-78.5 4.6c-55.2 12.9-93.9 47.2-101.1 105.8c-15.7 126.2 78.6 184.7 276 188.9c29.1 70.4 106.4 107.9 179.6 87c73.3-20.9 119.3-93.4 106.9-168.6M329.1 345.2c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3M695.6 845c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3" fill="currentColor"></path></svg>
 <span class="md-ellipsis">
     Lecture Slides
   </span>
 </a>
-<label class="md-nav__link md-nav__link--active" for="__nav_6" id="__nav_6_label" tabindex="">
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
             Lecture Slides
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="%20Authentication/">
+<a class="md-nav__link" href="../Lecture%20Slides/%20Authentication/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
      Authentication
@@ -363,7 +363,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="Course%20Logistics%20%28Syllabus%2C%20class%20policies%2C%20etc%29/">
+<a class="md-nav__link" href="../Lecture%20Slides/Course%20Logistics%20%28Syllabus%2C%20class%20policies%2C%20etc%29/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Course Logistics (Syllabus, class policies, etc)
@@ -371,7 +371,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="Course%20Logistics/">
+<a class="md-nav__link" href="../Lecture%20Slides/Course%20Logistics/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Course Logistics
@@ -379,7 +379,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="Cypress%20Testing%20Guide/">
+<a class="md-nav__link" href="../Lecture%20Slides/Cypress%20Testing%20Guide/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Cypress Testing Guide
@@ -387,7 +387,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="History%20of%20the%20Web%20and%20Overview%20of%20Web%20Architectures/">
+<a class="md-nav__link" href="../Lecture%20Slides/History%20of%20the%20Web%20and%20Overview%20of%20Web%20Architectures/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     History of the Web and Overview of Web Architectures
@@ -395,7 +395,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="Node.js%20Fundamentals/">
+<a class="md-nav__link" href="../Lecture%20Slides/Node.js%20Fundamentals/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Node.js Fundamentals
@@ -403,7 +403,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="Week%2010%20-%20Testing%20Routes%20with%20Jest/">
+<a class="md-nav__link" href="../Lecture%20Slides/Week%2010%20-%20Testing%20Routes%20with%20Jest/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Week 10   Testing Routes with Jest
@@ -411,7 +411,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="Week%204%20Lecture%20-%20Node.js%20Fundamentals/">
+<a class="md-nav__link" href="../Lecture%20Slides/Week%204%20Lecture%20-%20Node.js%20Fundamentals/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Week 4 Lecture   Node.js Fundamentals
@@ -436,19 +436,10 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#lecture-slides">
+<a class="md-nav__link" href="#code-demos-and-tutorials">
 <span class="md-ellipsis">
       
-        Lecture Slides
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#presentations">
-<span class="md-ellipsis">
-      
-        Presentations
+        Code Demos and Tutorials
       
     </span>
 </a>
@@ -488,25 +479,19 @@
   page title (or respectively site name) is used as the main headline.
 -->
 <!-- Page content -->
-<h2 id="lecture-slides">Lecture Slides<a class="headerlink" href="#lecture-slides" title="Permanent link">¶</a></h2>
-<p>Slide decks and reference guides published after each class session. Use these to review concepts, catch up if you missed a session, or follow along in real time.</p>
-<p>Use the sidebar to navigate to a specific deck. The search bar is useful if you remember a keyword from lecture but not which session it came from.</p>
-<p>Use the links below if you want to view the deck as a presentation in your browser.</p>
-<hr/>
-<h2 id="presentations">Presentations<a class="headerlink" href="#presentations" title="Permanent link">¶</a></h2>
-<ul>
-<li><a href="https://teaching.johnaedo.com/lectures/cop4331c/Cypress%20Testing%20Guide%20"><strong>Cypress Testing Guide</strong></a></li>
-</ul>
+<h2 id="code-demos-and-tutorials">Code Demos and Tutorials<a class="headerlink" href="#code-demos-and-tutorials" title="Permanent link">¶</a></h2>
+<p>Step-by-step walkthroughs for assignments and live-coding lectures. Each demo is self-contained — start from the top or jump to the section you need.</p>
+<p>Tutorials are organized by stack. Use the sidebar to navigate to a specific guide.</p>
 <hr/>
 <div class="md-source-file">
 <small>
 <!-- mkdocs-git-revision-date-localized-plugin -->
 <u>Last update</u> :
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 22, 2026 13:29:46 UTC">April 22, 2026</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 23, 2026 20:11:33 UTC">August 23, 2026</span>
 <!-- mkdocs-git-revision-date-plugin -->
 <br/>
 <u>Created</u> :
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 16, 2026 15:49:35 UTC">April 16, 2026</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 16, 2026 02:43:07 UTC">April 16, 2026</span>
 </small>
 </div>
 <!-- Was this page helpful? -->
@@ -519,7 +504,7 @@
     try {
       const index = document.querySelector('h1').innerHTML;
       if (index === "Index") {
-        document.querySelector('h1').innerHTML = "Lecture Slides";
+        document.querySelector('h1').innerHTML = "Code Demos and Tutorials";
       }
     } catch (error) {
       // console.log(error);
