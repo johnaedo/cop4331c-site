@@ -127,7 +127,7 @@ Simple, but programmable card filing system included with Macintosh System 6 (19
 - Each card or stack could be linked to other cards or stacks
 - Later evolutions included database integrations and access to the web itself
 
-![Screenshot - Apple HyperCard.jpg](../_assets/images/Screenshot%20-%20Apple%20HyperCard.jpg)
+![Screenshot_-_Apple_HyperCard.jpg](../_assets/images/Screenshot_-_Apple_HyperCard.jpg)
 
 ---
 
@@ -323,7 +323,7 @@ Evolving competing architectures for organizing content and computation between 
 - At this point, most sites were "read only"
 - No rich client content… the best you could hope for was a Java applet:
 
-![Chess Applet.png](../_assets/images/Chess%20Applet.png)
+![Chess_Applet.png](../_assets/images/Chess_Applet.png)
 
 ---
 ## The Browser Wars
@@ -554,7 +554,7 @@ https://en.wikipedia.org/wiki/JSON
 
 ## Front-End Framework Architecture
 
-![Component-Based Single Page Application.jpg](../_assets/images/Component-Based%20Single%20Page%20Application.jpg)
+![Component-Based_Single_Page_Application.jpg](../_assets/images/Component-Based_Single_Page_Application.jpg)
 
 ---
 
