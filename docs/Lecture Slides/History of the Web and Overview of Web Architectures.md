@@ -128,7 +128,8 @@ Simple, but programmable card filing system included with Macintosh System 6 (19
 - Each card or stack could be linked to other cards or stacks
 - Later evolutions included database integrations and access to the web itself
 
-![Screenshot - Apple HyperCard.jpg](../_assets/images/Screenshot%20-%20Apple%20HyperCard.jpg)
+![Screenshot - Apple HyperCard.jpg|800](images/Screenshot - Apple HyperCard.jpg)
+
 
 ---
 
@@ -188,7 +189,7 @@ Domain name system (DNS) (~1982)
 - E.g. `cs.ucf.edu` → `132.170.216.243`
 
 
-![DNS Name Resolution.jpg](../_assets/images/DNS%20Name%20Resolution.jpg)
+![DNS Name Resolution.jpg|800](../_assets/images/DNS%20Name%20Resolution.jpg)
 
 
 
