@@ -1,5 +1,6 @@
 ---
 share_cop4331c: "true"
+share_cis4004: "true"
 site-folder: docs/Code Demos and Tutorials/MERN Stack
 ---
 
@@ -27,13 +28,13 @@ Unlike the LAMP project, where front-end and back-end files were hosted from the
 
 Remember that the benefit of the multi-tier or "stack" architecture is that a web application can be deployed in a distributed manner -- front-end can be served from one server, back-end on another, and database on yet another.  Of course, we're working on a smaller scale, we're not hosting the application across multiple servers, but rather a single server.  However, we can still deploy in a manner that simulates a distributed deployment:
 
-![600x600](../../_assets/images/Getting%20Started%20with%20MERN%20A%20(version%202.0)%20-%20Dev%20Stack%20Diagram.svg)
+![600x600](cop4331c/Code%20Demos%20and%20Tutorials/MERN%20Stack/Getting%20Started%20with%20MERN%20A%20(version%202.0)%20-%20Dev%20Stack%20Diagram.excalidraw)
 We'll initially start developing this project on your local machine (i.e., your laptop or desktop).
 Notice that both the front end and the API live locally on your computer.  We'll update this when we deploy to production, but this will do for now and will be useful as you progress in your MERN project.
 
 In the end of this tutorial, you'll be running two servers:  The Vite development server for your front-end and Node Express for the API.  The database will be remote using the MongoDB Atlas cloud service.
 
-In the [Getting Started with MERN B (version 2.0)](../../../Code%20Demos%20and%20Tutorials/MERN%20Stack/Getting%20Started%20with%20MERN%20B%20(version%202.0).md) tutorial, we'll transition to the production configuration on your remote droplet.
+In the [Getting Started with MERN B (version 2.0)](cop4331c/Code%20Demos%20and%20Tutorials/MERN%20Stack/Getting%20Started%20with%20MERN%20B%20(version%202.0).md) tutorial, we'll transition to the production configuration on your remote droplet.
 
 
 # Install Node Version Manager
@@ -99,7 +100,7 @@ Answer `Yes` to Install with npm and start now.
 ### The Vite Dev Server
 You'll notice that running the Create command also spun up the dev server in your terminal window:
 
-![screenshot-vite-startup](../../_assets/images/screenshot-vite-startup.png)
+![screenshot-vite-startup.png](cop4331c/Code%20Demos%20and%20Tutorials/MERN%20Stack/images/screenshot-vite-startup.png)
 
 You can leave this running for the remainder of this exercise.  As you add, remove, and update files, Vite will dynamically re-render the page in your browser.  Going forward, where we ask you to Test, you can simply navigate to the Vite front-end URL, in this case:
 
@@ -108,7 +109,7 @@ You can leave this running for the remainder of this exercise.  As you add, remo
 *Note:  Sometimes Vite won't update the browser.  Not sure why, but hitting Refresh (CTRL-R or F5) will update the page.*
 
 If you access the URL (http://localhost:5173) in your browser, you should see a page like this:
-![screenshot-default-react-page](../../_assets/images/screenshot-default-react-page.png)
+![screenshot-default-react-page.png](cop4331c/Code%20Demos%20and%20Tutorials/MERN%20Stack/images/screenshot-default-react-page.png)
 ## Create the necessary directories
 
 Since our previous command shell is now taken up by Vite's dev server,
@@ -303,11 +304,11 @@ In your browser or in Postman, test this URL:
 
 What you get back is JSON, which will be rendered differently in different browsers.  I'm in Firefox, and I get:
 
-![screenshot-postman-test-route-output](../../_assets/images/screenshot-postman-test-route-output.png)
+![screenshot-postman-test-route-output.png](cop4331c/Code%20Demos%20and%20Tutorials/MERN%20Stack/images/screenshot-postman-test-route-output.png)
 
 You can (and probably should) use Postman or Bruno to test as well:
 
-![screenshot-postman-test-route-input](../../_assets/images/screenshot-postman-test-route-input.png)
+![screenshot-postman-test-route-input.png](cop4331c/Code%20Demos%20and%20Tutorials/MERN%20Stack/images/screenshot-postman-test-route-input.png)
 
 # Initialize your `git` repos
 
@@ -457,7 +458,7 @@ export default App;
 
 You should now see:
 
-![screenshot-main-interface-no-labels](../../_assets/images/screenshot-main-interface-no-labels.png)
+![screenshot-main-interface-no-labels.png](cop4331c/Code%20Demos%20and%20Tutorials/MERN%20Stack/images/screenshot-main-interface-no-labels.png)
 # Routing and State
 
 - Routing is how single-page applications like ours navigate to different Pages using URLs.
@@ -503,7 +504,7 @@ export default App;
 
 You should now just get a Login page:
 
-![screenshot-login-page1](../../_assets/images/screenshot-login-page1.png)
+![screenshot-login-page1.png](cop4331c/Code%20Demos%20and%20Tutorials/MERN%20Stack/images/screenshot-login-page1.png)
 
 ## Add state and routing to Login.tsx
 
@@ -531,10 +532,10 @@ import { useNavigate } from "react-router-dom";
 Still in Login.tsx, add the following at the top of the `Login()` function:
 
 ```ts
-  const navigate = useNavigate();
-  const [message,setMessage] = useState('');
-  const [loginName,setLoginName] = useState('');
-  const [loginPassword,setPassword] = useState('');
+const navigate = useNavigate();
+const [message,setMessage] = useState('');
+const [loginName,setLoginName] = useState('');
+const [loginPassword,setPassword] = useState('');
 ```
 
 ### Add Calls to Event Handlers to the Login input elements
@@ -590,28 +591,32 @@ import { useState } from 'react';
 
 At the top of the `CardUI()` function, add:
 ```ts
-    const [message,setMessage] = useState('');
-    const [searchResults,setResults] = useState('');
-    const [cardList,setCardList] = useState('');
-    const [search,setSearchValue] = useState('');
-    const [card,setCardNameValue] = useState('');
+const [message,setMessage] = useState('');
+const [searchResults,setResults] = useState('');
+const [cardList,setCardList] = useState('');
+const [search,setSearchValue] = useState('');
+const [card,setCardNameValue] = useState('');
 ```
 
 ### Add Feedback and Calls to Event Handlers to the Form
 
 ```tsx
 <div id="cardUIDiv">
-  <br />
-  Search: <input type="text" id="searchText" placeholder="Card To Search For" onChange={handleSearchTextChange} />
-  <button type="button" id="searchCardButton" className="buttons" onClick={searchCard}> Search Card</button><br />
-  <span id="cardSearchResult">{searchResults}</span>
-  
-  <p id="cardList">{cardList}</p><br /><br />
-  
-  Add: <input type="text" id="cardText" placeholder="Card To Add" onChange={handleCardTextChange} />
-  <button type="button" id="addCardButton" className="buttons" onClick={addCard}> Add Card </button><br />
-  
-  <span id="cardAddResult">{message}</span>
+<br />
+Search: <input type="text" id="searchText" placeholder="Card To Search For" onChange={handleSearchTextChange} />
+
+<button type="button" id="searchCardButton" className="buttons" onClick={searchCard}> Search Card</button><br />
+
+<span id="cardSearchResult">{searchResults}</span>
+
+<p id="cardList">{cardList}</p><br /><br />
+
+Add: <input type="text" id="cardText" placeholder="Card To Add" onChange={handleCardTextChange} />
+
+<button type="button" id="addCardButton" className="buttons" onClick={addCard}> Add Card </button><br />
+
+<span id="cardAddResult">{message}</span>
+
 </div>
 ```
 
@@ -619,45 +624,44 @@ At the top of the `CardUI()` function, add:
 
 After the `addCard` and `searchCard` functions, add these two:
 ```ts
-    function handleSearchTextChange( e: any ) : void
-    {
-        setSearchValue( e.target.value );
-    }
-
-    function handleCardTextChange( e: any ) : void
-    {
-        setCardNameValue( e.target.value );
-    }
+function handleSearchTextChange( e: any ) : void
+{
+	setSearchValue( e.target.value );
+}
+function handleCardTextChange( e: any ) : void
+{
+	setCardNameValue( e.target.value );
+}
 ```
 
 ### Update `addCard` and `searchCard` to print the input values
 
 Again, this is placeholder code until we wire it up to the API.
 ```ts
-    function addCard(e:any) : void
-    {
-         e.preventDefault();
-         alert('addCard() ' + card);
-    };
+function addCard(e:any) : void
+{
+	e.preventDefault();
+	alert('addCard() ' + card);
+};
 
-    function searchCard(e:any) : void
-    {
-        e.preventDefault();
-        alert('searchCard() ' + search);
-    };
+function searchCard(e:any) : void
+{
+	e.preventDefault();
+	alert('searchCard() ' + search);
+};
 ```
 
 ## Test
 
 You should now get a login page when you access the app:
 
-![screenshot-login-page-unstyled](../../_assets/images/screenshot-login-page-unstyled.png)
+![screenshot-login-page-unstyled.png](cop4331c/images/screenshot-login-page-unstyled.png)
 
 Login as user `RickL` with password `COP4331` 
 
 You should now see the Cards UI:
 
-![screenshot-main-interface-with-labels](../../_assets/images/screenshot-main-interface-with-labels.png)
+![screenshot-main-interface-with-labels.png](cop4331c/Code%20Demos%20and%20Tutorials/MERN%20Stack/images/screenshot-main-interface-with-labels.png)
 Typing into either field and clicking the respective action button should result in a JavaScript alert box with the function that was called and the input you provided.
 
 # Don't forget to commit!
@@ -968,105 +972,103 @@ Make sure you can still login as `RickL`
 ## Update CardUI.tsx to use the API
 	
 ```ts
-    let _ud : any = localStorage.getItem('user_data');
-    let ud = JSON.parse( _ud );
-    let userId : string = ud.id;
-    let firstName : string = ud.firstName;
-    let lastName : string = ud.lastName;
-    const [message,setMessage] = useState('');
-    const [searchResults,setResults] = useState('');
-    const [cardList,setCardList] = useState('');
-    const [search,setSearchValue] = useState('');
-    const [card,setCardNameValue] = useState('');
-    
-    function handleSearchTextChange( e: any ) : void
-    {
-        setSearchValue( e.target.value );
-    }
+let _ud : any = localStorage.getItem('user_data');
+let ud = JSON.parse( _ud );
+let userId : string = ud.id;
+let firstName : string = ud.firstName;
+let lastName : string = ud.lastName;
 
-    function handleCardTextChange( e: any ) : void
-    {
-        setCardNameValue( e.target.value );
-    }
-    
-    async function addCard(e:any) : Promise<void>
-    {
-	    e.preventDefault();
+const [message,setMessage] = useState('');
+const [searchResults,setResults] = useState('');
+const [cardList,setCardList] = useState('');
+const [search,setSearchValue] = useState('');
+const [card,setCardNameValue] = useState('');
 
-        let obj = {userId:userId,card:card};
-        let js = JSON.stringify(obj);
+function handleSearchTextChange( e: any ) : void
+{
+	setSearchValue( e.target.value );
+}
 
-        try
-        {
-            const response = await fetch('http://localhost:5000/api/addcard',
-            {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
+function handleCardTextChange( e: any ) : void
+{
+	setCardNameValue( e.target.value );
+}
 
-            let txt = await response.text();
-            let res = JSON.parse(txt);
+async function addCard(e:any) : Promise<void>
+{
+	e.preventDefault();
+	let obj = {userId:userId,card:card};
+	let js = JSON.stringify(obj);
+	try
+	{
+		const response = await fetch('http://localhost:5000/api/addcard',
+		{
+			method:'POST',
+			body:js,
+			headers:{'Content-Type': 'application/json'}
+		});
+		let txt = await response.text();
+		let res = JSON.parse(txt);
+		if( res.error.length > 0 )
+		{
+			setMessage( "API Error:" + res.error );
+		} else {
+			setMessage('Card has been added');
+		}
+	} catch(error:any) {
+		setMessage(error.toString());
+	}
+};
 
-            if( res.error.length > 0 )
-            {
-                setMessage( "API Error:" + res.error );
-            }
-            else
-            {
-                setMessage('Card has been added');
-            }
-        }
-        catch(error:any)
-        {
-            setMessage(error.toString());
-        }
-    };
+async function searchCard(e:any) : Promise<void>
+{
+	e.preventDefault();
+	let obj = {userId:userId,search:search};
+	let js = JSON.stringify(obj);
+	try
+	{
+		
+		const response = await fetch('http://localhost:5000/api/searchcards',{method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
+		let txt = await response.text();
+		let res = JSON.parse(txt);
+		let _results = res.results;
+		let resultText = '';
+		for( let i=0; i<_results.length; i++ )
+		{
+			resultText += _results[i];
+			if( i < _results.length - 1 )
+			{
+				resultText += ', ';
+			}
+		}
+		setResults('Card(s) have been retrieved');
+		setCardList(resultText);
+	} catch(error:any) {
+		alert(error.toString());
+		setResults(error.toString());
+	}
+};
 
-    async function searchCard(e:any) : Promise<void>
-    {
-        e.preventDefault();
-        
-        let obj = {userId:userId,search:search};
-        let js = JSON.stringify(obj);
+return(
+<div id="cardUIDiv">
+<br />
+<input type="text" id="searchText" placeholder="Card To Search For" />
 
-        try
-        {
-            const response = await fetch('http://localhost:5000/api/searchcards',
-            {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
+<button type="button" id="searchCardButton" className="buttons" 
+onClick={searchCard}> Search Card </button><br />
 
-            let txt = await response.text();
-            let res = JSON.parse(txt);
-            let _results = res.results;
-            let resultText = '';
-            for( let i=0; i<_results.length; i++ )
-            {
-                resultText += _results[i];
-                if( i < _results.length - 1 )
-                {
-                    resultText += ', ';
-                }
-            }
-            setResults('Card(s) have been retrieved');
-            setCardList(resultText);
-        }
-        catch(error:any)
-        {
-            alert(error.toString());
-            setResults(error.toString());
-        }
-    };
-    
-    return(
-      <div id="cardUIDiv">
-       <br />
-       <input type="text" id="searchText" placeholder="Card To Search For" />
-       <button type="button" id="searchCardButton" className="buttons" 
-           onClick={searchCard}> Search Card </button><br />
-       <span id="cardSearchResult"></span>
-       <p id="cardList"></p><br /><br />
-       <input type="text" id="cardText" placeholder="Card To Add" />
-       <button type="button" id="addCardButton" className="buttons" 
-          onClick={addCard}> Add Card </button><br />
-       <span id="cardAddResult"></span>
-     </div>
-    );
+<span id="cardSearchResult"></span>
+
+<p id="cardList"></p><br /><br />
+
+<input type="text" id="cardText" placeholder="Card To Add" />
+
+<button type="button" id="addCardButton" className="buttons" 
+onClick={addCard}> Add Card </button><br />
+
+<span id="cardAddResult"></span>
+</div>
+);
 
 ```
 
@@ -1075,7 +1077,7 @@ Make sure you can still login as `RickL`
 1. Add an entry to the database.  You should see "Card has been added"
 2. Search for that entry.  It should be displayed below the search field.
 
-![screenshot-main-interface-searching](../../_assets/images/screenshot-main-interface-searching.png)
+![screenshot-main-interface-searching.png](cop4331c/Code%20Demos%20and%20Tutorials/MERN%20Stack/images/screenshot-main-interface-searching.png)
 
 # Create MongoDB Cluster
 
@@ -1096,7 +1098,7 @@ Make sure you can still login as `RickL`
 - Click the "Allow Access from Anywhere" button.
 - You should now see your access list updated with 0.0.0.0/0:
 
-![screenshot-mongodb-ip-acl](../../_assets/images/screenshot-mongodb-ip-acl.png)
+![screenshot-mongodb-ip-acl.png](cop4331c/Code%20Demos%20and%20Tutorials/MERN%20Stack/images/screenshot-mongodb-ip-acl.png)
 
 
 ## Update `server.js` with the database connection code
