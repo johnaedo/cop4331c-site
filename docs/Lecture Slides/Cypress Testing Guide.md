@@ -1,9 +1,7 @@
 ---
-theme: revealjs
 height: "1080"
 width: "1920"
 share_cop4331c: "true"
-type: revealjs
 site-folder: docs/Lecture Slides
 ---
 
