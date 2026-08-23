@@ -91,7 +91,7 @@ German for "slipbox" — an organized cabinet of interlinked notes
 - German philosopher Hans Blumenberg was said to have a collection of 30,000 notes
 - Still in use today via apps such as Obsidian, Joplin, and Notion
 
-![Zettlekasten|800](../_assets/images/zettlekasten.jpg)
+![Zettlekasten-Cards.jpg](../_assets/images/Zettlekasten-Cards.jpg)
 
 ---
 
@@ -103,8 +103,7 @@ German for "slipbox" — an organized cabinet of interlinked notes
 - Technically based on "rapid selectors" Vannevar Bush built in the 1930s to search microfilm
 - Conceptually based on human associative memory rather than indexing
 
-![MEMEX|800](../_assets/images/image7.png)
-
+![MEMEX Machine patent schematic.png](../_assets/images/MEMEX%20Machine%20patent%20schematic.png)
 ### Never Built :-(
 
 ---
@@ -116,7 +115,7 @@ German for "slipbox" — an organized cabinet of interlinked notes
 - **1969:** ARPANET comes online
 - **1980:** Tim Berners-Lee writes ENQUIRE, a notebook program which allows links to be made between arbitrary nodes with titles
 
-  ![ENQUIRE Diagram|600](../_assets/images/image10.jpg)
+  ![Englebart - The Mother of all Demos.jpg](../_assets/images/Englebart%20-%20The%20Mother%20of%20all%20Demos.jpg)
 
 ---
 
@@ -128,8 +127,7 @@ Simple, but programmable card filing system included with Macintosh System 6 (19
 - Each card or stack could be linked to other cards or stacks
 - Later evolutions included database integrations and access to the web itself
 
-![Screenshot - Apple HyperCard.jpg|800](images/Screenshot - Apple HyperCard.jpg)
-
+![Screenshot - Apple HyperCard.jpg](../_assets/images/Screenshot%20-%20Apple%20HyperCard.jpg)
 
 ---
 
@@ -140,14 +138,14 @@ Simple, but programmable card filing system included with Macintosh System 6 (19
 - Became what we know as the WWW
 - A "global" hypertext system full of links (which could be single-directional, and could be broken!)
 
-![Original proposal](../_assets/images/image12.png)
+![ENQUIRE Diagram.jpg](../_assets/images/ENQUIRE%20Diagram.jpg)
 
 
 ---
 
 ## Early Browsers
 
-![Early browsers](../_assets/images/image11.png)
+![Early Text-based Web Browser.png](../_assets/images/Early%20Text-based%20Web%20Browser.png)
 
 ---
 
@@ -188,9 +186,7 @@ Domain name system (DNS) (~1982)
 - Mapping from names to IP addresses
 - E.g. `cs.ucf.edu` → `132.170.216.243`
 
-
-![DNS Name Resolution.jpg|800](../_assets/images/DNS%20Name%20Resolution.jpg)
-
+![DNS Name Resolution.jpg](../_assets/images/DNS%20Name%20Resolution.jpg)
 
 
 ---
@@ -280,7 +276,7 @@ Simple markup tags: `<b>`, `<i>`, `<u>` (bold, italic, underline)
 ---
 ## The Full Response
 
-![DNS diagram|1000](../_assets/images/image31.jpg)
+![HTTP Request-Response Example.jpg](../_assets/images/HTTP%20Request-Response%20Example.jpg)
 
 ---
 ## Web vs. Internet
@@ -327,7 +323,7 @@ Evolving competing architectures for organizing content and computation between 
 - At this point, most sites were "read only"
 - No rich client content… the best you could hope for was a Java applet:
 
-![Browser wars](../_assets/images/image32.png)
+![Chess Applet.png](../_assets/images/Chess%20Applet.png)
 
 ---
 ## The Browser Wars
@@ -418,8 +414,7 @@ if ($randomNumber > 95) {
 
 ## Server-Side Scripting Architecture
 
-[Open: Pasted image 20260822223548.png](../_assets/images/Server-Side%20Web%20Architecture.jpg)
-![Open: Pasted image 20260822223548.png](../_assets/images/Server-Side%20Web%20Architecture.jpg)
+![Server-Side Web Architecture.jpg](../_assets/images/Server-Side%20Web%20Architecture.jpg)
 
 ---
 
@@ -450,8 +445,7 @@ Framework that structures server into tiers, organizes logic into classes:
 ## Server-Side Framework Architecture
 ### MVC - Model-View-Controller
 
-[Open: Pasted image 20260822223702.png](../_assets/images/Server-Side%20MVC%20Web%20Architecture.jpg)
-![Open: Pasted image 20260822223702.png](../_assets/images/Server-Side%20MVC%20Web%20Architecture.jpg)
+![Server-Side MVC Web Architecture.jpg](../_assets/images/Server-Side%20MVC%20Web%20Architecture.jpg)
 
 ---
 
@@ -560,8 +554,7 @@ https://en.wikipedia.org/wiki/JSON
 
 ## Front-End Framework Architecture
 
-[Open: Pasted image 20260822224431.png](../_assets/images/Component-Based%20Single%20Page%20Application.jpg)
-![Open: Pasted image 20260822224431.png](../_assets/images/Component-Based%20Single%20Page%20Application.jpg)
+![Component-Based Single Page Application.jpg](../_assets/images/Component-Based%20Single%20Page%20Application.jpg)
 
 ---
 
@@ -590,8 +583,7 @@ Small, focused web server that communicates through data requests & responses
 
 ## Microservice Architecture
 
-[Open: Pasted image 20260822224355.png](../_assets/images/Microservices%20Architecture.jpg)
-![Open: Pasted image 20260822224355.png](../_assets/images/Microservices%20Architecture.jpg)
+![Microservices Architecture.jpg](../_assets/images/Microservices%20Architecture.jpg)
 
 ---
 
@@ -1004,8 +996,8 @@ HTTP Response:
 
 ## Support for Scaling: Monolith
 
-![Monolith architecture](../_assets/images/image80.png)
 
+![Scaling the Monolithic Architecture.png](../_assets/images/Scaling%20the%20Monolithic%20Architecture.png)
 ```
 Our Cool App
 
@@ -1040,6 +1032,7 @@ This is called the **"monolithic" app**
 
 ## Microservices
 
+![Scaling the Monolithic Architecture.png](../_assets/images/Scaling%20the%20Monolithic%20Architecture.png)
 ```
 Our Cool App
 
