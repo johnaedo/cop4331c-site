@@ -186,7 +186,7 @@ Domain name system (DNS) (~1982)
 - Mapping from names to IP addresses
 - E.g. `cs.ucf.edu` → `132.170.216.243`
 
-![DNS Name Resolution.jpg](../_assets/images/DNS%20Name%20Resolution.jpg)
+![DNS_Name_Resolution.jpg](../_assets/images/DNS_Name_Resolution.jpg)
 
 
 ---
@@ -445,7 +445,7 @@ Framework that structures server into tiers, organizes logic into classes:
 ## Server-Side Framework Architecture
 ### MVC - Model-View-Controller
 
-![Server-Side MVC Web Architecture.jpg](../_assets/images/Server-Side%20MVC%20Web%20Architecture.jpg)
+![Server-Side_MVC_Web_Architecture.jpg](../_assets/images/Server-Side_MVC_Web_Architecture.jpg)
 
 ---
 
