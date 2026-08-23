@@ -103,7 +103,7 @@ German for "slipbox" — an organized cabinet of interlinked notes
 - Technically based on "rapid selectors" Vannevar Bush built in the 1930s to search microfilm
 - Conceptually based on human associative memory rather than indexing
 
-![MEMEX Machine patent schematic.png](../_assets/images/MEMEX%20Machine%20patent%20schematic.png)
+![MEMEX_Machine_patent_schematic.png](../_assets/images/MEMEX_Machine_patent_schematic.png)
 ### Never Built :-(
 
 ---
@@ -115,7 +115,7 @@ German for "slipbox" — an organized cabinet of interlinked notes
 - **1969:** ARPANET comes online
 - **1980:** Tim Berners-Lee writes ENQUIRE, a notebook program which allows links to be made between arbitrary nodes with titles
 
-  ![Englebart - The Mother of all Demos.jpg](../_assets/images/Englebart%20-%20The%20Mother%20of%20all%20Demos.jpg)
+  ![Englebart_-_The_Mother_of_all_Demos.jpg](../_assets/images/Englebart_-_The_Mother_of_all_Demos.jpg)
 
 ---
 
@@ -138,14 +138,14 @@ Simple, but programmable card filing system included with Macintosh System 6 (19
 - Became what we know as the WWW
 - A "global" hypertext system full of links (which could be single-directional, and could be broken!)
 
-![ENQUIRE Diagram.jpg](../_assets/images/ENQUIRE%20Diagram.jpg)
+![ENQUIRE_Diagram.jpg](../_assets/images/ENQUIRE_Diagram.jpg)
 
 
 ---
 
 ## Early Browsers
 
-![Early Text-based Web Browser.png](../_assets/images/Early%20Text-based%20Web%20Browser.png)
+![Early_Text-based_Web_Browser.png](../_assets/images/Early_Text-based_Web_Browser.png)
 
 ---
 
@@ -276,7 +276,7 @@ Simple markup tags: `<b>`, `<i>`, `<u>` (bold, italic, underline)
 ---
 ## The Full Response
 
-![HTTP Request-Response Example.jpg](../_assets/images/HTTP%20Request-Response%20Example.jpg)
+![HTTP_Request-Response_Example.jpg](../_assets/images/HTTP_Request-Response_Example.jpg)
 
 ---
 ## Web vs. Internet
@@ -414,7 +414,7 @@ if ($randomNumber > 95) {
 
 ## Server-Side Scripting Architecture
 
-![Server-Side Web Architecture.jpg](../_assets/images/Server-Side%20Web%20Architecture.jpg)
+![Server-Side_Web_Architecture.jpg](../_assets/images/Server-Side_Web_Architecture.jpg)
 
 ---
 
@@ -521,8 +521,8 @@ https://en.wikipedia.org/wiki/JSON
 
 ## Single Page Application Architecture
 
-[Open: Pasted image 20260822223825.png](../_assets/images/Server-Side%20Framework%20Architecture.jpg)
-![Open: Pasted image 20260822223825.png](../_assets/images/Server-Side%20Framework%20Architecture.jpg)
+[Open: Pasted image 20260822223825.png](../_assets/images/Server-Side_Framework_Architecture.jpg)
+![Open: Pasted image 20260822223825.png](../_assets/images/Server-Side_Framework_Architecture.jpg)
 
 ---
 
@@ -583,7 +583,7 @@ Small, focused web server that communicates through data requests & responses
 
 ## Microservice Architecture
 
-![Microservices Architecture.jpg](../_assets/images/Microservices%20Architecture.jpg)
+![Microservices_Architecture.jpg](../_assets/images/Microservices_Architecture.jpg)
 
 ---
 
@@ -997,7 +997,7 @@ HTTP Response:
 ## Support for Scaling: Monolith
 
 
-![Scaling the Monolithic Architecture.png](../_assets/images/Scaling%20the%20Monolithic%20Architecture.png)
+![Scaling_the_Monolithic_Architecture.png](../_assets/images/Scaling_the_Monolithic_Architecture.png)
 ```
 Our Cool App
 
@@ -1032,7 +1032,7 @@ This is called the **"monolithic" app**
 
 ## Microservices
 
-![Scaling the Monolithic Architecture.png](../_assets/images/Scaling%20the%20Monolithic%20Architecture.png)
+![Scaling_the_Monolithic_Architecture.png](../_assets/images/Scaling_the_Monolithic_Architecture.png)
 ```
 Our Cool App
 
