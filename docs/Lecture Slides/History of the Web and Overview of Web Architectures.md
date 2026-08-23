@@ -128,8 +128,7 @@ Simple, but programmable card filing system included with Macintosh System 6 (19
 - Each card or stack could be linked to other cards or stacks
 - Later evolutions included database integrations and access to the web itself
 
-[Open: Pasted image 20260822231443.png](../_assets/images/Apple%20Hypercard%20Screenshot.jpg)
-![Open: Pasted image 20260822231443.png](../_assets/images/Apple%20Hypercard%20Screenshot.jpg)
+![Screenshot - Apple HyperCard.jpg](../_assets/images/Screenshot%20-%20Apple%20HyperCard.jpg)
 
 ---
 
