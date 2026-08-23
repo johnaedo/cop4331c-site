@@ -521,8 +521,7 @@ https://en.wikipedia.org/wiki/JSON
 
 ## Single Page Application Architecture
 
-[Open: Pasted image 20260822223825.png](../_assets/images/Server-Side_Framework_Architecture.jpg)
-![Open: Pasted image 20260822223825.png](../_assets/images/Server-Side_Framework_Architecture.jpg)
+![Server-Side_Framework_Architecture.jpg](../_assets/images/Server-Side_Framework_Architecture.jpg)
 
 ---
 
