@@ -187,8 +187,8 @@ Domain name system (DNS) (~1982)
 - Mapping from names to IP addresses
 - E.g. `cs.ucf.edu` → `132.170.216.243`
 
-[Open: Pasted image 20260822230639.png](../_assets/images/DNS%20Name%20Resolution.jpg)
-![Open: Pasted image 20260822230639.png](../_assets/images/DNS%20Name%20Resolution.jpg)
+
+![DNS Name Resolution.jpg](../_assets/images/DNS%20Name%20Resolution.jpg)
 
 
 
