@@ -103,7 +103,7 @@ German for "slipbox" — an organized cabinet of interlinked notes
 - Technically based on "rapid selectors" Vannevar Bush built in the 1930s to search microfilm
 - Conceptually based on human associative memory rather than indexing
 
-![MEMEX_Machine_patent_schematic.png](../_assets/images/MEMEX_Machine_patent_schematic.png)
+![800](../_assets/images/MEMEX_Machine_patent_schematic.png)
 ### Never Built :-(
 
 ---
@@ -115,7 +115,7 @@ German for "slipbox" — an organized cabinet of interlinked notes
 - **1969:** ARPANET comes online
 - **1980:** Tim Berners-Lee writes ENQUIRE, a notebook program which allows links to be made between arbitrary nodes with titles
 
-  ![Englebart_-_The_Mother_of_all_Demos.jpg](../_assets/images/Englebart_-_The_Mother_of_all_Demos.jpg)
+  ![800](../_assets/images/Englebart_-_The_Mother_of_all_Demos.jpg)
 
 ---
 
@@ -127,7 +127,7 @@ Simple, but programmable card filing system included with Macintosh System 6 (19
 - Each card or stack could be linked to other cards or stacks
 - Later evolutions included database integrations and access to the web itself
 
-![Screenshot_-_Apple_HyperCard.jpg](../_assets/images/Screenshot_-_Apple_HyperCard.jpg)
+![800](../_assets/images/Screenshot_-_Apple_HyperCard.jpg)
 
 ---
 
@@ -138,7 +138,7 @@ Simple, but programmable card filing system included with Macintosh System 6 (19
 - Became what we know as the WWW
 - A "global" hypertext system full of links (which could be single-directional, and could be broken!)
 
-![ENQUIRE_Diagram.jpg](../_assets/images/ENQUIRE_Diagram.jpg)
+![800](../_assets/images/ENQUIRE_Diagram.jpg)
 
 
 ---
@@ -276,7 +276,7 @@ Simple markup tags: `<b>`, `<i>`, `<u>` (bold, italic, underline)
 ---
 ## The Full Response
 
-![HTTP_Request-Response_Example.jpg](../_assets/images/HTTP_Request-Response_Example.jpg)
+![1300](../_assets/images/HTTP_Request-Response_Example.jpg)
 
 ---
 ## Web vs. Internet
@@ -323,7 +323,7 @@ Evolving competing architectures for organizing content and computation between 
 - At this point, most sites were "read only"
 - No rich client content… the best you could hope for was a Java applet:
 
-![Chess_Applet.png](../_assets/images/Chess_Applet.png)
+![1000](../_assets/images/Chess_Applet.png)
 
 ---
 ## The Browser Wars
@@ -381,11 +381,16 @@ There's a standard mechanism to talk to these auxiliary applications, called **C
 
 ## Server-Side Scripting
 
-Generate HTML on the server through scripts.
-
-Early approaches emphasized embedding server code inside HTML pages.
+Early approaches generated HTML on the server through scripts.
 
 **Examples:** JavaServer Pages (JSPs), most PHP web code, Active Server Pages (ASPs), ColdFusion
+<style>
+.reveal pre {
+	font-size: 0.8em;
+}
+</style>
+
+</style>
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -414,7 +419,7 @@ if ($randomNumber > 95) {
 
 ## Server-Side Scripting Architecture
 
-![Server-Side_Web_Architecture.jpg](../_assets/images/Server-Side_Web_Architecture.jpg)
+![1700](../_assets/images/Server-Side_Web_Architecture.jpg)
 
 ---
 
@@ -442,10 +447,9 @@ Framework that structures server into tiers, organizes logic into classes:
 
 ---
 
-## Server-Side Framework Architecture
-### MVC - Model-View-Controller
+## MVC - Model-View-Controller
 
-![Server-Side_MVC_Web_Architecture.jpg](../_assets/images/Server-Side_MVC_Web_Architecture.jpg)
+![1700](../_assets/images/Server-Side_MVC_Web_Architecture.jpg)
 
 ---
 
@@ -481,6 +485,15 @@ Framework that structures server into tiers, organizes logic into classes:
 
 **JSON: JavaScript Object Notation**
 - Standard syntax for describing and transmitting JavaScript data objects
+
+---
+## Example JSON
+<style>
+.reveal pre {
+	font-size: 0.7em;
+}
+</style>
+
 ```json
 {
 	"firstName": "John",
@@ -510,18 +523,11 @@ Framework that structures server into tiers, organizes logic into classes:
 
 ```
 
-
-**jQuery**
-- Wrapper library built on HTML standards designed for AJAX and DOM manipulation
-
-
-https://en.wikipedia.org/wiki/JSON
-
 ---
 
 ## Single Page Application Architecture
 
-![Server-Side_Framework_Architecture.jpg](../_assets/images/Server-Side_Framework_Architecture.jpg)
+![1700](../_assets/images/Server-Side_Framework_Architecture.jpg)
 
 ---
 
@@ -553,7 +559,7 @@ https://en.wikipedia.org/wiki/JSON
 
 ## Front-End Framework Architecture
 
-![Component-Based_Single_Page_Application.jpg](../_assets/images/Component-Based_Single_Page_Application.jpg)
+![1700](../_assets/images/Component-Based_Single_Page_Application.jpg)
 
 ---
 
@@ -582,7 +588,7 @@ Small, focused web server that communicates through data requests & responses
 
 ## Microservice Architecture
 
-![Microservices_Architecture.jpg](../_assets/images/Microservices_Architecture.jpg)
+![1700](../_assets/images/Microservices_Architecture.jpg)
 
 ---
 
@@ -958,92 +964,68 @@ HTTP Response:
   Content-Type: text/html; charset=UTF-8
   <html><head>...
 ```
+### What's Wrong With This Picture?
 
 ---
 
-## What's Wrong with This Picture?
+## What Is a Monolith?
 
-<!-- FIX NEEDED: this slide has no image in any of the three source PPTX
-     files — the picture referenced by the title was never attached. Source
-     a screenshot of a naive request-per-server backend flow (or reuse the
-     CGI text diagram above with a callout) before presenting. -->
+![monolith_architecture.png](../_assets/images/monolith_architecture.png)
 
 ---
 
-## History of Backend Development
+### A **monolith** bundles every module of the backend into a single deployable unit — one codebase, one process, one deploy.
 
-- In the beginning, you wrote whatever you wanted using whatever language and framework you wanted
-	- ...yes, even C!
-- Then… **Perl, PHP and ASP** — languages "designed" for writing backends, encouraged spaghetti code. A lot of the web was built on this.
-- A whole lot of other languages were also springing up in the 90s: **Ruby, Python, JSP**
+- Simple to build, run, and deploy when a project is small
+- All modules share the same runtime, language, and database
+- This is how most backends start out — including "Our Cool App" below
+
+---
+
+### Scaling a Monolith
+
+![monolith_scaling_problem.png](../_assets/images/monolith_scaling_problem.png)
+
+
+---
+
+### The obvious fix when traffic grows: run more copies of the whole app behind a load balancer.
+
+- Every copy carries **all** the modules, whether they're under load or not
+- One module (say, Search) needing more capacity forces you to scale the *entire* app
+- CPU, memory, and licensing costs multiply for no real benefit
+
+---
+
+## Enter: Microservices
+
+![microservices_architecture.png](../_assets/images/microservices_architecture.png)
+
+---
+
+### Instead of one deployable unit, split the backend into small, independently deployable **services** — each with its own codebase, database, and technology stack.
+
+- A gateway routes each request to the right service
+- Services scale **independently** — only "Search" needs to run ×2 here
+- Each team can choose the stack that fits their service (Node.js, Java, Python, …)
 
 ---
 
 ## Microservices vs. Monoliths
 
+<!-- IMAGE: monolith_vs_microservices_comparison.png (standalone file, provided separately — embed here) -->
+
 **Advantages of microservices over monoliths:**
 
 | Advantage | Description |
 |-----------|-------------|
-| **Scaling** | Scale vertically rather than horizontally |
-| **Change** | Support hot deployment of updates |
-| **Reuse** | Use the same web service in multiple apps; swap internal for external services |
-| **Team development** | Pick boundaries that match team responsibilities |
-| **Failure** | Independent failure domains |
+| **Scaling** | Scale individual services rather than the whole app |
+| **Change** | Support hot deployment of updates, one service at a time |
+| **Reuse** | Use the same service across multiple apps; swap internal for external services |
+| **Team development** | Pick service boundaries that match team responsibilities |
+| **Failure** | Independent failure domains — one service crashing doesn't take down the app |
 
----
-
-## Support for Scaling: Monolith
-
-
-![Scaling_the_Monolithic_Architecture.png](../_assets/images/Scaling_the_Monolithic_Architecture.png)
-```
-Our Cool App
-
-Frontend → Backend Server (Mod 1, Mod 2, Mod 3, Mod 4, Mod 5, Mod 6) → Database
-```
-
----
-
-## Now How Do We Scale It?
-
-```
-Our Cool App
-
-Frontend → Backend Server 1 (Mod 1–6)  ↘
-         → Backend Server 2 (Mod 1–6)  → Database
-         → Backend Server 3 (Mod 1–6)  ↗
-
-We run multiple copies of the backend, each with ALL modules!
-```
-
----
-
-## What's Wrong with This Picture?
-
-This is called the **"monolithic" app**
-
-- If we need 100 servers…
-- Each server will have to run **EVERY** module
-- What if we need more of some modules than others?
-
----
-
-## Microservices
-
-![Scaling_the_Monolithic_Architecture.png](../_assets/images/Scaling_the_Monolithic_Architecture.png)
-```
-Our Cool App
-
-Frontend → "Dumb" Backend → Todos         (NodeJS, Firebase)
-                          → Mailer        (Java, MySQL)
-                          → Accounts      (Google Service)
-                          → Search Engine (Java, Neo4J)
-                          → Analytics     (C#, SQLServer)
-                          → Facebook Crawler (Python, Firebase)
-```
-
-Each microservice has its own database and technology stack!
+Nothing is free: microservices trade this flexibility for more moving parts to build, deploy, and monitor.
 
 ---
 
@@ -1055,3 +1037,22 @@ Each microservice has its own database and technology stack!
 - **Develop** them independently
 
 ➡ Have **ZERO coupling** between microservices, aside from their shared interface
+
+---
+
+## From Static Pages to Microservices
+
+We've now traced one continuous thread through the entire history of the web:
+
+**Static files → CGI scripts → server-side frameworks → single-page apps → front-end frameworks → microservices**
+
+At every step, the same question keeps resurfacing: *where should the logic live, and how do the pieces talk to each other?* HTTP, REST, and the client/server model are the constants underneath all of it — the architectures on top of them keep evolving.
+
+---
+
+## Looking Ahead
+
+- We'll pick this thread back up when we start **building** — starting with the HTTP request/response cycle you saw today, hands-on
+- Next class: The LAMP demo 
+- Questions before we wrap up?
+
