@@ -151,7 +151,7 @@ Simple, but programmable card filing system included with Macintosh System 6 (19
 
 # Original WWW Architecture
 
-## Nothing but Links!
+## Nothing but Documents and Links!
 - The key innovation of HTTP is the linking between documents not only on the same server, but across networks to other servers.
 - HTTP is undergirded by the URI/URL and DNS for locating resources across the internet.
 
