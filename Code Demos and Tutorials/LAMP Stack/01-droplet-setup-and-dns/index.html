@@ -4,22 +4,23 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Course notes, code demos, and tutorials" name="description"/>
 <meta content="Dr. John Aedo" name="author"/>
-<link href="https://johnaedo.github.io/cop4331c/tags/" rel="canonical"/>
-<link href=".." rel="prev"/>
-<link href="../_assets/meta/favicons.svg" rel="icon"/>
+<link href="https://johnaedo.github.io/cop4331c/Code%20Demos%20and%20Tutorials/LAMP%20Stack/01-droplet-setup-and-dns/" rel="canonical"/>
+<link href="../../Setting%20Up%20MongoDB%20Auth%20and%20Security/" rel="prev"/>
+<link href="../02-database-setup-mysql/" rel="next"/>
+<link href="../../../_assets/meta/favicons.svg" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
-<title>Tags - COP 4331C - Processes of Object Oriented Software Development</title>
-<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
-<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<title>01 droplet setup and dns - COP 4331C - Processes of Object Oriented Software Development</title>
+<link href="../../../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Karla:300,300i,400,400i,700,700i%7CUbuntu+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Karla";--md-code-font:"Ubuntu Mono"}</style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
-<link href="../_static/css/admonition.css" rel="stylesheet"/>
-<link href="../_static/css/custom_attributes.css" rel="stylesheet"/>
-<link href="../_static/css/customization.css" rel="stylesheet"/>
+<link href="../../../_static/css/admonition.css" rel="stylesheet"/>
+<link href="../../../_static/css/custom_attributes.css" rel="stylesheet"/>
+<link href="../../../_static/css/customization.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/gh/Enveloppe/_static@refs/heads/master/dist/styles.css" rel="stylesheet"/>
-<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
 <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
 <link href="https://unpkg.com/tippy.js@6/animations/scale-subtle.css" rel="stylesheet"/>
@@ -29,12 +30,12 @@
 <meta content="https://johnaedo.github.io/cop4331c/_assets/meta/logo.svg" property="og:image"/>
 <meta content="https://johnaedo.github.io/cop4331c/_assets/meta/logo.svg" name="twitter:image"/>
 <meta content="https://johnaedo.github.io/cop4331c/" name="site_url"/>
-<meta content="Tags" property="og:title"/>
-<meta content="Tags" name="twitter:title"/>
+<meta content="01 droplet setup and dns" property="og:title"/>
+<meta content="01 droplet setup and dns" name="twitter:title"/>
 <meta content="Course notes, code demos, and tutorials" name="og:description"/>
 <meta content="Course notes, code demos, and tutorials" name="twitter:description"/>
-<script> document.title = "Tags" </script>
-<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+<script> document.title = "01 droplet setup and dns" </script>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -50,7 +51,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="..">
+<a class="md-skip" href="../../..">
           Skip to content
         </a>
 </div>
@@ -58,8 +59,8 @@
 </div>
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="COP 4331C - Processes of Object Oriented Software Development" class="md-header__button md-logo" data-md-component="logo" href=".." title="COP 4331C - Processes of Object Oriented Software Development">
-<img alt="logo" src="../_assets/meta/logo.svg"/>
+<a aria-label="COP 4331C - Processes of Object Oriented Software Development" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="COP 4331C - Processes of Object Oriented Software Development">
+<img alt="logo" src="../../../_assets/meta/logo.svg"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
@@ -74,7 +75,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Tags
+              01 droplet setup and dns
             
           </span>
 </div>
@@ -127,7 +128,7 @@
 <div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../Assignments/">
+<a class="md-tabs__link" href="../../../Assignments/">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -135,8 +136,8 @@
 
         </a>
 </li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../Code%20Demos%20and%20Tutorials/">
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../../">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -145,7 +146,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../Helpful%20Links/">
+<a class="md-tabs__link" href="../../../Helpful%20Links/">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -154,7 +155,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../Lecture%20Slides/">
+<a class="md-tabs__link" href="../../../Lecture%20Slides/">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -163,7 +164,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="..">
+<a class="md-tabs__link" href="../../..">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -171,8 +172,8 @@
 
       </a>
 </li>
-<li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="./">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../tags/">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -192,8 +193,8 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="COP 4331C - Processes of Object Oriented Software Development" class="md-nav__button md-logo" data-md-component="logo" href=".." title="COP 4331C - Processes of Object Oriented Software Development">
-<img alt="logo" src="../_assets/meta/logo.svg"/>
+<a aria-label="COP 4331C - Processes of Object Oriented Software Development" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="COP 4331C - Processes of Object Oriented Software Development">
+<img alt="logo" src="../../../_assets/meta/logo.svg"/>
 </a>
     COP 4331C - Processes of Object Oriented Software Development
   </label>
@@ -201,7 +202,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../Assignments/">
+<a class="md-nav__link" href="../../../Assignments/">
 <svg height="18" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M843.5 737.4c-12.4-75.2-79.2-129.1-155.3-125.4S550.9 676 546 752c-153.5-4.8-208-40.7-199.1-113.7c3.3-27.3 19.8-41.9 50.1-49c18.4-4.3 38.8-4.9 57.3-3.2c1.7.2 3.5.3 5.2.5c11.3 2.7 22.8 5 34.3 6.8c34.1 5.6 68.8 8.4 101.8 6.6c92.8-5 156-45.9 159.2-132.7c3.1-84.1-54.7-143.7-147.9-183.6c-29.9-12.8-61.6-22.7-93.3-30.2c-14.3-3.4-26.3-5.7-35.2-7.2c-7.9-75.9-71.5-133.8-147.8-134.4S189.7 168 180.5 243.8s40 146.3 114.2 163.9s149.9-23.3 175.7-95.1c9.4 1.7 18.7 3.6 28 5.8c28.2 6.6 56.4 15.4 82.4 26.6c70.7 30.2 109.3 70.1 107.5 119.9c-1.6 44.6-33.6 65.2-96.2 68.6c-27.5 1.5-57.6-.9-87.3-5.8c-8.3-1.4-15.9-2.8-22.6-4.3c-3.9-.8-6.6-1.5-7.8-1.8l-3.1-.6c-2.2-.3-5.9-.8-10.7-1.3c-25-2.3-52.1-1.5-78.5 4.6c-55.2 12.9-93.9 47.2-101.1 105.8c-15.7 126.2 78.6 184.7 276 188.9c29.1 70.4 106.4 107.9 179.6 87c73.3-20.9 119.3-93.4 106.9-168.6M329.1 345.2c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3M695.6 845c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3" fill="currentColor"></path></svg>
 <span class="md-ellipsis">
     Assignments
@@ -217,35 +218,35 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/">
+<a class="md-nav__link" href="../../">
 <svg height="18" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M843.5 737.4c-12.4-75.2-79.2-129.1-155.3-125.4S550.9 676 546 752c-153.5-4.8-208-40.7-199.1-113.7c3.3-27.3 19.8-41.9 50.1-49c18.4-4.3 38.8-4.9 57.3-3.2c1.7.2 3.5.3 5.2.5c11.3 2.7 22.8 5 34.3 6.8c34.1 5.6 68.8 8.4 101.8 6.6c92.8-5 156-45.9 159.2-132.7c3.1-84.1-54.7-143.7-147.9-183.6c-29.9-12.8-61.6-22.7-93.3-30.2c-14.3-3.4-26.3-5.7-35.2-7.2c-7.9-75.9-71.5-133.8-147.8-134.4S189.7 168 180.5 243.8s40 146.3 114.2 163.9s149.9-23.3 175.7-95.1c9.4 1.7 18.7 3.6 28 5.8c28.2 6.6 56.4 15.4 82.4 26.6c70.7 30.2 109.3 70.1 107.5 119.9c-1.6 44.6-33.6 65.2-96.2 68.6c-27.5 1.5-57.6-.9-87.3-5.8c-8.3-1.4-15.9-2.8-22.6-4.3c-3.9-.8-6.6-1.5-7.8-1.8l-3.1-.6c-2.2-.3-5.9-.8-10.7-1.3c-25-2.3-52.1-1.5-78.5 4.6c-55.2 12.9-93.9 47.2-101.1 105.8c-15.7 126.2 78.6 184.7 276 188.9c29.1 70.4 106.4 107.9 179.6 87c73.3-20.9 119.3-93.4 106.9-168.6M329.1 345.2c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3M695.6 845c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3" fill="currentColor"></path></svg>
 <span class="md-ellipsis">
     Code Demos and Tutorials
   </span>
 </a>
-<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
             Code Demos and Tutorials
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/Setting%20Up%20MongoDB%20Auth%20and%20Security/">
+<a class="md-nav__link" href="../../Setting%20Up%20MongoDB%20Auth%20and%20Security/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Setting Up MongoDB Auth and Security
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
 <span class="md-ellipsis">
@@ -253,22 +254,229 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="true" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_3">
 <span class="md-nav__icon md-icon"></span>
             LAMP Stack
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/01-droplet-setup-and-dns/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
+<span class="md-ellipsis">
+    01 droplet setup and dns
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     01 droplet setup and dns
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tutorial-1-digitalocean-lamp-droplet-setup-ssh-authentication-dns-configuration">
+<span class="md-ellipsis">
+      
+        Tutorial 1: DigitalOcean LAMP Droplet Setup, SSH Authentication &amp; DNS Configuration
+      
+    </span>
+</a>
+<nav aria-label="Tutorial 1: DigitalOcean LAMP Droplet Setup, SSH Authentication &amp; DNS Configuration" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prerequisites">
+<span class="md-ellipsis">
+      
+        📋 Prerequisites
+      
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/02-database-setup-mysql/">
+<a class="md-nav__link" href="#step-1-generate-an-ssh-key-pair-locally">
+<span class="md-ellipsis">
+      
+        🔑 Step 1: Generate an SSH Key Pair Locally
+      
+    </span>
+</a>
+<nav aria-label="🔑 Step 1: Generate an SSH Key Pair Locally" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-on-macos-linux-terminal">
+<span class="md-ellipsis">
+      
+        A. On macOS / Linux Terminal
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#b-on-windows-terminal-powershell">
+<span class="md-ellipsis">
+      
+        B. On Windows Terminal (PowerShell)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-create-a-digitalocean-lamp-droplet">
+<span class="md-ellipsis">
+      
+        🚀 Step 2: Create a DigitalOcean LAMP Droplet
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-connect-to-the-droplet-via-ssh">
+<span class="md-ellipsis">
+      
+        💻 Step 3: Connect to the Droplet via SSH
+      
+    </span>
+</a>
+<nav aria-label="💻 Step 3: Connect to the Droplet via SSH" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-connecting-from-macos-linux-terminal">
+<span class="md-ellipsis">
+      
+        A. Connecting from macOS / Linux Terminal
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#b-connecting-from-windows-terminal">
+<span class="md-ellipsis">
+      
+        B. Connecting from Windows Terminal
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#first-time-connection-prompt">
+<span class="md-ellipsis">
+      
+        First-Time Connection Prompt:
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#verify-lamp-stack-services-on-the-droplet">
+<span class="md-ellipsis">
+      
+        Verify LAMP Stack Services on the Droplet
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-4-configure-dns-for-your-domain">
+<span class="md-ellipsis">
+      
+        🌐 Step 4: Configure DNS for Your Domain
+      
+    </span>
+</a>
+<nav aria-label="🌐 Step 4: Configure DNS for Your Domain" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#option-1-managing-dns-through-digitalocean-recommended">
+<span class="md-ellipsis">
+      
+        Option 1: Managing DNS through DigitalOcean (Recommended)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#option-2-using-your-domain-registrars-built-in-dns">
+<span class="md-ellipsis">
+      
+        Option 2: Using Your Domain Registrar’s Built-in DNS
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-5-verify-dns-resolution-web-access">
+<span class="md-ellipsis">
+      
+        🔍 Step 5: Verify DNS Resolution &amp; Web Access
+      
+    </span>
+</a>
+<nav aria-label="🔍 Step 5: Verify DNS Resolution &amp; Web Access" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-test-dns-resolution-in-terminal">
+<span class="md-ellipsis">
+      
+        A. Test DNS Resolution in Terminal
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#b-test-in-browser">
+<span class="md-ellipsis">
+      
+        B. Test in Browser
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ucf-dns-delays">
+<span class="md-ellipsis">
+      
+        UCF DNS Delays
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary-next-steps">
+<span class="md-ellipsis">
+      
+        🎯 Summary &amp; Next Steps
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02-database-setup-mysql/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     02 database setup mysql
@@ -276,7 +484,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/03-backend-api-deployment-and-testing/">
+<a class="md-nav__link" href="../03-backend-api-deployment-and-testing/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     03 backend api deployment and testing
@@ -284,7 +492,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/04-frontend-integration-and-testing/">
+<a class="md-nav__link" href="../04-frontend-integration-and-testing/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     04 frontend integration and testing
@@ -292,7 +500,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/Getting%20Started%20with%20LAMP/">
+<a class="md-nav__link" href="../Getting%20Started%20with%20LAMP/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Getting Started with LAMP
@@ -318,7 +526,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/MERN%20Stack/Getting%20Started%20with%20MERN%20A%20%28version%202.0%29/">
+<a class="md-nav__link" href="../../MERN%20Stack/Getting%20Started%20with%20MERN%20A%20%28version%202.0%29/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Getting Started with MERN A (version 2.0)
@@ -332,7 +540,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Helpful%20Links/">
+<a class="md-nav__link" href="../../../Helpful%20Links/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Helpful Links
@@ -342,7 +550,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../Lecture%20Slides/">
+<a class="md-nav__link" href="../../../Lecture%20Slides/">
 <svg height="18" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M843.5 737.4c-12.4-75.2-79.2-129.1-155.3-125.4S550.9 676 546 752c-153.5-4.8-208-40.7-199.1-113.7c3.3-27.3 19.8-41.9 50.1-49c18.4-4.3 38.8-4.9 57.3-3.2c1.7.2 3.5.3 5.2.5c11.3 2.7 22.8 5 34.3 6.8c34.1 5.6 68.8 8.4 101.8 6.6c92.8-5 156-45.9 159.2-132.7c3.1-84.1-54.7-143.7-147.9-183.6c-29.9-12.8-61.6-22.7-93.3-30.2c-14.3-3.4-26.3-5.7-35.2-7.2c-7.9-75.9-71.5-133.8-147.8-134.4S189.7 168 180.5 243.8s40 146.3 114.2 163.9s149.9-23.3 175.7-95.1c9.4 1.7 18.7 3.6 28 5.8c28.2 6.6 56.4 15.4 82.4 26.6c70.7 30.2 109.3 70.1 107.5 119.9c-1.6 44.6-33.6 65.2-96.2 68.6c-27.5 1.5-57.6-.9-87.3-5.8c-8.3-1.4-15.9-2.8-22.6-4.3c-3.9-.8-6.6-1.5-7.8-1.8l-3.1-.6c-2.2-.3-5.9-.8-10.7-1.3c-25-2.3-52.1-1.5-78.5 4.6c-55.2 12.9-93.9 47.2-101.1 105.8c-15.7 126.2 78.6 184.7 276 188.9c29.1 70.4 106.4 107.9 179.6 87c73.3-20.9 119.3-93.4 106.9-168.6M329.1 345.2c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3M695.6 845c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3" fill="currentColor"></path></svg>
 <span class="md-ellipsis">
     Lecture Slides
@@ -359,7 +567,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Lecture%20Slides/Authentication/">
+<a class="md-nav__link" href="../../../Lecture%20Slides/Authentication/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Authentication
@@ -367,7 +575,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Lecture%20Slides/Cypress%20Testing%20Guide/">
+<a class="md-nav__link" href="../../../Lecture%20Slides/Cypress%20Testing%20Guide/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Cypress Testing Guide
@@ -375,7 +583,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Lecture%20Slides/Node.js%20Fundamentals/">
+<a class="md-nav__link" href="../../../Lecture%20Slides/Node.js%20Fundamentals/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Node.js Fundamentals
@@ -383,7 +591,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Lecture%20Slides/Week%201%20-%20Course%20Logistics/">
+<a class="md-nav__link" href="../../../Lecture%20Slides/Week%201%20-%20Course%20Logistics/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Week 1   Course Logistics
@@ -391,7 +599,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Lecture%20Slides/Week%201%20-%20History%20of%20the%20Web%20and%20Overview%20of%20Web%20Architectures/">
+<a class="md-nav__link" href="../../../Lecture%20Slides/Week%201%20-%20History%20of%20the%20Web%20and%20Overview%20of%20Web%20Architectures/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Week 1   History of the Web and Overview of Web Architectures
@@ -399,7 +607,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Lecture%20Slides/Week%2010%20-%20Testing%20Routes%20with%20Jest/">
+<a class="md-nav__link" href="../../../Lecture%20Slides/Week%2010%20-%20Testing%20Routes%20with%20Jest/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Week 10   Testing Routes with Jest
@@ -407,7 +615,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Lecture%20Slides/Week%204%20Lecture%20-%20Node.js%20Fundamentals/">
+<a class="md-nav__link" href="../../../Lecture%20Slides/Week%204%20Lecture%20-%20Node.js%20Fundamentals/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Week 4 Lecture   Node.js Fundamentals
@@ -418,90 +626,20 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="..">
+<a class="md-nav__link" href="../../..">
 <svg height="18" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M843.5 737.4c-12.4-75.2-79.2-129.1-155.3-125.4S550.9 676 546 752c-153.5-4.8-208-40.7-199.1-113.7c3.3-27.3 19.8-41.9 50.1-49c18.4-4.3 38.8-4.9 57.3-3.2c1.7.2 3.5.3 5.2.5c11.3 2.7 22.8 5 34.3 6.8c34.1 5.6 68.8 8.4 101.8 6.6c92.8-5 156-45.9 159.2-132.7c3.1-84.1-54.7-143.7-147.9-183.6c-29.9-12.8-61.6-22.7-93.3-30.2c-14.3-3.4-26.3-5.7-35.2-7.2c-7.9-75.9-71.5-133.8-147.8-134.4S189.7 168 180.5 243.8s40 146.3 114.2 163.9s149.9-23.3 175.7-95.1c9.4 1.7 18.7 3.6 28 5.8c28.2 6.6 56.4 15.4 82.4 26.6c70.7 30.2 109.3 70.1 107.5 119.9c-1.6 44.6-33.6 65.2-96.2 68.6c-27.5 1.5-57.6-.9-87.3-5.8c-8.3-1.4-15.9-2.8-22.6-4.3c-3.9-.8-6.6-1.5-7.8-1.8l-3.1-.6c-2.2-.3-5.9-.8-10.7-1.3c-25-2.3-52.1-1.5-78.5 4.6c-55.2 12.9-93.9 47.2-101.1 105.8c-15.7 126.2 78.6 184.7 276 188.9c29.1 70.4 106.4 107.9 179.6 87c73.3-20.9 119.3-93.4 106.9-168.6M329.1 345.2c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3M695.6 845c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3" fill="currentColor"></path></svg>
 <span class="md-ellipsis">
     Home
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
-<span class="md-ellipsis">
-    Tags
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tags/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Tags
   </span>
 </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:apache">
-<span class="md-ellipsis">
-      
-        apache
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:dns">
-<span class="md-ellipsis">
-      
-        dns
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:hosting">
-<span class="md-ellipsis">
-      
-        hosting
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:linux">
-<span class="md-ellipsis">
-      
-        linux
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:mysql">
-<span class="md-ellipsis">
-      
-        mysql
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:php">
-<span class="md-ellipsis">
-      
-        php
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -518,55 +656,192 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tag:apache">
+<a class="md-nav__link" href="#tutorial-1-digitalocean-lamp-droplet-setup-ssh-authentication-dns-configuration">
 <span class="md-ellipsis">
       
-        apache
+        Tutorial 1: DigitalOcean LAMP Droplet Setup, SSH Authentication &amp; DNS Configuration
+      
+    </span>
+</a>
+<nav aria-label="Tutorial 1: DigitalOcean LAMP Droplet Setup, SSH Authentication &amp; DNS Configuration" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prerequisites">
+<span class="md-ellipsis">
+      
+        📋 Prerequisites
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tag:dns">
+<a class="md-nav__link" href="#step-1-generate-an-ssh-key-pair-locally">
 <span class="md-ellipsis">
       
-        dns
+        🔑 Step 1: Generate an SSH Key Pair Locally
+      
+    </span>
+</a>
+<nav aria-label="🔑 Step 1: Generate an SSH Key Pair Locally" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-on-macos-linux-terminal">
+<span class="md-ellipsis">
+      
+        A. On macOS / Linux Terminal
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tag:hosting">
+<a class="md-nav__link" href="#b-on-windows-terminal-powershell">
 <span class="md-ellipsis">
       
-        hosting
+        B. On Windows Terminal (PowerShell)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-create-a-digitalocean-lamp-droplet">
+<span class="md-ellipsis">
+      
+        🚀 Step 2: Create a DigitalOcean LAMP Droplet
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tag:linux">
+<a class="md-nav__link" href="#step-3-connect-to-the-droplet-via-ssh">
 <span class="md-ellipsis">
       
-        linux
+        💻 Step 3: Connect to the Droplet via SSH
+      
+    </span>
+</a>
+<nav aria-label="💻 Step 3: Connect to the Droplet via SSH" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-connecting-from-macos-linux-terminal">
+<span class="md-ellipsis">
+      
+        A. Connecting from macOS / Linux Terminal
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#b-connecting-from-windows-terminal">
+<span class="md-ellipsis">
+      
+        B. Connecting from Windows Terminal
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tag:mysql">
+<a class="md-nav__link" href="#first-time-connection-prompt">
 <span class="md-ellipsis">
       
-        mysql
+        First-Time Connection Prompt:
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tag:php">
+<a class="md-nav__link" href="#verify-lamp-stack-services-on-the-droplet">
 <span class="md-ellipsis">
       
-        php
+        Verify LAMP Stack Services on the Droplet
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-4-configure-dns-for-your-domain">
+<span class="md-ellipsis">
+      
+        🌐 Step 4: Configure DNS for Your Domain
+      
+    </span>
+</a>
+<nav aria-label="🌐 Step 4: Configure DNS for Your Domain" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#option-1-managing-dns-through-digitalocean-recommended">
+<span class="md-ellipsis">
+      
+        Option 1: Managing DNS through DigitalOcean (Recommended)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#option-2-using-your-domain-registrars-built-in-dns">
+<span class="md-ellipsis">
+      
+        Option 2: Using Your Domain Registrar’s Built-in DNS
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-5-verify-dns-resolution-web-access">
+<span class="md-ellipsis">
+      
+        🔍 Step 5: Verify DNS Resolution &amp; Web Access
+      
+    </span>
+</a>
+<nav aria-label="🔍 Step 5: Verify DNS Resolution &amp; Web Access" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-test-dns-resolution-in-terminal">
+<span class="md-ellipsis">
+      
+        A. Test DNS Resolution in Terminal
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#b-test-in-browser">
+<span class="md-ellipsis">
+      
+        B. Test in Browser
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ucf-dns-delays">
+<span class="md-ellipsis">
+      
+        UCF DNS Delays
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary-next-steps">
+<span class="md-ellipsis">
+      
+        🎯 Summary &amp; Next Steps
       
     </span>
 </a>
@@ -606,70 +881,238 @@
   page title (or respectively site name) is used as the main headline.
 -->
 <!-- Page content -->
-<h2 id="tag:apache">
-<span class="md-tag">apache</span><a class="headerlink" href="#tag:apache" title="Permanent link">¶</a></h2>
+<h2 id="tutorial-1-digitalocean-lamp-droplet-setup-ssh-authentication-dns-configuration">Tutorial 1: DigitalOcean LAMP Droplet Setup, SSH Authentication &amp; DNS Configuration<a class="headerlink" href="#tutorial-1-digitalocean-lamp-droplet-setup-ssh-authentication-dns-configuration" title="Permanent link">¶</a></h2>
+<p>Welcome to the COP 4331 LAMP Stack tutorial series! In this first tutorial, you will provision a cloud server (Droplet) on DigitalOcean running a complete LAMP (Linux, Apache, MySQL/MariaDB, PHP) stack. You will configure secure SSH key-based authentication for the <code>root</code> administrative user, connect to your server from <strong>Windows Terminal</strong> or <strong>macOS Terminal</strong>, and map your custom domain name to your Droplet using DNS.</p>
+<hr/>
+<div class="admonition tip">
+<p class="admonition-title">Important</p>
+<p><strong>Domain Name Placeholder:</strong><br/>
+Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></strong> as the example domain and subdomain.<br/>
+<strong>You must replace <code>lamp.johnaedo.com</code> with the domain name you acquired from your domain registrar</strong> (e.g., <code>lamp.yourdomain.com</code> or <code>yourdomain.com</code>).</p>
+</div>
+<hr/>
+<h3 id="prerequisites">📋 Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h3>
+<p>Before getting started, make sure you have:</p>
+<ol>
+<li>An active <a href="https://www.digitalocean.com/">DigitalOcean Account</a>. <em>(Students can use the GitHub Student Developer Pack for free DigitalOcean credits).</em></li>
+<li>A custom registered domain name acquired through a domain registrar (such as Namecheap, GoDaddy, Cloudflare, Porkbun, or Google Domains/Squarespace).</li>
+<li>A terminal client on your local computer:<br/>
+   - <strong>Windows 10/11</strong>: <strong>Windows Terminal</strong> (PowerShell or Command Prompt with OpenSSH).<br/>
+   - <strong>macOS / Linux</strong>: Built-in <strong>Terminal</strong> application.</li>
+</ol>
+<hr/>
+<h3 id="step-1-generate-an-ssh-key-pair-locally">🔑 Step 1: Generate an SSH Key Pair Locally<a class="headerlink" href="#step-1-generate-an-ssh-key-pair-locally" title="Permanent link">¶</a></h3>
+<p>SSH (Secure Shell) keys provide a cryptographic method of authenticating to your remote server without sending plaintext passwords over the network. An SSH key pair consists of two cryptographic keys:</p>
 <ul>
-<li>
-<a href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/Getting%20Started%20with%20LAMP/">
-          Getting Started with LAMP
-        </a>
-</li>
+<li><strong>Private Key (<code>id_ed25519</code>)</strong>: Kept strictly on your local machine. Never share or upload this key.</li>
+<li><strong>Public Key (<code>id_ed25519.pub</code>)</strong>: Uploaded to DigitalOcean and placed on your Droplet’s authorized keys list.</li>
 </ul>
-<h2 id="tag:dns">
-<span class="md-tag">dns</span><a class="headerlink" href="#tag:dns" title="Permanent link">¶</a></h2>
+<h4 id="a-on-macos-linux-terminal">A. On macOS / Linux Terminal<a class="headerlink" href="#a-on-macos-linux-terminal" title="Permanent link">¶</a></h4>
+<ol>
+<li>Open your <strong>Terminal</strong> application (press <code>Cmd + Space</code>, type <code>Terminal</code>, and press Enter).</li>
+<li>Generate an <code>ED25519</code> key pair (recommended) or a 4096-bit <code>RSA</code> key:<br/>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">"your_email@example.com"</span>
+</code></pre></div></li>
+<li>When prompted:<br/>
+   - <code>Enter file in which to save the key (/Users/youruser/.ssh/id_ed25519)</code>: Press <strong>Enter</strong> to accept default path.<br/>
+   - <code>Enter passphrase (empty for no passphrase)</code>: Enter a passphrase for extra protection, or press <strong>Enter</strong> for none.</li>
+<li>Display and copy your <strong>Public Key</strong>:<br/>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>cat<span class="w"> </span>~/.ssh/id_ed25519.pub
+</code></pre></div><br/>
+<em>Copy the entire output starting with <code>ssh-ed25519 AAAAC3NzaC... your_email@example.com</code>.</em></li>
+</ol>
+<h4 id="b-on-windows-terminal-powershell">B. On Windows Terminal (PowerShell)<a class="headerlink" href="#b-on-windows-terminal-powershell" title="Permanent link">¶</a></h4>
+<ol>
+<li>Open <strong>Windows Terminal</strong> or <strong>PowerShell</strong> as your standard user.</li>
+<li>Generate the key pair:<br/>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">ssh-keygen</span> <span class="n">-t</span> <span class="n">ed25519</span> <span class="n">-C</span> <span class="s2">"your_email@example.com"</span>
+</code></pre></div></li>
+<li>Press <strong>Enter</strong> to accept the default file location (<code>C:\Users\&lt;YourUsername&gt;\.ssh\id_ed25519</code>).</li>
+<li>Display and copy your <strong>Public Key</strong>:<br/>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nb">Get-Content</span> <span class="nv">$env:USERPROFILE</span><span class="p">\.</span><span class="n">ssh</span><span class="p">\</span><span class="n">id_ed25519</span><span class="p">.</span><span class="n">pub</span>
+</code></pre></div><br/>
+<em>Copy the full single line of text printed to the console.</em></li>
+</ol>
+<hr/>
+<h3 id="step-2-create-a-digitalocean-lamp-droplet">🚀 Step 2: Create a DigitalOcean LAMP Droplet<a class="headerlink" href="#step-2-create-a-digitalocean-lamp-droplet" title="Permanent link">¶</a></h3>
+<p>Now, we will provision a new virtual machine preloaded with the LAMP stack and install your SSH public key for the <code>root</code> superuser.</p>
+<ol>
+<li><strong>Log in to DigitalOcean</strong>: Navigate to <a href="https://cloud.digitalocean.com/">cloud.digitalocean.com</a>.</li>
+<li>In the top-right corner, click <strong>Create</strong> &gt; <strong>Droplets</strong>.</li>
+<li><strong>Choose Region / Datacenter</strong>: Select the datacenter geographically closest to you (e.g., <em>New York (NYC1/NYC3)</em> or <em>San Francisco (SFO3)</em>).</li>
+<li>
+<p><strong>Choose Image</strong>:<br/>
+   - Click the <strong>Marketplace</strong> tab.<br/>
+   - Search for and select <strong>LAMP on Ubuntu</strong> (this automatically installs Ubuntu LTS, Apache 2.4, MariaDB/MySQL, and PHP).</p>
+</li>
+<li>
+<p><strong>Choose Size (Droplet CPU / Memory)</strong>:<br/>
+   - Select <strong>Basic</strong>.<br/>
+   - Under <em>CPU Options</em>, choose <strong>Regular SSD</strong>.<br/>
+   - Select the $6.00/mo plan with 1GB RAM / 1 vCPU / 25GB SSD, which is sufficient for this project.</p>
+</li>
+<li>
+<p><strong>Choose Authentication Method</strong>:<br/>
+   - Select <strong>SSH Key</strong> (Do NOT choose Password).<br/>
+   - Click <strong>Add SSH Key</strong> (or <strong>New SSH Key</strong>).<br/>
+   - In the modal dialog:</p>
 <ul>
-<li>
-<a href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/Getting%20Started%20with%20LAMP/">
-          Getting Started with LAMP
-        </a>
-</li>
+<li><strong>SSH Key Content</strong>: Paste the public key string copied in Step 1 (<code>ssh-ed25519 AAAAC3...</code>).</li>
+<li><strong>Name</strong>: Give it a recognizable name (e.g., <code>My-Laptop-Key</code>).</li>
+<li>Click <strong>Add SSH Key</strong>.</li>
+<li>Ensure the checkbox next to your added key is selected.</li>
 </ul>
-<h2 id="tag:hosting">
-<span class="md-tag">hosting</span><a class="headerlink" href="#tag:hosting" title="Permanent link">¶</a></h2>
+</li>
+<li>
+<p><strong>Finalize and Create</strong>:<br/>
+   - <strong>Quantity</strong>: 1 Droplet.<br/>
+   - <strong>Hostname</strong>: Give your Droplet a descriptive hostname, e.g., <code>cop4331-lamp-droplet</code>.<br/>
+   - Click the green <strong>Create Droplet</strong> button.</p>
+</li>
+<li>
+<p><strong>Note Your Droplet’s IPv4 Address</strong>:<br/>
+   - Wait 30–60 seconds while DigitalOcean provisions the instance.<br/>
+   - Once ready, copy the public <strong>IPv4 Address</strong> displayed in your dashboard (e.g., <code>165.227.123.45</code>).</p>
+</li>
+</ol>
+<hr/>
+<h3 id="step-3-connect-to-the-droplet-via-ssh">💻 Step 3: Connect to the Droplet via SSH<a class="headerlink" href="#step-3-connect-to-the-droplet-via-ssh" title="Permanent link">¶</a></h3>
+<p>Now that the Droplet is active and configured with your SSH key, connect to it as the <code>root</code> administrative user.</p>
+<h4 id="a-connecting-from-macos-linux-terminal">A. Connecting from macOS / Linux Terminal<a class="headerlink" href="#a-connecting-from-macos-linux-terminal" title="Permanent link">¶</a></h4>
+<p>Run the following command, replacing <code>&lt;YOUR_DROPLET_IP&gt;</code> with your actual Droplet IP:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>ssh<span class="w"> </span>root@&lt;YOUR_DROPLET_IP&gt;
+</code></pre></div>
+<p><em>Example:</em><br/>
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>ssh<span class="w"> </span>root@165.227.123.45
+</code></pre></div><p></p>
+<h3 id="b-connecting-from-windows-terminal">B. Connecting from Windows Terminal<a class="headerlink" href="#b-connecting-from-windows-terminal" title="Permanent link">¶</a></h3>
+<p>Open <strong>Windows Terminal</strong> (PowerShell or Command Prompt) and execute:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">ssh</span> <span class="n">root</span><span class="p">@&lt;</span><span class="n">YOUR_DROPLET_IP</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><em>Example:</em><br/>
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">ssh</span> <span class="n">root</span><span class="nv">@165</span><span class="p">.</span><span class="n">227</span><span class="p">.</span><span class="n">123</span><span class="p">.</span><span class="n">45</span>
+</code></pre></div><p></p>
+<h3 id="first-time-connection-prompt">First-Time Connection Prompt:<a class="headerlink" href="#first-time-connection-prompt" title="Permanent link">¶</a></h3>
+<p>When connecting to a new host for the first time, your terminal will display a security authenticity warning:<br/>
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>The authenticity of host '165.227.123.45 (165.227.123.45)' can't be established.
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>ED25519 key fingerprint is SHA256:abcd1234efgh5678ijkl....
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a>Are you sure you want to continue connecting (yes/no/[fingerprint])?
+</code></pre></div><br/>
+Type <strong><code>yes</code></strong> and press <strong>Enter</strong>. Your terminal will store the server’s fingerprint in <code>~/.ssh/known_hosts</code> and log you directly into the root bash shell:<p></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-x86_64)
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>root@cop4331-lamp-droplet:~#
+</code></pre></div>
+<h3 id="verify-lamp-stack-services-on-the-droplet">Verify LAMP Stack Services on the Droplet<a class="headerlink" href="#verify-lamp-stack-services-on-the-droplet" title="Permanent link">¶</a></h3>
+<p>Once connected, run the following commands to verify Apache and MySQL are running:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="c1"># Check Apache Web Server status</span>
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>systemctl<span class="w"> </span>status<span class="w"> </span>apache2<span class="w"> </span>--no-pager
+<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a>
+<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="c1"># Check MySQL status</span>
+<a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a>systemctl<span class="w"> </span>status<span class="w"> </span>mysql<span class="w"> </span>--no-pager
+</code></pre></div>
+<p>Both services should report <code>Active: active (running)</code>.</p>
+<hr/>
+<h2 id="step-4-configure-dns-for-your-domain">🌐 Step 4: Configure DNS for Your Domain<a class="headerlink" href="#step-4-configure-dns-for-your-domain" title="Permanent link">¶</a></h2>
+<p>To point your custom domain or subdomain (e.g., <code>lamp.johnaedo.com</code>) to your DigitalOcean Droplet, you have two standard options depending on how you manage your DNS records.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../_assets/images/dns-configuration.svg"><img alt="1920" src="../../../_assets/images/dns-configuration.svg"/></a></p>
+<hr/>
+<h3 id="option-1-managing-dns-through-digitalocean-recommended">Option 1: Managing DNS through DigitalOcean (Recommended)<a class="headerlink" href="#option-1-managing-dns-through-digitalocean-recommended" title="Permanent link">¶</a></h3>
+<p>If you delegate your domain’s DNS management to DigitalOcean:</p>
+<ol>
+<li>
+<p><strong>Update Nameservers at your Domain Registrar</strong>:<br/>
+   - Log in to your domain registrar (e.g., Namecheap, GoDaddy).<br/>
+   - Go to your domain’s <strong>DNS / Nameservers</strong> settings.<br/>
+   - Switch from “Default DNS” to “Custom DNS” and enter DigitalOcean’s three nameservers:</p>
 <ul>
-<li>
-<a href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/Getting%20Started%20with%20LAMP/">
-          Getting Started with LAMP
-        </a>
-</li>
+<li><code>ns1.digitalocean.com</code></li>
+<li><code>ns2.digitalocean.com</code></li>
+<li><code>ns3.digitalocean.com</code></li>
+<li>Save changes.</li>
 </ul>
-<h2 id="tag:linux">
-<span class="md-tag">linux</span><a class="headerlink" href="#tag:linux" title="Permanent link">¶</a></h2>
+</li>
+<li>
+<p><strong>Add Your Domain in DigitalOcean Control Panel</strong>:<br/>
+   - Go to <strong>DigitalOcean</strong> &gt; <strong>Manage</strong> &gt; <strong>Networking</strong> &gt; <strong>Domains</strong>.<br/>
+   - Enter your base domain name (e.g., <code>johnaedo.com</code>) and click <strong>Add Domain</strong>.</p>
+</li>
+<li>
+<p><strong>Create the Subdomain <code>A</code> Record</strong>:<br/>
+   - In the DNS record editor for your domain:</p>
 <ul>
-<li>
-<a href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/Getting%20Started%20with%20LAMP/">
-          Getting Started with LAMP
-        </a>
-</li>
+<li><strong>Record Type</strong>: <code>A</code></li>
+<li><strong>HOSTNAME</strong>: <code>lamp</code> <em>(this creates <code>lamp.johnaedo.com</code>)</em></li>
+<li><strong>WILL DIRECT TO</strong>: Select your Droplet from the dropdown (or paste <code>&lt;YOUR_DROPLET_IP&gt;</code>).</li>
+<li><strong>TTL (Seconds)</strong>: <code>3600</code> (or default 3600 seconds).</li>
+<li>Click <strong>Create Record</strong>.</li>
 </ul>
-<h2 id="tag:mysql">
-<span class="md-tag">mysql</span><a class="headerlink" href="#tag:mysql" title="Permanent link">¶</a></h2>
+</li>
+</ol>
+<hr/>
+<h3 id="option-2-using-your-domain-registrars-built-in-dns">Option 2: Using Your Domain Registrar’s Built-in DNS<a class="headerlink" href="#option-2-using-your-domain-registrars-built-in-dns" title="Permanent link">¶</a></h3>
+<p>If you prefer to keep your nameservers at your domain registrar (e.g. Namecheap Advanced DNS, Cloudflare, GoDaddy DNS):</p>
+<ol>
+<li>Log in to your domain registrar’s management dashboard.</li>
+<li>Navigate to <strong>Manage Domain</strong> &gt; <strong>Advanced DNS</strong> (or <strong>DNS Management</strong> / <strong>DNS Records</strong>).</li>
+<li>Click <strong>Add New Record</strong>:<br/>
+   - <strong>Type</strong>: <code>A Record</code><br/>
+   - <strong>Host / Name</strong>: <code>lamp</code> <em>(or <code>lamp.johnaedo.com</code> depending on registrar interface)</em><br/>
+   - <strong>Value / Target IP</strong>: <code>&lt;YOUR_DROPLET_IP&gt;</code> (e.g., <code>165.227.123.45</code>)<br/>
+   - <strong>TTL</strong>: <code>Automatic</code> or <code>1 min</code> / <code>5 min</code> (to speed up initial propagation).</li>
+<li>Save the record.</li>
+</ol>
+<hr/>
+<h2 id="step-5-verify-dns-resolution-web-access">🔍 Step 5: Verify DNS Resolution &amp; Web Access<a class="headerlink" href="#step-5-verify-dns-resolution-web-access" title="Permanent link">¶</a></h2>
+<p>DNS records typically propagate across global DNS resolvers within 5 to 30 minutes (though it can take up to a few hours depending on TTL).</p>
+<h3 id="a-test-dns-resolution-in-terminal">A. Test DNS Resolution in Terminal<a class="headerlink" href="#a-test-dns-resolution-in-terminal" title="Permanent link">¶</a></h3>
+<p>On your local machine (macOS Terminal or Windows Terminal), test if your domain resolves to the Droplet’s IP address:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1"># Using ping</span>
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>ping<span class="w"> </span>lamp.johnaedo.com
+<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a>
+<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="c1"># Using nslookup</span>
+<a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a>nslookup<span class="w"> </span>lamp.johnaedo.com
+<a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a>
+<a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="c1"># Using dig (macOS/Linux)</span>
+<a href="#__codelineno-11-8" id="__codelineno-11-8" name="__codelineno-11-8"></a>dig<span class="w"> </span>lamp.johnaedo.com<span class="w"> </span>+short
+</code></pre></div>
+<p>You should see your Droplet’s public IPv4 address returned.</p>
+<h3 id="b-test-in-browser">B. Test in Browser<a class="headerlink" href="#b-test-in-browser" title="Permanent link">¶</a></h3>
+<p>Open your web browser and navigate to:<br/>
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>http://lamp.johnaedo.com
+</code></pre></div><br/>
+<em>(Remember to replace with your registered domain).</em><p></p>
+<p>You should see the default DigitalOcean LAMP landing page confirming HTTP connectivity!  </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../_assets/images/digitalocean-default-page.jpg"><img alt="digitalocean-default-page.jpg" src="../../../_assets/images/digitalocean-default-page.jpg"/></a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can safely ignore the “Please log into your Droplet” text.  You’ve already logged into the droplet and are well on your way to configuring and deploying your first application.  This is just the default page, which you will remove at the end of the tutorial.</p>
+</div>
+<hr/>
+<h2 id="ucf-dns-delays">UCF DNS Delays<a class="headerlink" href="#ucf-dns-delays" title="Permanent link">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you’re on campus, you will experience a much longer delay (24-48 hours) with your domain name being recognized.  This is due to campus IT security policies.  We don’t want to accept newly-minted domain names too quickly as they may be spam or malware domains!  If you’re planning on demonstrating your new domain on campus, please take this into account.  Register your domains early!</p>
+</div>
+<hr/>
+<h2 id="summary-next-steps">🎯 Summary &amp; Next Steps<a class="headerlink" href="#summary-next-steps" title="Permanent link">¶</a></h2>
+<p>In this tutorial, you accomplished the following:</p>
 <ul>
-<li>
-<a href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/Getting%20Started%20with%20LAMP/">
-          Getting Started with LAMP
-        </a>
-</li>
+<li>Generated a secure SSH key pair on Windows or macOS.</li>
+<li>Provisioned an Ubuntu LAMP Droplet on DigitalOcean authenticated with your SSH public key.</li>
+<li>Connected via SSH through the command line as <code>root</code>.</li>
+<li>Configured DNS <code>A</code> records to route <code>lamp.johnaedo.com</code> to your Droplet’s public IP address.</li>
 </ul>
-<h2 id="tag:php">
-<span class="md-tag">php</span><a class="headerlink" href="#tag:php" title="Permanent link">¶</a></h2>
-<ul>
-<li>
-<a href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/Getting%20Started%20with%20LAMP/">
-          Getting Started with LAMP
-        </a>
-</li>
-</ul>
+<p>In <strong><a href="../02-database-setup-mysql/">Tutorial 2: Database Design &amp; MySQL Management</a></strong>, you will access the MySQL command-line interface on your Droplet, create the <code>ColorsAppDB</code> database schema, and seed sample user and color records.</p>
 <hr/>
 <div class="md-source-file">
 <small>
 <!-- mkdocs-git-revision-date-localized-plugin -->
 <u>Last update</u> :
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 12, 2026 01:04:15 UTC">April 12, 2026</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 30, 2026 21:32:47 UTC">August 30, 2026</span>
 <!-- mkdocs-git-revision-date-plugin -->
 <br/>
 <u>Created</u> :
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 12, 2026 01:04:15 UTC">April 12, 2026</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 30, 2026 21:32:47 UTC">August 30, 2026</span>
 </small>
 </div>
 <!-- Was this page helpful? -->
@@ -682,7 +1125,7 @@
     try {
       const index = document.querySelector('h1').innerHTML;
       if (index === "Index") {
-        document.querySelector('h1').innerHTML = "Tags";
+        document.querySelector('h1').innerHTML = "01 droplet setup and dns";
       }
     } catch (error) {
       // console.log(error);
@@ -720,11 +1163,11 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
-<script src="../_static/js/mathjax.js"></script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script src="../../../_static/js/mathjax.js"></script>
 <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script src="../_static/js/snippets.js"></script>
+<script src="../../../_static/js/snippets.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/Enveloppe/_static@refs/heads/master/dist/index.js"></script>
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });
