@@ -70,7 +70,7 @@ We provide three SQL scripts in a [zip file available here](https://teaching.joh
 3. **`sql/resetdb.sql`**: An all-in-one script that resets the database, rebuilds the schema, and seeds default records in a single operation.
 
 > [!FILES DOWNLOAD]
-> [SQL Scripts Zip File Download]('/files/sql-scripts.zip')
+> [SQL Scripts Zip File Download]('https://teaching.johnaedo.com/../../../_assets/files/sql-scripts.zip')
 
 ### A. Database Schema Breakdown (`sql/create_tables.sql`)
 
