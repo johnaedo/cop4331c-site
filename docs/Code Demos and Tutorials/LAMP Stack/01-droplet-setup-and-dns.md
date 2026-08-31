@@ -30,8 +30,8 @@ Before getting started, make sure you have:
 ## 🔑 Step 1: Generate an SSH Key Pair Locally
 
 SSH (Secure Shell) keys provide a cryptographic method of authenticating to your remote server without sending plaintext passwords over the network. An SSH key pair consists of two cryptographic keys:
-- **Private Key (`id_ed25519`)**: Kept strictly on your local machine. Never share or upload this key.
-- **Public Key (`id_ed25519.pub`)**: Uploaded to DigitalOcean and placed on your Droplet's authorized keys list.
+- **Private Key (`id_ed25519` or `id_rsa`)**: Kept strictly on your local machine. Never share or upload this key.
+- **Public Key (`id_ed25519.pub` or `id_rsa.pub`)**: Uploaded to DigitalOcean and placed on your Droplet's authorized keys list.
 
 ### A. On macOS / Linux Terminal
 
@@ -75,11 +75,13 @@ Now, we will provision a new virtual machine preloaded with the LAMP stack and i
 4. **Choose Image**:
    - Click the **Marketplace** tab.
    - Search for and select **LAMP on Ubuntu** (this automatically installs Ubuntu LTS, Apache 2.4, MariaDB/MySQL, and PHP).
+   
+   *(Alternative: If you prefer a standard OS image, select **OS > Ubuntu 22.04 LTS x64**, and Apache/MariaDB/PHP can be installed via `apt`).*
 
 5. **Choose Size (Droplet CPU / Memory)**:
    - Select **Basic**.
    - Under *CPU Options*, choose **Regular SSD**.
-   - Select the $6.00/mo plan with 1GB RAM / 1 vCPU / 25GB SSD, which is sufficient for this project.
+   - Select the $6.00/mo tier with 1GB RAM / 1 vCPU / 25GB SSD), which is sufficient for this project.
 
 6. **Choose Authentication Method**:
    - Select **SSH Key** (Do NOT choose Password).
@@ -214,6 +216,10 @@ If you prefer to keep your nameservers at your domain registrar (e.g. Namecheap 
 
 DNS records typically propagate across global DNS resolvers within 5 to 30 minutes (though it can take up to a few hours depending on TTL).
 
+> [!WARNING]
+> If you're on campus, you will experience a 24-48 hour delay in your domain being accessible.  This is for security purposes.  Newly-minted domains carry a high risk of being malware hosts, so UCF imposes a delay on their propagation to vet them before making them available on the network.
+
+
 ### A. Test DNS Resolution in Terminal
 
 On your local machine (macOS Terminal or Windows Terminal), test if your domain resolves to the Droplet's IP address:
@@ -239,18 +245,7 @@ http://lamp.johnaedo.com
 ```
 *(Remember to replace with your registered domain).*
 
-You should see the default DigitalOcean LAMP landing page confirming HTTP connectivity!  
-
-![digitalocean-default-page.jpg](../../_assets/images/digitalocean-default-page.jpg)
-
-> [!TIP]
-> You can safely ignore the "Please log into your Droplet" text.  You've already logged into the droplet and are well on your way to configuring and deploying your first application.  This is just the default page, which you will remove at the end of the tutorial.
-
----
-## UCF DNS Delays
-
-> [!WARNING]
-> If you're on campus, you will experience a much longer delay (24-48 hours) with your domain name being recognized.  This is due to campus IT security policies.  We don't want to accept newly-minted domain names too quickly as they may be spam or malware domains!  If you're planning on demonstrating your new domain on campus, please take this into account.  Register your domains early!
+You should see the default **Apache2 Ubuntu Default Page** or the DigitalOcean LAMP landing page confirming HTTP connectivity!
 
 ---
 
