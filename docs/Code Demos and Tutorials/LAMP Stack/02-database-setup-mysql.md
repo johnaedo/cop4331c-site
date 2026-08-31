@@ -57,10 +57,31 @@ The database layer for the Colors Manager application is built on **MySQL 8.0.46
 
 ## 📜 Step 2: Understanding the SQL Scripts
 
-We provide three SQL scripts within the project's [`sql/`](../sql/) and [`api/config/`](../api/config/) directories:
-1. **[`sql/create_tables.sql`](../sql/create_tables.sql)**: Creates the database `ColorsAppDB`, `Users` table, `Colors` table, and dedicated application user.
-2. **[`sql/seed_data.sql`](../sql/seed_data.sql)**: Populates `ColorsAppDB` with sample users and color palettes.
-3. **[`sql/resetdb.sql`](../sql/resetdb.sql)** (and **[`api/config/resetdb.sql`](../api/config/resetdb.sql)**): An all-in-one script that resets the database, rebuilds the schema, and seeds default records in a single operation.
+> [!FILE DOWNLOAD]
+> You can download the SQL scripts to your PC here:  [sql-files.zip](https://teaching.johnaedo.com/code/cop4331c/lamp/sql-files.zip)
+
+### Download sql-files.zip to Your Droplet
+
+**Install unzip on your Droplet:**
+```bash
+apt-get install unzip
+```
+
+**Download sql-files.zip using curl:**
+```bash
+curl -O https://teaching.johnaedo.com/code/cop4331c/lamp/sql-files.zip
+```
+
+**Unzip the files:**
+```bash
+unzip sql-files.zip
+```
+
+**You now have 3 sql scripts in the `sql` directory and one script under `api`:**
+ 
+1. **`sql/create_tables.sql`**: Creates the database `ColorsAppDB`, `Users` table, `Colors` table, and dedicated application user.
+2. **`sql/seed_data.sql`**: Populates `ColorsAppDB` with sample users and color palettes.
+3. **`sql/resetdb.sql`** (and **`api/config/resetdb.sql`**): An all-in-one script that resets the database, rebuilds the schema, and seeds default records in a single operation.
 
 ### A. Database Schema Breakdown (`sql/create_tables.sql`)
 
@@ -153,11 +174,11 @@ You can run SQL scripts on your Droplet using either the MySQL interactive promp
 
 ### Method 1: Direct Command-Line Pipeline (Fastest)
 
-If you have transferred the SQL file to your Droplet or pasted it into a file (e.g. `/root/resetdb.sql`):
+If you have transferred the SQL file to your Droplet or pasted it into a file (e.g. `/root/sql/resetdb.sql`):
 
 ```bash
 # Execute the full reset script via standard input redirection
-mysql < /root/resetdb.sql
+mysql < /root/sql/resetdb.sql
 ```
 
 ### Method 2: Interactive Execution via MySQL Shell
@@ -168,7 +189,7 @@ mysql < /root/resetdb.sql
    ```
 2. Run the `SOURCE` command with the absolute path to your SQL script:
    ```sql
-   SOURCE /root/resetdb.sql;
+   SOURCE /root/sql/resetdb.sql;
    ```
 3. MySQL will output:
    ```text
