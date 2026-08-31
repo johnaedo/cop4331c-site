@@ -134,15 +134,24 @@ If you receive HTTP `200 OK` with JSON, Apache and PHP are communicating correct
 
 [Bruno](https://www.usebruno.com/) is an open-source, fast, Git-friendly desktop API client.
 
-### A. Install and Open Bruno
+### A. Install and Open Bruno on your local PC
 1. Download Bruno from [usebruno.com](https://www.usebruno.com/downloads) or install via package manager:
    - **macOS**: `brew install bruno`
    - **Windows**: `winget install Bruno.Bruno`
 2. Launch the Bruno desktop application.
 
-### B. Open the Project Collection in Bruno
-1. In Bruno, click **Open Collection**.
-2. Browse to your local project directory and select the **[`api-tests`](../api-tests)** folder.
+### B. Download the API tests
+
+You'll want to download the test files to your local computer, where you installed Bruno.
+
+> [! FILES DOWNLOAD]
+> [bruno-tests.zip](https://teaching.johnaedo.com/code/cop4331c/lamp/bruno-tests.zip)
+
+Unzip the files into the directory of your choice.
+
+### C. Open the Project Collection in Bruno
+1. In Bruno, click **Open Collection** button in the Overview tab.
+2. Browse to the folder you just unzipped called `api-tests` (yes, that's different than the zip file name)
 3. The collection **LAMP Demo** will load in the sidebar.
 
 ```
@@ -157,10 +166,12 @@ If you receive HTTP `200 OK` with JSON, Apache and PHP are communicating correct
 └── 📄 Delete Color
 ```
 
-### C. Configure the Production Environment
-1. In the top-right corner of Bruno, click the environment dropdown (currently set to *No Environment*).
-2. Select **Production** (or click *Configure* to view environments).
-3. Verify that the `urlBase` variable is set to your domain:
+### D. Configure the Production Environment
+1. Select the `Status Ping` test.
+2. In the top-right corner of Bruno, click the environment dropdown (currently set to *No Environment*).
+3. Select **Configure**
+4. Select **Production**
+5. Verify that the `urlBase` variable is set to your domain:
    ```yaml
    name: Production
    variables:
@@ -168,6 +179,7 @@ If you receive HTTP `200 OK` with JSON, Apache and PHP are communicating correct
        value: http://lamp.johnaedo.com
    ```
    *(Replace `http://lamp.johnaedo.com` with your actual domain URL).*
+6. Select **Save**
 
 ---
 
@@ -180,7 +192,7 @@ Execute each request sequentially in Bruno:
 - **URL**: `{{urlBase}}/api/index.php?ping=1`
 - **Click**: **Send** (or `Ctrl+Enter` / `Cmd+Enter`)
 - **Expected Status**: `200 OK`
-- **Expected Body**:
+- **Expected Body** (timestamp will differ in value):
   ```json
   {
     "status": "OK",
@@ -264,7 +276,7 @@ Execute each request sequentially in Bruno:
 
 ---
 
-#### 5. Add a New Color
+#### 5. Add Color
 - **Method**: `POST`
 - **URL**: `{{urlBase}}/api/index.php`
 - **Headers**:
@@ -278,7 +290,7 @@ Execute each request sequentially in Bruno:
   ```
 - **Click**: **Send**
 - **Expected Status**: `201 Created`
-- **Expected Body**:
+- **Expected Body** (id may be different in your instance):
   ```json
   {
     "message": "Color created",
@@ -290,7 +302,10 @@ Execute each request sequentially in Bruno:
 
 ---
 
-#### 6. Get Single Color by ID
+#### 6. Get Color (gets a single color by ID)
+
+Make sure to use the ID returned in the previous step.
+
 - **Method**: `GET`
 - **URL**: `{{urlBase}}/api/index.php?id=35`
 - **Headers**:
@@ -329,6 +344,7 @@ Execute each request sequentially in Bruno:
     "error": ""
   }
   ```
+You can go run the `Get Color` test with an ID of 1 to verify that the color updated.
 
 ---
 
