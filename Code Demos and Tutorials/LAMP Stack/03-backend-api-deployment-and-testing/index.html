@@ -336,28 +336,6 @@
       
     </span>
 </a>
-<nav aria-label="🚀 Step 1: Deploy Backend Code to the Droplet" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#option-a-git-clone-pull-on-the-droplet-recommended">
-<span class="md-ellipsis">
-      
-        Option A: Git Clone / Pull on the Droplet (Recommended)
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#option-b-sync-from-local-machine-via-rsync-or-scp">
-<span class="md-ellipsis">
-      
-        Option B: Sync from Local Machine via rsync or scp
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#step-2-configure-environment-variables-permissions">
@@ -739,28 +717,6 @@
       
     </span>
 </a>
-<nav aria-label="🚀 Step 1: Deploy Backend Code to the Droplet" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#option-a-git-clone-pull-on-the-droplet-recommended">
-<span class="md-ellipsis">
-      
-        Option A: Git Clone / Pull on the Droplet (Recommended)
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#option-b-sync-from-local-machine-via-rsync-or-scp">
-<span class="md-ellipsis">
-      
-        Option B: Sync from Local Machine via rsync or scp
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#step-2-configure-environment-variables-permissions">
@@ -1062,36 +1018,26 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 </table>
 <hr/>
 <h2 id="step-1-deploy-backend-code-to-the-droplet">🚀 Step 1: Deploy Backend Code to the Droplet<a class="headerlink" href="#step-1-deploy-backend-code-to-the-droplet" title="Permanent link">¶</a></h2>
-<p>There are two primary methods to deploy your code to the Droplet: using <strong>Git</strong> directly on the server, or syncing files from your local machine using <strong><code>rsync</code></strong> / <strong><code>scp</code></strong>.</p>
-<h3 id="option-a-git-clone-pull-on-the-droplet-recommended">Option A: Git Clone / Pull on the Droplet (Recommended)<a class="headerlink" href="#option-a-git-clone-pull-on-the-droplet-recommended" title="Permanent link">¶</a></h3>
 <ol>
+<li>SSH into your Droplet:<br/>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>ssh<span class="w"> </span>root@&lt;YOUR_DROPLET_IP&gt;
+</code></pre></div></li>
 <li>
-<p>SSH into your Droplet:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>ssh<span class="w"> </span>root@&lt;YOUR_DROPLET_IP&gt;
+<p>Download the API files:<br/>
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>curl<span class="w"> </span>-O<span class="w"> </span>https://teaching.johnaedo.com/code/cop4331c/lamp/api-files.zip
 </code></pre></div><p></p>
 </li>
 <li>
 <p>Navigate to <code>/var/www/html</code>:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>/var/www/html
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>/var/www/html
 </code></pre></div><p></p>
 </li>
 <li>
-<p>If this is a fresh droplet, clone your GitHub repository into the web root:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># Clone into a temporary folder and move files into /var/www/html</span>
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/johnaedo/cop4331c-lamp-demo.git<span class="w"> </span>/tmp/lamp-repo
-<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>cp<span class="w"> </span>-r<span class="w"> </span>/tmp/lamp-repo/*<span class="w"> </span>/var/www/html/
-<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>rm<span class="w"> </span>-rf<span class="w"> </span>/tmp/lamp-repo
+<p>Unzip the files:<br/>
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>unzip<span class="w"> </span>/root/api-files.zip
 </code></pre></div><p></p>
 </li>
 </ol>
-<h3 id="option-b-sync-from-local-machine-via-rsync-or-scp">Option B: Sync from Local Machine via <code>rsync</code> or <code>scp</code><a class="headerlink" href="#option-b-sync-from-local-machine-via-rsync-or-scp" title="Permanent link">¶</a></h3>
-<p>From your <strong>local terminal</strong> (Windows Terminal / macOS Terminal) inside your project directory:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># Using rsync (macOS/Linux)</span>
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>rsync<span class="w"> </span>-avz<span class="w"> </span>--exclude<span class="w"> </span><span class="s1">'.git'</span><span class="w"> </span>./<span class="w"> </span>root@&lt;YOUR_DROPLET_IP&gt;:/var/www/html/
-<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>
-<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="c1"># Or using scp (Windows/macOS)</span>
-<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>scp<span class="w"> </span>-r<span class="w"> </span>./api<span class="w"> </span>./sql<span class="w"> </span>root@&lt;YOUR_DROPLET_IP&gt;:/var/www/html/
-</code></pre></div>
 <hr/>
 <h2 id="step-2-configure-environment-variables-permissions">⚙️ Step 2: Configure Environment Variables &amp; Permissions<a class="headerlink" href="#step-2-configure-environment-variables-permissions" title="Permanent link">¶</a></h2>
 <ol>
@@ -1116,39 +1062,33 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <p><strong>Set Linux File Permissions</strong>:<br/>
    Apache runs under the system user <code>www-data</code>. Ensure the web server has read/write permissions while protecting your secret <code>.env</code> file:<br/>
 </p><div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1"># Set ownership to Apache's www-data user</span>
-<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html
 <a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>
 <a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="c1"># Set directory and file permissions</span>
-<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a>sudo<span class="w"> </span>find<span class="w"> </span>/var/www/html<span class="w"> </span>-type<span class="w"> </span>d<span class="w"> </span>-exec<span class="w"> </span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
-<a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a>sudo<span class="w"> </span>find<span class="w"> </span>/var/www/html<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-exec<span class="w"> </span>chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
-<a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a>
-<a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="c1"># Restrict .env file permissions</span>
-<a href="#__codelineno-7-9" id="__codelineno-7-9" name="__codelineno-7-9"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>/var/www/html/.env
-</code></pre></div><p></p>
-</li>
-<li>
-<p><strong>Ensure Apache Modules &amp; PHP MySQL Extensions are Active</strong>:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="c1"># Install PHP MySQL PDO module if not already present</span>
-<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>php-mysql<span class="w"> </span>php-curl
-<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a>
-<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="c1"># Enable Apache rewrite module and restart</span>
-<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a>sudo<span class="w"> </span>a2enmod<span class="w"> </span>rewrite
-<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
+<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="c1"># Directories are readable and executable by all, </span>
+<a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="c1"># but only writable by www-data </span>
+<a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a>find<span class="w"> </span>/var/www/html<span class="w"> </span>-type<span class="w"> </span>d<span class="w"> </span>-exec<span class="w"> </span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+<a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="c1"># Files are readable by all, but only writable by www-data </span>
+<a href="#__codelineno-7-9" id="__codelineno-7-9" name="__codelineno-7-9"></a>find<span class="w"> </span>/var/www/html<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-exec<span class="w"> </span>chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+<a href="#__codelineno-7-10" id="__codelineno-7-10" name="__codelineno-7-10"></a>
+<a href="#__codelineno-7-11" id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="c1"># Restrict .env file permissions</span>
+<a href="#__codelineno-7-12" id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="c1"># only www-data can write the file</span>
+<a href="#__codelineno-7-13" id="__codelineno-7-13" name="__codelineno-7-13"></a>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>/var/www/html/.env
 </code></pre></div><p></p>
 </li>
 </ol>
 <hr/>
 <h2 id="step-3-verify-api-health-via-curl">🔍 Step 3: Verify API Health via cURL<a class="headerlink" href="#step-3-verify-api-health-via-curl" title="Permanent link">¶</a></h2>
 <p>Before opening Bruno, test the unauthenticated status ping endpoint directly from your local terminal:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>curl<span class="w"> </span>-i<span class="w"> </span>http://lamp.johnaedo.com/api/index.php?ping<span class="o">=</span><span class="m">1</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>curl<span class="w"> </span>-i<span class="w"> </span>http://lamp.johnaedo.com/api/index.php?ping<span class="o">=</span><span class="m">1</span>
 </code></pre></div>
 <h3 id="expected-response">Expected Response:<a class="headerlink" href="#expected-response" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="na">Date</span><span class="o">:</span> <span class="l">Mon, 24 Aug 2026 14:00:00 GMT</span>
-<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="na">Server</span><span class="o">:</span> <span class="l">Apache/2.4.52 (Ubuntu)</span>
-<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json; charset=utf-8</span>
-<a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a>
-<a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="p">{</span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"OK"</span><span class="p">,</span><span class="nt">"timestamp"</span><span class="p">:</span><span class="mi">1787580000</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="na">Date</span><span class="o">:</span> <span class="l">Mon, 24 Aug 2026 14:00:00 GMT</span>
+<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="na">Server</span><span class="o">:</span> <span class="l">Apache/2.4.52 (Ubuntu)</span>
+<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json; charset=utf-8</span>
+<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a>
+<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="p">{</span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"OK"</span><span class="p">,</span><span class="nt">"timestamp"</span><span class="p">:</span><span class="mi">1787580000</span><span class="p">}</span>
 </code></pre></div>
 <p>If you receive HTTP <code>200 OK</code> with JSON, Apache and PHP are communicating correctly!</p>
 <hr/>
@@ -1167,25 +1107,25 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <li>Browse to your local project directory and select the <strong><span class="ezlinks_not_found ezlinks_not_found" src="../../../api-tests">api-tests</span></strong> folder.</li>
 <li>The collection <strong>LAMP Demo</strong> will load in the sidebar.</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>📁 api-tests (LAMP Demo)
-<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>├── 📄 Status Ping
-<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a>├── 📄 Login
-<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a>├── 📄 Invalid Login
-<a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a>├── 📄 Search
-<a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a>├── 📄 Add
-<a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a>├── 📄 Get Color
-<a href="#__codelineno-11-8" id="__codelineno-11-8" name="__codelineno-11-8"></a>├── 📄 Update Color
-<a href="#__codelineno-11-9" id="__codelineno-11-9" name="__codelineno-11-9"></a>└── 📄 Delete Color
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>📁 api-tests (LAMP Demo)
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>├── 📄 Status Ping
+<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a>├── 📄 Login
+<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a>├── 📄 Invalid Login
+<a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a>├── 📄 Search
+<a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a>├── 📄 Add
+<a href="#__codelineno-10-7" id="__codelineno-10-7" name="__codelineno-10-7"></a>├── 📄 Get Color
+<a href="#__codelineno-10-8" id="__codelineno-10-8" name="__codelineno-10-8"></a>├── 📄 Update Color
+<a href="#__codelineno-10-9" id="__codelineno-10-9" name="__codelineno-10-9"></a>└── 📄 Delete Color
 </code></pre></div>
 <h3 id="c-configure-the-production-environment">C. Configure the Production Environment<a class="headerlink" href="#c-configure-the-production-environment" title="Permanent link">¶</a></h3>
 <ol>
 <li>In the top-right corner of Bruno, click the environment dropdown (currently set to <em>No Environment</em>).</li>
 <li>Select <strong>Production</strong> (or click <em>Configure</em> to view environments).</li>
 <li>Verify that the <code>urlBase</code> variable is set to your domain:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Production</span>
-<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="nt">variables</span><span class="p">:</span>
-<a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">urlBase</span>
-<a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://lamp.johnaedo.com</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Production</span>
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="nt">variables</span><span class="p">:</span>
+<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">urlBase</span>
+<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://lamp.johnaedo.com</span>
 </code></pre></div><br/>
 <em>(Replace <code>http://lamp.johnaedo.com</code> with your actual domain URL).</em></li>
 </ol>
@@ -1199,10 +1139,10 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <li><strong>Click</strong>: <strong>Send</strong> (or <code>Ctrl+Enter</code> / <code>Cmd+Enter</code>)</li>
 <li><strong>Expected Status</strong>: <code>200 OK</code></li>
 <li><strong>Expected Body</strong>:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="p">{</span>
-<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span>
-<a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">  </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1787580000</span>
-<a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="p">{</span>
+<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span>
+<a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">  </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1787580000</span>
+<a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="p">}</span>
 </code></pre></div></li>
 </ul>
 <hr/>
@@ -1211,21 +1151,21 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <li><strong>Method</strong>: <code>POST</code></li>
 <li><strong>URL</strong>: <code>{{urlBase}}/api/index.php</code></li>
 <li><strong>Body (JSON)</strong>:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="p">{</span>
-<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">  </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RickL"</span><span class="p">,</span>
-<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">  </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COP4331"</span>
-<a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="p">{</span>
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">  </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RickL"</span><span class="p">,</span>
+<a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">  </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COP4331"</span>
+<a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="p">}</span>
 </code></pre></div></li>
 <li><strong>Click</strong>: <strong>Send</strong></li>
 <li><strong>Expected Status</strong>: <code>200 OK</code></li>
 <li><strong>Expected Body</strong>:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="p">{</span>
-<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">  </span><span class="nt">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rick"</span><span class="p">,</span>
-<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">  </span><span class="nt">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Leinecker"</span><span class="p">,</span>
-<a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">  </span><span class="nt">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
-<a href="#__codelineno-15-6" id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span>
-<a href="#__codelineno-15-7" id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="p">{</span>
+<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">  </span><span class="nt">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rick"</span><span class="p">,</span>
+<a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">  </span><span class="nt">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Leinecker"</span><span class="p">,</span>
+<a href="#__codelineno-14-5" id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w">  </span><span class="nt">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
+<a href="#__codelineno-14-6" id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span>
+<a href="#__codelineno-14-7" id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="p">}</span>
 </code></pre></div><br/>
 <em>Note the <code>id: 1</code> returned. This ID represents the authenticated session token.</em></li>
 </ul>
@@ -1235,20 +1175,20 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <li><strong>Method</strong>: <code>POST</code></li>
 <li><strong>URL</strong>: <code>{{urlBase}}/api/index.php</code></li>
 <li><strong>Body (JSON)</strong>:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="p">{</span>
-<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="w">  </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RickL"</span><span class="p">,</span>
-<a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">  </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WRONG_PASSWORD"</span>
-<a href="#__codelineno-16-4" id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="p">{</span>
+<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w">  </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RickL"</span><span class="p">,</span>
+<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">  </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WRONG_PASSWORD"</span>
+<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="p">}</span>
 </code></pre></div></li>
 <li><strong>Click</strong>: <strong>Send</strong></li>
 <li><strong>Expected Status</strong>: <code>401 Unauthorized</code></li>
 <li><strong>Expected Body</strong>:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="p">{</span>
-<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="w">  </span><span class="nt">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
-<a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="w">  </span><span class="nt">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
-<a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No Records Found"</span>
-<a href="#__codelineno-17-6" id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="p">{</span>
+<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">  </span><span class="nt">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<a href="#__codelineno-16-4" id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">  </span><span class="nt">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<a href="#__codelineno-16-5" id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No Records Found"</span>
+<a href="#__codelineno-16-6" id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="p">}</span>
 </code></pre></div></li>
 </ul>
 <hr/>
@@ -1261,17 +1201,17 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <li><strong>Click</strong>: <strong>Send</strong></li>
 <li><strong>Expected Status</strong>: <code>200 OK</code></li>
 <li><strong>Expected Body</strong>:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="p">{</span>
-<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="w">  </span><span class="nt">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="w">    </span><span class="s2">"Blue"</span><span class="p">,</span>
-<a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="w">    </span><span class="s2">"Light Blue"</span>
-<a href="#__codelineno-18-5" id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="w">  </span><span class="p">],</span>
-<a href="#__codelineno-18-6" id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="w">  </span><span class="nt">"colors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a href="#__codelineno-18-7" id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue"</span><span class="w"> </span><span class="p">},</span>
-<a href="#__codelineno-18-8" id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Light Blue"</span><span class="w"> </span><span class="p">}</span>
-<a href="#__codelineno-18-9" id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="w">  </span><span class="p">],</span>
-<a href="#__codelineno-18-10" id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span>
-<a href="#__codelineno-18-11" id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="p">{</span>
+<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="w">  </span><span class="nt">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="w">    </span><span class="s2">"Blue"</span><span class="p">,</span>
+<a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="w">    </span><span class="s2">"Light Blue"</span>
+<a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="w">  </span><span class="p">],</span>
+<a href="#__codelineno-17-6" id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="w">  </span><span class="nt">"colors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a href="#__codelineno-17-7" id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue"</span><span class="w"> </span><span class="p">},</span>
+<a href="#__codelineno-17-8" id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Light Blue"</span><span class="w"> </span><span class="p">}</span>
+<a href="#__codelineno-17-9" id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="w">  </span><span class="p">],</span>
+<a href="#__codelineno-17-10" id="__codelineno-17-10" name="__codelineno-17-10"></a><span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span>
+<a href="#__codelineno-17-11" id="__codelineno-17-11" name="__codelineno-17-11"></a><span class="p">}</span>
 </code></pre></div></li>
 </ul>
 <hr/>
@@ -1283,18 +1223,18 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <li><code>Authorization</code>: <code>Bearer 1</code></li>
 <li><code>Content-Type</code>: <code>application/json</code></li>
 <li><strong>Body (JSON)</strong>:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="p">{</span>
-<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="w">  </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Light Chartreuse"</span>
-<a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="p">{</span>
+<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="w">  </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Light Chartreuse"</span>
+<a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="p">}</span>
 </code></pre></div></li>
 <li><strong>Click</strong>: <strong>Send</strong></li>
 <li><strong>Expected Status</strong>: <code>201 Created</code></li>
 <li><strong>Expected Body</strong>:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="p">{</span>
-<a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="w">  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Color created"</span><span class="p">,</span>
-<a href="#__codelineno-20-3" id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span>
-<a href="#__codelineno-20-4" id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span>
-<a href="#__codelineno-20-5" id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="p">{</span>
+<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="w">  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Color created"</span><span class="p">,</span>
+<a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span>
+<a href="#__codelineno-19-4" id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span>
+<a href="#__codelineno-19-5" id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="p">}</span>
 </code></pre></div><br/>
 <em>Take note of the returned <code>id</code> (e.g., <code>35</code>).</em></li>
 </ul>
@@ -1308,11 +1248,11 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <li><strong>Click</strong>: <strong>Send</strong></li>
 <li><strong>Expected Status</strong>: <code>200 OK</code></li>
 <li><strong>Expected Body</strong>:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="p">{</span>
-<a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span>
-<a href="#__codelineno-21-3" id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Light Chartreuse"</span><span class="p">,</span>
-<a href="#__codelineno-21-4" id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="w">  </span><span class="nt">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
-<a href="#__codelineno-21-5" id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="p">{</span>
+<a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span>
+<a href="#__codelineno-20-3" id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Light Chartreuse"</span><span class="p">,</span>
+<a href="#__codelineno-20-4" id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="w">  </span><span class="nt">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<a href="#__codelineno-20-5" id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="p">}</span>
 </code></pre></div></li>
 </ul>
 <hr/>
@@ -1324,17 +1264,17 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <li><code>Authorization</code>: <code>Bearer 1</code></li>
 <li><code>Content-Type</code>: <code>application/json</code></li>
 <li><strong>Body (JSON)</strong>:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="p">{</span>
-<a href="#__codelineno-22-2" id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="w">  </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Electric Lime"</span>
-<a href="#__codelineno-22-3" id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="p">{</span>
+<a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="w">  </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Electric Lime"</span>
+<a href="#__codelineno-21-3" id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="p">}</span>
 </code></pre></div></li>
 <li><strong>Click</strong>: <strong>Send</strong></li>
 <li><strong>Expected Status</strong>: <code>200 OK</code></li>
 <li><strong>Expected Body</strong>:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="p">{</span>
-<a href="#__codelineno-23-2" id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="w">  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Color updated"</span><span class="p">,</span>
-<a href="#__codelineno-23-3" id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span>
-<a href="#__codelineno-23-4" id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="p">{</span>
+<a href="#__codelineno-22-2" id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="w">  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Color updated"</span><span class="p">,</span>
+<a href="#__codelineno-22-3" id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span>
+<a href="#__codelineno-22-4" id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="p">}</span>
 </code></pre></div></li>
 </ul>
 <hr/>
@@ -1347,10 +1287,10 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <li><strong>Click</strong>: <strong>Send</strong></li>
 <li><strong>Expected Status</strong>: <code>200 OK</code></li>
 <li><strong>Expected Body</strong>:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="p">{</span>
-<a href="#__codelineno-24-2" id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="w">  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Color deleted"</span><span class="p">,</span>
-<a href="#__codelineno-24-3" id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span>
-<a href="#__codelineno-24-4" id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="p">{</span>
+<a href="#__codelineno-23-2" id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="w">  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Color deleted"</span><span class="p">,</span>
+<a href="#__codelineno-23-3" id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="w">  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span>
+<a href="#__codelineno-23-4" id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="p">}</span>
 </code></pre></div></li>
 </ul>
 <hr/>
@@ -1358,13 +1298,13 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <p>If an endpoint returns an unexpected error:</p>
 <ol>
 <li><strong>Check Apache Error Logs</strong>:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a>sudo<span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">50</span><span class="w"> </span>-f<span class="w"> </span>/var/log/apache2/error.log
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">50</span><span class="w"> </span>-f<span class="w"> </span>/var/log/apache2/error.log
 </code></pre></div></li>
 <li><strong>Database Connection Refused (HTTP 500)</strong>:<br/>
-   - Check if MySQL is running: <code>sudo systemctl status mysql</code><br/>
+   - Check if MySQL is running: <code>systemctl status mysql</code><br/>
    - Verify credentials in <code>/var/www/html/.env</code>.<br/>
    - Test connecting with MySQL CLI using <code>ColorsAppUser</code>:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-26-1" id="__codelineno-26-1" name="__codelineno-26-1"></a>mysql<span class="w"> </span>-u<span class="w"> </span>ColorsAppUser<span class="w"> </span>-p<span class="s1">'WeLoveCOP4331!'</span><span class="w"> </span>-D<span class="w"> </span>ColorsAppDB
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a>mysql<span class="w"> </span>-u<span class="w"> </span>ColorsAppUser<span class="w"> </span>-p<span class="s1">'WeLoveCOP4331!'</span><span class="w"> </span>-D<span class="w"> </span>ColorsAppDB
 </code></pre></div></li>
 <li><strong>Missing Authorization Header</strong>:<br/>
    - In Apache, <code>Authorization</code> headers may sometimes be stripped by default. Ensure <code>a2enmod rewrite</code> is enabled. <code>api/config/helpers.php</code> also supports <code>X-User-Id</code> header and cookies as fallbacks.</li>
@@ -1384,7 +1324,7 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <small>
 <!-- mkdocs-git-revision-date-localized-plugin -->
 <u>Last update</u> :
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 30, 2026 21:32:47 UTC">August 30, 2026</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 31, 2026 17:59:32 UTC">August 31, 2026</span>
 <!-- mkdocs-git-revision-date-plugin -->
 <br/>
 <u>Created</u> :

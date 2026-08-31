@@ -455,15 +455,6 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#ucf-dns-delays">
-<span class="md-ellipsis">
-      
-        UCF DNS Delays
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#summary-next-steps">
 <span class="md-ellipsis">
       
@@ -829,15 +820,6 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#ucf-dns-delays">
-<span class="md-ellipsis">
-      
-        UCF DNS Delays
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#summary-next-steps">
 <span class="md-ellipsis">
       
@@ -904,8 +886,8 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <h3 id="step-1-generate-an-ssh-key-pair-locally">🔑 Step 1: Generate an SSH Key Pair Locally<a class="headerlink" href="#step-1-generate-an-ssh-key-pair-locally" title="Permanent link">¶</a></h3>
 <p>SSH (Secure Shell) keys provide a cryptographic method of authenticating to your remote server without sending plaintext passwords over the network. An SSH key pair consists of two cryptographic keys:</p>
 <ul>
-<li><strong>Private Key (<code>id_ed25519</code>)</strong>: Kept strictly on your local machine. Never share or upload this key.</li>
-<li><strong>Public Key (<code>id_ed25519.pub</code>)</strong>: Uploaded to DigitalOcean and placed on your Droplet’s authorized keys list.</li>
+<li><strong>Private Key (<code>id_ed25519</code> or <code>id_rsa</code>)</strong>: Kept strictly on your local machine. Never share or upload this key.</li>
+<li><strong>Public Key (<code>id_ed25519.pub</code> or <code>id_rsa.pub</code>)</strong>: Uploaded to DigitalOcean and placed on your Droplet’s authorized keys list.</li>
 </ul>
 <h4 id="a-on-macos-linux-terminal">A. On macOS / Linux Terminal<a class="headerlink" href="#a-on-macos-linux-terminal" title="Permanent link">¶</a></h4>
 <ol>
@@ -940,16 +922,17 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <li><strong>Log in to DigitalOcean</strong>: Navigate to <a href="https://cloud.digitalocean.com/">cloud.digitalocean.com</a>.</li>
 <li>In the top-right corner, click <strong>Create</strong> &gt; <strong>Droplets</strong>.</li>
 <li><strong>Choose Region / Datacenter</strong>: Select the datacenter geographically closest to you (e.g., <em>New York (NYC1/NYC3)</em> or <em>San Francisco (SFO3)</em>).</li>
-<li>
-<p><strong>Choose Image</strong>:<br/>
+<li><strong>Choose Image</strong>:<br/>
    - Click the <strong>Marketplace</strong> tab.<br/>
-   - Search for and select <strong>LAMP on Ubuntu</strong> (this automatically installs Ubuntu LTS, Apache 2.4, MariaDB/MySQL, and PHP).</p>
-</li>
+   - Search for and select <strong>LAMP on Ubuntu</strong> (this automatically installs Ubuntu LTS, Apache 2.4, MariaDB/MySQL, and PHP).</li>
+</ol>
+<p><em>(Alternative: If you prefer a standard OS image, select </em><em>OS &gt; Ubuntu 22.04 LTS x64</em><em>, and Apache/MariaDB/PHP can be installed via <code>apt</code>).</em></p>
+<ol start="5">
 <li>
 <p><strong>Choose Size (Droplet CPU / Memory)</strong>:<br/>
    - Select <strong>Basic</strong>.<br/>
    - Under <em>CPU Options</em>, choose <strong>Regular SSD</strong>.<br/>
-   - Select the $6.00/mo plan with 1GB RAM / 1 vCPU / 25GB SSD, which is sufficient for this project.</p>
+   - Select the $6.00/mo tier with 1GB RAM / 1 vCPU / 25GB SSD), which is sufficient for this project.</p>
 </li>
 <li>
 <p><strong>Choose Authentication Method</strong>:<br/>
@@ -1064,6 +1047,10 @@ Type <strong><code>yes</code></strong> and press <strong>Enter</strong>. Your te
 <hr/>
 <h2 id="step-5-verify-dns-resolution-web-access">🔍 Step 5: Verify DNS Resolution &amp; Web Access<a class="headerlink" href="#step-5-verify-dns-resolution-web-access" title="Permanent link">¶</a></h2>
 <p>DNS records typically propagate across global DNS resolvers within 5 to 30 minutes (though it can take up to a few hours depending on TTL).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you’re on campus, you will experience a 24-48 hour delay in your domain being accessible.  This is for security purposes.  Newly-minted domains carry a high risk of being malware hosts, so UCF imposes a delay on their propagation to vet them before making them available on the network.</p>
+</div>
 <h3 id="a-test-dns-resolution-in-terminal">A. Test DNS Resolution in Terminal<a class="headerlink" href="#a-test-dns-resolution-in-terminal" title="Permanent link">¶</a></h3>
 <p>On your local machine (macOS Terminal or Windows Terminal), test if your domain resolves to the Droplet’s IP address:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1"># Using ping</span>
@@ -1081,18 +1068,7 @@ Type <strong><code>yes</code></strong> and press <strong>Enter</strong>. Your te
 </p><div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>http://lamp.johnaedo.com
 </code></pre></div><br/>
 <em>(Remember to replace with your registered domain).</em><p></p>
-<p>You should see the default DigitalOcean LAMP landing page confirming HTTP connectivity!  </p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../_assets/images/digitalocean-default-page.jpg"><img alt="digitalocean-default-page.jpg" src="../../../_assets/images/digitalocean-default-page.jpg"/></a></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>You can safely ignore the “Please log into your Droplet” text.  You’ve already logged into the droplet and are well on your way to configuring and deploying your first application.  This is just the default page, which you will remove at the end of the tutorial.</p>
-</div>
-<hr/>
-<h2 id="ucf-dns-delays">UCF DNS Delays<a class="headerlink" href="#ucf-dns-delays" title="Permanent link">¶</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If you’re on campus, you will experience a much longer delay (24-48 hours) with your domain name being recognized.  This is due to campus IT security policies.  We don’t want to accept newly-minted domain names too quickly as they may be spam or malware domains!  If you’re planning on demonstrating your new domain on campus, please take this into account.  Register your domains early!</p>
-</div>
+<p>You should see the default <strong>Apache2 Ubuntu Default Page</strong> or the DigitalOcean LAMP landing page confirming HTTP connectivity!</p>
 <hr/>
 <h2 id="summary-next-steps">🎯 Summary &amp; Next Steps<a class="headerlink" href="#summary-next-steps" title="Permanent link">¶</a></h2>
 <p>In this tutorial, you accomplished the following:</p>
@@ -1108,7 +1084,7 @@ Type <strong><code>yes</code></strong> and press <strong>Enter</strong>. Your te
 <small>
 <!-- mkdocs-git-revision-date-localized-plugin -->
 <u>Last update</u> :
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 30, 2026 21:32:47 UTC">August 30, 2026</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 31, 2026 17:59:32 UTC">August 31, 2026</span>
 <!-- mkdocs-git-revision-date-plugin -->
 <br/>
 <u>Created</u> :
