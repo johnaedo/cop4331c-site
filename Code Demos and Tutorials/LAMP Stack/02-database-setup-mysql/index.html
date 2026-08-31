@@ -341,6 +341,18 @@
 <nav aria-label="📜 Step 2: Understanding the SQL Scripts" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#download-sql-fileszip-to-your-droplet">
+<span class="md-ellipsis">
+      
+        Download sql-files.zip to Your Droplet
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#a-database-schema-breakdown-sqlcreate_tablessql">
 <span class="md-ellipsis">
       
@@ -348,9 +360,6 @@
       
     </span>
 </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#b-security-least-privilege-user-creation">
@@ -658,6 +667,18 @@
 <nav aria-label="📜 Step 2: Understanding the SQL Scripts" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#download-sql-fileszip-to-your-droplet">
+<span class="md-ellipsis">
+      
+        Download sql-files.zip to Your Droplet
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#a-database-schema-breakdown-sqlcreate_tablessql">
 <span class="md-ellipsis">
       
@@ -665,9 +686,6 @@
       
     </span>
 </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#b-security-least-privilege-user-creation">
@@ -830,39 +848,53 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 </ul>
 <hr/>
 <h3 id="step-2-understanding-the-sql-scripts">📜 Step 2: Understanding the SQL Scripts<a class="headerlink" href="#step-2-understanding-the-sql-scripts" title="Permanent link">¶</a></h3>
-<p>We provide three SQL scripts within the project’s <span class="ezlinks_not_found ezlinks_not_found" src="../../../sql">sql/</span> and <span class="ezlinks_not_found ezlinks_not_found" src="../../../api/config">api/config/</span> directories:</p>
+<div class="admonition file download">
+<p class="admonition-title">File</p>
+<p>You can download the SQL scripts to your PC here:  <a href="https://teaching.johnaedo.com/code/cop4331c/lamp/sql-files.zip">sql-files.zip</a></p>
+</div>
+<h4 id="download-sql-fileszip-to-your-droplet">Download sql-files.zip to Your Droplet<a class="headerlink" href="#download-sql-fileszip-to-your-droplet" title="Permanent link">¶</a></h4>
+<p><strong>Install unzip on your Droplet:</strong><br/>
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>apt-get<span class="w"> </span>install<span class="w"> </span>unzip
+</code></pre></div><p></p>
+<p><strong>Download sql-files.zip using curl:</strong><br/>
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>curl<span class="w"> </span>-O<span class="w"> </span>https://teaching.johnaedo.com/code/cop4331c/lamp/sql-files.zip
+</code></pre></div><p></p>
+<p><strong>Unzip the files:</strong><br/>
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>unzip<span class="w"> </span>sql-files.zip
+</code></pre></div><p></p>
+<p><strong>You now have 3 sql scripts in the <code>sql</code> directory and one script under <code>api</code>:</strong></p>
 <ol>
-<li><strong><span class="ezlinks_not_found ezlinks_not_found" src="../../../sql/create_tables.sql">sql/create_tables.sql</span></strong>: Creates the database <code>ColorsAppDB</code>, <code>Users</code> table, <code>Colors</code> table, and dedicated application user.</li>
-<li><strong><span class="ezlinks_not_found ezlinks_not_found" src="../../../sql/seed_data.sql">sql/seed_data.sql</span></strong>: Populates <code>ColorsAppDB</code> with sample users and color palettes.</li>
-<li><strong><span class="ezlinks_not_found ezlinks_not_found" src="../../../sql/resetdb.sql">sql/resetdb.sql</span></strong> (and <strong><span class="ezlinks_not_found ezlinks_not_found" src="../../../api/config/resetdb.sql">api/config/resetdb.sql</span></strong>): An all-in-one script that resets the database, rebuilds the schema, and seeds default records in a single operation.</li>
+<li><strong><code>sql/create_tables.sql</code></strong>: Creates the database <code>ColorsAppDB</code>, <code>Users</code> table, <code>Colors</code> table, and dedicated application user.</li>
+<li><strong><code>sql/seed_data.sql</code></strong>: Populates <code>ColorsAppDB</code> with sample users and color palettes.</li>
+<li><strong><code>sql/resetdb.sql</code></strong> (and <strong><code>api/config/resetdb.sql</code></strong>): An all-in-one script that resets the database, rebuilds the schema, and seeds default records in a single operation.</li>
 </ol>
-<h4 id="a-database-schema-breakdown-sqlcreate_tablessql">A. Database Schema Breakdown (<code>sql/create_tables.sql</code>)<a class="headerlink" href="#a-database-schema-breakdown-sqlcreate_tablessql" title="Permanent link">¶</a></h4>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1">-- 1. Create the Database with utf8mb4 encoding</span>
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="o">`</span><span class="n">ColorsAppDB</span><span class="o">`</span>
-<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="k">DEFAULT</span><span class="w"> </span><span class="nb">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">utf8mb4</span>
-<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">COLLATE</span><span class="w"> </span><span class="n">utf8mb4_unicode_ci</span><span class="p">;</span>
-<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>
-<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="n">USE</span><span class="w"> </span><span class="o">`</span><span class="n">ColorsAppDB</span><span class="o">`</span><span class="p">;</span>
-<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>
-<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="c1">-- 2. Create Users Table</span>
-<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="o">`</span><span class="n">Users</span><span class="o">`</span><span class="w"> </span><span class="p">(</span>
-<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="o">`</span><span class="n">ID</span><span class="o">`</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">    </span><span class="o">`</span><span class="n">FirstName</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span>
-<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">    </span><span class="o">`</span><span class="n">LastName</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span>
-<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">    </span><span class="o">`</span><span class="n">Login</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span>
-<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">    </span><span class="o">`</span><span class="n">Password</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span>
-<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">ID</span><span class="o">`</span><span class="p">),</span>
-<a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">    </span><span class="k">INDEX</span><span class="w"> </span><span class="o">`</span><span class="n">idx_users_login</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">Login</span><span class="o">`</span><span class="p">)</span>
-<a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="w"> </span><span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8mb4_unicode_ci</span><span class="p">;</span>
-<a href="#__codelineno-3-18" id="__codelineno-3-18" name="__codelineno-3-18"></a>
-<a href="#__codelineno-3-19" id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="c1">-- 3. Create Colors Table</span>
-<a href="#__codelineno-3-20" id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="o">`</span><span class="n">Colors</span><span class="o">`</span><span class="w"> </span><span class="p">(</span>
-<a href="#__codelineno-3-21" id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="w">    </span><span class="o">`</span><span class="n">ID</span><span class="o">`</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-<a href="#__codelineno-3-22" id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="w">    </span><span class="o">`</span><span class="n">Name</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span>
-<a href="#__codelineno-3-23" id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="w">    </span><span class="o">`</span><span class="n">UserID</span><span class="o">`</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<a href="#__codelineno-3-24" id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">ID</span><span class="o">`</span><span class="p">),</span>
-<a href="#__codelineno-3-25" id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="w">    </span><span class="k">INDEX</span><span class="w"> </span><span class="o">`</span><span class="n">idx_colors_userid</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">UserID</span><span class="o">`</span><span class="p">)</span>
-<a href="#__codelineno-3-26" id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="w"> </span><span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8mb4_unicode_ci</span><span class="p">;</span>
+<h3 id="a-database-schema-breakdown-sqlcreate_tablessql">A. Database Schema Breakdown (<code>sql/create_tables.sql</code>)<a class="headerlink" href="#a-database-schema-breakdown-sqlcreate_tablessql" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1">-- 1. Create the Database with utf8mb4 encoding</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="o">`</span><span class="n">ColorsAppDB</span><span class="o">`</span>
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="k">DEFAULT</span><span class="w"> </span><span class="nb">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">utf8mb4</span>
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">COLLATE</span><span class="w"> </span><span class="n">utf8mb4_unicode_ci</span><span class="p">;</span>
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a>
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="n">USE</span><span class="w"> </span><span class="o">`</span><span class="n">ColorsAppDB</span><span class="o">`</span><span class="p">;</span>
+<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a>
+<a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="c1">-- 2. Create Users Table</span>
+<a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="o">`</span><span class="n">Users</span><span class="o">`</span><span class="w"> </span><span class="p">(</span>
+<a href="#__codelineno-6-10" id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">    </span><span class="o">`</span><span class="n">ID</span><span class="o">`</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+<a href="#__codelineno-6-11" id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">    </span><span class="o">`</span><span class="n">FirstName</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span>
+<a href="#__codelineno-6-12" id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">    </span><span class="o">`</span><span class="n">LastName</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span>
+<a href="#__codelineno-6-13" id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">    </span><span class="o">`</span><span class="n">Login</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span>
+<a href="#__codelineno-6-14" id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">    </span><span class="o">`</span><span class="n">Password</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span>
+<a href="#__codelineno-6-15" id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">ID</span><span class="o">`</span><span class="p">),</span>
+<a href="#__codelineno-6-16" id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">    </span><span class="k">INDEX</span><span class="w"> </span><span class="o">`</span><span class="n">idx_users_login</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">Login</span><span class="o">`</span><span class="p">)</span>
+<a href="#__codelineno-6-17" id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="w"> </span><span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8mb4_unicode_ci</span><span class="p">;</span>
+<a href="#__codelineno-6-18" id="__codelineno-6-18" name="__codelineno-6-18"></a>
+<a href="#__codelineno-6-19" id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="c1">-- 3. Create Colors Table</span>
+<a href="#__codelineno-6-20" id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="o">`</span><span class="n">Colors</span><span class="o">`</span><span class="w"> </span><span class="p">(</span>
+<a href="#__codelineno-6-21" id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="w">    </span><span class="o">`</span><span class="n">ID</span><span class="o">`</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+<a href="#__codelineno-6-22" id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="w">    </span><span class="o">`</span><span class="n">Name</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span>
+<a href="#__codelineno-6-23" id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="w">    </span><span class="o">`</span><span class="n">UserID</span><span class="o">`</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a href="#__codelineno-6-24" id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">ID</span><span class="o">`</span><span class="p">),</span>
+<a href="#__codelineno-6-25" id="__codelineno-6-25" name="__codelineno-6-25"></a><span class="w">    </span><span class="k">INDEX</span><span class="w"> </span><span class="o">`</span><span class="n">idx_colors_userid</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">UserID</span><span class="o">`</span><span class="p">)</span>
+<a href="#__codelineno-6-26" id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="w"> </span><span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8mb4_unicode_ci</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="b-security-least-privilege-user-creation">B. Security &amp; Least Privilege User Creation<a class="headerlink" href="#b-security-least-privilege-user-creation" title="Permanent link">¶</a></h3>
 <div class="admonition warning">
@@ -870,70 +902,70 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <p>Never configure your web application (PHP) to connect to the database using the <code>root</code> administrative account! If your application code is compromised, an attacker would gain full administrative control over all databases on the server.</p>
 </div>
 <p>We create a restricted database user <code>ColorsAppUser</code> that can only access <code>ColorsAppDB</code>:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">-- Create dedicated application database user</span>
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="s1">'ColorsAppUser'</span><span class="o">@</span><span class="s1">'localhost'</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">'WeLoveCOP4331!'</span><span class="p">;</span>
-<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>
-<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="c1">-- Grant privileges only on ColorsAppDB</span>
-<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">`</span><span class="n">ColorsAppDB</span><span class="o">`</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">'ColorsAppUser'</span><span class="o">@</span><span class="s1">'localhost'</span><span class="p">;</span>
-<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a>
-<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="c1">-- Also permit remote connection if needed for Docker containerization</span>
-<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="s1">'ColorsAppUser'</span><span class="o">@</span><span class="s1">'%'</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">'WeLoveCOP4331!'</span><span class="p">;</span>
-<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">`</span><span class="n">ColorsAppDB</span><span class="o">`</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">'ColorsAppUser'</span><span class="o">@</span><span class="s1">'%'</span><span class="p">;</span>
-<a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a>
-<a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="n">FLUSH</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1">-- Create dedicated application database user</span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="s1">'ColorsAppUser'</span><span class="o">@</span><span class="s1">'localhost'</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">'WeLoveCOP4331!'</span><span class="p">;</span>
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="c1">-- Grant privileges only on ColorsAppDB</span>
+<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">`</span><span class="n">ColorsAppDB</span><span class="o">`</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">'ColorsAppUser'</span><span class="o">@</span><span class="s1">'localhost'</span><span class="p">;</span>
+<a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a>
+<a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="c1">-- Also permit remote connection if needed for Docker containerization</span>
+<a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="s1">'ColorsAppUser'</span><span class="o">@</span><span class="s1">'%'</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">'WeLoveCOP4331!'</span><span class="p">;</span>
+<a href="#__codelineno-7-9" id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">`</span><span class="n">ColorsAppDB</span><span class="o">`</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">'ColorsAppUser'</span><span class="o">@</span><span class="s1">'%'</span><span class="p">;</span>
+<a href="#__codelineno-7-10" id="__codelineno-7-10" name="__codelineno-7-10"></a>
+<a href="#__codelineno-7-11" id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="n">FLUSH</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="c-seed-data-breakdown-sqlseed_datasql">C. Seed Data Breakdown (<code>sql/seed_data.sql</code>)<a class="headerlink" href="#c-seed-data-breakdown-sqlseed_datasql" title="Permanent link">¶</a></h3>
 <p>We insert default users and color palettes for testing:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">USE</span><span class="w"> </span><span class="o">`</span><span class="n">ColorsAppDB</span><span class="o">`</span><span class="p">;</span>
-<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>
-<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="c1">-- Sample Users</span>
-<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">Users</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">FirstName</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">LastName</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">Login</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">Password</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span>
-<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="p">(</span><span class="s1">'Rick'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Leinecker'</span><span class="p">,</span><span class="w"> </span><span class="s1">'RickL'</span><span class="p">,</span><span class="w"> </span><span class="s1">'COP4331'</span><span class="p">),</span>
-<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="p">(</span><span class="s1">'Sam'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Hill'</span><span class="p">,</span><span class="w"> </span><span class="s1">'SamH'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Test'</span><span class="p">),</span>
-<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="p">(</span><span class="s1">'Rick'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Leinecker'</span><span class="p">,</span><span class="w"> </span><span class="s1">'RickL_MD5'</span><span class="p">,</span><span class="w"> </span><span class="s1">'5832a71366768098cceb7095efb774f2'</span><span class="p">),</span>
-<a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="p">(</span><span class="s1">'Sam'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Hill'</span><span class="p">,</span><span class="w"> </span><span class="s1">'SamH_MD5'</span><span class="p">,</span><span class="w"> </span><span class="s1">'0cbc6611f5540bd0809a388dc95a615b'</span><span class="p">);</span>
-<a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a>
-<a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="c1">-- Sample Colors for User 1 (RickL)</span>
-<a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">Colors</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">Name</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">UserID</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span>
-<a href="#__codelineno-5-12" id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="p">(</span><span class="s1">'Blue'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'White'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Black'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Magenta'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span>
-<a href="#__codelineno-5-13" id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="p">(</span><span class="s1">'Yellow'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Cyan'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Salmon'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Chartreuse'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span>
-<a href="#__codelineno-5-14" id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="p">(</span><span class="s1">'Lime'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Light Blue'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Light Gray'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Light Red'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span>
-<a href="#__codelineno-5-15" id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="p">(</span><span class="s1">'Light Green'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Chiffon'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Fuscia'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Brown'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span>
-<a href="#__codelineno-5-16" id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="p">(</span><span class="s1">'Beige'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-<a href="#__codelineno-5-17" id="__codelineno-5-17" name="__codelineno-5-17"></a>
-<a href="#__codelineno-5-18" id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="c1">-- Sample Colors for User 3 (RickL_MD5)</span>
-<a href="#__codelineno-5-19" id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">Colors</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">Name</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">UserID</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span>
-<a href="#__codelineno-5-20" id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="p">(</span><span class="s1">'Blue'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'White'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Black'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Gray'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span>
-<a href="#__codelineno-5-21" id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="p">(</span><span class="s1">'Magenta'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Yellow'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Cyan'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Salmon'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span>
-<a href="#__codelineno-5-22" id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="p">(</span><span class="s1">'Chartreuse'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Lime'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Light Blue'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Light Gray'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span>
-<a href="#__codelineno-5-23" id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="p">(</span><span class="s1">'Light Red'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Light Green'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Chiffon'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Fuscia'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span>
-<a href="#__codelineno-5-24" id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="p">(</span><span class="s1">'Brown'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Beige'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">USE</span><span class="w"> </span><span class="o">`</span><span class="n">ColorsAppDB</span><span class="o">`</span><span class="p">;</span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="c1">-- Sample Users</span>
+<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">Users</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">FirstName</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">LastName</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">Login</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">Password</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span>
+<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="p">(</span><span class="s1">'Rick'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Leinecker'</span><span class="p">,</span><span class="w"> </span><span class="s1">'RickL'</span><span class="p">,</span><span class="w"> </span><span class="s1">'COP4331'</span><span class="p">),</span>
+<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="p">(</span><span class="s1">'Sam'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Hill'</span><span class="p">,</span><span class="w"> </span><span class="s1">'SamH'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Test'</span><span class="p">),</span>
+<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="p">(</span><span class="s1">'Rick'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Leinecker'</span><span class="p">,</span><span class="w"> </span><span class="s1">'RickL_MD5'</span><span class="p">,</span><span class="w"> </span><span class="s1">'5832a71366768098cceb7095efb774f2'</span><span class="p">),</span>
+<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="p">(</span><span class="s1">'Sam'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Hill'</span><span class="p">,</span><span class="w"> </span><span class="s1">'SamH_MD5'</span><span class="p">,</span><span class="w"> </span><span class="s1">'0cbc6611f5540bd0809a388dc95a615b'</span><span class="p">);</span>
+<a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a>
+<a href="#__codelineno-8-10" id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="c1">-- Sample Colors for User 1 (RickL)</span>
+<a href="#__codelineno-8-11" id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">Colors</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">Name</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">UserID</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span>
+<a href="#__codelineno-8-12" id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="p">(</span><span class="s1">'Blue'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'White'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Black'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Magenta'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span>
+<a href="#__codelineno-8-13" id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="p">(</span><span class="s1">'Yellow'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Cyan'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Salmon'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Chartreuse'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span>
+<a href="#__codelineno-8-14" id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="p">(</span><span class="s1">'Lime'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Light Blue'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Light Gray'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Light Red'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span>
+<a href="#__codelineno-8-15" id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="p">(</span><span class="s1">'Light Green'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Chiffon'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Fuscia'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Brown'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span>
+<a href="#__codelineno-8-16" id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="p">(</span><span class="s1">'Beige'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a href="#__codelineno-8-17" id="__codelineno-8-17" name="__codelineno-8-17"></a>
+<a href="#__codelineno-8-18" id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="c1">-- Sample Colors for User 3 (RickL_MD5)</span>
+<a href="#__codelineno-8-19" id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">Colors</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">Name</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">UserID</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span>
+<a href="#__codelineno-8-20" id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="p">(</span><span class="s1">'Blue'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'White'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Black'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Gray'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span>
+<a href="#__codelineno-8-21" id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="p">(</span><span class="s1">'Magenta'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Yellow'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Cyan'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Salmon'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span>
+<a href="#__codelineno-8-22" id="__codelineno-8-22" name="__codelineno-8-22"></a><span class="p">(</span><span class="s1">'Chartreuse'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Lime'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Light Blue'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Light Gray'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span>
+<a href="#__codelineno-8-23" id="__codelineno-8-23" name="__codelineno-8-23"></a><span class="p">(</span><span class="s1">'Light Red'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Light Green'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Chiffon'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Fuscia'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span>
+<a href="#__codelineno-8-24" id="__codelineno-8-24" name="__codelineno-8-24"></a><span class="p">(</span><span class="s1">'Brown'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'Beige'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
 </code></pre></div>
 <hr/>
 <h2 id="step-3-executing-sql-scripts-on-the-droplet">🛠️ Step 3: Executing SQL Scripts on the Droplet<a class="headerlink" href="#step-3-executing-sql-scripts-on-the-droplet" title="Permanent link">¶</a></h2>
 <p>You can run SQL scripts on your Droplet using either the MySQL interactive prompt or shell command piping.</p>
 <h3 id="method-1-direct-command-line-pipeline-fastest">Method 1: Direct Command-Line Pipeline (Fastest)<a class="headerlink" href="#method-1-direct-command-line-pipeline-fastest" title="Permanent link">¶</a></h3>
-<p>If you have transferred the SQL file to your Droplet or pasted it into a file (e.g. <code>/root/resetdb.sql</code>):</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1"># Execute the full reset script via standard input redirection</span>
-<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>mysql<span class="w"> </span>&lt;<span class="w"> </span>/root/resetdb.sql
+<p>If you have transferred the SQL file to your Droplet or pasted it into a file (e.g. <code>/root/sql/resetdb.sql</code>):</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1"># Execute the full reset script via standard input redirection</span>
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>mysql<span class="w"> </span>&lt;<span class="w"> </span>/root/sql/resetdb.sql
 </code></pre></div>
 <h3 id="method-2-interactive-execution-via-mysql-shell">Method 2: Interactive Execution via MySQL Shell<a class="headerlink" href="#method-2-interactive-execution-via-mysql-shell" title="Permanent link">¶</a></h3>
 <ol>
 <li>Launch MySQL:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>mysql
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>mysql
 </code></pre></div></li>
 <li>Run the <code>SOURCE</code> command with the absolute path to your SQL script:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">SOURCE</span><span class="w"> </span><span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">resetdb</span><span class="p">.</span><span class="k">sql</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">SOURCE</span><span class="w"> </span><span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="k">sql</span><span class="o">/</span><span class="n">resetdb</span><span class="p">.</span><span class="k">sql</span><span class="p">;</span>
 </code></pre></div></li>
 <li>MySQL will output:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>Query OK, 1 row affected (0.001 sec)
-<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>Database changed
-<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a>Query OK, 0 rows affected (0.012 sec)
-<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a>Query OK, 4 rows affected (0.003 sec)
-<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a>Records: 4  Duplicates: 0  Warnings: 0
-<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a>Query OK, 17 rows affected (0.002 sec)
-<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a>Records: 17  Duplicates: 0  Warnings: 0
-<a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a>...
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>Query OK, 1 row affected (0.001 sec)
+<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>Database changed
+<a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a>Query OK, 0 rows affected (0.012 sec)
+<a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a>Query OK, 4 rows affected (0.003 sec)
+<a href="#__codelineno-12-5" id="__codelineno-12-5" name="__codelineno-12-5"></a>Records: 4  Duplicates: 0  Warnings: 0
+<a href="#__codelineno-12-6" id="__codelineno-12-6" name="__codelineno-12-6"></a>Query OK, 17 rows affected (0.002 sec)
+<a href="#__codelineno-12-7" id="__codelineno-12-7" name="__codelineno-12-7"></a>Records: 17  Duplicates: 0  Warnings: 0
+<a href="#__codelineno-12-8" id="__codelineno-12-8" name="__codelineno-12-8"></a>...
 </code></pre></div></li>
 </ol>
 <hr/>
@@ -942,77 +974,77 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <ol>
 <li>
 <p>Connect to MySQL using the new application user <code>ColorsAppUser</code> to confirm credentials and privileges:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>mysql<span class="w"> </span>-u<span class="w"> </span>ColorsAppUser<span class="w"> </span>-p<span class="s1">'WeLoveCOP4331!'</span><span class="w"> </span>-D<span class="w"> </span>ColorsAppDB
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>mysql<span class="w"> </span>-u<span class="w"> </span>ColorsAppUser<span class="w"> </span>-p<span class="s1">'WeLoveCOP4331!'</span><span class="w"> </span>-D<span class="w"> </span>ColorsAppDB
 </code></pre></div><p></p>
 </li>
 <li>
 <p>Inspect the database tables:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">SHOW</span><span class="w"> </span><span class="n">TABLES</span><span class="p">;</span>
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">SHOW</span><span class="w"> </span><span class="n">TABLES</span><span class="p">;</span>
 </code></pre></div><br/>
 <em>Expected Output:</em><br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>+-----------------------+
-<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>| Tables_in_ColorsAppDB |
-<a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a>+-----------------------+
-<a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a>| Colors                |
-<a href="#__codelineno-12-5" id="__codelineno-12-5" name="__codelineno-12-5"></a>| Users                 |
-<a href="#__codelineno-12-6" id="__codelineno-12-6" name="__codelineno-12-6"></a>+-----------------------+
-<a href="#__codelineno-12-7" id="__codelineno-12-7" name="__codelineno-12-7"></a>2 rows in set (0.000 sec)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>+-----------------------+
+<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a>| Tables_in_ColorsAppDB |
+<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a>+-----------------------+
+<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a>| Colors                |
+<a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a>| Users                 |
+<a href="#__codelineno-15-6" id="__codelineno-15-6" name="__codelineno-15-6"></a>+-----------------------+
+<a href="#__codelineno-15-7" id="__codelineno-15-7" name="__codelineno-15-7"></a>2 rows in set (0.000 sec)
 </code></pre></div><p></p>
 </li>
 <li>
 <p>Check table schema definitions:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">DESCRIBE</span><span class="w"> </span><span class="n">Users</span><span class="p">;</span>
-<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="k">DESCRIBE</span><span class="w"> </span><span class="n">Colors</span><span class="p">;</span>
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="k">DESCRIBE</span><span class="w"> </span><span class="n">Users</span><span class="p">;</span>
+<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="k">DESCRIBE</span><span class="w"> </span><span class="n">Colors</span><span class="p">;</span>
 </code></pre></div><p></p>
 </li>
 <li>
 <p>Query the sample users:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">FirstName</span><span class="p">,</span><span class="w"> </span><span class="n">LastName</span><span class="p">,</span><span class="w"> </span><span class="n">Login</span><span class="p">,</span><span class="w"> </span><span class="n">Password</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Users</span><span class="p">;</span>
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">FirstName</span><span class="p">,</span><span class="w"> </span><span class="n">LastName</span><span class="p">,</span><span class="w"> </span><span class="n">Login</span><span class="p">,</span><span class="w"> </span><span class="n">Password</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Users</span><span class="p">;</span>
 </code></pre></div><br/>
 <em>Expected Output:</em><br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>+----+-----------+-----------+-----------+----------------------------------+
-<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a>| ID | FirstName | LastName  | Login     | Password                         |
-<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a>+----+-----------+-----------+-----------+----------------------------------+
-<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a>|  1 | Rick      | Leinecker | RickL     | COP4331                          |
-<a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a>|  2 | Sam       | Hill      | SamH      | Test                             |
-<a href="#__codelineno-15-6" id="__codelineno-15-6" name="__codelineno-15-6"></a>|  3 | Rick      | Leinecker | RickL_MD5 | 5832a71366768098cceb7095efb774f2 |
-<a href="#__codelineno-15-7" id="__codelineno-15-7" name="__codelineno-15-7"></a>|  4 | Sam       | Hill      | SamH_MD5  | 0cbc6611f5540bd0809a388dc95a615b |
-<a href="#__codelineno-15-8" id="__codelineno-15-8" name="__codelineno-15-8"></a>+----+-----------+-----------+-----------+----------------------------------+
-<a href="#__codelineno-15-9" id="__codelineno-15-9" name="__codelineno-15-9"></a>4 rows in set (0.000 sec)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>+----+-----------+-----------+-----------+----------------------------------+
+<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a>| ID | FirstName | LastName  | Login     | Password                         |
+<a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a>+----+-----------+-----------+-----------+----------------------------------+
+<a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a>|  1 | Rick      | Leinecker | RickL     | COP4331                          |
+<a href="#__codelineno-18-5" id="__codelineno-18-5" name="__codelineno-18-5"></a>|  2 | Sam       | Hill      | SamH      | Test                             |
+<a href="#__codelineno-18-6" id="__codelineno-18-6" name="__codelineno-18-6"></a>|  3 | Rick      | Leinecker | RickL_MD5 | 5832a71366768098cceb7095efb774f2 |
+<a href="#__codelineno-18-7" id="__codelineno-18-7" name="__codelineno-18-7"></a>|  4 | Sam       | Hill      | SamH_MD5  | 0cbc6611f5540bd0809a388dc95a615b |
+<a href="#__codelineno-18-8" id="__codelineno-18-8" name="__codelineno-18-8"></a>+----+-----------+-----------+-----------+----------------------------------+
+<a href="#__codelineno-18-9" id="__codelineno-18-9" name="__codelineno-18-9"></a>4 rows in set (0.000 sec)
 </code></pre></div><p></p>
 </li>
 <li>
 <p>Query color counts grouped by user:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">Login</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">c</span><span class="p">.</span><span class="n">ID</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">TotalColors</span><span class="w"> </span>
-<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">Users</span><span class="w"> </span><span class="n">u</span><span class="w"> </span>
-<a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Colors</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">UserID</span><span class="w"> </span>
-<a href="#__codelineno-16-4" id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">ID</span><span class="p">;</span>
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">Login</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">c</span><span class="p">.</span><span class="n">ID</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">TotalColors</span><span class="w"> </span>
+<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">Users</span><span class="w"> </span><span class="n">u</span><span class="w"> </span>
+<a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Colors</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">UserID</span><span class="w"> </span>
+<a href="#__codelineno-19-4" id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">ID</span><span class="p">;</span>
 </code></pre></div><br/>
 <em>Expected Output:</em><br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>+-----------+-------------+
-<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a>| Login     | TotalColors |
-<a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a>+-----------+-------------+
-<a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a>| RickL     |          17 |
-<a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a>| SamH      |           0 |
-<a href="#__codelineno-17-6" id="__codelineno-17-6" name="__codelineno-17-6"></a>| RickL_MD5 |          17 |
-<a href="#__codelineno-17-7" id="__codelineno-17-7" name="__codelineno-17-7"></a>| SamH_MD5  |           0 |
-<a href="#__codelineno-17-8" id="__codelineno-17-8" name="__codelineno-17-8"></a>+-----------+-------------+
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>+-----------+-------------+
+<a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a>| Login     | TotalColors |
+<a href="#__codelineno-20-3" id="__codelineno-20-3" name="__codelineno-20-3"></a>+-----------+-------------+
+<a href="#__codelineno-20-4" id="__codelineno-20-4" name="__codelineno-20-4"></a>| RickL     |          17 |
+<a href="#__codelineno-20-5" id="__codelineno-20-5" name="__codelineno-20-5"></a>| SamH      |           0 |
+<a href="#__codelineno-20-6" id="__codelineno-20-6" name="__codelineno-20-6"></a>| RickL_MD5 |          17 |
+<a href="#__codelineno-20-7" id="__codelineno-20-7" name="__codelineno-20-7"></a>| SamH_MD5  |           0 |
+<a href="#__codelineno-20-8" id="__codelineno-20-8" name="__codelineno-20-8"></a>+-----------+-------------+
 </code></pre></div><p></p>
 </li>
 <li>
 <p>Exit the MySQL shell:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="n">EXIT</span><span class="p">;</span>
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="n">EXIT</span><span class="p">;</span>
 </code></pre></div><p></p>
 </li>
 </ol>
 <hr/>
 <h2 id="step-5-mysql-backup-maintenance-optional-but-recommended">💾 Step 5: MySQL Backup &amp; Maintenance (Optional but Recommended)<a class="headerlink" href="#step-5-mysql-backup-maintenance-optional-but-recommended" title="Permanent link">¶</a></h2>
 <p>As a best practice in production operations, you should know how to create logical backups of your database using <code>mysqldump</code>:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="c1"># Export full database dump to a timestamped .sql file</span>
-<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a>mysqldump<span class="w"> </span>ColorsAppDB<span class="w"> </span>&gt;<span class="w"> </span>/root/ColorsAppDB_backup_<span class="k">$(</span>date<span class="w"> </span>+%F<span class="k">)</span>.sql
-<a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a>
-<a href="#__codelineno-19-4" id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="c1"># Restore database from backup</span>
-<a href="#__codelineno-19-5" id="__codelineno-19-5" name="__codelineno-19-5"></a>mysql<span class="w"> </span>ColorsAppDB<span class="w"> </span>&lt;<span class="w"> </span>/root/ColorsAppDB_backup_*.sql
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="c1"># Export full database dump to a timestamped .sql file</span>
+<a href="#__codelineno-22-2" id="__codelineno-22-2" name="__codelineno-22-2"></a>mysqldump<span class="w"> </span>ColorsAppDB<span class="w"> </span>&gt;<span class="w"> </span>/root/ColorsAppDB_backup_<span class="k">$(</span>date<span class="w"> </span>+%F<span class="k">)</span>.sql
+<a href="#__codelineno-22-3" id="__codelineno-22-3" name="__codelineno-22-3"></a>
+<a href="#__codelineno-22-4" id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="c1"># Restore database from backup</span>
+<a href="#__codelineno-22-5" id="__codelineno-22-5" name="__codelineno-22-5"></a>mysql<span class="w"> </span>ColorsAppDB<span class="w"> </span>&lt;<span class="w"> </span>/root/ColorsAppDB_backup_*.sql
 </code></pre></div>
 <hr/>
 <h2 id="summary-next-steps">🎯 Summary &amp; Next Steps<a class="headerlink" href="#summary-next-steps" title="Permanent link">¶</a></h2>
@@ -1030,7 +1062,7 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <small>
 <!-- mkdocs-git-revision-date-localized-plugin -->
 <u>Last update</u> :
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 31, 2026 17:59:32 UTC">August 31, 2026</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 31, 2026 18:06:40 UTC">August 31, 2026</span>
 <!-- mkdocs-git-revision-date-plugin -->
 <br/>
 <u>Created</u> :
