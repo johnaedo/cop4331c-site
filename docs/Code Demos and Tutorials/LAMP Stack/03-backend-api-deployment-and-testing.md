@@ -46,39 +46,25 @@ The backend is organized into a clean, decoupled RESTful API written in PHP 8.1+
 
 ## 🚀 Step 1: Deploy Backend Code to the Droplet
 
-There are two primary methods to deploy your code to the Droplet: using **Git** directly on the server, or syncing files from your local machine using **`rsync`** / **`scp`**.
-
-### Option A: Git Clone / Pull on the Droplet (Recommended)
 
 1. SSH into your Droplet:
    ```bash
    ssh root@<YOUR_DROPLET_IP>
    ```
+2. Download the API files:
+   ```bash
+   curl -O https://teaching.johnaedo.com/code/cop4331c/lamp/api-files.zip
+   ```
 
-2. Navigate to `/var/www/html`:
+3. Navigate to `/var/www/html`:
    ```bash
    cd /var/www/html
    ```
 
-3. If this is a fresh droplet, clone your GitHub repository into the web root:
+4. Unzip the files:
    ```bash
-   # Clone into a temporary folder and move files into /var/www/html
-   git clone https://github.com/johnaedo/cop4331c-lamp-demo.git /tmp/lamp-repo
-   cp -r /tmp/lamp-repo/* /var/www/html/
-   rm -rf /tmp/lamp-repo
+   unzip /root/api-files.zip
    ```
-
-### Option B: Sync from Local Machine via `rsync` or `scp`
-
-From your **local terminal** (Windows Terminal / macOS Terminal) inside your project directory:
-
-```bash
-# Using rsync (macOS/Linux)
-rsync -avz --exclude '.git' ./ root@<YOUR_DROPLET_IP>:/var/www/html/
-
-# Or using scp (Windows/macOS)
-scp -r ./api ./sql root@<YOUR_DROPLET_IP>:/var/www/html/
-```
 
 ---
 
@@ -105,25 +91,20 @@ scp -r ./api ./sql root@<YOUR_DROPLET_IP>:/var/www/html/
    Apache runs under the system user `www-data`. Ensure the web server has read/write permissions while protecting your secret `.env` file:
    ```bash
    # Set ownership to Apache's www-data user
-   sudo chown -R www-data:www-data /var/www/html
+   chown -R www-data:www-data /var/www/html
 
    # Set directory and file permissions
-   sudo find /var/www/html -type d -exec chmod 755 {} \;
-   sudo find /var/www/html -type f -exec chmod 644 {} \;
+   # Directories are readable and executable by all, 
+   # but only writable by www-data 
+   find /var/www/html -type d -exec chmod 755 {} \;
+   # Files are readable by all, but only writable by www-data 
+   find /var/www/html -type f -exec chmod 644 {} \;
 
    # Restrict .env file permissions
-   sudo chmod 600 /var/www/html/.env
+   # only www-data can write the file
+   chmod 600 /var/www/html/.env
    ```
 
-4. **Ensure Apache Modules & PHP MySQL Extensions are Active**:
-   ```bash
-   # Install PHP MySQL PDO module if not already present
-   sudo apt-get update && sudo apt-get install -y php-mysql php-curl
-
-   # Enable Apache rewrite module and restart
-   sudo a2enmod rewrite
-   sudo systemctl restart apache2
-   ```
 
 ---
 
@@ -374,10 +355,10 @@ If an endpoint returns an unexpected error:
 
 1. **Check Apache Error Logs**:
    ```bash
-   sudo tail -n 50 -f /var/log/apache2/error.log
+   tail -n 50 -f /var/log/apache2/error.log
    ```
 2. **Database Connection Refused (HTTP 500)**:
-   - Check if MySQL is running: `sudo systemctl status mysql`
+   - Check if MySQL is running: `systemctl status mysql`
    - Verify credentials in `/var/www/html/.env`.
    - Test connecting with MySQL CLI using `ColorsAppUser`:
      ```bash
