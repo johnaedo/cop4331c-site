@@ -18,7 +18,7 @@ In this second tutorial, you will build out the persistence layer of your LAMP s
 
 ## 🏗️ Database Architecture Overview
 
-The database layer for the Colors Manager application is built on **MySQL 8.0.46**. It uses the **InnoDB** storage engine for ACID transaction compliance and row-level locking.
+The database layer for the Colors Manager application is built on **MySQL 8.0.46**. 
 
 ![1920](../../_assets/images/database-architecture.svg)
 
@@ -37,19 +37,12 @@ The database layer for the Colors Manager application is built on **MySQL 8.0.46
    ```
 
 3. You will see the MySQL interactive prompt:
-   
    ```text
-   Welcome to the MySQL monitor.  Commands end with ; or \g.  
-Your MySQL connection id is 10  
-Server version: 8.0.46-0ubuntu0.24.04.3 (Ubuntu)  
-  
-Copyright (c) 2000, 2026, Oracle and/or its affiliates.  
-  
-Oracle is a registered trademark of Oracle Corporation and/or its  
-affiliates. Other names may be trademarks of their respective  
-owners.  
-  
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+   Welcome to the MySQL monitor.  Commands end with ; or \g.
+   Your MySQL connection id is 42
+   Server version: 8.0.46-0ubuntu0.22.04.1 (Ubuntu)
+
+   Copyright (c) 2000, 2024, Oracle and/or its affiliates.
 
    mysql>
    ```
@@ -64,13 +57,10 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 ## 📜 Step 2: Understanding the SQL Scripts
 
-We provide three SQL scripts in a [zip file available here](https://teaching.johnaedo.com/code/cop4331c/lamp/sql-scripts.zip):
-1. **`sql/create_tables.sql`**: Creates the database `ColorsAppDB`, `Users` table, `Colors` table, and dedicated application user.
-2. **`sql/seed_data.sql`**: Populates `ColorsAppDB` with sample users and color palettes.
-3. **`sql/resetdb.sql`**: An all-in-one script that resets the database, rebuilds the schema, and seeds default records in a single operation.
-
-> [!FILES DOWNLOAD]
-> [SQL Scripts Zip File Download]('https://teaching.johnaedo.com/../../../_assets/files/sql-scripts.zip')
+We provide three SQL scripts within the project's [`sql/`](../sql/) and [`api/config/`](../api/config/) directories:
+1. **[`sql/create_tables.sql`](../sql/create_tables.sql)**: Creates the database `ColorsAppDB`, `Users` table, `Colors` table, and dedicated application user.
+2. **[`sql/seed_data.sql`](../sql/seed_data.sql)**: Populates `ColorsAppDB` with sample users and color palettes.
+3. **[`sql/resetdb.sql`](../sql/resetdb.sql)** (and **[`api/config/resetdb.sql`](../api/config/resetdb.sql)**): An all-in-one script that resets the database, rebuilds the schema, and seeds default records in a single operation.
 
 ### A. Database Schema Breakdown (`sql/create_tables.sql`)
 
@@ -154,20 +144,10 @@ INSERT INTO `Colors` (`Name`, `UserID`) VALUES
 ('Light Red', 3), ('Light Green', 3), ('Chiffon', 3), ('Fuscia', 3),
 ('Brown', 3), ('Beige', 3);
 ```
----
-## ⬆️ Step 3: Uploading the SQL Scripts to the Droplet
-
-In your operating system's terminal program, you can upload the files to your droplet using the `scp` command.  You'll want to be in the same directory as your `sql-scripts.zip` file.
-
-```bash
-scp sql-scripts.zip root@<YOUR DROPLET IP>:
-```
-> [!NOTE]
-> Don't forget the `:` at the end!
 
 ---
 
-## 🛠️ Step 4: Executing SQL Scripts on the Droplet
+## 🛠️ Step 3: Executing SQL Scripts on the Droplet
 
 You can run SQL scripts on your Droplet using either the MySQL interactive prompt or shell command piping.
 
@@ -177,14 +157,14 @@ If you have transferred the SQL file to your Droplet or pasted it into a file (e
 
 ```bash
 # Execute the full reset script via standard input redirection
-sudo mysql < /root/resetdb.sql
+mysql < /root/resetdb.sql
 ```
 
 ### Method 2: Interactive Execution via MySQL Shell
 
 1. Launch MySQL:
    ```bash
-   sudo mysql
+   mysql
    ```
 2. Run the `SOURCE` command with the absolute path to your SQL script:
    ```sql
@@ -204,7 +184,7 @@ sudo mysql < /root/resetdb.sql
 
 ---
 
-## 🔍 Step 5: Verifying the Database and Tables
+## 🔍 Step 4: Verifying the Database and Tables
 
 Let's verify that the tables were created and populated correctly.
 
@@ -277,16 +257,16 @@ Let's verify that the tables were created and populated correctly.
 
 ---
 
-## 💾 Step 6: MySQL Backup & Maintenance (Optional but Recommended)
+## 💾 Step 5: MySQL Backup & Maintenance (Optional but Recommended)
 
 As a best practice in production operations, you should know how to create logical backups of your database using `mysqldump`:
 
 ```bash
 # Export full database dump to a timestamped .sql file
-sudo mysqldump ColorsAppDB > /root/ColorsAppDB_backup_$(date +%F).sql
+mysqldump ColorsAppDB > /root/ColorsAppDB_backup_$(date +%F).sql
 
 # Restore database from backup
-sudo mysql ColorsAppDB < /root/ColorsAppDB_backup_*.sql
+mysql ColorsAppDB < /root/ColorsAppDB_backup_*.sql
 ```
 
 ---
