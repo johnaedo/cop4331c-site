@@ -58,7 +58,7 @@ The database layer for the Colors Manager application is built on **MySQL 8.0.46
 ## 📜 Step 2: Understanding the SQL Scripts
 
 > [!FILE DOWNLOAD]
-> You can download the SQL scripts to your PC here:  [sql-files.zip](https://teaching.johnaedo.com/code/cop4331c/lamp/sql-files.zip)
+> You can download the SQL scripts to your PC here:  [sql-files.zip](https://teaching.johnaedo.com/code/cop4331c-site/lamp/sql-files.zip)
 
 ### Download sql-files.zip to Your Droplet
 
@@ -69,7 +69,7 @@ apt-get install unzip
 
 **Download sql-files.zip using curl:**
 ```bash
-curl -O https://teaching.johnaedo.com/code/cop4331c/lamp/sql-files.zip
+curl -O https://teaching.johnaedo.com/code/cop4331c-site/lamp/sql-files.zip
 ```
 
 **Unzip the files:**
