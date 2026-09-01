@@ -320,6 +320,15 @@
 <nav aria-label="Tutorial 4: Frontend Integration, Droplet Deployment &amp; End-to-End Browser Testing" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#download-frontend-fileszip">
+<span class="md-ellipsis">
+      
+        Download frontend-files.zip
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#frontend-architecture-overview">
 <span class="md-ellipsis">
       
@@ -373,19 +382,10 @@
 <nav aria-label="🚀 Step 2: Deploy Frontend Files to the Droplet" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#option-a-from-local-machine-using-rsync">
+<a class="md-nav__link" href="#from-local-machine-using-scp">
 <span class="md-ellipsis">
       
-        Option A: From Local Machine using rsync
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#option-b-from-local-machine-using-scp">
-<span class="md-ellipsis">
-      
-        Option B: From Local Machine using scp
+        From Local Machine using scp
       
     </span>
 </a>
@@ -666,6 +666,15 @@
 <nav aria-label="Tutorial 4: Frontend Integration, Droplet Deployment &amp; End-to-End Browser Testing" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#download-frontend-fileszip">
+<span class="md-ellipsis">
+      
+        Download frontend-files.zip
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#frontend-architecture-overview">
 <span class="md-ellipsis">
       
@@ -719,19 +728,10 @@
 <nav aria-label="🚀 Step 2: Deploy Frontend Files to the Droplet" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#option-a-from-local-machine-using-rsync">
+<a class="md-nav__link" href="#from-local-machine-using-scp">
 <span class="md-ellipsis">
       
-        Option A: From Local Machine using rsync
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#option-b-from-local-machine-using-scp">
-<span class="md-ellipsis">
-      
-        Option B: From Local Machine using scp
+        From Local Machine using scp
       
     </span>
 </a>
@@ -887,8 +887,17 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <strong>You must replace <code>lamp.johnaedo.com</code> with the domain name you acquired from your domain registrar.</strong></p>
 </div>
 <hr/>
+<h3 id="download-frontend-fileszip">Download frontend-files.zip<a class="headerlink" href="#download-frontend-fileszip" title="Permanent link">¶</a></h3>
+<p>You’ll want to keep a copy of the front-end HTML, CSS, and Javascript files locally on your computer on your PC for ease of editing.  You’ll later upload the files to your Droplet.</p>
+<div class="admonition files download">
+<p class="admonition-title">Files</p>
+<p><a href="https://teaching.johnaedo.com/code/cop4331c/lamp/frontend-files.zip">frontend-files.zip</a></p>
+</div>
+<p>Once you’ve downloaded the file, go ahead and decompress the zip file so you can inspect and edit the files.</p>
+<hr/>
 <h3 id="frontend-architecture-overview">🎨 Frontend Architecture Overview<a class="headerlink" href="#frontend-architecture-overview" title="Permanent link">¶</a></h3>
 <p>The presentation layer is built as a decoupled, responsive client-side interface:</p>
+<p><code>/var/www/html</code> is the directory on the server from which your application’s front-end is served.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a> /var/www/html/
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a> ├── index.html        # Login Page: Form inputs, client validation, authentication trigger
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a> ├── color.html        # Color Manager Dashboard: Search bar, color pill badges, add form, logout
@@ -917,12 +926,24 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a>
 <a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="kd">const</span><span class="w"> </span><span class="nx">loginUrlBase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">urlBase</span><span class="p">;</span>
 </code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p><strong>Relative vs. Absolute URLs:</strong><br/>
-When your frontend HTML/JS and backend PHP API are hosted on the same server/domain (origin), using the relative path <code>'/api/index.php'</code> is the best practice! It automatically works on any domain, IP, or localhost without needing manual edits.<br/>
-If you specify an absolute URL, replace <code>lamp.johnaedo.com</code> with your own domain (e.g. <code>http://lamp.yourdomain.com/api/index.php</code>).</p>
-</div>
+<p>This code figures out which API base URL to use depending on where the app is currently running, then reuses that same value for login requests.</p>
+<p><strong>Breaking it down:</strong></p>
+<ol>
+<li><strong><code>typeof window !== 'undefined'</code></strong> — checks that this code is running in a browser environment (not on a server, like during server-side rendering in Node.js, where <code>window</code> doesn’t exist). This prevents a crash if the code runs somewhere without a <code>window</code> object.</li>
+<li><strong><code>window.location &amp;&amp;</code></strong> — an extra safety check to make sure <code>window.location</code> actually exists before trying to read properties off it.</li>
+<li><strong>The three OR conditions</strong> check if the current page is being viewed from:<ul>
+<li><code>localhost</code> (local development)</li>
+<li><code>127.0.0.1</code> (also local development, via IP)</li>
+<li>anywhere with <code>johnaedo</code> in the origin (e.g. <code>johnaedo.com</code>, <code>www.johnaedo.com</code>, <code>staging.johnaedo.com</code>, etc. — production or related domains)</li>
+</ul>
+</li>
+<li><strong>The ternary (<code>? :</code>)</strong> decides the actual URL base:<ul>
+<li>If any of those conditions are true → use a <strong>relative path</strong>: <code>/api/index.php</code>. This works because in those cases the frontend and the API are assumed to be served from the same host, so a relative URL will correctly resolve against whatever domain/port the page is currently on.</li>
+<li>Otherwise (e.g. running from some other domain, or no <code>window</code> object at all) → fall back to a <strong>hardcoded absolute URL</strong>: <code>http://lamp.johnaedo.com/api/index.php</code>.</li>
+</ul>
+</li>
+</ol>
+<p>You’ll need to update the <code>includes</code> argument to some string that uniquely distinguishes your domain name (or it can be the full domain name itself).</p>
 <hr/>
 <h3 id="b-understanding-core-javascript-functions">B. Understanding Core JavaScript Functions<a class="headerlink" href="#b-understanding-core-javascript-functions" title="Permanent link">¶</a></h3>
 <ol>
@@ -969,48 +990,44 @@ If you specify an absolute URL, replace <code>lamp.johnaedo.com</code> with your
 <hr/>
 <h2 id="step-2-deploy-frontend-files-to-the-droplet">🚀 Step 2: Deploy Frontend Files to the Droplet<a class="headerlink" href="#step-2-deploy-frontend-files-to-the-droplet" title="Permanent link">¶</a></h2>
 <p>Now copy all frontend assets (<code>index.html</code>, <code>color.html</code>, <code>css/</code>, <code>js/</code>, <code>images/</code>, <code>favicon.ico</code>) to <code>/var/www/html/</code> on your Droplet.</p>
-<h3 id="option-a-from-local-machine-using-rsync">Option A: From Local Machine using <code>rsync</code><a class="headerlink" href="#option-a-from-local-machine-using-rsync" title="Permanent link">¶</a></h3>
-<p>From your local project root:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>rsync<span class="w"> </span>-avz<span class="w"> </span>--exclude<span class="w"> </span><span class="s1">'.git'</span><span class="w"> </span>./<span class="w"> </span>root@&lt;YOUR_DROPLET_IP&gt;:/var/www/html/
-</code></pre></div>
-<h3 id="option-b-from-local-machine-using-scp">Option B: From Local Machine using <code>scp</code><a class="headerlink" href="#option-b-from-local-machine-using-scp" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>scp<span class="w"> </span>-r<span class="w"> </span>index.html<span class="w"> </span>color.html<span class="w"> </span>favicon.ico<span class="w"> </span>css<span class="w"> </span>js<span class="w"> </span>images<span class="w"> </span>root@&lt;YOUR_DROPLET_IP&gt;:/var/www/html/
+<h3 id="from-local-machine-using-scp">From Local Machine using <code>scp</code><a class="headerlink" href="#from-local-machine-using-scp" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>scp<span class="w"> </span>-r<span class="w"> </span>index.html<span class="w"> </span>color.html<span class="w"> </span>favicon.ico<span class="w"> </span>css<span class="w"> </span>js<span class="w"> </span>images<span class="w"> </span>root@&lt;YOUR_DROPLET_IP&gt;:/var/www/html/
 </code></pre></div>
 <hr/>
 <h2 id="step-3-verify-web-server-directory-structure-permissions">🔒 Step 3: Verify Web Server Directory Structure &amp; Permissions<a class="headerlink" href="#step-3-verify-web-server-directory-structure-permissions" title="Permanent link">¶</a></h2>
 <p>SSH into your Droplet:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>ssh<span class="w"> </span>root@&lt;YOUR_DROPLET_IP&gt;
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>ssh<span class="w"> </span>root@&lt;YOUR_DROPLET_IP&gt;
 </code></pre></div><p></p>
 <ol>
 <li>
 <p>Check that all files are present in <code>/var/www/html</code>:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>ls<span class="w"> </span>-la<span class="w"> </span>/var/www/html
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>ls<span class="w"> </span>-la<span class="w"> </span>/var/www/html
 </code></pre></div><br/>
 <em>Expected listing:</em><br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>drwxr-xr-x 6 www-data www-data  4096 Aug 24 14:00 .
-<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>-rw------- 1 www-data www-data   120 Aug 24 14:00 .env
-<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>drwxr-xr-x 3 www-data www-data  4096 Aug 24 14:00 api
-<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>-rw-r--r-- 1 www-data www-data  5505 Aug 24 14:00 color.html
-<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a>drwxr-xr-x 2 www-data www-data  4096 Aug 24 14:00 css
-<a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a>-rw-r--r-- 1 www-data www-data  1150 Aug 24 14:00 favicon.ico
-<a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a>drwxr-xr-x 2 www-data www-data  4096 Aug 24 14:00 images
-<a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a>-rw-r--r-- 1 www-data www-data  4455 Aug 24 14:00 index.html
-<a href="#__codelineno-7-9" id="__codelineno-7-9" name="__codelineno-7-9"></a>drwxr-xr-x 2 www-data www-data  4096 Aug 24 14:00 js
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>drwxr-xr-x 6 www-data www-data  4096 Aug 24 14:00 .
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>-rw------- 1 www-data www-data   120 Aug 24 14:00 .env
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>drwxr-xr-x 3 www-data www-data  4096 Aug 24 14:00 api
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>-rw-r--r-- 1 www-data www-data  5505 Aug 24 14:00 color.html
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a>drwxr-xr-x 2 www-data www-data  4096 Aug 24 14:00 css
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a>-rw-r--r-- 1 www-data www-data  1150 Aug 24 14:00 favicon.ico
+<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a>drwxr-xr-x 2 www-data www-data  4096 Aug 24 14:00 images
+<a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a>-rw-r--r-- 1 www-data www-data  4455 Aug 24 14:00 index.html
+<a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a>drwxr-xr-x 2 www-data www-data  4096 Aug 24 14:00 js
 </code></pre></div><p></p>
 </li>
 <li>
 <p>Ensure correct ownership and permissions:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html
-<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>sudo<span class="w"> </span>find<span class="w"> </span>/var/www/html<span class="w"> </span>-type<span class="w"> </span>d<span class="w"> </span>-exec<span class="w"> </span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
-<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a>sudo<span class="w"> </span>find<span class="w"> </span>/var/www/html<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-exec<span class="w"> </span>chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
-<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>/var/www/html/.env
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>sudo<span class="w"> </span>find<span class="w"> </span>/var/www/html<span class="w"> </span>-type<span class="w"> </span>d<span class="w"> </span>-exec<span class="w"> </span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>sudo<span class="w"> </span>find<span class="w"> </span>/var/www/html<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-exec<span class="w"> </span>chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>/var/www/html/.env
 </code></pre></div><p></p>
 </li>
 </ol>
 <hr/>
 <h2 id="step-4-end-to-end-browser-testing-walkthrough">🌐 Step 4: End-to-End Browser Testing Walkthrough<a class="headerlink" href="#step-4-end-to-end-browser-testing-walkthrough" title="Permanent link">¶</a></h2>
 <p>Open your web browser (Chrome, Firefox, Safari, or Edge) and navigate to:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>http://lamp.johnaedo.com
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>http://lamp.johnaedo.com
 </code></pre></div><br/>
 <em>(Replace <code>lamp.johnaedo.com</code> with your registered domain).</em><p></p>
 <hr/>
@@ -1125,13 +1142,13 @@ If you specify an absolute URL, replace <code>lamp.johnaedo.com</code> with your
 <p>To secure your production Droplet with an SSL/TLS certificate:</p>
 <ol>
 <li>SSH into your Droplet:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>ssh<span class="w"> </span>root@&lt;YOUR_DROPLET_IP&gt;
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>ssh<span class="w"> </span>root@&lt;YOUR_DROPLET_IP&gt;
 </code></pre></div></li>
 <li>Install Certbot:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>certbot<span class="w"> </span>python3-certbot-apache
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>certbot<span class="w"> </span>python3-certbot-apache
 </code></pre></div></li>
 <li>Request and install certificate for your domain:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>sudo<span class="w"> </span>certbot<span class="w"> </span>--apache<span class="w"> </span>-d<span class="w"> </span>lamp.johnaedo.com
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>sudo<span class="w"> </span>certbot<span class="w"> </span>--apache<span class="w"> </span>-d<span class="w"> </span>lamp.johnaedo.com
 </code></pre></div><br/>
 <em>(Enter your email address and accept terms when prompted).</em></li>
 <li>Certbot will automatically reconfigure Apache to redirect all HTTP traffic to secure <strong><code>https://lamp.johnaedo.com</code></strong>!</li>
@@ -1150,7 +1167,7 @@ If you specify an absolute URL, replace <code>lamp.johnaedo.com</code> with your
 <small>
 <!-- mkdocs-git-revision-date-localized-plugin -->
 <u>Last update</u> :
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 30, 2026 21:32:47 UTC">August 30, 2026</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 1, 2026 21:49:07 UTC">September 1, 2026</span>
 <!-- mkdocs-git-revision-date-plugin -->
 <br/>
 <u>Created</u> :
