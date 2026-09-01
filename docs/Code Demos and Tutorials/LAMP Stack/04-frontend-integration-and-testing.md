@@ -15,10 +15,21 @@ In this final tutorial, you will connect the client-side user interface (HTML5, 
 > **You must replace `lamp.johnaedo.com` with the domain name you acquired from your domain registrar.**
 
 ---
+## Download frontend-files.zip
 
+You'll want to keep a copy of the front-end HTML, CSS, and Javascript files locally on your computer on your PC for ease of editing.  You'll later upload the files to your Droplet.
+
+> [!FILES DOWNLOAD]
+> [frontend-files.zip](https://teaching.johnaedo.com/code/cop4331c/lamp/frontend-files.zip)
+
+Once you've downloaded the file, go ahead and decompress the zip file so you can inspect and edit the files.
+
+---
 ## 🎨 Frontend Architecture Overview
 
 The presentation layer is built as a decoupled, responsive client-side interface:
+
+`/var/www/html` is the directory on the server from which your application's front-end is served.
 
 ```
  /var/www/html/
@@ -56,10 +67,21 @@ const urlBase = (typeof window !== 'undefined' && window.location &&
 const loginUrlBase = urlBase;
 ```
 
-> [!TIP]
-> **Relative vs. Absolute URLs:**  
-> When your frontend HTML/JS and backend PHP API are hosted on the same server/domain (origin), using the relative path `'/api/index.php'` is the best practice! It automatically works on any domain, IP, or localhost without needing manual edits.  
-> If you specify an absolute URL, replace `lamp.johnaedo.com` with your own domain (e.g. `http://lamp.yourdomain.com/api/index.php`).
+This code figures out which API base URL to use depending on where the app is currently running, then reuses that same value for login requests.
+
+**Breaking it down:**
+
+1. **`typeof window !== 'undefined'`** — checks that this code is running in a browser environment (not on a server, like during server-side rendering in Node.js, where `window` doesn't exist). This prevents a crash if the code runs somewhere without a `window` object.
+2. **`window.location &&`** — an extra safety check to make sure `window.location` actually exists before trying to read properties off it.
+3. **The three OR conditions** check if the current page is being viewed from:
+    - `localhost` (local development)
+    - `127.0.0.1` (also local development, via IP)
+    - anywhere with `johnaedo` in the origin (e.g. `johnaedo.com`, `www.johnaedo.com`, `staging.johnaedo.com`, etc. — production or related domains)
+4. **The ternary (`? :`)** decides the actual URL base:
+    - If any of those conditions are true → use a **relative path**: `/api/index.php`. This works because in those cases the frontend and the API are assumed to be served from the same host, so a relative URL will correctly resolve against whatever domain/port the page is currently on.
+    - Otherwise (e.g. running from some other domain, or no `window` object at all) → fall back to a **hardcoded absolute URL**: `http://lamp.johnaedo.com/api/index.php`.
+
+You'll need to update the `includes` argument to some string that uniquely distinguishes your domain name (or it can be the full domain name itself).
 
 ---
 
@@ -105,15 +127,7 @@ const loginUrlBase = urlBase;
 
 Now copy all frontend assets (`index.html`, `color.html`, `css/`, `js/`, `images/`, `favicon.ico`) to `/var/www/html/` on your Droplet.
 
-### Option A: From Local Machine using `rsync`
-
-From your local project root:
-
-```bash
-rsync -avz --exclude '.git' ./ root@<YOUR_DROPLET_IP>:/var/www/html/
-```
-
-### Option B: From Local Machine using `scp`
+### From Local Machine using `scp`
 
 ```bash
 scp -r index.html color.html favicon.ico css js images root@<YOUR_DROPLET_IP>:/var/www/html/
