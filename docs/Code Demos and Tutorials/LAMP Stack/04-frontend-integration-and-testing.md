@@ -168,12 +168,84 @@ ssh root@<YOUR_DROPLET_IP>
    ```
 
 ---
+## 🔐 Step 4: Secure Your Application with HTTPS
 
-## 🌐 Step 4: End-to-End Browser Testing Walkthrough
+While still connected to the server via SSH:
+
+1.  Edit /etc/apache2/sites-enabled/000-default.conf
+
+The top of the file will look something like this:
+
+```xml
+<VirtualHost *:80>  
+       ServerAdmin webmaster@localhost  
+       DocumentRoot /var/www/html  
+  
+       <Directory /var/www/html/>  
+           Options Indexes FollowSymLinks  
+           AllowOverride All  
+           Require all granted  
+       </Directory>
+```
+
+Add a line for `ServerName` with the name of your domain as the argument as follows:
+
+```xml
+<VirtualHost *:80>  
+	   ServerName lamp.johnaedo.com
+       ServerAdmin webmaster@localhost  
+       DocumentRoot /var/www/html  
+  
+       <Directory /var/www/html/>  
+           Options Indexes FollowSymLinks  
+           AllowOverride All  
+           Require all granted  
+       </Directory>
+
+```
+
+2. Restart Apache:
+```bash
+systemctl restart apache2
+```
+
+3. Run certbot to generate your TLS certificate and reconfigure your server:
+
+```bash
+certbot
+```
+
+Provide your e-mail address when prompted and answer yes to all questions, except for maybe when they prompt for data collection.  This one is optional.  I personally do it to support the Electronic Frontier Foundation, but you certainly don't have to.
+
+4. Restart Apache:
+
+```bash
+systemctl restart apache2
+```
+
+You should now be able to access the Colors application via https:
+
+```
+https://<your domain name>
+```
+And the result should look like this:
+
+[Open: Pasted image 20260904131427.png](../../_assets/images/32226761837b87a5b682d3a6d27bcde9_MD5.jpg)
+![Open: Pasted image 20260904131427.png](../../_assets/images/32226761837b87a5b682d3a6d27bcde9_MD5.jpg)
+
+```xml
+
+       
+```
+
+
+---
+
+## 🌐 Step 5: End-to-End Browser Testing Walkthrough
 
 Open your web browser (Chrome, Firefox, Safari, or Edge) and navigate to:
 ```
-http://lamp.johnaedo.com
+https://lamp.johnaedo.com
 ```
 *(Replace `lamp.johnaedo.com` with your registered domain).*
 
@@ -200,7 +272,7 @@ http://lamp.johnaedo.com
 ### Test Flow 2: Session & Cookie Verification
 1. On `color.html`, press **`F12`** (or right-click and choose **Inspect**) to open Browser Developer Tools.
 2. Navigate to the **Application** tab (Chrome/Edge) or **Storage** tab (Firefox).
-3. Expand **Cookies** and select `http://lamp.johnaedo.com`.
+3. Expand **Cookies** and select `https://lamp.johnaedo.com`.
 4. Verify the following three cookies are stored:
    - `userId`: `1`
    - `firstName`: `Rick`
@@ -248,7 +320,7 @@ http://lamp.johnaedo.com
 2. Verify you are redirected back to `index.html`.
 3. Check DevTools Cookies to confirm session cookies have been cleared.
 4. **Direct URL Access Test**:
-   - While logged out, manually enter `http://lamp.johnaedo.com/color.html` into your browser address bar and press Enter.
+   - While logged out, manually enter `https://lamp.johnaedo.com/color.html` into your browser address bar and press Enter.
    - Verify `readCookie()` immediately detects missing credentials and redirects you back to `index.html`.
 
 ---
@@ -261,27 +333,6 @@ http://lamp.johnaedo.com
 | **403 Forbidden Error** | Incorrect Linux file permissions on `/var/www/html` | Run `sudo chown -R www-data:www-data /var/www/html` and `sudo chmod -R 755 /var/www/html`. |
 | **Login fails with red error message** | API cannot connect to MySQL | Check `/var/www/html/.env` credentials and verify `systemctl status mysql`. |
 | **CORS / Network Error in Console** | Mixed HTTP/HTTPS or wrong `urlBase` in `code.js` | Ensure `code.js` uses relative `'/api/index.php'` or matches current protocol (`http://` vs `https://`). |
-
----
-
-## 🔒 Optional Bonus: Enable Free HTTPS with Let's Encrypt (Certbot)
-
-To secure your production Droplet with an SSL/TLS certificate:
-
-1. SSH into your Droplet:
-   ```bash
-   ssh root@<YOUR_DROPLET_IP>
-   ```
-2. Install Certbot:
-   ```bash
-   sudo apt-get install -y certbot python3-certbot-apache
-   ```
-3. Request and install certificate for your domain:
-   ```bash
-   sudo certbot --apache -d lamp.johnaedo.com
-   ```
-   *(Enter your email address and accept terms when prompted).*
-4. Certbot will automatically reconfigure Apache to redirect all HTTP traffic to secure **`https://lamp.johnaedo.com`**!
 
 ---
 
