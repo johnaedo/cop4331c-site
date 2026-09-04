@@ -403,14 +403,23 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#step-4-end-to-end-browser-testing-walkthrough">
+<a class="md-nav__link" href="#step-4-secure-your-application-with-https">
 <span class="md-ellipsis">
       
-        🌐 Step 4: End-to-End Browser Testing Walkthrough
+        🔐 Step 4: Secure Your Application with HTTPS
       
     </span>
 </a>
-<nav aria-label="🌐 Step 4: End-to-End Browser Testing Walkthrough" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-5-end-to-end-browser-testing-walkthrough">
+<span class="md-ellipsis">
+      
+        🌐 Step 5: End-to-End Browser Testing Walkthrough
+      
+    </span>
+</a>
+<nav aria-label="🌐 Step 5: End-to-End Browser Testing Walkthrough" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#test-flow-1-login-form-validation">
@@ -474,15 +483,6 @@
 <span class="md-ellipsis">
       
         🛠️ Step 5: Troubleshooting &amp; Developer Tips
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#optional-bonus-enable-free-https-with-lets-encrypt-certbot">
-<span class="md-ellipsis">
-      
-        🔒 Optional Bonus: Enable Free HTTPS with Let’s Encrypt (Certbot)
       
     </span>
 </a>
@@ -749,14 +749,23 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#step-4-end-to-end-browser-testing-walkthrough">
+<a class="md-nav__link" href="#step-4-secure-your-application-with-https">
 <span class="md-ellipsis">
       
-        🌐 Step 4: End-to-End Browser Testing Walkthrough
+        🔐 Step 4: Secure Your Application with HTTPS
       
     </span>
 </a>
-<nav aria-label="🌐 Step 4: End-to-End Browser Testing Walkthrough" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-5-end-to-end-browser-testing-walkthrough">
+<span class="md-ellipsis">
+      
+        🌐 Step 5: End-to-End Browser Testing Walkthrough
+      
+    </span>
+</a>
+<nav aria-label="🌐 Step 5: End-to-End Browser Testing Walkthrough" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#test-flow-1-login-form-validation">
@@ -820,15 +829,6 @@
 <span class="md-ellipsis">
       
         🛠️ Step 5: Troubleshooting &amp; Developer Tips
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#optional-bonus-enable-free-https-with-lets-encrypt-certbot">
-<span class="md-ellipsis">
-      
-        🔒 Optional Bonus: Enable Free HTTPS with Let’s Encrypt (Certbot)
       
     </span>
 </a>
@@ -1025,9 +1025,64 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 </li>
 </ol>
 <hr/>
-<h2 id="step-4-end-to-end-browser-testing-walkthrough">🌐 Step 4: End-to-End Browser Testing Walkthrough<a class="headerlink" href="#step-4-end-to-end-browser-testing-walkthrough" title="Permanent link">¶</a></h2>
+<h2 id="step-4-secure-your-application-with-https">🔐 Step 4: Secure Your Application with HTTPS<a class="headerlink" href="#step-4-secure-your-application-with-https" title="Permanent link">¶</a></h2>
+<p>While still connected to the server via SSH:</p>
+<ol>
+<li>Edit /etc/apache2/sites-enabled/000-default.conf</li>
+</ol>
+<p>The top of the file will look something like this:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="err">*:80</span><span class="nt">&gt;</span><span class="w">  </span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>ServerAdmin<span class="w"> </span>webmaster@localhost<span class="w">  </span>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>DocumentRoot<span class="w"> </span>/var/www/html<span class="w">  </span>
+<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">  </span>
+<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span><span class="nt">&lt;Directory</span><span class="w"> </span><span class="err">/var/www/html</span><span class="nt">/&gt;</span><span class="w">  </span>
+<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>Options<span class="w"> </span>Indexes<span class="w"> </span>FollowSymLinks<span class="w">  </span>
+<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>AllowOverride<span class="w"> </span>All<span class="w">  </span>
+<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>Require<span class="w"> </span>all<span class="w"> </span>granted<span class="w">  </span>
+<a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span><span class="nt">&lt;/Directory&gt;</span>
+</code></pre></div>
+<p>Add a line for <code>ServerName</code> with the name of your domain as the argument as follows:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="err">*:80</span><span class="nt">&gt;</span><span class="w">  </span>
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">	   </span>ServerName<span class="w"> </span>lamp.johnaedo.com
+<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>ServerAdmin<span class="w"> </span>webmaster@localhost<span class="w">  </span>
+<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>DocumentRoot<span class="w"> </span>/var/www/html<span class="w">  </span>
+<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">  </span>
+<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span><span class="nt">&lt;Directory</span><span class="w"> </span><span class="err">/var/www/html</span><span class="nt">/&gt;</span><span class="w">  </span>
+<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>Options<span class="w"> </span>Indexes<span class="w"> </span>FollowSymLinks<span class="w">  </span>
+<a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>AllowOverride<span class="w"> </span>All<span class="w">  </span>
+<a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>Require<span class="w"> </span>all<span class="w"> </span>granted<span class="w">  </span>
+<a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span><span class="nt">&lt;/Directory&gt;</span>
+</code></pre></div>
+<ol start="2">
+<li>
+<p>Restart Apache:<br/>
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
+</code></pre></div><p></p>
+</li>
+<li>
+<p>Run certbot to generate your TLS certificate and reconfigure your server:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>certbot
+</code></pre></div>
+<p>Provide your e-mail address when prompted and answer yes to all questions, except for maybe when they prompt for data collection.  This one is optional.  I personally do it to support the Electronic Frontier Foundation, but you certainly don’t have to.</p>
+<ol start="4">
+<li>Restart Apache:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
+</code></pre></div>
+<p>You should now be able to access the Colors application via https:</p>
+<p></p><div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>https://&lt;your domain name&gt;
+</code></pre></div><br/>
+And the result should look like this:<p></p>
+<p><a href="../../../_assets/images/32226761837b87a5b682d3a6d27bcde9_MD5.jpg">Open: Pasted image 20260904131427.png</a><br/>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../_assets/images/32226761837b87a5b682d3a6d27bcde9_MD5.jpg"><img alt="Open: Pasted image 20260904131427.png" src="../../../_assets/images/32226761837b87a5b682d3a6d27bcde9_MD5.jpg"/></a></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>
+</code></pre></div>
+<hr/>
+<h2 id="step-5-end-to-end-browser-testing-walkthrough">🌐 Step 5: End-to-End Browser Testing Walkthrough<a class="headerlink" href="#step-5-end-to-end-browser-testing-walkthrough" title="Permanent link">¶</a></h2>
 <p>Open your web browser (Chrome, Firefox, Safari, or Edge) and navigate to:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>http://lamp.johnaedo.com
+</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>https://lamp.johnaedo.com
 </code></pre></div><br/>
 <em>(Replace <code>lamp.johnaedo.com</code> with your registered domain).</em><p></p>
 <hr/>
@@ -1053,7 +1108,7 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <ol>
 <li>On <code>color.html</code>, press <strong><code>F12</code></strong> (or right-click and choose <strong>Inspect</strong>) to open Browser Developer Tools.</li>
 <li>Navigate to the <strong>Application</strong> tab (Chrome/Edge) or <strong>Storage</strong> tab (Firefox).</li>
-<li>Expand <strong>Cookies</strong> and select <code>http://lamp.johnaedo.com</code>.</li>
+<li>Expand <strong>Cookies</strong> and select <code>https://lamp.johnaedo.com</code>.</li>
 <li>Verify the following three cookies are stored:<br/>
    - <code>userId</code>: <code>1</code><br/>
    - <code>firstName</code>: <code>Rick</code><br/>
@@ -1101,7 +1156,7 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <li>Verify you are redirected back to <code>index.html</code>.</li>
 <li>Check DevTools Cookies to confirm session cookies have been cleared.</li>
 <li><strong>Direct URL Access Test</strong>:<br/>
-   - While logged out, manually enter <code>http://lamp.johnaedo.com/color.html</code> into your browser address bar and press Enter.<br/>
+   - While logged out, manually enter <code>https://lamp.johnaedo.com/color.html</code> into your browser address bar and press Enter.<br/>
    - Verify <code>readCookie()</code> immediately detects missing credentials and redirects you back to <code>index.html</code>.</li>
 </ol>
 <hr/>
@@ -1138,22 +1193,6 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 </tbody>
 </table>
 <hr/>
-<h2 id="optional-bonus-enable-free-https-with-lets-encrypt-certbot">🔒 Optional Bonus: Enable Free HTTPS with Let’s Encrypt (Certbot)<a class="headerlink" href="#optional-bonus-enable-free-https-with-lets-encrypt-certbot" title="Permanent link">¶</a></h2>
-<p>To secure your production Droplet with an SSL/TLS certificate:</p>
-<ol>
-<li>SSH into your Droplet:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>ssh<span class="w"> </span>root@&lt;YOUR_DROPLET_IP&gt;
-</code></pre></div></li>
-<li>Install Certbot:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>certbot<span class="w"> </span>python3-certbot-apache
-</code></pre></div></li>
-<li>Request and install certificate for your domain:<br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>sudo<span class="w"> </span>certbot<span class="w"> </span>--apache<span class="w"> </span>-d<span class="w"> </span>lamp.johnaedo.com
-</code></pre></div><br/>
-<em>(Enter your email address and accept terms when prompted).</em></li>
-<li>Certbot will automatically reconfigure Apache to redirect all HTTP traffic to secure <strong><code>https://lamp.johnaedo.com</code></strong>!</li>
-</ol>
-<hr/>
 <h2 id="project-complete">🏆 Project Complete!<a class="headerlink" href="#project-complete" title="Permanent link">¶</a></h2>
 <p>Congratulations! You have successfully built, configured, deployed, and tested a modern, decoupled full-stack LAMP web application:</p>
 <ol>
@@ -1167,7 +1206,7 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 <small>
 <!-- mkdocs-git-revision-date-localized-plugin -->
 <u>Last update</u> :
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 1, 2026 21:49:07 UTC">September 1, 2026</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 4, 2026 17:15:35 UTC">September 4, 2026</span>
 <!-- mkdocs-git-revision-date-plugin -->
 <br/>
 <u>Created</u> :
