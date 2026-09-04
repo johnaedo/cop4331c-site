@@ -178,29 +178,30 @@ The top of the file will look something like this:
 
 ```xml
 <VirtualHost *:80>  
-       ServerAdmin webmaster@localhost  
-       DocumentRoot /var/www/html  
-  
-       <Directory /var/www/html/>  
-           Options Indexes FollowSymLinks  
-           AllowOverride All  
-           Require all granted  
-       </Directory>
+	ServerAdmin webmaster@localhost  
+	DocumentRoot /var/www/html  
+	
+<Directory /var/www/html/>  
+	Options Indexes FollowSymLinks  
+	AllowOverride All  
+	Require all granted  
+</Directory>
+
 ```
 
 Add a line for `ServerName` with the name of your domain as the argument as follows:
 
 ```xml
 <VirtualHost *:80>  
-	   ServerName lamp.johnaedo.com
-       ServerAdmin webmaster@localhost  
-       DocumentRoot /var/www/html  
-  
-       <Directory /var/www/html/>  
-           Options Indexes FollowSymLinks  
-           AllowOverride All  
-           Require all granted  
-       </Directory>
+	ServerName lamp.johnaedo.com
+	ServerAdmin webmaster@localhost  
+	DocumentRoot /var/www/html  
+	
+<Directory /var/www/html/>  
+	Options Indexes FollowSymLinks  
+	AllowOverride All  
+	Require all granted  
+</Directory>
 
 ```
 
