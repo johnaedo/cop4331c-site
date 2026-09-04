@@ -1032,26 +1032,26 @@ Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></
 </ol>
 <p>The top of the file will look something like this:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="err">*:80</span><span class="nt">&gt;</span><span class="w">  </span>
-<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>ServerAdmin<span class="w"> </span>webmaster@localhost<span class="w">  </span>
-<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>DocumentRoot<span class="w"> </span>/var/www/html<span class="w">  </span>
-<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">  </span>
-<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span><span class="nt">&lt;Directory</span><span class="w"> </span><span class="err">/var/www/html</span><span class="nt">/&gt;</span><span class="w">  </span>
-<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>Options<span class="w"> </span>Indexes<span class="w"> </span>FollowSymLinks<span class="w">  </span>
-<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>AllowOverride<span class="w"> </span>All<span class="w">  </span>
-<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>Require<span class="w"> </span>all<span class="w"> </span>granted<span class="w">  </span>
-<a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span><span class="nt">&lt;/Directory&gt;</span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">	</span>ServerAdmin<span class="w"> </span>webmaster@localhost<span class="w">  </span>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">	</span>DocumentRoot<span class="w"> </span>/var/www/html<span class="w">  </span>
+<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">	</span>
+<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="nt">&lt;Directory</span><span class="w"> </span><span class="err">/var/www/html</span><span class="nt">/&gt;</span><span class="w">  </span>
+<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">	</span>Options<span class="w"> </span>Indexes<span class="w"> </span>FollowSymLinks<span class="w">  </span>
+<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">	</span>AllowOverride<span class="w"> </span>All<span class="w">  </span>
+<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">	</span>Require<span class="w"> </span>all<span class="w"> </span>granted<span class="w">  </span>
+<a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="nt">&lt;/Directory&gt;</span>
 </code></pre></div>
 <p>Add a line for <code>ServerName</code> with the name of your domain as the argument as follows:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="err">*:80</span><span class="nt">&gt;</span><span class="w">  </span>
-<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">	   </span>ServerName<span class="w"> </span>lamp.johnaedo.com
-<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>ServerAdmin<span class="w"> </span>webmaster@localhost<span class="w">  </span>
-<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>DocumentRoot<span class="w"> </span>/var/www/html<span class="w">  </span>
-<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">  </span>
-<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span><span class="nt">&lt;Directory</span><span class="w"> </span><span class="err">/var/www/html</span><span class="nt">/&gt;</span><span class="w">  </span>
-<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>Options<span class="w"> </span>Indexes<span class="w"> </span>FollowSymLinks<span class="w">  </span>
-<a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>AllowOverride<span class="w"> </span>All<span class="w">  </span>
-<a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>Require<span class="w"> </span>all<span class="w"> </span>granted<span class="w">  </span>
-<a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span><span class="nt">&lt;/Directory&gt;</span>
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">	</span>ServerName<span class="w"> </span>lamp.johnaedo.com
+<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">	</span>ServerAdmin<span class="w"> </span>webmaster@localhost<span class="w">  </span>
+<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">	</span>DocumentRoot<span class="w"> </span>/var/www/html<span class="w">  </span>
+<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">	</span>
+<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="nt">&lt;Directory</span><span class="w"> </span><span class="err">/var/www/html</span><span class="nt">/&gt;</span><span class="w">  </span>
+<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">	</span>Options<span class="w"> </span>Indexes<span class="w"> </span>FollowSymLinks<span class="w">  </span>
+<a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">	</span>AllowOverride<span class="w"> </span>All<span class="w">  </span>
+<a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w">	</span>Require<span class="w"> </span>all<span class="w"> </span>granted<span class="w">  </span>
+<a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="nt">&lt;/Directory&gt;</span>
 </code></pre></div>
 <ol start="2">
 <li>
@@ -1206,7 +1206,7 @@ And the result should look like this:<p></p>
 <small>
 <!-- mkdocs-git-revision-date-localized-plugin -->
 <u>Last update</u> :
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 4, 2026 17:15:35 UTC">September 4, 2026</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 4, 2026 17:19:02 UTC">September 4, 2026</span>
 <!-- mkdocs-git-revision-date-plugin -->
 <br/>
 <u>Created</u> :
