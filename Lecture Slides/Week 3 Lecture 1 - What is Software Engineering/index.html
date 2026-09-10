@@ -4,12 +4,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Course notes, code demos, and tutorials" name="description"/>
 <meta content="Dr. John Aedo" name="author"/>
-<link href="https://johnaedo.github.io/cop4331c/Lecture%20Slides/Week%201%20-%20Course%20Logistics/" rel="canonical"/>
-<link href="../Node.js%20Fundamentals/" rel="prev"/>
-<link href="../Week%201%20-%20History%20of%20the%20Web%20and%20Overview%20of%20Web%20Architectures/" rel="next"/>
+<link href="https://johnaedo.github.io/cop4331c/Lecture%20Slides/Week%203%20Lecture%201%20-%20What%20is%20Software%20Engineering/" rel="canonical"/>
+<link href="../Week%2010%20-%20Testing%20Routes%20with%20Jest/" rel="prev"/>
+<link href="../Week%204%20Lecture%20-%20Node.js%20Fundamentals/" rel="next"/>
 <link href="../../_assets/meta/favicons.svg" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
-<title>Week 1 Course Logistics - COP 4331C - Processes of Object Oriented Software Development</title>
+<title>Week 3 Lecture 1 What is Software Engineering - COP 4331C - Processes of Object Oriented Software Development</title>
 <link href="../../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -30,11 +30,11 @@
 <meta content="https://johnaedo.github.io/cop4331c/_assets/meta/logo.svg" property="og:image"/>
 <meta content="https://johnaedo.github.io/cop4331c/_assets/meta/logo.svg" name="twitter:image"/>
 <meta content="https://johnaedo.github.io/cop4331c/" name="site_url"/>
-<meta content="Week 1   Course Logistics" property="og:title"/>
-<meta content="Week 1   Course Logistics" name="twitter:title"/>
+<meta content="Week 3 Lecture 1   What is Software Engineering" property="og:title"/>
+<meta content="Week 3 Lecture 1   What is Software Engineering" name="twitter:title"/>
 <meta content="Course notes, code demos, and tutorials" name="og:description"/>
 <meta content="Course notes, code demos, and tutorials" name="twitter:description"/>
-<script> document.title = "Week 1   Course Logistics" </script>
+<script> document.title = "Week 3 Lecture 1   What is Software Engineering" </script>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -75,7 +75,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Week 1   Course Logistics
+              Week 3 Lecture 1   What is Software Engineering
             
           </span>
 </div>
@@ -387,310 +387,13 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
-<span class="md-ellipsis">
-    Week 1   Course Logistics
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Week%201%20-%20Course%20Logistics/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Week 1   Course Logistics
   </span>
 </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cop-4331c">
-<span class="md-ellipsis">
-      
-        COP 4331C
-      
-    </span>
-</a>
-<nav aria-label="COP 4331C" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#processes-of-object-oriented-software-development">
-<span class="md-ellipsis">
-      
-        Processes of Object Oriented Software Development
-      
-    </span>
-</a>
-<nav aria-label="Processes of Object Oriented Software Development" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#fall-2026">
-<span class="md-ellipsis">
-      
-        Fall 2026
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#instructor-dr-john-aedo">
-<span class="md-ellipsis">
-      
-        Instructor: Dr. John Aedo
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#office-location-hec-328">
-<span class="md-ellipsis">
-      
-        Office Location: HEC 328
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#welcome-and-course-overview">
-<span class="md-ellipsis">
-      
-        Welcome and Course Overview
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#course-materials">
-<span class="md-ellipsis">
-      
-        Course Materials
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#class-schedule-and-format">
-<span class="md-ellipsis">
-      
-        Class Schedule and Format
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#attendance-policy">
-<span class="md-ellipsis">
-      
-        Attendance Policy
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#punctuality-and-class-participation">
-<span class="md-ellipsis">
-      
-        Punctuality and Class Participation
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#assignment-overview">
-<span class="md-ellipsis">
-      
-        Assignment Overview
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#grading-scale">
-<span class="md-ellipsis">
-      
-        Grading Scale
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#get-your-head-in-the-game">
-<span class="md-ellipsis">
-      
-        Get Your Head in the Game!
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#learning">
-<span class="md-ellipsis">
-      
-        Learning
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#project-descriptions">
-<span class="md-ellipsis">
-      
-        Project Descriptions
-      
-    </span>
-</a>
-<nav aria-label="Project Descriptions" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#lamp-stack-project">
-<span class="md-ellipsis">
-      
-        LAMP Stack Project
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#expected-features">
-<span class="md-ellipsis">
-      
-        Expected Features
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#mern-project-large-project">
-<span class="md-ellipsis">
-      
-        MERN Project (Large Project)
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#team-formation-and-group-work-policies">
-<span class="md-ellipsis">
-      
-        Team Formation and Group Work Policies
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#suggested-roles">
-<span class="md-ellipsis">
-      
-        Suggested Roles
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#expectations">
-<span class="md-ellipsis">
-      
-        Expectations
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#assignment-submission">
-<span class="md-ellipsis">
-      
-        Assignment Submission
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#late-assignment-policy">
-<span class="md-ellipsis">
-      
-        Late Assignment Policy
-      
-    </span>
-</a>
-<nav aria-label="Late Assignment Policy" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#no-late-work-will-be-accepted-without-prior-approval-or-documentation-ie-doctors-note">
-<span class="md-ellipsis">
-      
-        No late work will be accepted without prior approval or documentation (i.e., doctor’s note)
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#assignment-expectations-and-quality-standards">
-<span class="md-ellipsis">
-      
-        Assignment Expectations and Quality Standards
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ai-and-technology-use-policy">
-<span class="md-ellipsis">
-      
-        AI and Technology Use Policy
-      
-    </span>
-</a>
-<nav aria-label="AI and Technology Use Policy" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ai-is-allowed-in-the-course-but-must-be-fully-disclosed-during-your-presentations">
-<span class="md-ellipsis">
-      
-        AI is allowed in the course, but must be fully disclosed during your presentations:
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#this-is-a-no-shame-course">
-<span class="md-ellipsis">
-      
-        This is a no-shame course!
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#communication-expectations">
-<span class="md-ellipsis">
-      
-        Communication Expectations
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Week%201%20-%20History%20of%20the%20Web%20and%20Overview%20of%20Web%20Architectures/">
@@ -708,13 +411,334 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Week%203%20Lecture%201%20-%20What%20is%20Software%20Engineering/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
+<span class="md-ellipsis">
+    Week 3 Lecture 1   What is Software Engineering
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Week 3 Lecture 1   What is Software Engineering
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-is-software-engineering">
+<span class="md-ellipsis">
+      
+        What Is Software Engineering?
+      
+    </span>
+</a>
+<nav aria-label="What Is Software Engineering?" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cop-4331-processes-of-object-oriented-software-development">
+<span class="md-ellipsis">
+      
+        COP 4331 - Processes of Object Oriented Software Development
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#objectives">
+<span class="md-ellipsis">
+      
+        Objectives
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-world-runs-on-software">
+<span class="md-ellipsis">
+      
+        The World Runs on Software
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-we-need-a-formal-discipline">
+<span class="md-ellipsis">
+      
+        Why We Need a Formal Discipline
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-it-goes-wrong-a-real-example">
+<span class="md-ellipsis">
+      
+        When It Goes Wrong: A Real Example
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-went-wrong">
+<span class="md-ellipsis">
+      
+        What Went Wrong?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-formal-definition">
+<span class="md-ellipsis">
+      
+        A Formal Definition
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#solving-problems-analysis-synthesis">
+<span class="md-ellipsis">
+      
+        Solving Problems: Analysis &amp; Synthesis
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#an-analogy-building-a-structure">
+<span class="md-ellipsis">
+      
+        An Analogy: Building a Structure
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#theory-vs-application-cs-vs-se">
+<span class="md-ellipsis">
+      
+        Theory vs. Application: CS vs. SE
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#who-does-software-engineering">
+<span class="md-ellipsis">
+      
+        Who Does Software Engineering?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-system-approach">
+<span class="md-ellipsis">
+      
+        The System Approach
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-roadmap-for-building-software-the-sdlc">
+<span class="md-ellipsis">
+      
+        A Roadmap for Building Software: the SDLC
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#phase-1-requirements-what-are-we-building">
+<span class="md-ellipsis">
+      
+        Phase 1: Requirements - What Are We Building?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#phase-2-design-how-will-we-build-it">
+<span class="md-ellipsis">
+      
+        Phase 2: Design - How Will We Build It?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#phase-3-implementation-writing-the-code">
+<span class="md-ellipsis">
+      
+        Phase 3: Implementation - Writing the Code
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#phase-4-testing-does-it-work-correctly">
+<span class="md-ellipsis">
+      
+        Phase 4: Testing - Does It Work Correctly?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#phase-5-deployment-going-live">
+<span class="md-ellipsis">
+      
+        Phase 5: Deployment - Going Live
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#phase-6-maintenance-keeping-it-running">
+<span class="md-ellipsis">
+      
+        Phase 6: Maintenance - Keeping It Running
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#phase-omega-documentation">
+<span class="md-ellipsis">
+      
+        Phase OMEGA - Documentation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#programming-vs-software-engineering-the-part-vs-the-whole">
+<span class="md-ellipsis">
+      
+        Programming vs. Software Engineering: The Part vs. The Whole
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-we-organize-the-work-methodologies">
+<span class="md-ellipsis">
+      
+        How We Organize the Work: Methodologies
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#waterfall-vs-agile">
+<span class="md-ellipsis">
+      
+        Waterfall vs. Agile
+      
+    </span>
+</a>
+<nav aria-label="Waterfall vs. Agile" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#waterfall-a-sequential-model-each-phase-must-fully-finish-before-the-next-begins">
+<span class="md-ellipsis">
+      
+        Waterfall - a sequential model; each phase must fully finish before the next begins.
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#agile-builds-software-in-small-incremental-cycles-called-sprints-each-delivering-a-working-slice">
+<span class="md-ellipsis">
+      
+        Agile - builds software in small, incremental cycles called sprints, each delivering a working slice.
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tools-of-the-trade">
+<span class="md-ellipsis">
+      
+        Tools of the Trade
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-keeps-engineers-up-at-night">
+<span class="md-ellipsis">
+      
+        What Keeps Engineers Up at Night?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-is-good-software-perspectives-on-quality">
+<span class="md-ellipsis">
+      
+        What Is “Good” Software? Perspectives on Quality
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-impact-of-quality">
+<span class="md-ellipsis">
+      
+        The Impact of Quality
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#case-study-ariane-5-1996">
+<span class="md-ellipsis">
+      
+        Case Study: Ariane 5 (1996)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#case-study-therac-25">
+<span class="md-ellipsis">
+      
+        Case Study: Therac-25
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Week%204%20Lecture%20-%20Node.js%20Fundamentals/">
@@ -758,30 +782,237 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#cop-4331c">
+<a class="md-nav__link" href="#what-is-software-engineering">
 <span class="md-ellipsis">
       
-        COP 4331C
+        What Is Software Engineering?
       
     </span>
 </a>
-<nav aria-label="COP 4331C" class="md-nav">
+<nav aria-label="What Is Software Engineering?" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#processes-of-object-oriented-software-development">
+<a class="md-nav__link" href="#cop-4331-processes-of-object-oriented-software-development">
 <span class="md-ellipsis">
       
-        Processes of Object Oriented Software Development
+        COP 4331 - Processes of Object Oriented Software Development
       
     </span>
 </a>
-<nav aria-label="Processes of Object Oriented Software Development" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#fall-2026">
+<a class="md-nav__link" href="#objectives">
 <span class="md-ellipsis">
       
-        Fall 2026
+        Objectives
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-world-runs-on-software">
+<span class="md-ellipsis">
+      
+        The World Runs on Software
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-we-need-a-formal-discipline">
+<span class="md-ellipsis">
+      
+        Why We Need a Formal Discipline
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-it-goes-wrong-a-real-example">
+<span class="md-ellipsis">
+      
+        When It Goes Wrong: A Real Example
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-went-wrong">
+<span class="md-ellipsis">
+      
+        What Went Wrong?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-formal-definition">
+<span class="md-ellipsis">
+      
+        A Formal Definition
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#solving-problems-analysis-synthesis">
+<span class="md-ellipsis">
+      
+        Solving Problems: Analysis &amp; Synthesis
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#an-analogy-building-a-structure">
+<span class="md-ellipsis">
+      
+        An Analogy: Building a Structure
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#theory-vs-application-cs-vs-se">
+<span class="md-ellipsis">
+      
+        Theory vs. Application: CS vs. SE
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#who-does-software-engineering">
+<span class="md-ellipsis">
+      
+        Who Does Software Engineering?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-system-approach">
+<span class="md-ellipsis">
+      
+        The System Approach
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-roadmap-for-building-software-the-sdlc">
+<span class="md-ellipsis">
+      
+        A Roadmap for Building Software: the SDLC
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#phase-1-requirements-what-are-we-building">
+<span class="md-ellipsis">
+      
+        Phase 1: Requirements - What Are We Building?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#phase-2-design-how-will-we-build-it">
+<span class="md-ellipsis">
+      
+        Phase 2: Design - How Will We Build It?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#phase-3-implementation-writing-the-code">
+<span class="md-ellipsis">
+      
+        Phase 3: Implementation - Writing the Code
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#phase-4-testing-does-it-work-correctly">
+<span class="md-ellipsis">
+      
+        Phase 4: Testing - Does It Work Correctly?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#phase-5-deployment-going-live">
+<span class="md-ellipsis">
+      
+        Phase 5: Deployment - Going Live
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#phase-6-maintenance-keeping-it-running">
+<span class="md-ellipsis">
+      
+        Phase 6: Maintenance - Keeping It Running
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#phase-omega-documentation">
+<span class="md-ellipsis">
+      
+        Phase OMEGA - Documentation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#programming-vs-software-engineering-the-part-vs-the-whole">
+<span class="md-ellipsis">
+      
+        Programming vs. Software Engineering: The Part vs. The Whole
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-we-organize-the-work-methodologies">
+<span class="md-ellipsis">
+      
+        How We Organize the Work: Methodologies
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#waterfall-vs-agile">
+<span class="md-ellipsis">
+      
+        Waterfall vs. Agile
+      
+    </span>
+</a>
+<nav aria-label="Waterfall vs. Agile" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#waterfall-a-sequential-model-each-phase-must-fully-finish-before-the-next-begins">
+<span class="md-ellipsis">
+      
+        Waterfall - a sequential model; each phase must fully finish before the next begins.
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#agile-builds-software-in-small-incremental-cycles-called-sprints-each-delivering-a-working-slice">
+<span class="md-ellipsis">
+      
+        Agile - builds software in small, incremental cycles called sprints, each delivering a working slice.
       
     </span>
 </a>
@@ -790,247 +1021,64 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#instructor-dr-john-aedo">
+<a class="md-nav__link" href="#tools-of-the-trade">
 <span class="md-ellipsis">
       
-        Instructor: Dr. John Aedo
+        Tools of the Trade
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#office-location-hec-328">
+<a class="md-nav__link" href="#what-keeps-engineers-up-at-night">
 <span class="md-ellipsis">
       
-        Office Location: HEC 328
+        What Keeps Engineers Up at Night?
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#welcome-and-course-overview">
+<a class="md-nav__link" href="#what-is-good-software-perspectives-on-quality">
 <span class="md-ellipsis">
       
-        Welcome and Course Overview
+        What Is “Good” Software? Perspectives on Quality
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#course-materials">
+<a class="md-nav__link" href="#the-impact-of-quality">
 <span class="md-ellipsis">
       
-        Course Materials
+        The Impact of Quality
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#class-schedule-and-format">
+<a class="md-nav__link" href="#case-study-ariane-5-1996">
 <span class="md-ellipsis">
       
-        Class Schedule and Format
+        Case Study: Ariane 5 (1996)
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#attendance-policy">
+<a class="md-nav__link" href="#case-study-therac-25">
 <span class="md-ellipsis">
       
-        Attendance Policy
+        Case Study: Therac-25
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#punctuality-and-class-participation">
+<a class="md-nav__link" href="#key-takeaways">
 <span class="md-ellipsis">
       
-        Punctuality and Class Participation
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#assignment-overview">
-<span class="md-ellipsis">
-      
-        Assignment Overview
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#grading-scale">
-<span class="md-ellipsis">
-      
-        Grading Scale
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#get-your-head-in-the-game">
-<span class="md-ellipsis">
-      
-        Get Your Head in the Game!
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#learning">
-<span class="md-ellipsis">
-      
-        Learning
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#project-descriptions">
-<span class="md-ellipsis">
-      
-        Project Descriptions
-      
-    </span>
-</a>
-<nav aria-label="Project Descriptions" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#lamp-stack-project">
-<span class="md-ellipsis">
-      
-        LAMP Stack Project
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#expected-features">
-<span class="md-ellipsis">
-      
-        Expected Features
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#mern-project-large-project">
-<span class="md-ellipsis">
-      
-        MERN Project (Large Project)
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#team-formation-and-group-work-policies">
-<span class="md-ellipsis">
-      
-        Team Formation and Group Work Policies
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#suggested-roles">
-<span class="md-ellipsis">
-      
-        Suggested Roles
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#expectations">
-<span class="md-ellipsis">
-      
-        Expectations
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#assignment-submission">
-<span class="md-ellipsis">
-      
-        Assignment Submission
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#late-assignment-policy">
-<span class="md-ellipsis">
-      
-        Late Assignment Policy
-      
-    </span>
-</a>
-<nav aria-label="Late Assignment Policy" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#no-late-work-will-be-accepted-without-prior-approval-or-documentation-ie-doctors-note">
-<span class="md-ellipsis">
-      
-        No late work will be accepted without prior approval or documentation (i.e., doctor’s note)
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#assignment-expectations-and-quality-standards">
-<span class="md-ellipsis">
-      
-        Assignment Expectations and Quality Standards
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ai-and-technology-use-policy">
-<span class="md-ellipsis">
-      
-        AI and Technology Use Policy
-      
-    </span>
-</a>
-<nav aria-label="AI and Technology Use Policy" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ai-is-allowed-in-the-course-but-must-be-fully-disclosed-during-your-presentations">
-<span class="md-ellipsis">
-      
-        AI is allowed in the course, but must be fully disclosed during your presentations:
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#this-is-a-no-shame-course">
-<span class="md-ellipsis">
-      
-        This is a no-shame course!
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#communication-expectations">
-<span class="md-ellipsis">
-      
-        Communication Expectations
+        Key Takeaways
       
     </span>
 </a>
@@ -1073,320 +1121,382 @@
   page title (or respectively site name) is used as the main headline.
 -->
 <!-- Page content -->
-<h2 id="cop-4331c">COP 4331C<a class="headerlink" href="#cop-4331c" title="Permanent link">¶</a></h2>
-<h3 id="processes-of-object-oriented-software-development">Processes of Object Oriented Software Development<a class="headerlink" href="#processes-of-object-oriented-software-development" title="Permanent link">¶</a></h3>
-<h4 id="fall-2026">Fall 2026<a class="headerlink" href="#fall-2026" title="Permanent link">¶</a></h4>
+<h2 id="what-is-software-engineering">What Is Software Engineering?<a class="headerlink" href="#what-is-software-engineering" title="Permanent link">¶</a></h2>
+<h4 id="cop-4331-processes-of-object-oriented-software-development">COP 4331 - Processes of Object Oriented Software Development<a class="headerlink" href="#cop-4331-processes-of-object-oriented-software-development" title="Permanent link">¶</a></h4>
+<p>University of Central Florida</p>
+<p><small>Based on material by Dr. Richard Leinecker, and Pfleeger &amp; Atlee, <em>Software Engineering</em> (4th ed.)</small></p>
+<p>Note:<br/>
+Welcome / housekeeping. This is lecture 1 of 2 covering the foundations of the course: what software engineering is, why it exists as a discipline, the SDLC, and how quality and methodology shape the way we build software. Lecture 2 covers project-management tooling and UML modeling.</p>
 <hr/>
-<h3 id="instructor-dr-john-aedo">Instructor:  Dr. John Aedo<a class="headerlink" href="#instructor-dr-john-aedo" title="Permanent link">¶</a></h3>
-<h3 id="office-location-hec-328">Office Location:  HEC 328<a class="headerlink" href="#office-location-hec-328" title="Permanent link">¶</a></h3>
+<h3 id="objectives">Objectives<a class="headerlink" href="#objectives" title="Permanent link">¶</a></h3>
+<p>By the end of this lecture you should be able to:</p>
 <ul>
-<li>Office Hours:  <ul>
-<li>Monday, Wednesday 4:45pm - 5:45pm</li>
-<li>Tuesday, Thursday 3:00pm - 5:00pm</li>
+<li>Explain what software engineering is, and how it differs from programming and computer science</li>
+<li>Describe why software needed a “formal discipline” and what happens when it doesn’t have one</li>
+<li>Walk through the phases of the Software Development Life Cycle (SDLC)</li>
+<li>Compare Waterfall and Agile as ways of organizing that lifecycle</li>
+<li>Describe multiple perspectives on software <strong>quality</strong>, and why quality matters</li>
+</ul>
+<p>Note:<br/>
+This slide sets expectations. Feel free to skip narrating every bullet — post it and move on.</p>
+<hr/>
+<h3 id="the-world-runs-on-software">The World Runs on Software<a class="headerlink" href="#the-world-runs-on-software" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Communication</strong> - social media, email, messaging apps</li>
+<li><strong>Transportation</strong> - engine controls, GPS, flight control systems</li>
+<li><strong>Finance</strong> - online banking, trading platforms, ATMs</li>
+<li><strong>Healthcare</strong> - electronic health records, medical imaging, diagnostics</li>
+<li><strong>Entertainment</strong> - games, streaming, digital arts</li>
+</ul>
+<p>Software isn’t a niche technical product anymore - it’s critical infrastructure.</p>
+<hr/>
+<h3 id="why-we-need-a-formal-discipline">Why We Need a Formal Discipline<a class="headerlink" href="#why-we-need-a-formal-discipline" title="Permanent link">¶</a></h3>
+<p>In the early days of computing (1960s-1980s), software projects were notoriously difficult. Common problems:</p>
+<ul>
+<li>Massively over budget</li>
+<li>Delivered late - or not delivered at all</li>
+<li>Unreliable, full of bugs</li>
+<li>Difficult and expensive to maintain or update</li>
+</ul>
+<p>This “software crisis” is what pushed the field toward an <strong>engineering</strong> approach.</p>
+<p>Note:<br/>
+Historically this is sometimes literally called the “software crisis” — worth mentioning by name if there’s time.</p>
+<hr/>
+<h3 id="when-it-goes-wrong-a-real-example">When It Goes Wrong: A Real Example<a class="headerlink" href="#when-it-goes-wrong-a-real-example" title="Permanent link">¶</a></h3>
+<p><strong>The IRS / Sperry Corporation case (1981-1985):</strong></p>
+<ul>
+<li>IRS hired Sperry to build an automated federal income-tax processing system which involved both a hardware and software upgrade<ul>
+<li>Honeywell/CDC to Sperry UNIVAC 1100/84</li>
+<li>Assembly Language to COBOL</li>
 </ul>
 </li>
+<li>An extra <strong>$90M</strong> was needed on top of the original $103M contract</li>
+<li>IRS lost <strong>$40.2M</strong> in interest and <strong>$22.3M</strong> in overtime wages because refunds weren’t issued on time (two weeks late!)</li>
+</ul>
+<p>A <strong>fault</strong> is a human mistake (an error) made during a software activity. A <strong>failure</strong> is a departure from the system’s required behavior - what the user actually experiences.</p>
+<hr/>
+<h3 id="what-went-wrong">What Went Wrong?<a class="headerlink" href="#what-went-wrong" title="Permanent link">¶</a></h3>
+<ul>
+<li><em>Moving Goal Posts</em> - IRS did not settle on a final specification until 3 1/2 years into the project.</li>
+<li><em>Double Jeopardy</em> - Involved a simultaneous hardware and software upgrade.  Each one of these is difficult on its own, especially considering the scale of the IRS.  This scenario was built on compounded complexities!</li>
+<li><em>Poor Performance</em> - There was no time to optimize the new COBOL code against the new UNIVAC machines</li>
+<li><em>Murphy’s Law</em> - Even the best-planned, expertly-executed projects can be plagued by unexpected problems like hardware failures</li>
+<li><em>No Fallback</em> - The old system wasn’t available as a backup once it was clear that the new system was having issues.</li>
 </ul>
 <hr/>
-<h3 id="welcome-and-course-overview">Welcome and Course Overview<a class="headerlink" href="#welcome-and-course-overview" title="Permanent link">¶</a></h3>
-<ul>
-<li>We’re going to build cool stuff and learn how the “pros” build software</li>
-<li>The chief objective is to prepare you for both Senior Design and the professional software development world</li>
-<li>This is your on-ramp to Senior Design.  Many of the course elements are designed specifically to prepare you for the 2-semester trial of tears that is your capstone project.</li>
-<li>Prerequisites:  CS2 (COP 3503C) and for CS majors, Foundation Exam (COT 3960)</li>
-</ul>
+<h3 id="a-formal-definition">A Formal Definition<a class="headerlink" href="#a-formal-definition" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>“The application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software; that is, the application of engineering to software.” - IEEE</p>
+</blockquote>
+<p>In simpler terms: <strong>using established principles and processes to build high-quality software that meets users’ needs, on time and within budget.</strong></p>
 <hr/>
-<h3 id="course-materials">Course Materials<a class="headerlink" href="#course-materials" title="Permanent link">¶</a></h3>
+<h3 id="solving-problems-analysis-synthesis">Solving Problems: Analysis &amp; Synthesis<a class="headerlink" href="#solving-problems-analysis-synthesis" title="Permanent link">¶</a></h3>
+<p>Software products are large and complex. Building them requires two complementary skills:</p>
 <ul>
-<li>All required materials will be provided via Canvas</li>
-<li>
-<p>Most of these materials will be available concurrently on the course website:</p>
-<ul>
-<li><a href="https://teaching.johnaedo.com/cop4331c-site">https://teaching.johnaedo.com/cop4331c-site</a></li>
+<li><strong>Analysis</strong> - decomposing a large problem into smaller, understandable pieces. The key tool is <strong>abstraction</strong>.</li>
+<li><strong>Synthesis</strong> - composing a working system from smaller building blocks. <strong>Composition</strong> is the hard part - the pieces have to fit.</li>
 </ul>
-</li>
-<li>
-<p>You will be required to purchase a domain and a virtual server for our assignments.</p>
-<ul>
-<li>Costs can vary, but should be inexpensive.</li>
-<li>Domain registration can be as cheap as a buck of two for a year.</li>
-<li>A virtual server should run you under $10\/month, usually cheaper.</li>
-</ul>
-</li>
-<li>
-<p>Other software or technology requirements:</p>
-<ul>
-<li>A device capable of running Visual Studio Code or equivalent software, possibly also some server services such as NodeJS, mySQL, Docker etc. if you wish to code locally.</li>
-<li>A phone that is capable of successfully registering your attendance via UCF Here.</li>
-</ul>
-</li>
-</ul>
-<hr/>
-<h3 id="class-schedule-and-format">Class Schedule and Format<a class="headerlink" href="#class-schedule-and-format" title="Permanent link">¶</a></h3>
-<ul>
-<li>Section 1: Tuesdays and Thursdays, 9:00am - 10:15am</li>
-<li>Section 2:  Mondays and Wednesdays, 6:00pm - 7:15pm</li>
-<li>Location:  HEC 125</li>
-<li><strong>In Person</strong></li>
-<li>Sessions will be a mix of lectures and live-coding demos</li>
-<li>No Class on Monday 9/  in observance of Labor Day</li>
-<li>No Class on Wednesday 11\/11 in observance of Veteran’s Day</li>
-<li>No Class on the week of 11\/23 for Thanksgiving</li>
-<li>Labor Day and Veteran’s Day will have recorded lectures available since Section 1 will hold classes as normal that week.</li>
-</ul>
-<hr/>
-<h3 id="attendance-policy">Attendance Policy<a class="headerlink" href="#attendance-policy" title="Permanent link">¶</a></h3>
-<ul>
-<li>Attendance comprises 10% of your final grade</li>
-<li>Attendance will be taken randomly throughout the semesters<ul>
-<li>It may be at the beginning of class, in the middle of class, or at the end.</li>
-</ul>
-</li>
-<li>Use UCF Here to register your attendance<ul>
-<li>Make sure your phone works with UCF Here.</li>
-<li>If you have issues, contact UCF IT</li>
-</ul>
-</li>
-<li>Excused absences must be accompanied by documentation such a doctor’s note.</li>
-</ul>
-<hr/>
-<h3 id="punctuality-and-class-participation">Punctuality and Class Participation<a class="headerlink" href="#punctuality-and-class-participation" title="Permanent link">¶</a></h3>
-<ul>
-<li>If attendance is taken at the start of class, the QR code will remain available for 5 minutes after the start.</li>
-<li>I do not allow for tardiness.  If you miss the QR code, you are considered absent.</li>
-<li>I ask that if you do not wish to stay for class, please do not come at all.  Unless you have a pressing need to be somewhere in the middle of class, it is fundamentally disrespectful to up and walk.  I ask kindly that you not do this.</li>
-<li>If you choose to leave in the middle of class, please be considerate and respectful of others.  Do so quietly.  Note that the doors to this classroom are LOUD.  DO NOT LET THEM SLAM.</li>
-</ul>
-<hr/>
-<h3 id="assignment-overview">Assignment Overview<a class="headerlink" href="#assignment-overview" title="Permanent link">¶</a></h3>
+<p>Related vocabulary you’ll hear all semester:</p>
 <table>
 <thead>
 <tr>
-<th>Activity</th>
-<th>Contribution</th>
+<th>Term</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Mid-Term Exam</td>
-<td>10%</td>
+<td>Method</td>
+<td>A formal “recipe” for reaching a goal, independent of tools</td>
 </tr>
 <tr>
-<td>LAMP Tutorial</td>
-<td>5%</td>
+<td>Tool</td>
+<td>An instrument/automated system that helps do something better</td>
 </tr>
 <tr>
-<td>LAMP Project</td>
-<td>15%</td>
+<td>Procedure</td>
+<td>A combination of tools and techniques used to produce a product</td>
 </tr>
 <tr>
-<td>MERN Tutorial</td>
-<td>10%</td>
-</tr>
-<tr>
-<td>MERN Project</td>
-<td>25%</td>
-</tr>
-<tr>
-<td>Quizzes</td>
-<td>5%</td>
-</tr>
-<tr>
-<td>Labs</td>
-<td>10%</td>
-</tr>
-<tr>
-<td>Attendance</td>
-<td>10%</td>
-</tr>
-<tr>
-<td>Instructor Check-In</td>
-<td>10%</td>
+<td>Paradigm</td>
+<td>A philosophy for building a product (e.g., object-oriented vs. structured)</td>
 </tr>
 </tbody>
 </table>
 <hr/>
-<h3 id="grading-scale">Grading Scale<a class="headerlink" href="#grading-scale" title="Permanent link">¶</a></h3>
+<h3 id="an-analogy-building-a-structure">An Analogy: Building a Structure<a class="headerlink" href="#an-analogy-building-a-structure" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Programming</strong> is like laying bricks - a fundamental, essential skill.</li>
+<li><strong>Software Engineering</strong> is like being the architect, project manager, <em>and</em> construction foreman:</li>
+<li>Designing the blueprint (architecture)</li>
+<li>Sourcing materials (choosing technologies)</li>
+<li>Managing timeline and budget (project management)</li>
+<li>Making sure the foundation is solid and the building is safe (quality assurance)</li>
+<li>Overseeing the entire construction process</li>
+<li>Responding to issues after the building is occupied (software maintenance)</li>
+</ul>
+<hr/>
+<h3 id="theory-vs-application-cs-vs-se">Theory vs. Application: CS vs. SE<a class="headerlink" href="#theory-vs-application-cs-vs-se" title="Permanent link">¶</a></h3>
+<div style="display:flex; gap:2em; text-align:left;">
+<div style="flex:1;">
+
+**Computer Science**
+
+- The theoretical foundation - the "Science"
+- Focuses on what is *computable*
+- Algorithms, data structures, complexity theory, math of computation
+- Analogy: **Physics**
+
+</div>
+<div style="flex:1;">
+
+**Software Engineering**
+
+- The practical application - the "Engineering"
+- Focuses on building reliable systems in the real world
+- Process, methodology, quality, cost, deadlines
+- Analogy: **Mechanical Engineering** (using physics to build a reliable car)
+
+</div>
+</div>
+<p>Computer science tends to focus on hardware, compilers, operating systems, and languages; software engineering uses all of that as a <strong>problem-solving toolkit</strong>.</p>
+<hr/>
+<h3 id="who-does-software-engineering">Who Does Software Engineering?<a class="headerlink" href="#who-does-software-engineering" title="Permanent link">¶</a></h3>
+<p>Every project has (at least) three kinds of stakeholders:</p>
+<ul>
+<li><strong>Customer</strong> - the company, organization, or person who <em>pays</em> for the system</li>
+<li><strong>Developer</strong> - the company, organization, or person <em>building</em> the system</li>
+<li><strong>User</strong> - the person or people who will actually <em>use</em> the system</li>
+</ul>
+<p>These are not always the same people - and that gap is often where requirements go wrong. A full project also involves requirement analysts, designers, programmers, testers, trainers, a maintenance team, and often librarians and configuration managers to keep everything traceable.</p>
+<hr/>
+<h3 id="the-system-approach">The System Approach<a class="headerlink" href="#the-system-approach" title="Permanent link">¶</a></h3>
+<p>Software rarely exists in isolation - it’s one part of a larger <strong>system</strong> of hardware, software, and people. Thinking in systems means:</p>
+<ul>
+<li>Identifying the relevant <strong>activities</strong> (events triggered by something) and <strong>objects</strong> (the entities involved)</li>
+<li>Defining <strong>relationships</strong> - how entities and activities interact</li>
+<li>Defining the <strong>system boundary</strong> - where input comes from, where output goes</li>
+<li>Recognizing that systems can be <strong>nested</strong> or <strong>interrelated</strong> - a system can exist entirely inside another system</li>
+</ul>
+<p>Getting the boundary right early avoids a lot of pain later - it’s the same boundary concept you’ll see again in UML use case diagrams next lecture.</p>
+<hr/>
+<h3 id="a-roadmap-for-building-software-the-sdlc">A Roadmap for Building Software: the SDLC<a class="headerlink" href="#a-roadmap-for-building-software-the-sdlc" title="Permanent link">¶</a></h3>
+<p>The <strong>Software Development Life Cycle (SDLC)</strong> is a structured process that divides software development into distinct phases. Think of it as the step-by-step recipe for a software project - it gives you a framework for planning, creating, testing,and deploying quality software.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../_assets/images/sdlc-pipeline.svg"><img alt="1920" src="../../_assets/images/sdlc-pipeline.svg"/></a></p>
+<hr/>
+<h3 id="phase-1-requirements-what-are-we-building">Phase 1: Requirements - What Are We Building?<a class="headerlink" href="#phase-1-requirements-what-are-we-building" title="Permanent link">¶</a></h3>
+<p>The most critical phase: understanding and documenting what the user and stakeholders actually need.</p>
+<p><strong>Key activities:</strong></p>
+<ul>
+<li>Conducting interviews with clients</li>
+<li>Writing user stories (“As a user, I want to…“)</li>
+<li>Defining <strong>functional requirements</strong> - what the system does</li>
+<li>Defining <strong>non-functional requirements</strong> - how the system performs (speed, security, etc.)</li>
+</ul>
+<hr/>
+<h3 id="phase-2-design-how-will-we-build-it">Phase 2: Design - How Will We Build It?<a class="headerlink" href="#phase-2-design-how-will-we-build-it" title="Permanent link">¶</a></h3>
+<p>Creating the blueprint for the system based on the requirements.</p>
+<p><strong>High-level design (architecture):</strong></p>
+<ul>
+<li>What are the major components, and how do they interact?</li>
+<li>What database and technology stack will be used?</li>
+</ul>
+<p><strong>Low-level design:</strong></p>
+<ul>
+<li>Detailed logic for specific modules and functions</li>
+<li>Database schemas</li>
+<li>API specifications</li>
+</ul>
+<hr/>
+<h3 id="phase-3-implementation-writing-the-code">Phase 3: Implementation - Writing the Code<a class="headerlink" href="#phase-3-implementation-writing-the-code" title="Permanent link">¶</a></h3>
+<ul>
+<li>The phase where developers write the actual code</li>
+<li>Design documents and specifications get translated into a working product</li>
+<li>This is the “programming” part of the larger engineering process - important, but only one slice of it</li>
+</ul>
+<hr/>
+<h3 id="phase-4-testing-does-it-work-correctly">Phase 4: Testing - Does It Work Correctly?<a class="headerlink" href="#phase-4-testing-does-it-work-correctly" title="Permanent link">¶</a></h3>
+<p>Verifying that the software meets requirements and is free of major defects.</p>
 <table>
 <thead>
 <tr>
-<th>Letter Grade</th>
-<th>Range</th>
+<th>Type of testing</th>
+<th>What it checks</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>A</td>
-<td>100% - 94%</td>
+<td>Unit Testing</td>
+<td>Individual components</td>
 </tr>
 <tr>
-<td>A-</td>
-<td>\&lt; 94% - 90%</td>
+<td>Integration Testing</td>
+<td>Components working together</td>
 </tr>
 <tr>
-<td>B+</td>
-<td>\&lt; 90% - 87%</td>
+<td>System Testing</td>
+<td>The entire system, end-to-end</td>
 </tr>
 <tr>
-<td>B</td>
-<td>\&lt; 87% - 84%</td>
-</tr>
-<tr>
-<td>B-</td>
-<td>\&lt; 84% - 80%</td>
-</tr>
-<tr>
-<td>C+</td>
-<td>\&lt; 80% - 77%</td>
-</tr>
-<tr>
-<td>C</td>
-<td>\&lt; 77% - 74%</td>
-</tr>
-<tr>
-<td>C-</td>
-<td>\&lt; 74% - 70%</td>
-</tr>
-<tr>
-<td>D+</td>
-<td>\&lt; 70% - 67%</td>
-</tr>
-<tr>
-<td>D</td>
-<td>\&lt; 67% - 64%</td>
-</tr>
-<tr>
-<td>D-</td>
-<td>\&lt; 64% - 60%</td>
-</tr>
-<tr>
-<td>F</td>
-<td>\&lt; 60% - 0%</td>
+<td>User Acceptance Testing (UAT)</td>
+<td>The client validates the software</td>
 </tr>
 </tbody>
 </table>
 <hr/>
-<h3 id="get-your-head-in-the-game">Get Your Head in the Game!<a class="headerlink" href="#get-your-head-in-the-game" title="Permanent link">¶</a></h3>
+<h3 id="phase-5-deployment-going-live">Phase 5: Deployment - Going Live<a class="headerlink" href="#phase-5-deployment-going-live" title="Permanent link">¶</a></h3>
+<p>Releasing the software to users - anywhere from a simple file upload to a complex, automated cloud rollout.</p>
 <ul>
-<li>This course is very different from any you’ve had so far.</li>
-<li>You cannot expect to succeed if you put off the projects until the last minute.</li>
-<li>Success requires time management and being proactive, not just with your own tasks, but your teammates!</li>
-<li>The best strategy is to spend some time every week working on the projects.</li>
-<li>You do not have time to dawdle.  This course is packed and will require a lot of self-learning and discipline to stay on task!</li>
+<li>Installing on servers, or building containers</li>
+<li>Network configuration (opening ports, configuring DNS)</li>
+<li>Security testing (red-teaming, compliance audits)</li>
+<li>Migrating data</li>
+<li>Training users</li>
 </ul>
 <hr/>
-<h3 id="learning">Learning<a class="headerlink" href="#learning" title="Permanent link">¶</a></h3>
+<h3 id="phase-6-maintenance-keeping-it-running">Phase 6: Maintenance - Keeping It Running<a class="headerlink" href="#phase-6-maintenance-keeping-it-running" title="Permanent link">¶</a></h3>
+<p>The <strong>longest and often most expensive</strong> phase of the SDLC.</p>
 <ul>
-<li>What if nobody on your team knows about databases, or APIs, or front ends?</li>
-<li>You will learn the basics in class, but these are just “getting started” lectures</li>
-<li>You will need to spend time learning on your own with YouTube videos and online courses.</li>
-<li>You can also visit me during office hours (see above)</li>
-<li>I am also willing to schedule extra zoom sessions.</li>
-<li>In this class, you will learn a lot more than I have time to teach you.</li>
+<li><strong>Corrective maintenance</strong> - fixing bugs discovered after release</li>
+<li><strong>Adaptive maintenance</strong> - updating software to work in new environments (e.g., a new OS)</li>
+<li><strong>Perfective maintenance</strong> - adding features or improving performance based on user feedback</li>
 </ul>
 <hr/>
-<h2 id="project-descriptions">Project Descriptions<a class="headerlink" href="#project-descriptions" title="Permanent link">¶</a></h2>
-<hr/>
-<h3 id="lamp-stack-project">LAMP Stack Project<a class="headerlink" href="#lamp-stack-project" title="Permanent link">¶</a></h3>
+<h3 id="phase-omega-documentation">Phase <strong>OMEGA</strong> - Documentation<a class="headerlink" href="#phase-omega-documentation" title="Permanent link">¶</a></h3>
 <ul>
-<li>A contact manager web app built on a LAMP stack (Linux, Apache, MySQL, PHP) — no Python</li>
-<li>Users can log in or sign up (register); once authenticated, they perform standard CRUD operations on their contacts:<ul>
-<li><strong>C</strong> – Create</li>
-<li><strong>R</strong> – Read</li>
-<li><strong>U</strong> – Update</li>
-<li><strong>D</strong> – Delete</li>
+<li>This one is mine, borne out of experience and frustration.</li>
+<li>One of the most overlooked software engineering tasks is documentation – getting it all in writing for the purposes of communication, training, and future work on the project.</li>
+<li>It requires discipline to budget the time, organization to make the documentation searchable and usable, and skill to effectively and concisely communicate the technical and functional aspects of the project.</li>
 </ul>
-</li>
-</ul>
+<div class="admonition tip">
+<p class="admonition-title">Important</p>
+</div>
+<p>Documentation is an on-going process throughout every phase of the SDLC</p>
 <hr/>
-<h3 id="expected-features">Expected Features<a class="headerlink" href="#expected-features" title="Permanent link">¶</a></h3>
+<h3 id="programming-vs-software-engineering-the-part-vs-the-whole">Programming vs. Software Engineering: The Part vs. The Whole<a class="headerlink" href="#programming-vs-software-engineering-the-part-vs-the-whole" title="Permanent link">¶</a></h3>
+<div style="display:flex; gap:2em; text-align:left;">
+<div style="flex:1;">
+<b>Programming</b>
+
+- A solitary or small-group activity
+- Writing instructions for a computer
+- A single phase in the process
+- Focus: making the code *work*
+
+</div>
+<div style="flex:1;">
+
+**Software Engineering**
+
+- A team-based discipline
+- The entire life cycle - idea to retirement
+- Project management, design, testing, process
+- Focus: a quality product that solves a problem, reliably and sustainably
+
+</div>
+</div>
+<hr/>
+<h3 id="how-we-organize-the-work-methodologies">How We Organize the Work: Methodologies<a class="headerlink" href="#how-we-organize-the-work-methodologies" title="Permanent link">¶</a></h3>
+<p>A <strong>methodology</strong> is a specific way of organizing the SDLC’s phases. The two dominant approaches are <strong>Waterfall</strong> (linear) and <strong>Agile</strong> (iterative).</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../_assets/images/methodology-comparison.svg"><img alt="1920" src="../../_assets/images/methodology-comparison.svg"/></a></p>
+<hr/>
+<h3 id="waterfall-vs-agile">Waterfall vs. Agile<a class="headerlink" href="#waterfall-vs-agile" title="Permanent link">¶</a></h3>
+<h4 id="waterfall-a-sequential-model-each-phase-must-fully-finish-before-the-next-begins"><strong>Waterfall</strong> - a sequential model; each phase must fully finish before the next begins.<a class="headerlink" href="#waterfall-a-sequential-model-each-phase-must-fully-finish-before-the-next-begins" title="Permanent link">¶</a></h4>
 <ul>
-<li>Includes a search function for contact records (case-insensitive, partial match — e.g. searching “Jo” should match John, Jones, Jobs)</li>
-<li>Minimum contact fields: First Name, Last Name, Email, Phone</li>
-<li>Must implement at least one one:many relation in the database schema</li>
-<li>Must communicate from front end to backend through an API; at least one endpoint must be demonstrated with Bruno.</li>
-<li>Application must be secured with TLS and passwords hashed and salted.</li>
-<li>Must reside on a remote server (not a local machine) — e.g. GoDaddy, Heroku, Digital Ocean, AWS, or Azure.  Class demos will be on Digital Ocean.</li>
-<li>Deliverables: professional PowerPoint slides.  All team members must participate meaningfully in the presentation.</li>
-<li>For the current rubric, check Canvas</li>
+<li>Best for: projects with stable, well-understood requirements (e.g., building a bridge)</li>
+<li>Risk: rigid; changes are expensive once a phase is complete</li>
 </ul>
-<hr/>
-<h3 id="mern-project-large-project">MERN Project (Large Project)<a class="headerlink" href="#mern-project-large-project" title="Permanent link">¶</a></h3>
+<h4 id="agile-builds-software-in-small-incremental-cycles-called-sprints-each-delivering-a-working-slice"><strong>Agile</strong> - builds software in small, incremental cycles called <strong>sprints</strong>, each delivering a working slice.<a class="headerlink" href="#agile-builds-software-in-small-incremental-cycles-called-sprints-each-delivering-a-working-slice" title="Permanent link">¶</a></h4>
 <ul>
-<li>The larger, capstone-style project of the semester (MongoDB, Express, React, Node)</li>
-<li>Unlike the small project’s assigned teams, you may form your own team for this project</li>
-<li>Detailed requirements and rubric to be provided separately — check Webcourses for updates</li>
+<li>Best for: projects where requirements are expected to evolve (most modern software)</li>
+<li>Risk: less predictable in final feature set and timeline</li>
 </ul>
 <hr/>
-<h3 id="team-formation-and-group-work-policies">Team Formation and Group Work Policies<a class="headerlink" href="#team-formation-and-group-work-policies" title="Permanent link">¶</a></h3>
+<h3 id="tools-of-the-trade">Tools of the Trade<a class="headerlink" href="#tools-of-the-trade" title="Permanent link">¶</a></h3>
 <ul>
-<li>For the small project, you will be assigned to a team; for the large project, you may form your own team</li>
-<li>In most cases, everyone on a team receives the same grade for a project — exceptions apply for members who do not contribute their fair share</li>
-<li>You are expected to hold regular team meetings (in person and/or via a tool such as Discord) in addition to class time</li>
-<li>Take personal responsibility for your part of the work — “Do what you say you will do” (DWYSYWD) is a philosophy that will follow you into Senior Design</li>
+<li><strong>Programming Languages:</strong> Python, Java, JavaScript, C++, Go, Rust</li>
+<li><strong>Version Control:</strong> Git, GitHub, GitLab</li>
+<li><strong>IDEs:</strong> VS Code, IntelliJ IDEA, Eclipse, Zed</li>
+<li><strong>Project Management / Issue Tracking:</strong> Jira, Trello, Asana</li>
+<li><strong>Testing Frameworks:</strong> JUnit, Jest, PyTest, Selenium, Cypress</li>
+<li><strong>Cloud &amp; DevOps:</strong> AWS, Azure, Docker, Kubernetes</li>
 </ul>
+<p><small>We’ll dig into the project-management and modeling tools in the next lecture.</small></p>
 <hr/>
-<h3 id="suggested-roles">Suggested Roles<a class="headerlink" href="#suggested-roles" title="Permanent link">¶</a></h3>
+<h3 id="what-keeps-engineers-up-at-night">What Keeps Engineers Up at Night?<a class="headerlink" href="#what-keeps-engineers-up-at-night" title="Permanent link">¶</a></h3>
 <ul>
-<li><strong>Project manager</strong> – coordinates work across roles, develops project timeline, enables communication/collaboration.  Also takes on a secondary development role.  “Not just a backseat driver”</li>
-<li><strong>Database</strong> – creates the entity relationship diagram (ERD) for the team, which becomes part of the presentation</li>
-<li><strong>API developers</strong> – build and test endpoints, typically via SwaggerHub, so front-end developers know how to consume them</li>
-<li><strong>Front-end developers</strong> – build the UI (Bootstrap/jQuery recommended), following API documentation; avoid alert/dialog boxes except for delete confirmations</li>
+<li><strong>Security</strong> - protecting systems from threats and vulnerabilities</li>
+<li><strong>Scale</strong> - handling millions of users</li>
+<li><strong>Complexity</strong> - managing massive, interconnected codebases</li>
+<li><strong>Legacy systems</strong> - maintaining and modernizing old, critical software</li>
+<li><strong>AI/ML integration</strong> - incorporating it ethically and effectively</li>
+<li><strong>Evolving user expectations</strong> - fast, seamless, intuitive experiences</li>
 </ul>
 <hr/>
-<h3 id="expectations">Expectations<a class="headerlink" href="#expectations" title="Permanent link">¶</a></h3>
+<h3 id="what-is-good-software-perspectives-on-quality">What Is “Good” Software? Perspectives on Quality<a class="headerlink" href="#what-is-good-software-perspectives-on-quality" title="Permanent link">¶</a></h3>
+<p>There is no single definition of quality - different people mean different things by it:</p>
 <ul>
-<li>Do not ghost your team — social loafing is not fair to your teammates and will affect your individual grade</li>
-<li>If you hold a full-time job, plan for strong time management; this is a 4000-level class that prepares you for Senior Design and requires real time and dedication</li>
+<li><strong>Transcendental view</strong> - quality is something you recognize but can’t quite define</li>
+<li><strong>User view</strong> - quality is fitness for purpose</li>
+<li><strong>Manufacturing view</strong> - quality is conformance to specification</li>
+<li><strong>Product view</strong> - quality tied to inherent characteristics of the product itself</li>
+<li><strong>Value-based view</strong> - quality is what customers are willing to pay for</li>
 </ul>
+<p>Good software engineering has to account for the <strong>quality of the product</strong>, the <strong>quality of the process</strong> used to build it, and the <strong>quality in the context of the business</strong> (e.g., return on investment).</p>
 <hr/>
-<h3 id="assignment-submission">Assignment Submission<a class="headerlink" href="#assignment-submission" title="Permanent link">¶</a></h3>
+<h3 id="the-impact-of-quality">The Impact of Quality<a class="headerlink" href="#the-impact-of-quality" title="Permanent link">¶</a></h3>
+<p><strong>Good software engineering:</strong></p>
 <ul>
-<li>Only one team member needs to submit the presentation slides.</li>
-<li>All project code must be kept in a public GitHub repository so the instructor and TA can access it and check progress; add the GitHub link to the project spreadsheet</li>
-<li>APIs must be documented and testable via Bruno </li>
-<li>Keep documentation current so the team knows how to use each endpoint and any changes made</li>
+<li>Saves money and time</li>
+<li>Powers innovation and economic growth</li>
+<li>Can save lives (medical devices, automotive safety)</li>
+<li>Builds trust with users</li>
 </ul>
-<hr/>
-<h3 id="late-assignment-policy">Late Assignment Policy<a class="headerlink" href="#late-assignment-policy" title="Permanent link">¶</a></h3>
-<h4 id="no-late-work-will-be-accepted-without-prior-approval-or-documentation-ie-doctors-note">No late work will be accepted without prior approval or documentation (i.e., doctor’s note)<a class="headerlink" href="#no-late-work-will-be-accepted-without-prior-approval-or-documentation-ie-doctors-note" title="Permanent link">¶</a></h4>
-<hr/>
-<h3 id="assignment-expectations-and-quality-standards">Assignment Expectations and Quality Standards<a class="headerlink" href="#assignment-expectations-and-quality-standards" title="Permanent link">¶</a></h3>
+<p><strong>Poor software engineering:</strong></p>
 <ul>
-<li>Project presentations must use professional PowerPoint slides</li>
-<li>Follow good UX practices in your web apps: the only alert/dialog that should appear is a delete confirmation; test on multiple devices, including full-screen desktop and phone</li>
-<li>Do not load entire recordsets into memory — design search and data access to scale (e.g., a search for “Jo” should efficiently match John, Jones, Jobs without pulling every record)</li>
+<li>Leads to financial loss and project failure</li>
+<li>Can have catastrophic, even fatal, consequences</li>
 </ul>
 <hr/>
-<h3 id="ai-and-technology-use-policy">AI and Technology Use Policy<a class="headerlink" href="#ai-and-technology-use-policy" title="Permanent link">¶</a></h3>
-<h4 id="ai-is-allowed-in-the-course-but-must-be-fully-disclosed-during-your-presentations">AI is allowed in the course, but must be fully disclosed during your presentations:<a class="headerlink" href="#ai-is-allowed-in-the-course-but-must-be-fully-disclosed-during-your-presentations" title="Permanent link">¶</a></h4>
+<h3 id="case-study-ariane-5-1996">Case Study: Ariane 5 (1996)<a class="headerlink" href="#case-study-ariane-5-1996" title="Permanent link">¶</a></h3>
 <ul>
-<li>Which services/models were used (e.g. Claude, Gemini, ChatGPT, local model)</li>
-<li>In which capacity were they used (e.g. code generation, debugging help, learning assistance)</li>
-<li>If an agent was used, provide the harness used (e.g. Antigravity, Claude Code, Codex etc.), system prompt (if approrpriate) and any other parameters used.</li>
+<li>European Space Agency rocket, carrying four satellites worth <strong>$500 million</strong></li>
+<li>Functioned well for 40 seconds - then veered off course and was destroyed</li>
+<li>Root cause: it <strong>reused code from the Ariane-4 rocket</strong>, under assumptions that no longer held for Ariane-5’s flight profile</li>
 </ul>
-<h4 id="this-is-a-no-shame-course">This is a no-shame course!<a class="headerlink" href="#this-is-a-no-shame-course" title="Permanent link">¶</a></h4>
-<ul>
-<li>You will not be penalized or in any way shamed for using AI in this course.  (Future courses may in fact include a module on agentic coding!)</li>
-</ul>
+<blockquote>
+<p>“…the supplier … was only following the specification given to it. … The exception which occurred was not due to random failure but a design error.” - Lions et al. report</p>
+</blockquote>
+<p>Reuse is powerful - but a component is only as trustworthy as the assumptions it was built under.</p>
 <hr/>
-<h3 id="communication-expectations">Communication Expectations<a class="headerlink" href="#communication-expectations" title="Permanent link">¶</a></h3>
+<h3 id="case-study-therac-25">Case Study: Therac-25<a class="headerlink" href="#case-study-therac-25" title="Permanent link">¶</a></h3>
 <ul>
-<li><strong>E-Mail Only!</strong>  I am available exclusively via e-mail.  </li>
-<li><strong><em>DO NOT use Wecourses/Canvas Messaging</em></strong> </li>
-<li>I try my best to respond in a timely manner, but stuff happens.  You are well within your right to bug me after class or office hoursif I haven’t responded within 3 business days.</li>
-<li>I do, however, try to maintain a healthy work-life balance.  I love my job, but I also love my family.  I am unavailable after 5pm (lectures and office hours not withstanding) and during weekends.</li>
+<li>A radiation-therapy machine whose malfunctioning control software <strong>killed several patients</strong></li>
+<li>A textbook example of a <strong>safety-critical system</strong>: one whose failure poses a threat to life or health</li>
+<li>Reliability constraints from cases like this have led to the cancellation of other safety-critical systems when quality couldn’t be assured</li>
 </ul>
+<p>Note:<br/>
+Keep this brief and respectful — it’s a real tragedy used pedagogically to underscore why SE discipline (testing, traceability, reviews) exists. Don’t dwell on graphic detail.</p>
 <hr/>
+<h3 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">¶</a></h3>
+<ul>
+<li>Software engineering is the <strong>discipline</strong>, not just the code - it spans the full life cycle from requirements to retirement</li>
+<li>The <strong>SDLC</strong> gives every project a repeatable roadmap: requirements –&gt; design –&gt; implementation –&gt; testing –&gt; deployment –&gt; maintenance</li>
+<li><strong>Waterfall</strong> and <strong>Agile</strong> are two different philosophies for organizing that roadmap - pick based on how stable your requirements are</li>
+<li><strong>Quality</strong> has many faces: product, process, and business value all matter</li>
+<li>History (Ariane 5, Therac-25, the IRS/Sperry project) shows what happens when the discipline is skipped</li>
+</ul>
+<p><strong>Next lecture:</strong> the tools and diagrams we use to plan and model software - Gantt charts, Kanban boards, and the UML.</p>
 <hr/>
 <div class="md-source-file">
 <small>
 <!-- mkdocs-git-revision-date-localized-plugin -->
 <u>Last update</u> :
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 24, 2026 21:36:29 UTC">August 24, 2026</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 10, 2026 20:24:07 UTC">September 10, 2026</span>
 <!-- mkdocs-git-revision-date-plugin -->
 <br/>
 <u>Created</u> :
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 24, 2026 21:36:29 UTC">August 24, 2026</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 10, 2026 20:24:07 UTC">September 10, 2026</span>
 </small>
 </div>
 <!-- Was this page helpful? -->
@@ -1399,7 +1509,7 @@
     try {
       const index = document.querySelector('h1').innerHTML;
       if (index === "Index") {
-        document.querySelector('h1').innerHTML = "Week 1   Course Logistics";
+        document.querySelector('h1').innerHTML = "Week 3 Lecture 1   What is Software Engineering";
       }
     } catch (error) {
       // console.log(error);
