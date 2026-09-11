@@ -4,12 +4,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Course notes, code demos, and tutorials" name="description"/>
 <meta content="Dr. John Aedo" name="author"/>
-<link href="https://johnaedo.github.io/cop4331c/Code%20Demos%20and%20Tutorials/LAMP%20Stack/04-frontend-integration-and-testing/" rel="canonical"/>
-<link href="../03-backend-api-deployment-and-testing/" rel="prev"/>
-<link href="../Getting%20Started%20with%20LAMP/" rel="next"/>
+<link href="https://johnaedo.github.io/cop4331c/Code%20Demos%20and%20Tutorials/LAMP%20Stack/Using%20your%20Droplet%20for%20both%20Colors%20and%20Contacts%20apps/" rel="canonical"/>
+<link href="../Getting%20Started%20with%20LAMP/" rel="prev"/>
+<link href="../../MERN%20Stack/Getting%20Started%20with%20MERN%20A%20%28version%202.0%29/" rel="next"/>
 <link href="../../../_assets/meta/favicons.svg" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
-<title>04 frontend integration and testing - COP 4331C - Processes of Object Oriented Software Development</title>
+<title>Using your Droplet for both Colors and Contacts apps - COP 4331C - Processes of Object Oriented Software Development</title>
 <link href="../../../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -30,11 +30,11 @@
 <meta content="https://johnaedo.github.io/cop4331c/_assets/meta/logo.svg" property="og:image"/>
 <meta content="https://johnaedo.github.io/cop4331c/_assets/meta/logo.svg" name="twitter:image"/>
 <meta content="https://johnaedo.github.io/cop4331c/" name="site_url"/>
-<meta content="04 frontend integration and testing" property="og:title"/>
-<meta content="04 frontend integration and testing" name="twitter:title"/>
+<meta content="Using your Droplet for both Colors and Contacts apps" property="og:title"/>
+<meta content="Using your Droplet for both Colors and Contacts apps" name="twitter:title"/>
 <meta content="Course notes, code demos, and tutorials" name="og:description"/>
 <meta content="Course notes, code demos, and tutorials" name="twitter:description"/>
-<script> document.title = "04 frontend integration and testing" </script>
+<script> document.title = "Using your Droplet for both Colors and Contacts apps" </script>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -75,7 +75,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              04 frontend integration and testing
+              Using your Droplet for both Colors and Contacts apps
             
           </span>
 </div>
@@ -288,216 +288,13 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
-<span class="md-ellipsis">
-    04 frontend integration and testing
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../04-frontend-integration-and-testing/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     04 frontend integration and testing
   </span>
 </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tutorial-4-frontend-integration-droplet-deployment-end-to-end-browser-testing">
-<span class="md-ellipsis">
-      
-        Tutorial 4: Frontend Integration, Droplet Deployment &amp; End-to-End Browser Testing
-      
-    </span>
-</a>
-<nav aria-label="Tutorial 4: Frontend Integration, Droplet Deployment &amp; End-to-End Browser Testing" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#download-frontend-fileszip">
-<span class="md-ellipsis">
-      
-        Download frontend-files.zip
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#frontend-architecture-overview">
-<span class="md-ellipsis">
-      
-        🎨 Frontend Architecture Overview
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-1-reviewing-and-configuring-jscodejs">
-<span class="md-ellipsis">
-      
-        🧩 Step 1: Reviewing and Configuring js/code.js
-      
-    </span>
-</a>
-<nav aria-label="🧩 Step 1: Reviewing and Configuring js/code.js" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#a-api-base-url-configuration">
-<span class="md-ellipsis">
-      
-        A. API Base URL Configuration
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#b-understanding-core-javascript-functions">
-<span class="md-ellipsis">
-      
-        B. Understanding Core JavaScript Functions
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-2-deploy-frontend-files-to-the-droplet">
-<span class="md-ellipsis">
-      
-        🚀 Step 2: Deploy Frontend Files to the Droplet
-      
-    </span>
-</a>
-<nav aria-label="🚀 Step 2: Deploy Frontend Files to the Droplet" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#from-local-machine-using-scp">
-<span class="md-ellipsis">
-      
-        From Local Machine using scp
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-3-verify-web-server-directory-structure-permissions">
-<span class="md-ellipsis">
-      
-        🔒 Step 3: Verify Web Server Directory Structure &amp; Permissions
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-4-secure-your-application-with-https">
-<span class="md-ellipsis">
-      
-        🔐 Step 4: Secure Your Application with HTTPS
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-5-end-to-end-browser-testing-walkthrough">
-<span class="md-ellipsis">
-      
-        🌐 Step 5: End-to-End Browser Testing Walkthrough
-      
-    </span>
-</a>
-<nav aria-label="🌐 Step 5: End-to-End Browser Testing Walkthrough" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#test-flow-1-login-form-validation">
-<span class="md-ellipsis">
-      
-        Test Flow 1: Login &amp; Form Validation
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#test-flow-2-session-cookie-verification">
-<span class="md-ellipsis">
-      
-        Test Flow 2: Session &amp; Cookie Verification
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#test-flow-3-palette-display-live-search">
-<span class="md-ellipsis">
-      
-        Test Flow 3: Palette Display &amp; Live Search
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#test-flow-4-adding-new-colors">
-<span class="md-ellipsis">
-      
-        Test Flow 4: Adding New Colors
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#test-flow-5-deleting-colors">
-<span class="md-ellipsis">
-      
-        Test Flow 5: Deleting Colors
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#test-flow-6-protected-routes-log-out">
-<span class="md-ellipsis">
-      
-        Test Flow 6: Protected Routes &amp; Log Out
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-5-troubleshooting-developer-tips">
-<span class="md-ellipsis">
-      
-        🛠️ Step 5: Troubleshooting &amp; Developer Tips
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#project-complete">
-<span class="md-ellipsis">
-      
-        🏆 Project Complete!
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Getting%20Started%20with%20LAMP/">
@@ -507,13 +304,96 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Using%20your%20Droplet%20for%20both%20Colors%20and%20Contacts%20apps/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
+<span class="md-ellipsis">
+    Using your Droplet for both Colors and Contacts apps
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Using your Droplet for both Colors and Contacts apps
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup-a-virtual-host-in-apache">
+<span class="md-ellipsis">
+      
+        Setup a Virtual Host in Apache
+      
+    </span>
+</a>
+<nav aria-label="Setup a Virtual Host in Apache" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-a-config-file-for-your-site">
+<span class="md-ellipsis">
+      
+        Create a config file for your site:
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#edit-your-site-in-this-case-my-contacts-app-will-be-served-by-contactsjohnaedocom-and-ill-place-all-of-my-app-files-in-varwwwcontacts">
+<span class="md-ellipsis">
+      
+        Edit your Site. In this case, my Contacts app will be served by contacts.johnaedo.com and I’ll place all of my app files in /var/www/contacts
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#enable-your-site">
+<span class="md-ellipsis">
+      
+        Enable Your Site
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#restart-apache">
+<span class="md-ellipsis">
+      
+        Restart Apache
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup-httpstls">
+<span class="md-ellipsis">
+      
+        Setup HTTPS/TLS
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-your-project-directory">
+<span class="md-ellipsis">
+      
+        Create Your Project Directory
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -672,29 +552,20 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tutorial-4-frontend-integration-droplet-deployment-end-to-end-browser-testing">
+<a class="md-nav__link" href="#setup-a-virtual-host-in-apache">
 <span class="md-ellipsis">
       
-        Tutorial 4: Frontend Integration, Droplet Deployment &amp; End-to-End Browser Testing
+        Setup a Virtual Host in Apache
       
     </span>
 </a>
-<nav aria-label="Tutorial 4: Frontend Integration, Droplet Deployment &amp; End-to-End Browser Testing" class="md-nav">
+<nav aria-label="Setup a Virtual Host in Apache" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#download-frontend-fileszip">
+<a class="md-nav__link" href="#create-a-config-file-for-your-site">
 <span class="md-ellipsis">
       
-        Download frontend-files.zip
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#frontend-architecture-overview">
-<span class="md-ellipsis">
-      
-        🎨 Frontend Architecture Overview
+        Create a config file for your site:
       
     </span>
 </a>
@@ -703,157 +574,46 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#step-1-reviewing-and-configuring-jscodejs">
+<a class="md-nav__link" href="#edit-your-site-in-this-case-my-contacts-app-will-be-served-by-contactsjohnaedocom-and-ill-place-all-of-my-app-files-in-varwwwcontacts">
 <span class="md-ellipsis">
       
-        🧩 Step 1: Reviewing and Configuring js/code.js
-      
-    </span>
-</a>
-<nav aria-label="🧩 Step 1: Reviewing and Configuring js/code.js" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#a-api-base-url-configuration">
-<span class="md-ellipsis">
-      
-        A. API Base URL Configuration
+        Edit your Site. In this case, my Contacts app will be served by contacts.johnaedo.com and I’ll place all of my app files in /var/www/contacts
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#b-understanding-core-javascript-functions">
+<a class="md-nav__link" href="#enable-your-site">
 <span class="md-ellipsis">
       
-        B. Understanding Core JavaScript Functions
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-2-deploy-frontend-files-to-the-droplet">
-<span class="md-ellipsis">
-      
-        🚀 Step 2: Deploy Frontend Files to the Droplet
-      
-    </span>
-</a>
-<nav aria-label="🚀 Step 2: Deploy Frontend Files to the Droplet" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#from-local-machine-using-scp">
-<span class="md-ellipsis">
-      
-        From Local Machine using scp
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-3-verify-web-server-directory-structure-permissions">
-<span class="md-ellipsis">
-      
-        🔒 Step 3: Verify Web Server Directory Structure &amp; Permissions
+        Enable Your Site
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#step-4-secure-your-application-with-https">
+<a class="md-nav__link" href="#restart-apache">
 <span class="md-ellipsis">
       
-        🔐 Step 4: Secure Your Application with HTTPS
+        Restart Apache
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#step-5-end-to-end-browser-testing-walkthrough">
+<a class="md-nav__link" href="#setup-httpstls">
 <span class="md-ellipsis">
       
-        🌐 Step 5: End-to-End Browser Testing Walkthrough
-      
-    </span>
-</a>
-<nav aria-label="🌐 Step 5: End-to-End Browser Testing Walkthrough" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#test-flow-1-login-form-validation">
-<span class="md-ellipsis">
-      
-        Test Flow 1: Login &amp; Form Validation
+        Setup HTTPS/TLS
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#test-flow-2-session-cookie-verification">
+<a class="md-nav__link" href="#create-your-project-directory">
 <span class="md-ellipsis">
       
-        Test Flow 2: Session &amp; Cookie Verification
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#test-flow-3-palette-display-live-search">
-<span class="md-ellipsis">
-      
-        Test Flow 3: Palette Display &amp; Live Search
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#test-flow-4-adding-new-colors">
-<span class="md-ellipsis">
-      
-        Test Flow 4: Adding New Colors
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#test-flow-5-deleting-colors">
-<span class="md-ellipsis">
-      
-        Test Flow 5: Deleting Colors
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#test-flow-6-protected-routes-log-out">
-<span class="md-ellipsis">
-      
-        Test Flow 6: Protected Routes &amp; Log Out
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-5-troubleshooting-developer-tips">
-<span class="md-ellipsis">
-      
-        🛠️ Step 5: Troubleshooting &amp; Developer Tips
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#project-complete">
-<span class="md-ellipsis">
-      
-        🏆 Project Complete!
+        Create Your Project Directory
       
     </span>
 </a>
@@ -893,340 +653,73 @@
   page title (or respectively site name) is used as the main headline.
 -->
 <!-- Page content -->
-<h2 id="tutorial-4-frontend-integration-droplet-deployment-end-to-end-browser-testing">Tutorial 4: Frontend Integration, Droplet Deployment &amp; End-to-End Browser Testing<a class="headerlink" href="#tutorial-4-frontend-integration-droplet-deployment-end-to-end-browser-testing" title="Permanent link">¶</a></h2>
-<p>In this final tutorial, you will connect the client-side user interface (HTML5, Bootstrap 5.3, and Vanilla JavaScript) to the backend RESTful API, deploy all static frontend assets to your DigitalOcean Droplet, and conduct complete end-to-end user experience testing in your web browser.</p>
-<hr/>
+<h3 id="setup-a-virtual-host-in-apache">Setup a Virtual Host in Apache<a class="headerlink" href="#setup-a-virtual-host-in-apache" title="Permanent link">¶</a></h3>
+<h4 id="create-a-config-file-for-your-site">Create a config file for your site:<a class="headerlink" href="#create-a-config-file-for-your-site" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>/etc/apache2/sites-available
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>cp<span class="w"> </span><span class="m">000</span>-default.conf<span class="w"> </span>contacts-site.conf
+</code></pre></div>
+<h3 id="edit-your-site-in-this-case-my-contacts-app-will-be-served-by-contactsjohnaedocom-and-ill-place-all-of-my-app-files-in-varwwwcontacts">Edit your Site.  In this case, my Contacts app will be served by <code>contacts.johnaedo.com</code> and I’ll place all of my app files in <code>/var/www/contacts</code><a class="headerlink" href="#edit-your-site-in-this-case-my-contacts-app-will-be-served-by-contactsjohnaedocom-and-ill-place-all-of-my-app-files-in-varwwwcontacts" title="Permanent link">¶</a></h3>
+<p>Update the following settings:</p>
+<ul>
+<li>ServerName</li>
+<li>DocumentRoot</li>
+<li>Directory</li>
+</ul>
 <div class="admonition tip">
 <p class="admonition-title">Important</p>
-<p><strong>Domain Name Placeholder:</strong><br/>
-Throughout this tutorial series, we use <strong><code>lamp.johnaedo.com</code></strong> as the example domain.<br/>
-<strong>You must replace <code>lamp.johnaedo.com</code> with the domain name you acquired from your domain registrar.</strong></p>
+<p>Don’t forget the trailing slash on the \<directory> container!</directory></p>
 </div>
-<hr/>
-<h3 id="download-frontend-fileszip">Download frontend-files.zip<a class="headerlink" href="#download-frontend-fileszip" title="Permanent link">¶</a></h3>
-<p>You’ll want to keep a copy of the front-end HTML, CSS, and Javascript files locally on your computer on your PC for ease of editing.  You’ll later upload the files to your Droplet.</p>
-<div class="admonition files download">
-<p class="admonition-title">Files</p>
-<p><a href="https://teaching.johnaedo.com/code/cop4331c/lamp/frontend-files.zip">frontend-files.zip</a></p>
-</div>
-<p>Once you’ve downloaded the file, go ahead and decompress the zip file so you can inspect and edit the files.</p>
-<hr/>
-<h3 id="frontend-architecture-overview">🎨 Frontend Architecture Overview<a class="headerlink" href="#frontend-architecture-overview" title="Permanent link">¶</a></h3>
-<p>The presentation layer is built as a decoupled, responsive client-side interface:</p>
-<p><code>/var/www/html</code> is the directory on the server from which your application’s front-end is served.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a> /var/www/html/
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a> ├── index.html        # Login Page: Form inputs, client validation, authentication trigger
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a> ├── color.html        # Color Manager Dashboard: Search bar, color pill badges, add form, logout
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a> ├── favicon.ico       # Application browser tab favicon
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a> ├── css/
-<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a> │   └── styles.css    # Dark mode theme, glassmorphism cards, WCAG-compliant high-contrast tokens
-<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a> ├── js/
-<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a> │   ├── code.js       # Client application logic: API calls (AJAX/XHR), cookies, DOM rendering
-<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a> │   └── md5.js        # MD5 hashing utility script
-<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a> └── images/
-<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>     ├── background.png
-<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>     └── favicon.svg
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="err">*:80</span><span class="nt">&gt;</span><span class="w">  </span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>ServerName<span class="w"> </span>contacts.johnaedo.com<span class="w">  </span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>ServerAdmin<span class="w"> </span>webmaster@localhost<span class="w">  </span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>DocumentRoot<span class="w"> </span>/var/www/contacts<span class="w">  </span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">  </span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span><span class="nt">&lt;Directory</span><span class="w"> </span><span class="err">/var/www/contacts</span><span class="nt">/&gt;</span><span class="w">  </span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>Options<span class="w"> </span>Indexes<span class="w"> </span>FollowSymLinks<span class="w">  </span>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>AllowOverride<span class="w"> </span>All<span class="w">  </span>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>Require<span class="w"> </span>all<span class="w"> </span>granted<span class="w">  </span>
+<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span><span class="nt">&lt;/Directory&gt;</span><span class="w">  </span>
+<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">  </span>
+<a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>ErrorLog<span class="w"> </span>${APACHE_LOG_DIR}/error.log<span class="w">  </span>
+<a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>CustomLog<span class="w"> </span>${APACHE_LOG_DIR}/access.log<span class="w"> </span>combined<span class="w">  </span>
+<a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">  </span>
+<a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span><span class="nt">&lt;IfModule</span><span class="w"> </span><span class="err">mod_dir.c</span><span class="nt">&gt;</span><span class="w">  </span>
+<a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>DirectoryIndex<span class="w"> </span>index.php<span class="w"> </span>index.pl<span class="w"> </span>index.cgi<span class="w"> </span>index.html<span class="w"> </span>index.xhtml<span class="w"> </span>index.htm<span class="w">  </span>
+<a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span><span class="nt">&lt;/IfModule&gt;</span><span class="w">  </span>
+<a href="#__codelineno-1-18" id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">  </span>
+<a href="#__codelineno-1-19" id="__codelineno-1-19" name="__codelineno-1-19"></a>RewriteEngine<span class="w"> </span>on<span class="w">  </span>
+<a href="#__codelineno-1-20" id="__codelineno-1-20" name="__codelineno-1-20"></a>RewriteCond<span class="w"> </span>%{SERVER_NAME}<span class="w"> </span>=lamp.johnaedo.com<span class="w">  </span>
+<a href="#__codelineno-1-21" id="__codelineno-1-21" name="__codelineno-1-21"></a>RewriteRule<span class="w"> </span>^<span class="w"> </span>https://%{SERVER_NAME}%{REQUEST_URI}<span class="w"> </span>[END,NE,R=permanent]<span class="w">  </span>
+<a href="#__codelineno-1-22" id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="nt">&lt;/VirtualHost&gt;</span>
 </code></pre></div>
-<hr/>
-<h2 id="step-1-reviewing-and-configuring-jscodejs">🧩 Step 1: Reviewing and Configuring <code>js/code.js</code><a class="headerlink" href="#step-1-reviewing-and-configuring-jscodejs" title="Permanent link">¶</a></h2>
-<p>Open <span class="ezlinks_not_found ezlinks_not_found" src="../../../js/code.js">js/code.js</span> in your local editor. Let’s examine how the frontend communicates with the API.</p>
-<h3 id="a-api-base-url-configuration">A. API Base URL Configuration<a class="headerlink" href="#a-api-base-url-configuration" title="Permanent link">¶</a></h3>
-<p>At the top of <code>js/code.js</code>, the API endpoint is defined:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">// js/code.js (Lines 1-5)</span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">urlBase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nb">window</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">'undefined'</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">  </span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">hostname</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">'localhost'</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">   </span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">hostname</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">'127.0.0.1'</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>
-<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">   </span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">origin</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'johnaedo'</span><span class="p">)))</span>
-<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">  </span><span class="o">?</span><span class="w"> </span><span class="s1">'/api/index.php'</span>
-<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="s1">'http://lamp.johnaedo.com/api/index.php'</span><span class="p">;</span>
-<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a>
-<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="kd">const</span><span class="w"> </span><span class="nx">loginUrlBase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">urlBase</span><span class="p">;</span>
+<h3 id="enable-your-site">Enable Your Site<a class="headerlink" href="#enable-your-site" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>a2ensite<span class="w"> </span>contacts-site.conf
 </code></pre></div>
-<p>This code figures out which API base URL to use depending on where the app is currently running, then reuses that same value for login requests.</p>
-<p><strong>Breaking it down:</strong></p>
-<ol>
-<li><strong><code>typeof window !== 'undefined'</code></strong> — checks that this code is running in a browser environment (not on a server, like during server-side rendering in Node.js, where <code>window</code> doesn’t exist). This prevents a crash if the code runs somewhere without a <code>window</code> object.</li>
-<li><strong><code>window.location &amp;&amp;</code></strong> — an extra safety check to make sure <code>window.location</code> actually exists before trying to read properties off it.</li>
-<li><strong>The three OR conditions</strong> check if the current page is being viewed from:<ul>
-<li><code>localhost</code> (local development)</li>
-<li><code>127.0.0.1</code> (also local development, via IP)</li>
-<li>anywhere with <code>johnaedo</code> in the origin (e.g. <code>johnaedo.com</code>, <code>www.johnaedo.com</code>, <code>staging.johnaedo.com</code>, etc. — production or related domains)</li>
-</ul>
-</li>
-<li><strong>The ternary (<code>? :</code>)</strong> decides the actual URL base:<ul>
-<li>If any of those conditions are true → use a <strong>relative path</strong>: <code>/api/index.php</code>. This works because in those cases the frontend and the API are assumed to be served from the same host, so a relative URL will correctly resolve against whatever domain/port the page is currently on.</li>
-<li>Otherwise (e.g. running from some other domain, or no <code>window</code> object at all) → fall back to a <strong>hardcoded absolute URL</strong>: <code>http://lamp.johnaedo.com/api/index.php</code>.</li>
-</ul>
-</li>
-</ol>
-<p>You’ll need to update the <code>includes</code> argument to some string that uniquely distinguishes your domain name (or it can be the full domain name itself).</p>
-<hr/>
-<h3 id="b-understanding-core-javascript-functions">B. Understanding Core JavaScript Functions<a class="headerlink" href="#b-understanding-core-javascript-functions" title="Permanent link">¶</a></h3>
-<ol>
-<li>
-<p><strong>Authentication (<code>doLogin()</code>)</strong>:<br/>
-   - Collects the username and password from the input fields in <code>index.html</code>.<br/>
-   - Sends an asynchronous HTTP <code>POST</code> request with JSON payload: <code>{"login": login, "password": password}</code>.<br/>
-   - If authentication succeeds (<code>status === 200</code> and <code>userId &gt; 0</code>), it invokes <code>saveCookie()</code> and redirects the browser to <code>color.html</code>.<br/>
-   - If authentication fails, it displays an alert message inside <code>#loginResult</code>.</p>
-</li>
-<li>
-<p><strong>Session Persistence (<code>saveCookie()</code> and <code>readCookie()</code>)</strong>:<br/>
-   - <code>saveCookie()</code>: Serializes <code>firstName</code>, <code>lastName</code>, and <code>userId</code> into a client-side HTTP cookie with a 20-minute expiration time.<br/>
-   - <code>readCookie()</code>: Executed immediately when <code>color.html</code> loads (<code>DOMContentLoaded</code>). If no valid cookie exists, it automatically redirects the user back to <code>index.html</code> (protecting the dashboard). If valid, it renders the user’s name and calls <code>searchColor()</code>.</p>
-</li>
-<li>
-<p><strong>Search &amp; Dynamic Rendering (<code>searchColor()</code>)</strong>:<br/>
-   - Queries the API via <code>GET /api/index.php?q=&lt;search&gt;</code> with header <code>Authorization: Bearer &lt;userId&gt;</code>.<br/>
-   - Receives JSON array of colors.<br/>
-   - Dynamically constructs HTML badge pills with color swatch indicators and delete buttons:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nx">colorList</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="sb">`&lt;span class="badge rounded-pill bg-dark-subtle text-body border border-secondary px-3 py-2 fs-6 shadow-sm d-inline-flex align-items-center me-2 mb-2"&gt;</span>
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="sb">  &lt;span class="d-inline-block rounded-circle me-2 border" style="width: 14px; height: 14px; background-color: </span><span class="si">${</span><span class="nx">colorName</span><span class="si">}</span><span class="sb">;"&gt;&lt;/span&gt;</span>
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="sb">  &lt;span class="me-2"&gt;</span><span class="si">${</span><span class="nx">colorName</span><span class="si">}</span><span class="sb">&lt;/span&gt;</span>
-<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="sb">  &lt;button type="button" class="btn-close btn-close-white" style="font-size: 0.65rem;" onclick="deleteColor(</span><span class="si">${</span><span class="nx">colorId</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">colorId</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="sb">`'</span><span class="si">${</span><span class="nx">colorName</span><span class="si">}</span><span class="sb">'`</span><span class="si">}</span><span class="sb">);" title="Delete Color"&gt;&lt;/button&gt;</span>
-<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="sb">&lt;/span&gt;`</span><span class="p">;</span>
-</code></pre></div><p></p>
-</li>
-<li>
-<p><strong>Add Color (<code>addColor()</code>)</strong>:<br/>
-   - Reads <code>#colorText</code>, validates non-empty input.<br/>
-   - Sends <code>POST /api/index.php</code> with <code>{"color": newColor}</code> and <code>Authorization: Bearer &lt;userId&gt;</code>.<br/>
-   - On success (<code>201 Created</code>), clears input field and refreshes the color list.</p>
-</li>
-<li>
-<p><strong>Delete Color (<code>deleteColor()</code>)</strong>:<br/>
-   - Sends <code>DELETE /api/index.php?id=&lt;id&gt;</code> with <code>Authorization: Bearer &lt;userId&gt;</code>.<br/>
-   - On completion, invokes <code>searchColor()</code> to re-render the palette.</p>
-</li>
-<li>
-<p><strong>Log Out (<code>doLogout()</code>)</strong>:<br/>
-   - Sets cookie expiration dates to the past (clearing cookies) and redirects to <code>index.html</code>.</p>
-</li>
-</ol>
-<hr/>
-<h2 id="step-2-deploy-frontend-files-to-the-droplet">🚀 Step 2: Deploy Frontend Files to the Droplet<a class="headerlink" href="#step-2-deploy-frontend-files-to-the-droplet" title="Permanent link">¶</a></h2>
-<p>Now copy all frontend assets (<code>index.html</code>, <code>color.html</code>, <code>css/</code>, <code>js/</code>, <code>images/</code>, <code>favicon.ico</code>) to <code>/var/www/html/</code> on your Droplet.</p>
-<h3 id="from-local-machine-using-scp">From Local Machine using <code>scp</code><a class="headerlink" href="#from-local-machine-using-scp" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>scp<span class="w"> </span>-r<span class="w"> </span>index.html<span class="w"> </span>color.html<span class="w"> </span>favicon.ico<span class="w"> </span>css<span class="w"> </span>js<span class="w"> </span>images<span class="w"> </span>root@&lt;YOUR_DROPLET_IP&gt;:/var/www/html/
+<h3 id="restart-apache">Restart Apache<a class="headerlink" href="#restart-apache" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>systemctl<span class="w"> </span>reload<span class="w"> </span>apache2
 </code></pre></div>
-<hr/>
-<h2 id="step-3-verify-web-server-directory-structure-permissions">🔒 Step 3: Verify Web Server Directory Structure &amp; Permissions<a class="headerlink" href="#step-3-verify-web-server-directory-structure-permissions" title="Permanent link">¶</a></h2>
-<p>SSH into your Droplet:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>ssh<span class="w"> </span>root@&lt;YOUR_DROPLET_IP&gt;
-</code></pre></div><p></p>
-<ol>
-<li>
-<p>Check that all files are present in <code>/var/www/html</code>:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>ls<span class="w"> </span>-la<span class="w"> </span>/var/www/html
+<h2 id="setup-httpstls">Setup HTTPS/TLS<a class="headerlink" href="#setup-httpstls" title="Permanent link">¶</a></h2>
+<p></p><div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>certbot
 </code></pre></div><br/>
-<em>Expected listing:</em><br/>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>drwxr-xr-x 6 www-data www-data  4096 Aug 24 14:00 .
-<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>-rw------- 1 www-data www-data   120 Aug 24 14:00 .env
-<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>drwxr-xr-x 3 www-data www-data  4096 Aug 24 14:00 api
-<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>-rw-r--r-- 1 www-data www-data  5505 Aug 24 14:00 color.html
-<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a>drwxr-xr-x 2 www-data www-data  4096 Aug 24 14:00 css
-<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a>-rw-r--r-- 1 www-data www-data  1150 Aug 24 14:00 favicon.ico
-<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a>drwxr-xr-x 2 www-data www-data  4096 Aug 24 14:00 images
-<a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a>-rw-r--r-- 1 www-data www-data  4455 Aug 24 14:00 index.html
-<a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a>drwxr-xr-x 2 www-data www-data  4096 Aug 24 14:00 js
-</code></pre></div><p></p>
-</li>
-<li>
-<p>Ensure correct ownership and permissions:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html
-<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>sudo<span class="w"> </span>find<span class="w"> </span>/var/www/html<span class="w"> </span>-type<span class="w"> </span>d<span class="w"> </span>-exec<span class="w"> </span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
-<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>sudo<span class="w"> </span>find<span class="w"> </span>/var/www/html<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-exec<span class="w"> </span>chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
-<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>/var/www/html/.env
-</code></pre></div><p></p>
-</li>
-</ol>
-<hr/>
-<h2 id="step-4-secure-your-application-with-https">🔐 Step 4: Secure Your Application with HTTPS<a class="headerlink" href="#step-4-secure-your-application-with-https" title="Permanent link">¶</a></h2>
-<p>While still connected to the server via SSH:</p>
-<ol>
-<li>Edit /etc/apache2/sites-enabled/000-default.conf</li>
-</ol>
-<p>The top of the file will look something like this:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="err">*:80</span><span class="nt">&gt;</span><span class="w">  </span>
-<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">	</span>ServerAdmin<span class="w"> </span>webmaster@localhost<span class="w">  </span>
-<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">	</span>DocumentRoot<span class="w"> </span>/var/www/html<span class="w">  </span>
-<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">	</span>
-<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="nt">&lt;Directory</span><span class="w"> </span><span class="err">/var/www/html</span><span class="nt">/&gt;</span><span class="w">  </span>
-<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">	</span>Options<span class="w"> </span>Indexes<span class="w"> </span>FollowSymLinks<span class="w">  </span>
-<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">	</span>AllowOverride<span class="w"> </span>All<span class="w">  </span>
-<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">	</span>Require<span class="w"> </span>all<span class="w"> </span>granted<span class="w">  </span>
-<a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="nt">&lt;/Directory&gt;</span>
-</code></pre></div>
-<p>Add a line for <code>ServerName</code> with the name of your domain as the argument as follows:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="err">*:80</span><span class="nt">&gt;</span><span class="w">  </span>
-<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">	</span>ServerName<span class="w"> </span>lamp.johnaedo.com
-<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">	</span>ServerAdmin<span class="w"> </span>webmaster@localhost<span class="w">  </span>
-<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">	</span>DocumentRoot<span class="w"> </span>/var/www/html<span class="w">  </span>
-<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">	</span>
-<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="nt">&lt;Directory</span><span class="w"> </span><span class="err">/var/www/html</span><span class="nt">/&gt;</span><span class="w">  </span>
-<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">	</span>Options<span class="w"> </span>Indexes<span class="w"> </span>FollowSymLinks<span class="w">  </span>
-<a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">	</span>AllowOverride<span class="w"> </span>All<span class="w">  </span>
-<a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w">	</span>Require<span class="w"> </span>all<span class="w"> </span>granted<span class="w">  </span>
-<a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="nt">&lt;/Directory&gt;</span>
-</code></pre></div>
-<ol start="2">
-<li>
-<p>Restart Apache:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
-</code></pre></div><p></p>
-</li>
-<li>
-<p>Run certbot to generate your TLS certificate and reconfigure your server:</p>
-</li>
-</ol>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>certbot
-</code></pre></div>
-<p>Provide your e-mail address when prompted and answer yes to all questions, except for maybe when they prompt for data collection.  This one is optional.  I personally do it to support the Electronic Frontier Foundation, but you certainly don’t have to.</p>
-<ol start="4">
-<li>Restart Apache:</li>
-</ol>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>apache2
-</code></pre></div>
-<p>You should now be able to access the Colors application via https:</p>
-<p></p><div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>https://&lt;your domain name&gt;
+It should find your new domain name (e.g. <code>contacts.johnaedo.com</code>)<br/>
+Select it when prompted and you will then have HTTPS enabled on your new site.<p></p>
+<h2 id="create-your-project-directory">Create Your Project Directory<a class="headerlink" href="#create-your-project-directory" title="Permanent link">¶</a></h2>
+<p></p><div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nb">cd</span><span class="w"> </span>/var/www
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>mkdir<span class="w"> </span>contacts
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>contacts
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>chown<span class="w"> </span>www-data:www-data<span class="w"> </span>contacts
 </code></pre></div><br/>
-And the result should look like this:<p></p>
-<p><a href="../../../_assets/images/32226761837b87a5b682d3a6d27bcde9_MD5.jpg">Open: Pasted image 20260904131427.png</a><br/>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../_assets/images/32226761837b87a5b682d3a6d27bcde9_MD5.jpg"><img alt="Open: Pasted image 20260904131427.png" src="../../../_assets/images/32226761837b87a5b682d3a6d27bcde9_MD5.jpg"/></a></p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="ni">&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;</span>
-</code></pre></div>
-<hr/>
-<h2 id="step-5-end-to-end-browser-testing-walkthrough">🌐 Step 5: End-to-End Browser Testing Walkthrough<a class="headerlink" href="#step-5-end-to-end-browser-testing-walkthrough" title="Permanent link">¶</a></h2>
-<p>Open your web browser (Chrome, Firefox, Safari, or Edge) and navigate to:<br/>
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>https://lamp.johnaedo.com
-</code></pre></div><br/>
-<em>(Replace <code>lamp.johnaedo.com</code> with your registered domain).</em><p></p>
-<hr/>
-<h3 id="test-flow-1-login-form-validation">Test Flow 1: Login &amp; Form Validation<a class="headerlink" href="#test-flow-1-login-form-validation" title="Permanent link">¶</a></h3>
-<ol>
-<li><strong>Empty Form Submission</strong>:<br/>
-   - Leave fields blank and click <strong>Sign In</strong>.<br/>
-   - Notice browser HTML5 validation prompts for required inputs.</li>
-<li><strong>Invalid Credentials</strong>:<br/>
-   - Username: <code>RickL</code><br/>
-   - Password: <code>WRONG_PASSWORD</code><br/>
-   - Click <strong>Sign In</strong>.<br/>
-   - Verify error feedback appears:<br/>
-<code>&lt;i class='bi bi-exclamation-circle-fill'&gt;&lt;/i&gt; User/Password combination incorrect</code></li>
-<li><strong>Valid Login</strong>:<br/>
-   - Username: <code>RickL</code><br/>
-   - Password: <code>COP4331</code><br/>
-   - Click <strong>Sign In</strong> (or press Enter).<br/>
-   - Verify immediate transition to <code>color.html</code>.</li>
-</ol>
-<hr/>
-<h3 id="test-flow-2-session-cookie-verification">Test Flow 2: Session &amp; Cookie Verification<a class="headerlink" href="#test-flow-2-session-cookie-verification" title="Permanent link">¶</a></h3>
-<ol>
-<li>On <code>color.html</code>, press <strong><code>F12</code></strong> (or right-click and choose <strong>Inspect</strong>) to open Browser Developer Tools.</li>
-<li>Navigate to the <strong>Application</strong> tab (Chrome/Edge) or <strong>Storage</strong> tab (Firefox).</li>
-<li>Expand <strong>Cookies</strong> and select <code>https://lamp.johnaedo.com</code>.</li>
-<li>Verify the following three cookies are stored:<br/>
-   - <code>userId</code>: <code>1</code><br/>
-   - <code>firstName</code>: <code>Rick</code><br/>
-   - <code>lastName</code>: <code>Leinecker</code></li>
-<li>Verify the header bar on the page displays:<br/>
-<strong>“Logged in as Rick Leinecker”</strong>.</li>
-</ol>
-<hr/>
-<h3 id="test-flow-3-palette-display-live-search">Test Flow 3: Palette Display &amp; Live Search<a class="headerlink" href="#test-flow-3-palette-display-live-search" title="Permanent link">¶</a></h3>
-<ol>
-<li>When <code>color.html</code> loads, observe that default palette badges (Blue, White, Black, Magenta, Yellow, Cyan, Salmon, etc.) are rendered with colored preview dots.</li>
-<li><strong>Search for Colors</strong>:<br/>
-   - In the <em>Search Colors</em> field, type <strong><code>Blue</code></strong> and click <strong>Search Color</strong> (or press Enter).<br/>
-   - Verify the list filters to show only <strong>Blue</strong> and <strong>Light Blue</strong>.<br/>
-   - Notice the status message: <code>Results updated</code>.</li>
-<li><strong>Search for Non-Existent Color</strong>:<br/>
-   - Type <strong><code>Purple</code></strong> and search.<br/>
-   - Verify message: <code>No matching colors found.</code></li>
-<li><strong>Clear Search</strong>:<br/>
-   - Clear the search box and click <strong>Search Color</strong>.<br/>
-   - Verify all 17 default colors re-appear.</li>
-</ol>
-<hr/>
-<h3 id="test-flow-4-adding-new-colors">Test Flow 4: Adding New Colors<a class="headerlink" href="#test-flow-4-adding-new-colors" title="Permanent link">¶</a></h3>
-<ol>
-<li>Scroll to the <strong>Add New Color</strong> card.</li>
-<li>Enter <strong><code>Chartreuse</code></strong> (or a color hex like <code>#4A90E2</code>).</li>
-<li>Click <strong>Add Color</strong> (or press Enter).</li>
-<li>Verify:<br/>
-   - Success message: <code>&lt;i class='bi bi-check-circle-fill'&gt;&lt;/i&gt; Color successfully added!</code><br/>
-   - The input field resets.<br/>
-   - The new color pill badge immediately appears in the palette above.</li>
-</ol>
-<hr/>
-<h3 id="test-flow-5-deleting-colors">Test Flow 5: Deleting Colors<a class="headerlink" href="#test-flow-5-deleting-colors" title="Permanent link">¶</a></h3>
-<ol>
-<li>Locate any color badge (for example, the newly created color).</li>
-<li>Click the small white <strong><code>×</code></strong> close button inside the badge.</li>
-<li>The badge is deleted from the MySQL database and vanishes from the screen.</li>
-</ol>
-<hr/>
-<h3 id="test-flow-6-protected-routes-log-out">Test Flow 6: Protected Routes &amp; Log Out<a class="headerlink" href="#test-flow-6-protected-routes-log-out" title="Permanent link">¶</a></h3>
-<ol>
-<li>Click the red <strong>Log Out</strong> button in the top header.</li>
-<li>Verify you are redirected back to <code>index.html</code>.</li>
-<li>Check DevTools Cookies to confirm session cookies have been cleared.</li>
-<li><strong>Direct URL Access Test</strong>:<br/>
-   - While logged out, manually enter <code>https://lamp.johnaedo.com/color.html</code> into your browser address bar and press Enter.<br/>
-   - Verify <code>readCookie()</code> immediately detects missing credentials and redirects you back to <code>index.html</code>.</li>
-</ol>
-<hr/>
-<h2 id="step-5-troubleshooting-developer-tips">🛠️ Step 5: Troubleshooting &amp; Developer Tips<a class="headerlink" href="#step-5-troubleshooting-developer-tips" title="Permanent link">¶</a></h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Issue</th>
-<th style="text-align: left;">Cause</th>
-<th style="text-align: left;">Solution</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Page changes not showing up</strong></td>
-<td style="text-align: left;">Browser caching old <code>code.js</code> or <code>styles.css</code></td>
-<td style="text-align: left;">Perform a hard refresh: <code>Ctrl + F5</code> (Windows) or <code>Cmd + Shift + R</code> (macOS).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>403 Forbidden Error</strong></td>
-<td style="text-align: left;">Incorrect Linux file permissions on <code>/var/www/html</code></td>
-<td style="text-align: left;">Run <code>sudo chown -R www-data:www-data /var/www/html</code> and <code>sudo chmod -R 755 /var/www/html</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Login fails with red error message</strong></td>
-<td style="text-align: left;">API cannot connect to MySQL</td>
-<td style="text-align: left;">Check <code>/var/www/html/.env</code> credentials and verify <code>systemctl status mysql</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>CORS / Network Error in Console</strong></td>
-<td style="text-align: left;">Mixed HTTP/HTTPS or wrong <code>urlBase</code> in <code>code.js</code></td>
-<td style="text-align: left;">Ensure <code>code.js</code> uses relative <code>'/api/index.php'</code> or matches current protocol (<code>http://</code> vs <code>https://</code>).</td>
-</tr>
-</tbody>
-</table>
-<hr/>
-<h2 id="project-complete">🏆 Project Complete!<a class="headerlink" href="#project-complete" title="Permanent link">¶</a></h2>
-<p>Congratulations! You have successfully built, configured, deployed, and tested a modern, decoupled full-stack LAMP web application:</p>
-<ol>
-<li><strong>Infrastructure</strong>: Ubuntu Linux Droplet on DigitalOcean with SSH key authentication and custom DNS routing.</li>
-<li><strong>Database Tier</strong>: MySQL relational persistence with <code>Users</code> and <code>Colors</code> tables and least-privilege security.</li>
-<li><strong>Backend API Tier</strong>: PHP RESTful controller communicating over JSON, verified with Bruno integration tests.</li>
-<li><strong>Presentation Tier</strong>: Responsive Bootstrap 5.3 dark interface with client-side cookie session management and asynchronous CRUD operations.</li>
-</ol>
+Don’t forget when copying files from your home (/root) directory that you will need to change their ownership to <code>www-data:www-data</code> and their permissions to <code>644</code> for files, <code>755</code> for directories.<p></p>
 <hr/>
 <div class="md-source-file">
 <small>
 <!-- mkdocs-git-revision-date-localized-plugin -->
 <u>Last update</u> :
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 4, 2026 17:19:02 UTC">September 4, 2026</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 11, 2026 19:28:18 UTC">September 11, 2026</span>
 <!-- mkdocs-git-revision-date-plugin -->
 <br/>
 <u>Created</u> :
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 30, 2026 21:32:47 UTC">August 30, 2026</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 11, 2026 19:28:18 UTC">September 11, 2026</span>
 </small>
 </div>
 <!-- Was this page helpful? -->
@@ -1239,7 +732,7 @@ And the result should look like this:<p></p>
     try {
       const index = document.querySelector('h1').innerHTML;
       if (index === "Index") {
-        document.querySelector('h1').innerHTML = "04 frontend integration and testing";
+        document.querySelector('h1').innerHTML = "Using your Droplet for both Colors and Contacts apps";
       }
     } catch (error) {
       // console.log(error);
