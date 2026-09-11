@@ -19,30 +19,30 @@ Update the following settings:
 - Directory
 
 > [!IMPORTANT]
-> Don't forget the trailing slash on the \<Directory> container!
+> Don't forget the trailing slash on the directory you provided the \<Directory> container!
 
 ```xml
 <VirtualHost *:80>  
-       ServerName contacts.johnaedo.com  
-       ServerAdmin webmaster@localhost  
-       DocumentRoot /var/www/contacts  
+	ServerName contacts.johnaedo.com  
+	ServerAdmin webmaster@localhost  
+	DocumentRoot /var/www/contacts  
   
-       <Directory /var/www/contacts/>  
-           Options Indexes FollowSymLinks  
-           AllowOverride All  
-           Require all granted  
-       </Directory>  
+	<Directory /var/www/contacts/>  
+		Options Indexes FollowSymLinks  
+		AllowOverride All  
+		Require all granted  
+	</Directory>  
   
-       ErrorLog ${APACHE_LOG_DIR}/error.log  
-       CustomLog ${APACHE_LOG_DIR}/access.log combined  
+	ErrorLog ${APACHE_LOG_DIR}/error.log  
+	CustomLog ${APACHE_LOG_DIR}/access.log combined  
   
-       <IfModule mod_dir.c>  
-           DirectoryIndex index.php index.pl index.cgi index.html index.xhtml index.htm  
-       </IfModule>  
+	<IfModule mod_dir.c>  
+		DirectoryIndex index.php index.pl index.cgi index.html index.xhtml index.htm  
+	</IfModule>  
   
-RewriteEngine on  
-RewriteCond %{SERVER_NAME} =lamp.johnaedo.com  
-RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]  
+	RewriteEngine on  
+	RewriteCond %{SERVER_NAME} =lamp.johnaedo.com  
+	RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]  
 </VirtualHost>
 ```
 ### Enable Your Site
