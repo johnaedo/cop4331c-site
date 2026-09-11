@@ -19,7 +19,7 @@ Update the following settings:
 - Directory
 
 > [!IMPORTANT]
-> Don't forget the trailing slash on the \<Directory> container!
+> Don't forget the trailing slash on the directory you provided the \<Directory> container!
 
 ```xml
 <VirtualHost *:80>  
