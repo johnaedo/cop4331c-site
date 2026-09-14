@@ -4,23 +4,23 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Course notes, code demos, and tutorials" name="description"/>
 <meta content="Dr. John Aedo" name="author"/>
-<link href="https://johnaedo.github.io/cop4331c/Lecture%20Slides/" rel="canonical"/>
-<link href="../Helpful%20Links/" rel="prev"/>
-<link href="Authentication/" rel="next"/>
-<link href="../_assets/meta/favicons.svg" rel="icon"/>
+<link href="https://johnaedo.github.io/cop4331c/Lecture%20Slides/Week%203%20Lecture%202%20-%20Modeling%20with%20UML/" rel="canonical"/>
+<link href="../Week%203%20Lecture%201%20-%20What%20is%20Software%20Engineering/" rel="prev"/>
+<link href="../Week%204%20Lecture%20-%20Node.js%20Fundamentals/" rel="next"/>
+<link href="../../_assets/meta/favicons.svg" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
-<title>Index - COP 4331C - Processes of Object Oriented Software Development</title>
-<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
-<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<title>Week 3 Lecture 2 Modeling with UML - COP 4331C - Processes of Object Oriented Software Development</title>
+<link href="../../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Karla:300,300i,400,400i,700,700i%7CUbuntu+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Karla";--md-code-font:"Ubuntu Mono"}</style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
-<link href="../_static/css/admonition.css" rel="stylesheet"/>
-<link href="../_static/css/custom_attributes.css" rel="stylesheet"/>
-<link href="../_static/css/customization.css" rel="stylesheet"/>
+<link href="../../_static/css/admonition.css" rel="stylesheet"/>
+<link href="../../_static/css/custom_attributes.css" rel="stylesheet"/>
+<link href="../../_static/css/customization.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/gh/Enveloppe/_static@refs/heads/master/dist/styles.css" rel="stylesheet"/>
-<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
 <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
 <link href="https://unpkg.com/tippy.js@6/animations/scale-subtle.css" rel="stylesheet"/>
@@ -30,12 +30,12 @@
 <meta content="https://johnaedo.github.io/cop4331c/_assets/meta/logo.svg" property="og:image"/>
 <meta content="https://johnaedo.github.io/cop4331c/_assets/meta/logo.svg" name="twitter:image"/>
 <meta content="https://johnaedo.github.io/cop4331c/" name="site_url"/>
-<meta content="Lecture Slides" property="og:title"/>
-<meta content="Lecture Slides" name="twitter:title"/>
+<meta content="Week 3 Lecture 2   Modeling with UML" property="og:title"/>
+<meta content="Week 3 Lecture 2   Modeling with UML" name="twitter:title"/>
 <meta content="Course notes, code demos, and tutorials" name="og:description"/>
 <meta content="Course notes, code demos, and tutorials" name="twitter:description"/>
-<script> document.title = "Lecture Slides" </script>
-<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+<script> document.title = "Week 3 Lecture 2   Modeling with UML" </script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -51,7 +51,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="..">
+<a class="md-skip" href="../..">
           Skip to content
         </a>
 </div>
@@ -59,8 +59,8 @@
 </div>
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="COP 4331C - Processes of Object Oriented Software Development" class="md-header__button md-logo" data-md-component="logo" href=".." title="COP 4331C - Processes of Object Oriented Software Development">
-<img alt="logo" src="../_assets/meta/logo.svg"/>
+<a aria-label="COP 4331C - Processes of Object Oriented Software Development" class="md-header__button md-logo" data-md-component="logo" href="../.." title="COP 4331C - Processes of Object Oriented Software Development">
+<img alt="logo" src="../../_assets/meta/logo.svg"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
@@ -75,7 +75,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Index
+              Week 3 Lecture 2   Modeling with UML
             
           </span>
 </div>
@@ -128,7 +128,7 @@
 <div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../Assignments/">
+<a class="md-tabs__link" href="../../Assignments/">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -137,7 +137,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../Code%20Demos%20and%20Tutorials/">
+<a class="md-tabs__link" href="../../Code%20Demos%20and%20Tutorials/">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -146,7 +146,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../Helpful%20Links/">
+<a class="md-tabs__link" href="../../Helpful%20Links/">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -155,7 +155,7 @@
       </a>
 </li>
 <li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="./">
+<a class="md-tabs__link" href="../">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -164,7 +164,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="..">
+<a class="md-tabs__link" href="../..">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -173,7 +173,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../tags/">
+<a class="md-tabs__link" href="../../tags/">
 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5v6.604l1.5-2.6a3 3 0 0 1 2.599-1.5H15V7.5A1.5 1.5 0 0 0 13.5 6h-4a.5.5 0 0 1-.353-.146L7.44 4.146A.5.5 0 0 0 7.086 4H4.5A1.5 1.5 0 0 0 3 5.5m1.284 10.485q.106.015.22.015H13.9a2 2 0 0 0 1.732-1l2.163-3.745a1.5 1.5 0 0 0-1.3-2.25H7.1a2 2 0 0 0-1.732 1L3.205 13.75a1.5 1.5 0 0 0 1.079 2.235M2 14.46V5.5A2.5 2.5 0 0 1 4.5 3h2.586a1.5 1.5 0 0 1 1.06.44L9.708 5H13.5A2.5 2.5 0 0 1 16 7.5v.505h.496c1.925 0 3.128 2.083 2.166 3.75L16.499 15.5a3 3 0 0 1-2.598 1.5h-9.4q-.095 0-.186-.007a2.46 2.46 0 0 1-1.438-.592A2.5 2.5 0 0 1 2 14.461" fill="currentColor"></path></svg>
     
   
@@ -193,8 +193,8 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="COP 4331C - Processes of Object Oriented Software Development" class="md-nav__button md-logo" data-md-component="logo" href=".." title="COP 4331C - Processes of Object Oriented Software Development">
-<img alt="logo" src="../_assets/meta/logo.svg"/>
+<a aria-label="COP 4331C - Processes of Object Oriented Software Development" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="COP 4331C - Processes of Object Oriented Software Development">
+<img alt="logo" src="../../_assets/meta/logo.svg"/>
 </a>
     COP 4331C - Processes of Object Oriented Software Development
   </label>
@@ -202,7 +202,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../Assignments/">
+<a class="md-nav__link" href="../../Assignments/">
 <svg height="18" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M843.5 737.4c-12.4-75.2-79.2-129.1-155.3-125.4S550.9 676 546 752c-153.5-4.8-208-40.7-199.1-113.7c3.3-27.3 19.8-41.9 50.1-49c18.4-4.3 38.8-4.9 57.3-3.2c1.7.2 3.5.3 5.2.5c11.3 2.7 22.8 5 34.3 6.8c34.1 5.6 68.8 8.4 101.8 6.6c92.8-5 156-45.9 159.2-132.7c3.1-84.1-54.7-143.7-147.9-183.6c-29.9-12.8-61.6-22.7-93.3-30.2c-14.3-3.4-26.3-5.7-35.2-7.2c-7.9-75.9-71.5-133.8-147.8-134.4S189.7 168 180.5 243.8s40 146.3 114.2 163.9s149.9-23.3 175.7-95.1c9.4 1.7 18.7 3.6 28 5.8c28.2 6.6 56.4 15.4 82.4 26.6c70.7 30.2 109.3 70.1 107.5 119.9c-1.6 44.6-33.6 65.2-96.2 68.6c-27.5 1.5-57.6-.9-87.3-5.8c-8.3-1.4-15.9-2.8-22.6-4.3c-3.9-.8-6.6-1.5-7.8-1.8l-3.1-.6c-2.2-.3-5.9-.8-10.7-1.3c-25-2.3-52.1-1.5-78.5 4.6c-55.2 12.9-93.9 47.2-101.1 105.8c-15.7 126.2 78.6 184.7 276 188.9c29.1 70.4 106.4 107.9 179.6 87c73.3-20.9 119.3-93.4 106.9-168.6M329.1 345.2c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3M695.6 845c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3" fill="currentColor"></path></svg>
 <span class="md-ellipsis">
     Assignments
@@ -221,7 +221,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/">
+<a class="md-nav__link" href="../../Code%20Demos%20and%20Tutorials/">
 <svg height="18" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M843.5 737.4c-12.4-75.2-79.2-129.1-155.3-125.4S550.9 676 546 752c-153.5-4.8-208-40.7-199.1-113.7c3.3-27.3 19.8-41.9 50.1-49c18.4-4.3 38.8-4.9 57.3-3.2c1.7.2 3.5.3 5.2.5c11.3 2.7 22.8 5 34.3 6.8c34.1 5.6 68.8 8.4 101.8 6.6c92.8-5 156-45.9 159.2-132.7c3.1-84.1-54.7-143.7-147.9-183.6c-29.9-12.8-61.6-22.7-93.3-30.2c-14.3-3.4-26.3-5.7-35.2-7.2c-7.9-75.9-71.5-133.8-147.8-134.4S189.7 168 180.5 243.8s40 146.3 114.2 163.9s149.9-23.3 175.7-95.1c9.4 1.7 18.7 3.6 28 5.8c28.2 6.6 56.4 15.4 82.4 26.6c70.7 30.2 109.3 70.1 107.5 119.9c-1.6 44.6-33.6 65.2-96.2 68.6c-27.5 1.5-57.6-.9-87.3-5.8c-8.3-1.4-15.9-2.8-22.6-4.3c-3.9-.8-6.6-1.5-7.8-1.8l-3.1-.6c-2.2-.3-5.9-.8-10.7-1.3c-25-2.3-52.1-1.5-78.5 4.6c-55.2 12.9-93.9 47.2-101.1 105.8c-15.7 126.2 78.6 184.7 276 188.9c29.1 70.4 106.4 107.9 179.6 87c73.3-20.9 119.3-93.4 106.9-168.6M329.1 345.2c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3M695.6 845c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3" fill="currentColor"></path></svg>
 <span class="md-ellipsis">
     Code Demos and Tutorials
@@ -238,7 +238,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/Setting%20Up%20MongoDB%20Auth%20and%20Security/">
+<a class="md-nav__link" href="../../Code%20Demos%20and%20Tutorials/Setting%20Up%20MongoDB%20Auth%20and%20Security/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Setting Up MongoDB Auth and Security
@@ -248,7 +248,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/">
+<a class="md-nav__link" href="../../Code%20Demos%20and%20Tutorials/LAMP%20Stack/">
 <svg height="18" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M843.5 737.4c-12.4-75.2-79.2-129.1-155.3-125.4S550.9 676 546 752c-153.5-4.8-208-40.7-199.1-113.7c3.3-27.3 19.8-41.9 50.1-49c18.4-4.3 38.8-4.9 57.3-3.2c1.7.2 3.5.3 5.2.5c11.3 2.7 22.8 5 34.3 6.8c34.1 5.6 68.8 8.4 101.8 6.6c92.8-5 156-45.9 159.2-132.7c3.1-84.1-54.7-143.7-147.9-183.6c-29.9-12.8-61.6-22.7-93.3-30.2c-14.3-3.4-26.3-5.7-35.2-7.2c-7.9-75.9-71.5-133.8-147.8-134.4S189.7 168 180.5 243.8s40 146.3 114.2 163.9s149.9-23.3 175.7-95.1c9.4 1.7 18.7 3.6 28 5.8c28.2 6.6 56.4 15.4 82.4 26.6c70.7 30.2 109.3 70.1 107.5 119.9c-1.6 44.6-33.6 65.2-96.2 68.6c-27.5 1.5-57.6-.9-87.3-5.8c-8.3-1.4-15.9-2.8-22.6-4.3c-3.9-.8-6.6-1.5-7.8-1.8l-3.1-.6c-2.2-.3-5.9-.8-10.7-1.3c-25-2.3-52.1-1.5-78.5 4.6c-55.2 12.9-93.9 47.2-101.1 105.8c-15.7 126.2 78.6 184.7 276 188.9c29.1 70.4 106.4 107.9 179.6 87c73.3-20.9 119.3-93.4 106.9-168.6M329.1 345.2c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3M695.6 845c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3" fill="currentColor"></path></svg>
 <span class="md-ellipsis">
     LAMP Stack
@@ -265,7 +265,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/01-droplet-setup-and-dns/">
+<a class="md-nav__link" href="../../Code%20Demos%20and%20Tutorials/LAMP%20Stack/01-droplet-setup-and-dns/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     01 droplet setup and dns
@@ -273,7 +273,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/02-database-setup-mysql/">
+<a class="md-nav__link" href="../../Code%20Demos%20and%20Tutorials/LAMP%20Stack/02-database-setup-mysql/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     02 database setup mysql
@@ -281,7 +281,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/03-backend-api-deployment-and-testing/">
+<a class="md-nav__link" href="../../Code%20Demos%20and%20Tutorials/LAMP%20Stack/03-backend-api-deployment-and-testing/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     03 backend api deployment and testing
@@ -289,7 +289,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/04-frontend-integration-and-testing/">
+<a class="md-nav__link" href="../../Code%20Demos%20and%20Tutorials/LAMP%20Stack/04-frontend-integration-and-testing/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     04 frontend integration and testing
@@ -297,7 +297,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/Getting%20Started%20with%20LAMP/">
+<a class="md-nav__link" href="../../Code%20Demos%20and%20Tutorials/LAMP%20Stack/Getting%20Started%20with%20LAMP/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Getting Started with LAMP
@@ -305,7 +305,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/LAMP%20Stack/Using%20your%20Droplet%20for%20both%20Colors%20and%20Contacts%20apps/">
+<a class="md-nav__link" href="../../Code%20Demos%20and%20Tutorials/LAMP%20Stack/Using%20your%20Droplet%20for%20both%20Colors%20and%20Contacts%20apps/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Using your Droplet for both Colors and Contacts apps
@@ -331,7 +331,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Code%20Demos%20and%20Tutorials/MERN%20Stack/Getting%20Started%20with%20MERN%20A%20%28version%202.0%29/">
+<a class="md-nav__link" href="../../Code%20Demos%20and%20Tutorials/MERN%20Stack/Getting%20Started%20with%20MERN%20A%20%28version%202.0%29/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Getting Started with MERN A (version 2.0)
@@ -345,7 +345,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Helpful%20Links/">
+<a class="md-nav__link" href="../../Helpful%20Links/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Helpful Links
@@ -355,13 +355,13 @@
 <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link md-nav__link--active" href="./">
+<a class="md-nav__link" href="../">
 <svg height="18" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M843.5 737.4c-12.4-75.2-79.2-129.1-155.3-125.4S550.9 676 546 752c-153.5-4.8-208-40.7-199.1-113.7c3.3-27.3 19.8-41.9 50.1-49c18.4-4.3 38.8-4.9 57.3-3.2c1.7.2 3.5.3 5.2.5c11.3 2.7 22.8 5 34.3 6.8c34.1 5.6 68.8 8.4 101.8 6.6c92.8-5 156-45.9 159.2-132.7c3.1-84.1-54.7-143.7-147.9-183.6c-29.9-12.8-61.6-22.7-93.3-30.2c-14.3-3.4-26.3-5.7-35.2-7.2c-7.9-75.9-71.5-133.8-147.8-134.4S189.7 168 180.5 243.8s40 146.3 114.2 163.9s149.9-23.3 175.7-95.1c9.4 1.7 18.7 3.6 28 5.8c28.2 6.6 56.4 15.4 82.4 26.6c70.7 30.2 109.3 70.1 107.5 119.9c-1.6 44.6-33.6 65.2-96.2 68.6c-27.5 1.5-57.6-.9-87.3-5.8c-8.3-1.4-15.9-2.8-22.6-4.3c-3.9-.8-6.6-1.5-7.8-1.8l-3.1-.6c-2.2-.3-5.9-.8-10.7-1.3c-25-2.3-52.1-1.5-78.5 4.6c-55.2 12.9-93.9 47.2-101.1 105.8c-15.7 126.2 78.6 184.7 276 188.9c29.1 70.4 106.4 107.9 179.6 87c73.3-20.9 119.3-93.4 106.9-168.6M329.1 345.2c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3M695.6 845c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3" fill="currentColor"></path></svg>
 <span class="md-ellipsis">
     Lecture Slides
   </span>
 </a>
-<label class="md-nav__link md-nav__link--active" for="__nav_4" id="__nav_4_label" tabindex="">
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
@@ -372,7 +372,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="Authentication/">
+<a class="md-nav__link" href="../Authentication/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Authentication
@@ -380,7 +380,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="Cypress%20Testing%20Guide/">
+<a class="md-nav__link" href="../Cypress%20Testing%20Guide/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Cypress Testing Guide
@@ -388,7 +388,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="Node.js%20Fundamentals/">
+<a class="md-nav__link" href="../Node.js%20Fundamentals/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Node.js Fundamentals
@@ -396,7 +396,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="Week%201%20-%20Course%20Logistics/">
+<a class="md-nav__link" href="../Week%201%20-%20Course%20Logistics/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Week 1   Course Logistics
@@ -404,7 +404,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="Week%201%20-%20History%20of%20the%20Web%20and%20Overview%20of%20Web%20Architectures/">
+<a class="md-nav__link" href="../Week%201%20-%20History%20of%20the%20Web%20and%20Overview%20of%20Web%20Architectures/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Week 1   History of the Web and Overview of Web Architectures
@@ -412,7 +412,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="Week%2010%20-%20Testing%20Routes%20with%20Jest/">
+<a class="md-nav__link" href="../Week%2010%20-%20Testing%20Routes%20with%20Jest/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Week 10   Testing Routes with Jest
@@ -420,23 +420,321 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="Week%203%20Lecture%201%20-%20What%20is%20Software%20Engineering/">
+<a class="md-nav__link" href="../Week%203%20Lecture%201%20-%20What%20is%20Software%20Engineering/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Week 3 Lecture 1   What is Software Engineering
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="Week%203%20Lecture%202%20-%20Modeling%20with%20UML/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
+<span class="md-ellipsis">
+    Week 3 Lecture 2   Modeling with UML
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Week 3 Lecture 2   Modeling with UML
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modeling-software-projects">
+<span class="md-ellipsis">
+      
+        Modeling Software Projects
+      
+    </span>
+</a>
+<nav aria-label="Modeling Software Projects" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#project-management-tools-the-uml">
+<span class="md-ellipsis">
+      
+        Project-Management Tools &amp; the UML
+      
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="Week%204%20Lecture%20-%20Node.js%20Fundamentals/">
+<a class="md-nav__link" href="#why-we-model-at-all">
+<span class="md-ellipsis">
+      
+        Why We Model At All
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#part-1-non-uml-tools-for-managing-the-work">
+<span class="md-ellipsis">
+      
+        Part 1: Non-UML Tools for Managing the Work
+      
+    </span>
+</a>
+<nav aria-label="Part 1: Non-UML Tools for Managing the Work" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gantt-charts">
+<span class="md-ellipsis">
+      
+        Gantt Charts
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reading-a-gantt-chart">
+<span class="md-ellipsis">
+      
+        Reading a Gantt Chart
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kanban-boards-trello">
+<span class="md-ellipsis">
+      
+        Kanban Boards &amp; Trello
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#trello-in-practice">
+<span class="md-ellipsis">
+      
+        Trello in Practice
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#beyond-trello-more-pm-issue-tools">
+<span class="md-ellipsis">
+      
+        Beyond Trello: More PM &amp; Issue Tools
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#burndown-charts">
+<span class="md-ellipsis">
+      
+        Burndown Charts
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#part-2-modeling-the-application-the-uml">
+<span class="md-ellipsis">
+      
+        Part 2: Modeling the Application - the UML
+      
+    </span>
+</a>
+<nav aria-label="Part 2: Modeling the Application - the UML" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-model-your-applications">
+<span class="md-ellipsis">
+      
+        Why Model Your Applications?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-uml-family">
+<span class="md-ellipsis">
+      
+        The UML Family
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#use-case-diagrams-the-big-picture">
+<span class="md-ellipsis">
+      
+        Use Case Diagrams: The Big Picture
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#actors-the-use-case-diagram">
+<span class="md-ellipsis">
+      
+        Actors &amp; the Use Case Diagram
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#use-case-relationships-include-extend">
+<span class="md-ellipsis">
+      
+        Use Case Relationships: Include &amp; Extend
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#general-thoughts-on-uml">
+<span class="md-ellipsis">
+      
+        General Thoughts on UML
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#refine-and-reduce-risk">
+<span class="md-ellipsis">
+      
+        Refine and Reduce Risk
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#class-diagrams-notation-basics">
+<span class="md-ellipsis">
+      
+        Class Diagrams: Notation Basics
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#class-relationships-the-zoo-system">
+<span class="md-ellipsis">
+      
+        Class Relationships: The Zoo System
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sequence-diagrams-purpose">
+<span class="md-ellipsis">
+      
+        Sequence Diagrams: Purpose
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sequence-diagram-notation">
+<span class="md-ellipsis">
+      
+        Sequence Diagram Notation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#building-a-sequence-diagram-atm-withdrawal">
+<span class="md-ellipsis">
+      
+        Building a Sequence Diagram: ATM Withdrawal
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#alt-frames-modeling-branches">
+<span class="md-ellipsis">
+      
+        Alt Frames: Modeling Branches
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activity-diagrams-purpose">
+<span class="md-ellipsis">
+      
+        Activity Diagrams: Purpose
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activity-diagram-notation">
+<span class="md-ellipsis">
+      
+        Activity Diagram Notation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#swimlanes-assigning-responsibility">
+<span class="md-ellipsis">
+      
+        Swimlanes: Assigning Responsibility
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activity-diagram-example-library-book-loan">
+<span class="md-ellipsis">
+      
+        Activity Diagram Example: Library Book Loan
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#choosing-the-right-diagram">
+<span class="md-ellipsis">
+      
+        Choosing the Right Diagram
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Week%204%20Lecture%20-%20Node.js%20Fundamentals/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Week 4 Lecture   Node.js Fundamentals
@@ -447,7 +745,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="..">
+<a class="md-nav__link" href="../..">
 <svg height="18" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M843.5 737.4c-12.4-75.2-79.2-129.1-155.3-125.4S550.9 676 546 752c-153.5-4.8-208-40.7-199.1-113.7c3.3-27.3 19.8-41.9 50.1-49c18.4-4.3 38.8-4.9 57.3-3.2c1.7.2 3.5.3 5.2.5c11.3 2.7 22.8 5 34.3 6.8c34.1 5.6 68.8 8.4 101.8 6.6c92.8-5 156-45.9 159.2-132.7c3.1-84.1-54.7-143.7-147.9-183.6c-29.9-12.8-61.6-22.7-93.3-30.2c-14.3-3.4-26.3-5.7-35.2-7.2c-7.9-75.9-71.5-133.8-147.8-134.4S189.7 168 180.5 243.8s40 146.3 114.2 163.9s149.9-23.3 175.7-95.1c9.4 1.7 18.7 3.6 28 5.8c28.2 6.6 56.4 15.4 82.4 26.6c70.7 30.2 109.3 70.1 107.5 119.9c-1.6 44.6-33.6 65.2-96.2 68.6c-27.5 1.5-57.6-.9-87.3-5.8c-8.3-1.4-15.9-2.8-22.6-4.3c-3.9-.8-6.6-1.5-7.8-1.8l-3.1-.6c-2.2-.3-5.9-.8-10.7-1.3c-25-2.3-52.1-1.5-78.5 4.6c-55.2 12.9-93.9 47.2-101.1 105.8c-15.7 126.2 78.6 184.7 276 188.9c29.1 70.4 106.4 107.9 179.6 87c73.3-20.9 119.3-93.4 106.9-168.6M329.1 345.2c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3M695.6 845c-46 0-83.3-37.3-83.3-83.3s37.3-83.3 83.3-83.3s83.3 37.3 83.3 83.3s-37.3 83.3-83.3 83.3" fill="currentColor"></path></svg>
 <span class="md-ellipsis">
     Home
@@ -455,7 +753,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../tags/">
+<a class="md-nav__link" href="../../tags/">
 <svg fill="currentColor" height="16px" viewbox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>
 <span class="md-ellipsis">
     Tags
@@ -477,22 +775,286 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#lecture-slides">
+<a class="md-nav__link" href="#modeling-software-projects">
 <span class="md-ellipsis">
       
-        Lecture Slides
+        Modeling Software Projects
+      
+    </span>
+</a>
+<nav aria-label="Modeling Software Projects" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#project-management-tools-the-uml">
+<span class="md-ellipsis">
+      
+        Project-Management Tools &amp; the UML
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#presentations">
+<a class="md-nav__link" href="#why-we-model-at-all">
 <span class="md-ellipsis">
       
-        Presentations
+        Why We Model At All
       
     </span>
 </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#part-1-non-uml-tools-for-managing-the-work">
+<span class="md-ellipsis">
+      
+        Part 1: Non-UML Tools for Managing the Work
+      
+    </span>
+</a>
+<nav aria-label="Part 1: Non-UML Tools for Managing the Work" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gantt-charts">
+<span class="md-ellipsis">
+      
+        Gantt Charts
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reading-a-gantt-chart">
+<span class="md-ellipsis">
+      
+        Reading a Gantt Chart
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kanban-boards-trello">
+<span class="md-ellipsis">
+      
+        Kanban Boards &amp; Trello
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#trello-in-practice">
+<span class="md-ellipsis">
+      
+        Trello in Practice
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#beyond-trello-more-pm-issue-tools">
+<span class="md-ellipsis">
+      
+        Beyond Trello: More PM &amp; Issue Tools
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#burndown-charts">
+<span class="md-ellipsis">
+      
+        Burndown Charts
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#part-2-modeling-the-application-the-uml">
+<span class="md-ellipsis">
+      
+        Part 2: Modeling the Application - the UML
+      
+    </span>
+</a>
+<nav aria-label="Part 2: Modeling the Application - the UML" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-model-your-applications">
+<span class="md-ellipsis">
+      
+        Why Model Your Applications?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-uml-family">
+<span class="md-ellipsis">
+      
+        The UML Family
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#use-case-diagrams-the-big-picture">
+<span class="md-ellipsis">
+      
+        Use Case Diagrams: The Big Picture
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#actors-the-use-case-diagram">
+<span class="md-ellipsis">
+      
+        Actors &amp; the Use Case Diagram
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#use-case-relationships-include-extend">
+<span class="md-ellipsis">
+      
+        Use Case Relationships: Include &amp; Extend
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#general-thoughts-on-uml">
+<span class="md-ellipsis">
+      
+        General Thoughts on UML
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#refine-and-reduce-risk">
+<span class="md-ellipsis">
+      
+        Refine and Reduce Risk
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#class-diagrams-notation-basics">
+<span class="md-ellipsis">
+      
+        Class Diagrams: Notation Basics
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#class-relationships-the-zoo-system">
+<span class="md-ellipsis">
+      
+        Class Relationships: The Zoo System
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sequence-diagrams-purpose">
+<span class="md-ellipsis">
+      
+        Sequence Diagrams: Purpose
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sequence-diagram-notation">
+<span class="md-ellipsis">
+      
+        Sequence Diagram Notation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#building-a-sequence-diagram-atm-withdrawal">
+<span class="md-ellipsis">
+      
+        Building a Sequence Diagram: ATM Withdrawal
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#alt-frames-modeling-branches">
+<span class="md-ellipsis">
+      
+        Alt Frames: Modeling Branches
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activity-diagrams-purpose">
+<span class="md-ellipsis">
+      
+        Activity Diagrams: Purpose
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activity-diagram-notation">
+<span class="md-ellipsis">
+      
+        Activity Diagram Notation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#swimlanes-assigning-responsibility">
+<span class="md-ellipsis">
+      
+        Swimlanes: Assigning Responsibility
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activity-diagram-example-library-book-loan">
+<span class="md-ellipsis">
+      
+        Activity Diagram Example: Library Book Loan
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#choosing-the-right-diagram">
+<span class="md-ellipsis">
+      
+        Choosing the Right Diagram
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -529,25 +1091,293 @@
   page title (or respectively site name) is used as the main headline.
 -->
 <!-- Page content -->
-<h2 id="lecture-slides">Lecture Slides<a class="headerlink" href="#lecture-slides" title="Permanent link">¶</a></h2>
-<p>Slide decks and reference guides published after each class session. Use these to review concepts, catch up if you missed a session, or follow along in real time.</p>
-<p>Use the sidebar to navigate to a specific deck. The search bar is useful if you remember a keyword from lecture but not which session it came from.</p>
-<p>Use the links below if you want to view the deck as a presentation in your browser.</p>
+<h2 id="modeling-software-projects">Modeling Software Projects<a class="headerlink" href="#modeling-software-projects" title="Permanent link">¶</a></h2>
+<h4 id="project-management-tools-the-uml">Project-Management Tools &amp; the UML<a class="headerlink" href="#project-management-tools-the-uml" title="Permanent link">¶</a></h4>
+<p>COP 4331 - University of Central Florida</p>
+<p><small>Based on material by Drs. Richard Leinecker and John Aedo</small></p>
+<p>Note:<br/>
+Lecture 2 of 2. First half: the non-UML tools we use to plan and track a project (Gantt charts, Kanban boards, Jira/GitHub Issues). Second half: the UML diagrams we use to model the application itself (use case, class, sequence, activity).</p>
 <hr/>
-<h2 id="presentations">Presentations<a class="headerlink" href="#presentations" title="Permanent link">¶</a></h2>
+<h3 id="why-we-model-at-all">Why We Model At All<a class="headerlink" href="#why-we-model-at-all" title="Permanent link">¶</a></h3>
+<p>Before you model the <em>application</em>, you have to model the <em>project</em>. Two different problems, two different sets of diagrams:</p>
+<ol>
+<li><strong>Modeling the work</strong> - Gantt charts, Kanban boards, burndown charts: <em>when</em> things happen and <em>who</em> is doing them</li>
+<li><strong>Modeling the application</strong> - UML: <em>what</em> the system does and <em>how</em> its parts fit together</li>
+</ol>
+<p>Both are about the same thing at heart: creating a shared, visual understanding that a team can agree on before committing to code.</p>
+<hr/>
+<h2 id="part-1-non-uml-tools-for-managing-the-work">Part 1: Non-UML Tools for Managing the Work<a class="headerlink" href="#part-1-non-uml-tools-for-managing-the-work" title="Permanent link">¶</a></h2>
+<hr/>
+<h3 id="gantt-charts">Gantt Charts<a class="headerlink" href="#gantt-charts" title="Permanent link">¶</a></h3>
+<p>A Gantt chart is one of the most popular ways to show activities (tasks or events) displayed against time.</p>
 <ul>
-<li><a href="https://teaching.johnaedo.com/lectures/cop4331c/Cypress%20Testing%20Guide%20"><strong>Cypress Testing Guide</strong></a></li>
+<li>The <strong>left side</strong> lists the activities</li>
+<li>The <strong>top</strong> is a time scale</li>
+<li>Each activity is a <strong>bar</strong> - its position, length, and end reflect the start date, duration, and end date</li>
 </ul>
+<p>At a glance you can see what’s active, what’s upcoming, how long each task will last, and whether tasks overlap.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../_assets/images/gantt-chart-example.svg"><img alt="1920" src="../../_assets/images/gantt-chart-example.svg"/></a></p>
+<hr/>
+<h3 id="reading-a-gantt-chart">Reading a Gantt Chart<a class="headerlink" href="#reading-a-gantt-chart" title="Permanent link">¶</a></h3>
+<p>When you look at a Gantt chart, you’re really asking:</p>
+<ul>
+<li>What tasks are being worked on <strong>now</strong>, and what’s <strong>upcoming</strong>?</li>
+<li>When is each task <strong>due</strong>, and what <strong>dependencies</strong> does it have?</li>
+<li><strong>Who</strong> is doing each task?</li>
+<li>Is the project <strong>late, on time, or ahead</strong> of schedule?</li>
+</ul>
+<p><strong>Common tools:</strong> GanttPro.com, TeamGantt, Excel, LucidChart.io (which can even import a board from Trello)</p>
+<hr/>
+<h3 id="kanban-boards-trello">Kanban Boards &amp; Trello<a class="headerlink" href="#kanban-boards-trello" title="Permanent link">¶</a></h3>
+<p>A <strong>Kanban board</strong> is the digital equivalent of laying sticky notes out on the floor - it’s cloud-based, so it can be accessed anywhere, and it’s just as useful for a group presentation or a research project as it is for a corporate team.</p>
+<ul>
+<li><strong>Board</strong> - the project or goal itself</li>
+<li><strong>List</strong> - a stage in your workflow (typically “To Do,” “Doing,” “Done”)</li>
+<li><strong>Card</strong> - an actual task that needs to get done</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../_assets/images/kanban-board.svg"><img alt="1920" src="../../_assets/images/kanban-board.svg"/></a></p>
+<hr/>
+<h3 id="trello-in-practice">Trello in Practice<a class="headerlink" href="#trello-in-practice" title="Permanent link">¶</a></h3>
+<p>Cards carry more than just a title:</p>
+<ul>
+<li><strong>Due dates</strong> - Trello notifies you by email as a deadline nears</li>
+<li><strong>Checklists</strong> - track progress within a single card</li>
+<li><strong>Color labels</strong> - filter down to a specific type of task</li>
+<li><strong>Attachments</strong> - documents and links for easy reference</li>
+<li><strong>Interoperability</strong> - connects with other apps (e.g., Evernote)</li>
+</ul>
+<p>On a collaborative board, teammates get notified when a card they’re assigned to is due; you can also <strong>subscribe</strong> to a card to get updates without being personally assigned.</p>
+<hr/>
+<h3 id="beyond-trello-more-pm-issue-tools">Beyond Trello: More PM &amp; Issue Tools<a class="headerlink" href="#beyond-trello-more-pm-issue-tools" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Best known for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GitKraken / GitKraken Boards</strong></td>
+<td>Git GUI with an integrated Kanban board</td>
+</tr>
+<tr>
+<td><strong>Jira</strong></td>
+<td>Sprint boards and reporting, built for <strong>Agile</strong> teams</td>
+</tr>
+<tr>
+<td><strong>GitHub Issues</strong></td>
+<td>Lightweight issue tracking tied directly to your repo</td>
+</tr>
+</tbody>
+</table>
+<p>Jira in particular is built around the Agile sprint model - its sprint board looks like a Kanban board, but its reporting is where it earns its reputation.</p>
+<hr/>
+<h3 id="burndown-charts">Burndown Charts<a class="headerlink" href="#burndown-charts" title="Permanent link">¶</a></h3>
+<p>A <strong>burndown chart</strong> is Agile’s answer to “are we on track?” It plots <strong>remaining work</strong> against <strong>time remaining in the sprint</strong>.</p>
+<ul>
+<li>The ideal line trends straight down to zero by the sprint’s end</li>
+<li>The actual line shows real progress - above the ideal line means the team is behind, below means ahead</li>
+<li>Unlike a Gantt chart (which shows a <em>schedule</em>), a burndown chart shows <em>velocity</em></li>
+</ul>
+<hr/>
+<h2 id="part-2-modeling-the-application-the-uml">Part 2: Modeling the Application - the UML<a class="headerlink" href="#part-2-modeling-the-application-the-uml" title="Permanent link">¶</a></h2>
+<hr/>
+<h3 id="why-model-your-applications">Why Model Your Applications?<a class="headerlink" href="#why-model-your-applications" title="Permanent link">¶</a></h3>
+<ul>
+<li>Creating models <strong>solidifies design goals</strong> before a line of code is written</li>
+<li>Models provide <strong>design agreement</strong> among development teams</li>
+<li>A visual model <strong>bridges the gap</strong> between stakeholders who think about the system very differently - and gives everyone a common understanding</li>
+</ul>
+<p><strong>Non-UML diagrams still matter in this course too:</strong> Entity-Relation Diagrams, Gantt charts, and (for Agile teams) burndown charts.</p>
+<hr/>
+<h3 id="the-uml-family">The UML Family<a class="headerlink" href="#the-uml-family" title="Permanent link">¶</a></h3>
+<p>UML (<strong>Unified Modeling Language</strong>) isn’t one diagram - it’s a whole family. This course focuses on four:</p>
+<ul>
+<li><strong>Use Case Diagram</strong> - what the system does, from the outside</li>
+<li><strong>Class Diagram</strong> - the static structure of the system’s data and behavior</li>
+<li><strong>Sequence Diagram</strong> - how objects collaborate, over time, to accomplish one task</li>
+<li><strong>Activity Diagram</strong> - the workflow / control flow of a process</li>
+</ul>
+<p>You’ll also encounter State Machine, Object, Component, Deployment, Package, Timing, Communication, Composite Structure, and Profile diagrams elsewhere - but these four cover the vast majority of day-to-day modeling.</p>
+<hr/>
+<h3 id="use-case-diagrams-the-big-picture">Use Case Diagrams: The Big Picture<a class="headerlink" href="#use-case-diagrams-the-big-picture" title="Permanent link">¶</a></h3>
+<ul>
+<li>A Use Case Diagram gives a <strong>high-level snapshot</strong> of an application</li>
+<li>Complex applications need <em>multiple</em> use case diagrams, often arranged hierarchically</li>
+<li>They’re usually the <strong>best starting point</strong> when communicating with a wide variety of stakeholders - you don’t need to be technical to read one</li>
+</ul>
+<p>A use case diagram starts with a <strong>boundary</strong> - the edge of the system being modeled.</p>
+<hr/>
+<h3 id="actors-the-use-case-diagram">Actors &amp; the Use Case Diagram<a class="headerlink" href="#actors-the-use-case-diagram" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Actors</strong> sit <em>outside</em> the boundary and are normally drawn as stick figures - but an actor doesn’t have to be human. A database or another system counts too.</li>
+<li><strong>Use cases</strong> live <em>inside</em> the boundary, drawn as ellipses with a short verb-phrase description (e.g., “Withdraw Money”)</li>
+<li>A straight line connects an actor to every use case it participates in</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../_assets/images/use-case-diagram-atm.svg"><img alt="1920" src="../../_assets/images/use-case-diagram-atm.svg"/></a></p>
+<hr/>
+<h3 id="use-case-relationships-include-extend">Use Case Relationships: Include &amp; Extend<a class="headerlink" href="#use-case-relationships-include-extend" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong><code>&lt;&lt;include&gt;&gt;</code></strong> - one use case always triggers another. <em>Insert Card</em> always leads into <em>Enter PIN</em> - they’re related by necessity.</li>
+<li><strong><code>&lt;&lt;extend&gt;&gt;</code></strong> - models an <strong>edge case</strong> that only sometimes happens. <em>Exceeded Try Count</em> only occurs when PIN entry fails too many times.</li>
+</ul>
+<p>Both relationships let you keep the base flow simple while still documenting the exceptions that real systems have to handle.</p>
+<hr/>
+<h3 id="general-thoughts-on-uml">General Thoughts on UML<a class="headerlink" href="#general-thoughts-on-uml" title="Permanent link">¶</a></h3>
+<p>For an application to be of <strong>professional quality</strong>, it must:</p>
+<ul>
+<li>Meet the needs of the users</li>
+<li>Be robust</li>
+<li>Be maintainable</li>
+<li>Be documented</li>
+</ul>
+<p>Many developers using rapid tools are tempted to skip modeling: write a prototype, then keep bolting on code until it’s “done.” The problem is that the result lacks a well-defined, scalable architecture - because it was never actually designed. That tends to compromise object-oriented principles and leaves you with code that’s inefficient and hard to maintain.</p>
+<hr/>
+<h3 id="refine-and-reduce-risk">Refine and Reduce Risk<a class="headerlink" href="#refine-and-reduce-risk" title="Permanent link">¶</a></h3>
+<p>Using UML, a UML-aware tool, and a real development process shifts design work <strong>earlier</strong> - from the development phase into analysis and design.</p>
+<ul>
+<li>This reduces risk and gives you a way to test the architecture <em>before</em> coding begins</li>
+<li>The upfront overhead pays off: the system ends up user-driven and documented</li>
+<li>Many UML tools can even generate skeleton code that is efficient, object-oriented, and reusable</li>
+</ul>
+<hr/>
+<h3 id="class-diagrams-notation-basics">Class Diagrams: Notation Basics<a class="headerlink" href="#class-diagrams-notation-basics" title="Permanent link">¶</a></h3>
+<p>A class is drawn as a box with three compartments: <strong>name</strong>, <strong>attributes</strong>, and <strong>methods</strong>. Every object created from the class shares this same structure and behavior.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../_assets/images/class-diagram-notation.svg"><img alt="1920" src="../../_assets/images/class-diagram-notation.svg"/></a></p>
+<p><strong>Visibility markers:</strong> <code>+</code> public    <code>−</code> private    <code>#</code> protected</p>
+<hr/>
+<h3 id="class-relationships-the-zoo-system">Class Relationships: The Zoo System<a class="headerlink" href="#class-relationships-the-zoo-system" title="Permanent link">¶</a></h3>
+<p>Classes rarely stand alone - UML gives us five distinct line styles for how they relate:</p>
+<ul>
+<li><strong>Association</strong> - a plain line connecting two independent classes (e.g., Zoo - employs - Zookeeper)</li>
+<li><strong>Aggregation</strong> - hollow diamond, a “has-a” relationship where the part can outlive the whole</li>
+<li><strong>Composition</strong> - filled diamond, an “owns” relationship where the part is destroyed with the whole</li>
+<li><strong>Generalization / Inheritance</strong> - hollow triangle pointing to the parent, an “is-a” relationship</li>
+<li><strong>Dependency</strong> - dashed arrow, “uses” - one class relies on another without owning it</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../_assets/images/class-relationships-zoo.svg"><img alt="1920" src="../../_assets/images/class-relationships-zoo.svg"/></a></p>
+<p>Note:<br/>
+The “tortoise can leave the enclosure and still be a tortoise” line is a nice intuition-check for is-a vs has-a: identity survives the relationship for inheritance, but not necessarily for composition.</p>
+<hr/>
+<h3 id="sequence-diagrams-purpose">Sequence Diagrams: Purpose<a class="headerlink" href="#sequence-diagrams-purpose" title="Permanent link">¶</a></h3>
+<p>A sequence diagram is one of UML’s <strong>interaction diagrams</strong> - it describes the dynamic, time-ordered behavior of a set of objects.</p>
+<p>Its purposes:</p>
+<ul>
+<li>Model the interactions between objects that realize a single use case</li>
+<li>Verify that a use case can actually be supported by the classes you’ve designed</li>
+<li>Identify responsibilities/operations and assign them to the right class</li>
+<li>Emphasize the <strong>time ordering</strong> of messages - sequential flow, branching, iteration, even concurrency</li>
+</ul>
+<hr/>
+<h3 id="sequence-diagram-notation">Sequence Diagram Notation<a class="headerlink" href="#sequence-diagram-notation" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Lifelines</strong> - a dashed vertical line dropping from each actor/object, representing it existing over time</li>
+<li><strong>Actors</strong> sit outside the diagram (usually on the far left) and, unlike objects, have no activation box</li>
+<li><strong>Messages</strong> are horizontal arrows between lifelines:</li>
+<li><strong>Solid arrow</strong> = a call</li>
+<li><strong>Dashed arrow</strong> = a return</li>
+<li><strong>Activation boxes</strong> (thin rectangles on a lifeline) show how long an object is actively doing work</li>
+<li><strong><code>alt</code> frames</strong> wrap around two or more mutually-exclusive branches</li>
+</ul>
+<hr/>
+<h3 id="building-a-sequence-diagram-atm-withdrawal">Building a Sequence Diagram: ATM Withdrawal<a class="headerlink" href="#building-a-sequence-diagram-atm-withdrawal" title="Permanent link">¶</a></h3>
+<p>Start with the actor on the left, then add the objects it interacts with, left to right. Add lifelines, then walk the messages downward in time order.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../_assets/images/sequence-diagram-atm.svg"><img alt="1920" src="../../_assets/images/sequence-diagram-atm.svg"/></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>Walk this top-to-bottom live: insert card → verify with the bank → alt: valid/invalid → enter and verify PIN → alt: sufficient/insufficient funds → dispense cash → eject card. Point out that “requestPIN” is not a return message (solid, not dashed) even though it flows back toward the customer.</p>
+<hr/>
+<h3 id="alt-frames-modeling-branches">Alt Frames: Modeling Branches<a class="headerlink" href="#alt-frames-modeling-branches" title="Permanent link">¶</a></h3>
+<p>Notice two things in the ATM diagram:</p>
+<ul>
+<li>A <strong>dashed return arrow</strong> (<code>4: valid</code>, <code>12: ok</code>) means “I finished the call and I’m handing control back” - it is <em>not</em> the same as a new call</li>
+<li>An <strong><code>alt</code> frame</strong> offers two (or more) mutually exclusive paths - only one branch actually executes at runtime, and the diagram documents both so nothing is a surprise later</li>
+</ul>
+<p>This is exactly the kind of edge case that a use case diagram’s <code>&lt;&lt;extend&gt;&gt;</code> hinted at - the sequence diagram is where you work out the <em>detail</em> of that edge case.</p>
+<hr/>
+<h3 id="activity-diagrams-purpose">Activity Diagrams: Purpose<a class="headerlink" href="#activity-diagrams-purpose" title="Permanent link">¶</a></h3>
+<p>An activity diagram is essentially a <strong>flowchart</strong> for modeling the <em>dynamic</em> aspects of a system - usually a business workflow or an operation.</p>
+<p>It’s especially useful when an operation has to accomplish several things and you need to understand the <strong>dependencies between them</strong> - what can happen in parallel, and what has to finish before something else can start - before you decide on an exact order.</p>
+<hr/>
+<h3 id="activity-diagram-notation">Activity Diagram Notation<a class="headerlink" href="#activity-diagram-notation" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../_assets/images/activity-diagram-notation.svg"><img alt="1920" src="../../_assets/images/activity-diagram-notation.svg"/></a></p>
+<ul>
+<li><strong>Action states</strong> are atomic - they can’t be broken down further and can’t be interrupted</li>
+<li><strong>Activity states</strong> <em>can</em> be decomposed into their own activity diagram, and can be interrupted</li>
+<li>A <strong>branch</strong> has one incoming transition and two or more outgoing ones, each guarded by a Boolean condition like <code>[x&gt;0]</code></li>
+<li>A <strong>fork</strong> starts parallel/concurrent flows; a <strong>join</strong> waits for every incoming flow before continuing</li>
+</ul>
+<hr/>
+<h3 id="swimlanes-assigning-responsibility">Swimlanes: Assigning Responsibility<a class="headerlink" href="#swimlanes-assigning-responsibility" title="Permanent link">¶</a></h3>
+<p>A <strong>swimlane</strong> partitions the activities on a diagram into groups, where each group represents the person, role, or department responsible for those activities.</p>
+<ul>
+<li>Each swimlane has a name that’s unique within the diagram</li>
+<li>Every activity belongs to <strong>exactly one</strong> swimlane</li>
+<li>But <strong>transitions can cross lanes</strong> - that’s exactly how work gets handed off between people</li>
+</ul>
+<hr/>
+<h3 id="activity-diagram-example-library-book-loan">Activity Diagram Example: Library Book Loan<a class="headerlink" href="#activity-diagram-example-library-book-loan" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../_assets/images/activity-diagram-library-swimlane.svg"><img alt="1920" src="../../_assets/images/activity-diagram-library-swimlane.svg"/></a><br/>
+A member either borrows or returns a book; once they reach the front of the queue, responsibility crosses the swimlane boundary to the librarian, who records the transaction and prepares for the next member.</p>
+<hr/>
+<h3 id="choosing-the-right-diagram">Choosing the Right Diagram<a class="headerlink" href="#choosing-the-right-diagram" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Diagram</th>
+<th>Answers the question…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gantt chart</strong></td>
+<td>When does each task happen, and are we on schedule?</td>
+</tr>
+<tr>
+<td><strong>Kanban board</strong></td>
+<td>What state is each task in right now?</td>
+</tr>
+<tr>
+<td><strong>Use Case Diagram</strong></td>
+<td>What can the system do, from the outside?</td>
+</tr>
+<tr>
+<td><strong>Class Diagram</strong></td>
+<td>What are the system’s “nouns,” and how do they relate?</td>
+</tr>
+<tr>
+<td><strong>Sequence Diagram</strong></td>
+<td>In what order do objects talk to each other to get one thing done?</td>
+</tr>
+<tr>
+<td><strong>Activity Diagram</strong></td>
+<td>What’s the workflow, including branches and parallel work?</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">¶</a></h3>
+<ul>
+<li>Project <strong>tools</strong> (Gantt, Kanban, Jira/GitHub Issues, burndown charts) model the <strong>work</strong>; <strong>UML</strong> models the <strong>application</strong></li>
+<li>Use case diagrams start with a <strong>boundary</strong>; actors stay outside it, use cases live inside it</li>
+<li>Class diagrams capture structure through five relationship types: <strong>association, aggregation, composition, generalization, and dependency</strong></li>
+<li>Sequence diagrams show <strong>time-ordered</strong> collaboration between objects, with <code>alt</code> frames for branches</li>
+<li>Activity diagrams are <strong>flowcharts</strong> for workflows, with swimlanes showing who’s responsible for what</li>
+<li>Modeling <em>before</em> coding shifts risk earlier, where it’s cheaper to fix</li>
+</ul>
+<p><strong>Coming up:</strong> we’ll put these diagrams to work designing your own course project.</p>
 <hr/>
 <div class="md-source-file">
 <small>
 <!-- mkdocs-git-revision-date-localized-plugin -->
 <u>Last update</u> :
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 22, 2026 13:29:46 UTC">April 22, 2026</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 14, 2026 01:27:03 UTC">September 14, 2026</span>
 <!-- mkdocs-git-revision-date-plugin -->
 <br/>
 <u>Created</u> :
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 16, 2026 15:49:35 UTC">April 16, 2026</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 14, 2026 01:27:03 UTC">September 14, 2026</span>
 </small>
 </div>
 <!-- Was this page helpful? -->
@@ -560,7 +1390,7 @@
     try {
       const index = document.querySelector('h1').innerHTML;
       if (index === "Index") {
-        document.querySelector('h1').innerHTML = "Lecture Slides";
+        document.querySelector('h1').innerHTML = "Week 3 Lecture 2   Modeling with UML";
       }
     } catch (error) {
       // console.log(error);
@@ -598,11 +1428,11 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
-<script src="../_static/js/mathjax.js"></script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script src="../../_static/js/mathjax.js"></script>
 <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script src="../_static/js/snippets.js"></script>
+<script src="../../_static/js/snippets.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/Enveloppe/_static@refs/heads/master/dist/index.js"></script>
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });
