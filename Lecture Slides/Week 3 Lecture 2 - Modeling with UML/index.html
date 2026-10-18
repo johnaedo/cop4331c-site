@@ -1116,7 +1116,7 @@ Lecture 2 of 2. First half: the non-UML tools we use to plan and track a project
 <li>Each activity is a <strong>bar</strong> - its position, length, and end reflect the start date, duration, and end date</li>
 </ul>
 <p>At a glance you can see what’s active, what’s upcoming, how long each task will last, and whether tasks overlap.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../_assets/images/gantt-chart-example.svg"><img alt="1920" src="../../_assets/images/gantt-chart-example.svg"/></a></p>
+<p></p>
 <hr/>
 <h3 id="reading-a-gantt-chart">Reading a Gantt Chart<a class="headerlink" href="#reading-a-gantt-chart" title="Permanent link">¶</a></h3>
 <p>When you look at a Gantt chart, you’re really asking:</p>
@@ -1135,7 +1135,7 @@ Lecture 2 of 2. First half: the non-UML tools we use to plan and track a project
 <li><strong>List</strong> - a stage in your workflow (typically “To Do,” “Doing,” “Done”)</li>
 <li><strong>Card</strong> - an actual task that needs to get done</li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../_assets/images/kanban-board.svg"><img alt="1920" src="../../_assets/images/kanban-board.svg"/></a></p>
+<p></p>
 <hr/>
 <h3 id="trello-in-practice">Trello in Practice<a class="headerlink" href="#trello-in-practice" title="Permanent link">¶</a></h3>
 <p>Cards carry more than just a title:</p>
@@ -1215,7 +1215,7 @@ Lecture 2 of 2. First half: the non-UML tools we use to plan and track a project
 <li><strong>Use cases</strong> live <em>inside</em> the boundary, drawn as ellipses with a short verb-phrase description (e.g., “Withdraw Money”)</li>
 <li>A straight line connects an actor to every use case it participates in</li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../_assets/images/use-case-diagram-atm.svg"><img alt="1920" src="../../_assets/images/use-case-diagram-atm.svg"/></a></p>
+<p></p>
 <hr/>
 <h3 id="use-case-relationships-include-extend">Use Case Relationships: Include &amp; Extend<a class="headerlink" href="#use-case-relationships-include-extend" title="Permanent link">¶</a></h3>
 <ul>
@@ -1244,7 +1244,7 @@ Lecture 2 of 2. First half: the non-UML tools we use to plan and track a project
 <hr/>
 <h3 id="class-diagrams-notation-basics">Class Diagrams: Notation Basics<a class="headerlink" href="#class-diagrams-notation-basics" title="Permanent link">¶</a></h3>
 <p>A class is drawn as a box with three compartments: <strong>name</strong>, <strong>attributes</strong>, and <strong>methods</strong>. Every object created from the class shares this same structure and behavior.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../_assets/images/class-diagram-notation.svg"><img alt="1920" src="../../_assets/images/class-diagram-notation.svg"/></a></p>
+<p></p>
 <p><strong>Visibility markers:</strong> <code>+</code> public    <code>−</code> private    <code>#</code> protected</p>
 <hr/>
 <h3 id="class-relationships-the-zoo-system">Class Relationships: The Zoo System<a class="headerlink" href="#class-relationships-the-zoo-system" title="Permanent link">¶</a></h3>
@@ -1256,7 +1256,7 @@ Lecture 2 of 2. First half: the non-UML tools we use to plan and track a project
 <li><strong>Generalization / Inheritance</strong> - hollow triangle pointing to the parent, an “is-a” relationship</li>
 <li><strong>Dependency</strong> - dashed arrow, “uses” - one class relies on another without owning it</li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../_assets/images/class-relationships-zoo.svg"><img alt="1920" src="../../_assets/images/class-relationships-zoo.svg"/></a></p>
+<p></p>
 <p>Note:<br/>
 The “tortoise can leave the enclosure and still be a tortoise” line is a nice intuition-check for is-a vs has-a: identity survives the relationship for inheritance, but not necessarily for composition.</p>
 <hr/>
@@ -1283,7 +1283,7 @@ The “tortoise can leave the enclosure and still be a tortoise” line is a nic
 <hr/>
 <h3 id="building-a-sequence-diagram-atm-withdrawal">Building a Sequence Diagram: ATM Withdrawal<a class="headerlink" href="#building-a-sequence-diagram-atm-withdrawal" title="Permanent link">¶</a></h3>
 <p>Start with the actor on the left, then add the objects it interacts with, left to right. Add lifelines, then walk the messages downward in time order.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../_assets/images/sequence-diagram-atm.svg"><img alt="1920" src="../../_assets/images/sequence-diagram-atm.svg"/></a></p>
+<p></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 </div>
@@ -1302,7 +1302,7 @@ The “tortoise can leave the enclosure and still be a tortoise” line is a nic
 <p>It’s especially useful when an operation has to accomplish several things and you need to understand the <strong>dependencies between them</strong> - what can happen in parallel, and what has to finish before something else can start - before you decide on an exact order.</p>
 <hr/>
 <h3 id="activity-diagram-notation">Activity Diagram Notation<a class="headerlink" href="#activity-diagram-notation" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../_assets/images/activity-diagram-notation.svg"><img alt="1920" src="../../_assets/images/activity-diagram-notation.svg"/></a></p>
+<p></p>
 <ul>
 <li><strong>Action states</strong> are atomic - they can’t be broken down further and can’t be interrupted</li>
 <li><strong>Activity states</strong> <em>can</em> be decomposed into their own activity diagram, and can be interrupted</li>
@@ -1319,7 +1319,7 @@ The “tortoise can leave the enclosure and still be a tortoise” line is a nic
 </ul>
 <hr/>
 <h3 id="activity-diagram-example-library-book-loan">Activity Diagram Example: Library Book Loan<a class="headerlink" href="#activity-diagram-example-library-book-loan" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../_assets/images/activity-diagram-library-swimlane.svg"><img alt="1920" src="../../_assets/images/activity-diagram-library-swimlane.svg"/></a><br/>
+<p><br/>
 A member either borrows or returns a book; once they reach the front of the queue, responsibility crosses the swimlane boundary to the librarian, who records the transaction and prepares for the next member.</p>
 <hr/>
 <h3 id="choosing-the-right-diagram">Choosing the Right Diagram<a class="headerlink" href="#choosing-the-right-diagram" title="Permanent link">¶</a></h3>
